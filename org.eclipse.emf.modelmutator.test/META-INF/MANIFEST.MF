@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Model Mutator Test
+Bundle-SymbolicName: org.eclipse.emf.modemutator.test
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.emf.modemutator.test.Activator
+Bundle-Vendor: edu.tum.in.bruegge.epd.modelmutator
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.osgi.framework;version="1.3.0"
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.emf.modelmutator;bundle-version="1.0.0",
+ org.junit4;bundle-version="4.8.1",
+ org.eclipse.emf.emfstore.client;bundle-version="0.8.9"

@@ -16,4 +16,10 @@ public class ModelChanger extends AbstractModelMutator {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	public void mutate() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

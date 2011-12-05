@@ -3,7 +3,11 @@
  */
 package org.eclipse.emf.modelmutator.api;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedHashSet;
+import java.util.Random;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -17,17 +21,24 @@ public class ModelMutatorConfiguration {
 
 	private final EPackage modelPackage;
 	private final EObject rootEObject;
-	private final long seed;
+	private final Random random;
 	
 	private int depth;
 	private int width;
 	private boolean ignoreAndLog;
 	private Collection<EClass> eClassesToIgnore;
+	private Set<RuntimeException> exceptionLog;
 	
 	public ModelMutatorConfiguration(EPackage modelPackage,EObject rootEObject,long seed){
 		this.modelPackage=modelPackage;
 		this.rootEObject=rootEObject;
-		this.seed=seed;
+		this.random=new Random(seed);
+		
+		this.eClassesToIgnore=new ArrayList<EClass>();
+		this.exceptionLog=new LinkedHashSet<RuntimeException>();
+		this.ignoreAndLog=true;
+		this.depth=5;
+		this.width=5;
 	}
 
 	/**
@@ -101,10 +112,23 @@ public class ModelMutatorConfiguration {
 	}
 
 	/**
-	 * @return the seed
+	 * @return the exceptionLog
 	 */
-	public long getSeed() {
-		return seed;
+	public Set<RuntimeException> getExceptionLog() {
+		return exceptionLog;
+	}
+
+	/**
+	 * @param exceptionLog the exceptionLog to set
+	 */
+	public void setExceptionLog(Set<RuntimeException> exceptionLog) {
+		this.exceptionLog = exceptionLog;
+	}
+	/**
+	 * @return the random
+	 */
+	public Random getRandom() {
+		return random;
 	}
 	
 }
