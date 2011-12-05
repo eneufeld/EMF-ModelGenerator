@@ -1,6 +1,5 @@
 package org.eclipse.emf.modelmutator.api;
 
-import org.eclipse.emf.ecore.EObject;
 /**
  * 
  * @author Eugen Neufeld
@@ -13,14 +12,14 @@ public class ModelMutator {
 	 * 
 	 * @param root
 	 */
-	public static void generateModel(EObject root){
+	public static void generateModel(ModelMutatorConfiguration config){
 		
 	}
 	/**
 	 * 
 	 * @param root
 	 */
-	public static void changeModel(EObject root){
+	public static void changeModel(ModelMutatorConfiguration config){
 		
 	}
 }
