@@ -3,7 +3,6 @@
  */
 package org.eclipse.emf.modelmutator.api;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.Random;
@@ -12,6 +11,7 @@ import java.util.Set;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EStructuralFeature;
 
 /**
  * @author Eugen Neufeld
@@ -27,6 +27,7 @@ public class ModelMutatorConfiguration {
 	private int width;
 	private boolean ignoreAndLog;
 	private Collection<EClass> eClassesToIgnore;
+	private Collection<EStructuralFeature> eStructuralFeaturesToIgnore;
 	private Set<RuntimeException> exceptionLog;
 	
 	public ModelMutatorConfiguration(EPackage modelPackage,EObject rootEObject,long seed){
@@ -34,7 +35,8 @@ public class ModelMutatorConfiguration {
 		this.rootEObject=rootEObject;
 		this.random=new Random(seed);
 		
-		this.eClassesToIgnore=new ArrayList<EClass>();
+		this.eClassesToIgnore=new LinkedHashSet<EClass>();
+		this.eStructuralFeaturesToIgnore=new LinkedHashSet<EStructuralFeature>();
 		this.exceptionLog=new LinkedHashSet<RuntimeException>();
 		this.ignoreAndLog=true;
 		this.depth=5;
@@ -129,6 +131,20 @@ public class ModelMutatorConfiguration {
 	 */
 	public Random getRandom() {
 		return random;
+	}
+
+	/**
+	 * @return the eStructuralFeaturesToIgnore
+	 */
+	public Collection<EStructuralFeature> geteStructuralFeaturesToIgnore() {
+		return eStructuralFeaturesToIgnore;
+	}
+
+	/**
+	 * @param eStructuralFeaturesToIgnore the eStructuralFeaturesToIgnore to set
+	 */
+	public void seteStructuralFeaturesToIgnore(Collection<EStructuralFeature> eStructuralFeaturesToIgnore) {
+		this.eStructuralFeaturesToIgnore = eStructuralFeaturesToIgnore;
 	}
 	
 }

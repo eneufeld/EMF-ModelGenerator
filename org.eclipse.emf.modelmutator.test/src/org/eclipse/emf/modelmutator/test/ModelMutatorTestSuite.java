@@ -1,4 +1,4 @@
-package org.eclipse.emf.modemutator.test;
+package org.eclipse.emf.modelmutator.test;
 
 import org.eclipse.emf.modemutator.generator.ModelGeneratorTest;
 import org.junit.runner.RunWith;

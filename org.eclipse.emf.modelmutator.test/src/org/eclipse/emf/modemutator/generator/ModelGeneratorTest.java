@@ -1,8 +1,11 @@
 package org.eclipse.emf.modemutator.generator;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.XMLResource;
@@ -77,6 +80,10 @@ public class ModelGeneratorTest {
 				projectSpace.getProject(), seed);
 		mmc.setDepth(depth);
 		mmc.setWidth(width);
+		List<EStructuralFeature> eStructuralFeaturesToIgnore=new ArrayList<EStructuralFeature>();
+		eStructuralFeaturesToIgnore.addAll(projectSpace.getProject().eClass().getEAllContainments());
+		eStructuralFeaturesToIgnore.remove(projectSpace.getProject().eClass().getEStructuralFeature("modelElements"));
+		mmc.seteStructuralFeaturesToIgnore(eStructuralFeaturesToIgnore);
 
 		ModelMutator.generateModel(mmc);
 

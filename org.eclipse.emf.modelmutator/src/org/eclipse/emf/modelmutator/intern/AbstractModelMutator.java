@@ -58,10 +58,11 @@ public abstract class AbstractModelMutator {
 		result.put(parent.eClass(), newList);
 
 		for (EReference reference : parent.eClass().getEAllContainments()) {
-			if (reference.getName().contains("modelElements"))
-				for (EObject child : children) {
-					ModelMutatorUtil.addPerCommand(parent, reference, child, configuration.getExceptionLog(), configuration.isIgnoreAndLog());
-				}
+			if (configuration.geteStructuralFeaturesToIgnore().contains(reference))
+				continue;
+			for (EObject child : children) {
+				ModelMutatorUtil.addPerCommand(parent, reference, child, configuration.getExceptionLog(), configuration.isIgnoreAndLog());
+			}
 		}
 	}
 }
