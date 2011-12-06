@@ -3,7 +3,7 @@
  * accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this
  * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html </copyright>
  */
-package org.eclipse.emf.modelmutator.attribute;
+package org.eclipse.emf.modelmutator.intern.attribute;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -13,24 +13,20 @@ import java.util.Random;
 
 /**
  * Class for creating random BigInteger values.
- * 
- * @see IAttributeSetter
+ * @author Eugen Neufeld
+ * @author Stephan Köhler
+ * @see AttributeSetter
  */
-public class AttributeSetterEBigInteger implements IAttributeSetter<BigInteger> {
-	
-	/**
-	 * Random object that is used to determine values for attributes created 
-	 * by {@link #createNewAttribute()} and {@link #createNewAttributes()}.
-	 */
-	private Random random;
+public class AttributeSetterEBigInteger extends AttributeSetter<BigInteger> {
 
 	/**
 	 * Creates a new AttributeSetter for Integer attributes.
 	 * 
-	 * @param random Random object used to create attribute values
+	 * @param random
+	 *            Random object used to create attribute values
 	 */
 	public AttributeSetterEBigInteger(Random random) {
-		this.random = random;
+		super(random);
 	}
 
 	/**
@@ -45,7 +41,7 @@ public class AttributeSetterEBigInteger implements IAttributeSetter<BigInteger> 
 	 */
 	public Collection<BigInteger> createNewAttributes(int maxAmount) {
 		List<BigInteger> result = new ArrayList<BigInteger>(maxAmount);
-		for (int i=0; i<maxAmount; i++) {
+		for (int i = 0; i < maxAmount; i++) {
 			result.add(createNewAttribute());
 		}
 		return result;

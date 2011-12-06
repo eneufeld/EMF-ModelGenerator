@@ -3,7 +3,7 @@
  * accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this
  * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html </copyright>
  */
-package org.eclipse.emf.modelmutator.attribute;
+package org.eclipse.emf.modelmutator.intern.attribute;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,23 +13,20 @@ import java.util.Random;
 /**
  * Class for creating random Byte values.
  * 
- * @see IAttributeSetter
+ * @author Eugen Neufeld
+ * @author Stephan Köhler
+ * @see AttributeSetter
  */
-public class AttributeSetterEByte implements IAttributeSetter<Byte> {
-	
-	/**
-	 * Random object that is used to determine values for attributes created 
-	 * by {@link #createNewAttribute()} and {@link #createNewAttributes()}.
-	 */
-	private Random random;
+public class AttributeSetterEByte extends AttributeSetter<Byte> {
 
 	/**
 	 * Creates a new AttributeSetter for Byte attributes.
 	 * 
-	 * @param random Random object used to create attribute values
-	 */	
+	 * @param random
+	 *            Random object used to create attribute values
+	 */
 	public AttributeSetterEByte(Random random) {
-		this.random = random;
+		super(random);
 	}
 
 	/**
@@ -46,7 +43,7 @@ public class AttributeSetterEByte implements IAttributeSetter<Byte> {
 	 */
 	public Collection<Byte> createNewAttributes(int maxAmount) {
 		List<Byte> result = new ArrayList<Byte>(maxAmount);
-		for (int i=0; i<maxAmount; i++) {
+		for (int i = 0; i < maxAmount; i++) {
 			result.add(createNewAttribute());
 		}
 		return result;

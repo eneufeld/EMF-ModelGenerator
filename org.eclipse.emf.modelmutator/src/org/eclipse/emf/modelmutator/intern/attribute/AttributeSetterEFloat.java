@@ -3,7 +3,7 @@
  * accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this
  * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html </copyright>
  */
-package org.eclipse.emf.modelmutator.attribute;
+package org.eclipse.emf.modelmutator.intern.attribute;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,30 +13,27 @@ import java.util.Random;
 /**
  * Class for creating random Float values.
  * 
- * @see IAttributeSetter
+ * @author Eugen Neufeld
+ * @author Stephan Köhler
+ * @see AttributeSetter
  */
-public class AttributeSetterEFloat implements IAttributeSetter<Float> {
-
-	/**
-	 * Random object that is used to determine values for attributes created 
-	 * by {@link #createNewAttribute()} and {@link #createNewAttributes()}.
-	 */
-	private Random random;
+public class AttributeSetterEFloat extends AttributeSetter<Float> {
 
 	/**
 	 * Creates a new AttributeSetter for Float attributes.
 	 * 
-	 * @param random Random object used to create attribute values
+	 * @param random
+	 *            Random object used to create attribute values
 	 */
 	public AttributeSetterEFloat(Random random) {
-		this.random = random;
+		super(random);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public Float createNewAttribute() {
-		return random.nextFloat()*random.nextInt();
+		return random.nextFloat() * random.nextInt();
 	}
 
 	/**
@@ -44,7 +41,7 @@ public class AttributeSetterEFloat implements IAttributeSetter<Float> {
 	 */
 	public Collection<Float> createNewAttributes(int maxAmount) {
 		List<Float> result = new ArrayList<Float>(maxAmount);
-		for (int i=0; i<maxAmount; i++) {
+		for (int i = 0; i < maxAmount; i++) {
 			result.add(createNewAttribute());
 		}
 		return result;

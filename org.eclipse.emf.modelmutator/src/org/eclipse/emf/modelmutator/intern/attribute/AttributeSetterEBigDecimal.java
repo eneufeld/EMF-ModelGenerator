@@ -3,7 +3,7 @@
  * accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this
  * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html </copyright>
  */
-package org.eclipse.emf.modelmutator.attribute;
+package org.eclipse.emf.modelmutator.intern.attribute;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -13,31 +13,27 @@ import java.util.Random;
 
 /**
  * Class for creating random BigDecimal values.
- * 
- * @see IAttributeSetter
+ * @author Eugen Neufeld
+ * @author Stephan Köhler
+ * @see AttributeSetter
  */
-public class AttributeSetterEBigDecimal implements IAttributeSetter<BigDecimal> {
-	
-	/**
-	 * Random object that is used to determine values for attributes created 
-	 * by {@link #createNewAttribute()} and {@link #createNewAttributes()}.
-	 */
-	private Random random;
-	
+public class AttributeSetterEBigDecimal extends AttributeSetter<BigDecimal> {
+
 	/**
 	 * Creates a new AttributeSetter for BigDecimal attributes.
 	 * 
-	 * @param random Random object used to create attribute values
+	 * @param random
+	 *            Random object used to create attribute values
 	 */
 	public AttributeSetterEBigDecimal(Random random) {
-		this.random = random;
+		super(random);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public BigDecimal createNewAttribute() {
-		return new BigDecimal(random.nextDouble()*random.nextInt());
+		return new BigDecimal(random.nextDouble() * random.nextInt());
 	}
 
 	/**
@@ -45,7 +41,7 @@ public class AttributeSetterEBigDecimal implements IAttributeSetter<BigDecimal> 
 	 */
 	public Collection<BigDecimal> createNewAttributes(int maxAmount) {
 		List<BigDecimal> result = new ArrayList<BigDecimal>(maxAmount);
-		for (int i=0; i<maxAmount; i++) {
+		for (int i = 0; i < maxAmount; i++) {
 			result.add(createNewAttribute());
 		}
 		return result;

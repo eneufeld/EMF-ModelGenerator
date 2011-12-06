@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.modelmutator.api.ModelMutatorConfiguration;
+import org.eclipse.emf.modelmutator.api.ModelMutatorUtil;
 
 /**
  * @author Eugen Neufeld
@@ -31,6 +32,7 @@ public class ModelGenerator extends AbstractModelMutator {
 				throw new IllegalArgumentException("Root mustn't be abstract or an interface!");
 			}
 			EObject eObject = EcoreUtil.create(validClass);
+			ModelMutatorUtil.setEObjectAttributes(eObject, configuration.getRandom(), configuration.getExceptionLog(), configuration.isIgnoreAndLog());
 			objects.add(eObject);
 		}
 		addElement(configuration.getRootEObject(), objects);

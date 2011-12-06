@@ -3,7 +3,7 @@
  * accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this
  * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html </copyright>
  */
-package org.eclipse.emf.modelmutator.attribute;
+package org.eclipse.emf.modelmutator.intern.attribute;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -18,56 +18,54 @@ import org.eclipse.emf.ecore.EEnumLiteral;
 /**
  * Class for creating random Enumerator values.
  * 
- * @see IAttributeSetter
+ * @author Eugen Neufeld
+ * @author Stephan Köhler
+ * @see AttributeSetter
  */
-class AttributeSetterEEnum implements IAttributeSetter<Enumerator> {
-	
-	/**
-	 * Random object that is used to determine values for attributes created 
-	 * by {@link #createNewAttribute()} and {@link #createNewAttributes()}.
-	 */
-	private Random random;
-	
+public class AttributeSetterEEnum extends AttributeSetter<Enumerator> {
+
 	/**
 	 * The EEnum for which the Enumerators shall be created.
 	 */
 	private EEnum eEnum;
-	
+
 	/**
 	 * Creates a new AttributeSetter for Enumerator attributes.
 	 * 
-	 * @param eEnum the EEnum this attribute setter will create Enumerators for
-	 * @param random Random object used to create attribute values
+	 * @param eEnum
+	 *            the EEnum this attribute setter will create Enumerators for
+	 * @param random
+	 *            Random object used to create attribute values
 	 */
-	AttributeSetterEEnum(EEnum eEnum, Random random) {
+	public AttributeSetterEEnum(EEnum eEnum, Random random) {
+		super(random);
 		this.eEnum = eEnum;
-		this.random = random;
 	}
-	
-	/** 
+
+	/**
 	 * {@inheritDoc}
 	 */
 	public Enumerator createNewAttribute() {
 		List<EEnumLiteral> literals = new ArrayList<EEnumLiteral>(eEnum.getELiterals());
-		if(literals.isEmpty()) {
+		if (literals.isEmpty()) {
 			return null;
 		}
 		Collections.shuffle(literals, random);
 		return literals.get(0).getInstance();
 	}
 
-	/** 
+	/**
 	 * {@inheritDoc}
 	 */
 	public Collection<Enumerator> createNewAttributes(int maxAmount) {
 		List<Enumerator> result = new ArrayList<Enumerator>(maxAmount);
 		// add instances of all possible literals
-		for(EEnumLiteral literal : eEnum.getELiterals()) {
+		for (EEnumLiteral literal : eEnum.getELiterals()) {
 			result.add(literal.getInstance());
 		}
 		Collections.shuffle(result, random);
 		// remove random Enumerators until at most maxObjects are returned
-		while(result.size() > maxAmount) {
+		while (result.size() > maxAmount) {
 			result.remove(0);
 		}
 		return result;

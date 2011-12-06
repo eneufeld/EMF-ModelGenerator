@@ -3,7 +3,7 @@
  * accompanying materials are made available under the terms of the Eclipse Public License v1.0 which accompanies this
  * distribution, and is available at http://www.eclipse.org/legal/epl-v10.html </copyright>
  */
-package org.eclipse.emf.modelmutator.attribute;
+package org.eclipse.emf.modelmutator.intern.attribute;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -13,30 +13,27 @@ import java.util.Random;
 /**
  * Class for creating random Short values.
  * 
- * @see IAttributeSetter
+ * @author Eugen Neufeld
+ * @author Stephan Köhler
+ * @see AttributeSetter
  */
-public class AttributeSetterEShort implements IAttributeSetter<Short> {
-	
-	/**
-	 * Random object that is used to determine values for attributes created 
-	 * by {@link #createNewAttribute()} and {@link #createNewAttributes()}.
-	 */
-	private Random random;
+public class AttributeSetterEShort extends AttributeSetter<Short> {
 
 	/**
 	 * Creates a new AttributeSetter for Short attributes.
 	 * 
-	 * @param random Random object used to create attribute values
+	 * @param random
+	 *            Random object used to create attribute values
 	 */
 	public AttributeSetterEShort(Random random) {
-		this.random = random;
+		super(random);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	public Short createNewAttribute() {
-		return (short)random.nextInt();
+		return (short) random.nextInt();
 	}
 
 	/**
@@ -44,7 +41,7 @@ public class AttributeSetterEShort implements IAttributeSetter<Short> {
 	 */
 	public Collection<Short> createNewAttributes(int maxAmount) {
 		List<Short> result = new ArrayList<Short>(maxAmount);
-		for (int i=0; i<maxAmount; i++) {
+		for (int i = 0; i < maxAmount; i++) {
 			result.add(createNewAttribute());
 		}
 		return result;
