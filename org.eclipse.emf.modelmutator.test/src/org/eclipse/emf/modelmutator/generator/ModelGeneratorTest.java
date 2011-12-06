@@ -1,4 +1,4 @@
-package org.eclipse.emf.modemutator.generator;
+package org.eclipse.emf.modelmutator.generator;
 
 import java.util.ArrayList;
 import java.util.HashMap;
