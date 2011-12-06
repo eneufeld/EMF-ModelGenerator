@@ -4,9 +4,12 @@
 package org.eclipse.emf.modelmutator.api;
 
 import java.util.Collection;
+import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Random;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EClass;
@@ -20,12 +23,34 @@ import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.command.AddCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
+import org.eclipse.emf.modelmutator.attribute.AttributSetterEString;
+import org.eclipse.emf.modelmutator.attribute.AttributeSetterEBigDecimal;
+import org.eclipse.emf.modelmutator.attribute.AttributeSetterEBigInteger;
+import org.eclipse.emf.modelmutator.attribute.AttributeSetterEBoolean;
+import org.eclipse.emf.modelmutator.attribute.AttributeSetterEByte;
+import org.eclipse.emf.modelmutator.attribute.AttributeSetterEByteArray;
+import org.eclipse.emf.modelmutator.attribute.AttributeSetterEChar;
+import org.eclipse.emf.modelmutator.attribute.AttributeSetterEDate;
+import org.eclipse.emf.modelmutator.attribute.AttributeSetterEDouble;
+import org.eclipse.emf.modelmutator.attribute.AttributeSetterEFloat;
+import org.eclipse.emf.modelmutator.attribute.AttributeSetterEInt;
+import org.eclipse.emf.modelmutator.attribute.AttributeSetterELong;
+import org.eclipse.emf.modelmutator.attribute.AttributeSetterEShort;
+import org.eclipse.emf.modelmutator.attribute.IAttributeSetter;
 
 /**
  * @author Eugen Neufeld
+ * @author Stephan Köhler
  * 
  */
 public class ModelMutatorUtil {
+	
+	/**
+	 * Map that maps every attributeType to an AttributeSetter.
+	 * 
+	 * @see #getAttributeSetters()
+	 */
+	private static Map<EClassifier, IAttributeSetter<?>> attributeSetters;
 
 	/**
 	 * Returns the EPackage to the specified <code>nsURI</code>.
@@ -224,6 +249,7 @@ public class ModelMutatorUtil {
 		}
 		return allEClasses;
 	}
+	
 	/**
 	 * Retrieve all EClasses that are contained in <code>ePackage</code>. 
 	 * 
@@ -291,5 +317,68 @@ public class ModelMutatorUtil {
 			handle(e, exceptionLog, ignoreAndLog);
 			return null;
 		}
+	}
+	
+	/**
+	 * Returns a map containing an AttributeSetter-instance for each 
+	 * attribute type, granting access to all AttributeSetters.
+	 *  
+	 * @return the map that maps every attribute type to its attribute setter
+	 * @see AttributeSetter
+	 */
+	public static Map<EClassifier, IAttributeSetter<?>> getAttributeSetters(Random random) {
+		
+		if(attributeSetters != null) {
+			return attributeSetters;
+		}
+		EcorePackage ecoreInstance = EcorePackage.eINSTANCE;
+		
+		attributeSetters = new LinkedHashMap<EClassifier, IAttributeSetter<?>>();
+		IAttributeSetter<?> oAttributeSetter;
+		
+		oAttributeSetter = new AttributeSetterEBoolean(random);
+		attributeSetters.put(ecoreInstance.getEBoolean(), oAttributeSetter);
+		attributeSetters.put(ecoreInstance.getEBooleanObject(), oAttributeSetter);
+	
+		attributeSetters.put(ecoreInstance.getEByteArray(), new AttributeSetterEByteArray(random, 100));
+		
+		attributeSetters.put(ecoreInstance.getEString(), new AttributSetterEString(random));
+		
+		oAttributeSetter = new AttributeSetterEInt(random);
+		attributeSetters.put(ecoreInstance.getEInt(), oAttributeSetter);
+		attributeSetters.put(ecoreInstance.getEIntegerObject(), oAttributeSetter);
+		
+		attributeSetters.put(ecoreInstance.getEDate(), new AttributeSetterEDate(random));
+		
+		oAttributeSetter = new AttributeSetterELong(random);
+		attributeSetters.put(ecoreInstance.getELong(), oAttributeSetter);
+		attributeSetters.put(ecoreInstance.getELongObject(), oAttributeSetter);
+		
+		oAttributeSetter = new AttributeSetterEByte(random);
+		attributeSetters.put(ecoreInstance.getEByte(), oAttributeSetter);
+		attributeSetters.put(ecoreInstance.getEByteObject(), oAttributeSetter);
+		
+		oAttributeSetter = new AttributeSetterEChar(random);
+		attributeSetters.put(ecoreInstance.getEChar(), oAttributeSetter);
+		attributeSetters.put(ecoreInstance.getECharacterObject(), oAttributeSetter);
+		
+		oAttributeSetter = new AttributeSetterEDouble(random);
+		attributeSetters.put(ecoreInstance.getEDouble(), oAttributeSetter);
+		attributeSetters.put(ecoreInstance.getEDoubleObject(), oAttributeSetter);
+		
+		oAttributeSetter = new AttributeSetterEFloat(random);
+		attributeSetters.put(ecoreInstance.getEFloat(), oAttributeSetter);
+		attributeSetters.put(ecoreInstance.getEFloatObject(), oAttributeSetter);
+		
+		oAttributeSetter = new AttributeSetterEShort(random);
+		attributeSetters.put(ecoreInstance.getEShort(), oAttributeSetter);
+		attributeSetters.put(ecoreInstance.getEShortObject(), oAttributeSetter);
+		
+		attributeSetters.put(ecoreInstance.getEBigInteger(),new AttributeSetterEBigInteger(random));
+		
+		attributeSetters.put(ecoreInstance.getEBigDecimal(),new AttributeSetterEBigDecimal(random));
+		
+		return attributeSetters;
+		
 	}
 }
