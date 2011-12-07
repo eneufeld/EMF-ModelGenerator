@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.edit.command.AddCommand;
+import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
@@ -325,7 +326,37 @@ public class ModelMutatorUtil {
 			return null;
 		}
 	}
-
+	/**
+	 * Adds all <code>objects</code> to the many-valued feature of 
+	 * <code>eObject</code> using an AddCommand. 
+	 * Exceptions are caught if <code>ignoreAndLog</code> is
+	 * true, otherwise a RuntimeException might be thrown if the command fails.  
+	 * 
+	 * @param eObject the EObject to which <code>objects</code> shall be added
+	 * @param feature the EReference that <code>objects</code> shall be added to
+	 * @param objects collection of objects that shall be added to <code>feature</code>
+	 * @param exceptionLog the current log of exceptions
+	 * @param ignoreAndLog should exceptions be ignored and added to <code>exceptionLog</code>?
+	 */
+	public static void addPerCommand(EObject eObject, EStructuralFeature feature, Collection<?> objects,
+		Set<RuntimeException> exceptionLog, boolean ignoreAndLog) {
+		EditingDomain domain = AdapterFactoryEditingDomain.getEditingDomainFor(eObject);
+		try {
+			for(Object object : objects) {
+				if(feature.isUnique() && ((Collection<?>) eObject.eGet(feature)).contains(object)) {
+					// object already exists in unique feature, don't add it again
+					objects.remove(object);
+				}
+			}
+			// no objects to add left
+			if(objects.isEmpty()) {
+				return;
+			}
+			new AddCommand(domain, eObject, feature, objects).doExecute();
+		} catch(RuntimeException e) {
+			handle(e, exceptionLog, ignoreAndLog);
+		}
+	}
 	/**
 	 * Sets a feature between <code>eObject</code> and <code>newValue</code>
 	 * using a SetCommand. Exceptions are caught if <code>ignoreAndLog</code> is
@@ -365,7 +396,27 @@ public class ModelMutatorUtil {
 			return null;
 		}
 	}
-
+	/**
+	 * Removes <code>objects</code> from a feature of <code>eObject</code>
+	 * using a RemoveCommand. Exceptions are caught if <code>ignoreAndLog</code> is
+	 * true, otherwise a RuntimeException might be thrown if the command fails.  
+	 * 
+	 * @param eObject the EObject to remove <code>objects</code> from
+	 * @param feature the EStructuralFeature <code>objects</code> shall be removed from
+	 * @param objects collection of Objects that shall be removed
+	 * @param exceptionLog the current log of exceptions
+	 * @param ignoreAndLog should exceptions be ignored and added to <code>exceptionLog</code>?
+	 * @see RemoveCommand
+	 */
+	public static void removePerCommand(EObject eObject, EStructuralFeature feature, Collection<?> objects,
+		Set<RuntimeException> exceptionLog, boolean ignoreAndLog) {
+		EditingDomain domain = AdapterFactoryEditingDomain.getEditingDomainFor(eObject);
+		try {
+			new RemoveCommand(domain, eObject, feature, objects).doExecute();
+		} catch(RuntimeException e){
+			handle(e, exceptionLog, ignoreAndLog);
+		}
+	}
 	/**
 	 * Sets all possible attributes of known types to random values using
 	 * {@link IAttributeSetter} and SetCommands/AddCommands.
@@ -392,6 +443,11 @@ public class ModelMutatorUtil {
 		for (EAttribute attribute : eObject.eClass().getEAllAttributes()) {
 			EClassifier attributeType = attribute.getEAttributeType();
 
+			if(eObject.eIsSet(attribute)&&attribute.isMany()) {
+				removePerCommand(eObject, attribute, (Collection<?>) eObject.eGet(attribute),
+						exceptionLog, ignoreAndLog);
+			}
+				
 			if (!isValid(attribute, eObject, exceptionLog, ignoreAndLog)) {
 				continue;
 			}

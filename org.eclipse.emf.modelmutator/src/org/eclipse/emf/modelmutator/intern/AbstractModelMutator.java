@@ -37,8 +37,7 @@ public abstract class AbstractModelMutator {
 
 	public void mutate() {
 		preMutate();
-		ModelMutatorUtil.setEObjectAttributes(configuration.getRootEObject(), configuration.getRandom(), configuration.getExceptionLog(),
-				configuration.isIgnoreAndLog());
+		
 		setContaintments();
 
 		// TODO set references
@@ -55,6 +54,7 @@ public abstract class AbstractModelMutator {
 			// for all parent EObjects in this depth
 
 			for (EObject nextParentEObject : parentsInThisDepth) {
+				ModelMutatorUtil.setEObjectAttributes(nextParentEObject, configuration.getRandom(), configuration.getExceptionLog(), configuration.isIgnoreAndLog());
 				List<EObject> children = generateChildren(nextParentEObject);
 				// will the just created EObjects have children?
 				depthToParentObjects.get(currentDepth + 1).addAll(children);
@@ -84,7 +84,6 @@ public abstract class AbstractModelMutator {
 			if (!currentContainments.containsKey(curChild.eContainmentFeature()))
 				currentContainments.put(curChild.eContainmentFeature(), new LinkedList<EObject>());
 			currentContainments.get(curChild.eContainmentFeature()).add(curChild);
-			ModelMutatorUtil.setEObjectAttributes(curChild, configuration.getRandom(), configuration.getExceptionLog(), configuration.isIgnoreAndLog());
 			result.add(curChild);
 		}
 
