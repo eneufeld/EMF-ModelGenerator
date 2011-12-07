@@ -7,7 +7,7 @@ import org.eclipse.emf.modelmutator.api.ModelMutatorConfiguration;
 
 /**
  * @author Eugen Neufeld
- *
+ * 
  */
 public class ModelChanger extends AbstractModelMutator {
 
@@ -17,9 +17,15 @@ public class ModelChanger extends AbstractModelMutator {
 	}
 
 	@Override
-	public void mutate() {
+	public void preMutate() {
+		// TODO delete stuff randomly 
+
+	}
+
+	@Override
+	public void postMutate() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

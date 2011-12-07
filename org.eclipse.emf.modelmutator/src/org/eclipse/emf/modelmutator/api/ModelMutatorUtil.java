@@ -4,6 +4,7 @@
 package org.eclipse.emf.modelmutator.api;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -49,12 +50,6 @@ import org.eclipse.emf.modelmutator.intern.attribute.AttributeSetterEShort;
  */
 public class ModelMutatorUtil {
 
-	/**
-	 * Map that maps every attributeType to an AttributeSetter.
-	 * 
-	 * @see #getAttributeSetters()
-	 */
-	private static Map<EClassifier, AttributeSetter<?>> attributeSetters;
 
 	/**
 	 * Returns the EPackage to the specified <code>nsURI</code>.
@@ -466,12 +461,9 @@ public class ModelMutatorUtil {
 	 */
 	public static Map<EClassifier, AttributeSetter<?>> getAttributeSetters(Random random) {
 
-		if (attributeSetters != null) {
-			return attributeSetters;
-		}
 		EcorePackage ecoreInstance = EcorePackage.eINSTANCE;
 
-		attributeSetters = new LinkedHashMap<EClassifier, AttributeSetter<?>>();
+		HashMap<EClassifier, AttributeSetter<?>> attributeSetters = new LinkedHashMap<EClassifier, AttributeSetter<?>>();
 		AttributeSetter<?> oAttributeSetter;
 
 		oAttributeSetter = new AttributeSetterEBoolean(random);
