@@ -51,15 +51,14 @@ public class ModelChangerTest extends ModelMutatorTest {
 	public void testSetAttributesSeed() {
 
 		try {
-			System.out.println("");
 			ModelMutatorConfiguration mmc = createModelMutatorConfiurationSeed(projectSpace);
 			ModelMutator.changeModel(mmc);
 			String stringOrg = ModelMutatorHelper.eObjectToString(projectSpace.getProject());
-			System.out.println("");
+			
 			ModelMutatorConfiguration mmc2 = createModelMutatorConfiurationSeed(projectSpace);
 			ModelMutator.changeModel(mmc2);
 			String stringNew = ModelMutatorHelper.eObjectToString(projectSpace.getProject());
-
+			
 			Assert.assertEquals(stringNew, stringOrg);
 		} catch (SerializationException e) {
 			// TODO Auto-generated catch block

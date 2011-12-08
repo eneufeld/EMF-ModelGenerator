@@ -85,8 +85,7 @@ public class ModelMutatorUtil {
 	public static List<EReference> getValidReferences(EObject eObject, Set<RuntimeException> exceptionLog, boolean ignoreAndLog) {
 		List<EReference> result = new LinkedList<EReference>();
 		for (EReference reference : eObject.eClass().getEAllReferences()) {
-			if (!reference.isContainer() && !reference.isContainment() && isValid(reference, eObject, exceptionLog, ignoreAndLog)
-					&& (reference.isMany() || !eObject.eIsSet(reference))) {
+			if (!reference.isContainer() && !reference.isContainment() && isValid(reference, eObject, exceptionLog, ignoreAndLog)) {
 				result.add(reference);
 			}
 		}
@@ -647,9 +646,11 @@ public class ModelMutatorUtil {
 	 */
 	public static void setReference(EObject eObject, EClass referenceClass, EReference reference,
 		Random random, Set<RuntimeException> exceptionLog, boolean ignoreAndLog, Map<EClass, List<EObject>> allEObjects) {
+		
+		
 		List<EObject> possibleReferenceObjects = allEObjects.get(referenceClass); 
 		Collections.shuffle(possibleReferenceObjects, random);
-		boolean test = random.nextBoolean();
+		
 		if(!possibleReferenceObjects.isEmpty()) {
 			int index = 0;
 			if(reference.isMany()) {
@@ -662,11 +663,10 @@ public class ModelMutatorUtil {
 						break;
 					}
 				}
-			} else if (test || reference.isRequired()) {
+			} else if (random.nextBoolean() || reference.isRequired()) {
 				ModelMutatorUtil.setPerCommand(eObject, reference, possibleReferenceObjects.get(index),
 					exceptionLog, ignoreAndLog);
 			} 
-			System.out.println(eObject.toString() + ": "+test);
 		}
 	}
 

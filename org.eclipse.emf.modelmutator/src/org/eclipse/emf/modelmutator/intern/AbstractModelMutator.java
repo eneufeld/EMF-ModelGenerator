@@ -56,7 +56,7 @@ public abstract class AbstractModelMutator {
 			// for all parent EObjects in this depth
 
 			for (EObject nextParentEObject : parentsInThisDepth) {
-				ModelMutatorUtil.setEObjectAttributes(nextParentEObject, configuration.getRandom(), configuration.getExceptionLog(), configuration.isIgnoreAndLog());
+				//ModelMutatorUtil.setEObjectAttributes(nextParentEObject, configuration.getRandom(), configuration.getExceptionLog(), configuration.isIgnoreAndLog());
 				List<EObject> children = generateChildren(nextParentEObject);
 				// will the just created EObjects have children?
 				depthToParentObjects.get(currentDepth + 1).addAll(children);
@@ -86,6 +86,7 @@ public abstract class AbstractModelMutator {
 			if (!currentContainments.containsKey(curChild.eContainmentFeature()))
 				currentContainments.put(curChild.eContainmentFeature(), new LinkedList<EObject>());
 			currentContainments.get(curChild.eContainmentFeature()).add(curChild);
+			ModelMutatorUtil.setEObjectAttributes(curChild, configuration.getRandom(), configuration.getExceptionLog(), configuration.isIgnoreAndLog());
 			result.add(curChild);
 		}
 
@@ -159,6 +160,7 @@ public abstract class AbstractModelMutator {
 			EObject newChild = null;
 			// create and set attributes
 			EObject newEObject = EcoreUtil.create(eClass);
+			ModelMutatorUtil.setEObjectAttributes(newEObject, configuration.getRandom(), configuration.getExceptionLog(), configuration.isIgnoreAndLog());
 			// reference created EObject to the parent
 			if (reference.isMany()) {
 				newChild = ModelMutatorUtil.addPerCommand(parentEObject, reference, newEObject, configuration.getExceptionLog(), configuration.isIgnoreAndLog());
@@ -238,8 +240,13 @@ public abstract class AbstractModelMutator {
 	 * @param allEObjects all possible EObjects that can be referenced
 	 * @see ModelGeneratorUtil#setReference(EObject, EClass, EReference, Random, Set, boolean, Map)
 	 */
-	protected void setEObjectReference(EObject eObject, EClass referenceClass, EReference reference,
+	private void setEObjectReference(EObject eObject, EClass referenceClass, EReference reference,
 		Map<EClass, List<EObject>> allEObjects) {
+
+		//Delete already set references (only applies when changing a model)
+		if(eObject.eIsSet(reference)) {
+			eObject.eUnset(reference);
+		}
 		// check if the upper bound is reached
 		if(!ModelMutatorUtil.isValid(reference, eObject, configuration.getExceptionLog(), configuration.isIgnoreAndLog()) ||
 				(!reference.isMany() && eObject.eIsSet(reference))) {
