@@ -4,8 +4,10 @@
 package org.eclipse.emf.modelmutator.api;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +15,7 @@ import java.util.Map.Entry;
 import java.util.Random;
 import java.util.Set;
 
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EClassifier;
@@ -284,6 +287,38 @@ public class ModelMutatorUtil {
 		// packageToModelElementEClasses.put(ePackage, result);
 		return result;
 	}
+	
+	/**
+	 * Returns all direct and indirect contents of <code>rootObject</code> as a map.
+	 * All EObjects that appear in these contents are mapped to their corresponding
+	 * EClass.
+	 *  
+	 * @param rootObject the EObject to get contents for
+	 * @return all contents as a map from EClass to lists of EObjects
+	 */
+	public static Map<EClass, List<EObject>> getAllClassesAndObjects(EObject rootObject) {
+		// initialize the computation process
+		Map<EClass, List<EObject>> result = new LinkedHashMap<EClass, List<EObject>>();
+		TreeIterator<EObject> allContents = rootObject.eAllContents();
+		List<EObject> newList = new LinkedList<EObject>();
+		newList.add(rootObject);
+		result.put(rootObject.eClass(), newList);
+		// iterate over all direct and indirect contents
+		while(allContents.hasNext()) {
+			EObject eObject = allContents.next();
+			// did this EObject's EClass appear before? 
+			if(result.containsKey(eObject.eClass())) {
+				result.get(eObject.eClass()).add(eObject);
+			} else {
+				newList = new LinkedList<EObject>();
+				newList.add(eObject);
+				result.put(eObject.eClass(), newList);
+			}
+		}
+		return result;
+	}
+	
+	
 
 	/**
 	 * Adds <code>newValue</code> to the many-valued feature of
@@ -566,6 +601,73 @@ public class ModelMutatorUtil {
 
 		return attributeSetters;
 
+	}
+	
+	/**
+	 * Retrieves all EClasses from <code>allEClasses</code> that can possibly be
+	 * referenced by <code>reference</code> and returns them as a list.
+	 * 
+	 * @param reference the EReference to get EClasses for
+	 * @param allEClasses set of all possible EClasses
+	 * @return list of all EClasses that can be referenced by <code>reference</code>
+	 */
+	public static Set<EClass> getReferenceClasses(EReference reference, Set<EClass> allEClasses) {
+		Set<EClass> result = new LinkedHashSet<EClass>();
+		EClass referenceType = reference.getEReferenceType();
+		// 'referenceType: EObject' allows all kinds of EObjects
+		if(referenceType.equals(EcorePackage.eINSTANCE.getEObject())) {
+			return allEClasses;
+		}
+		for(EClass eClass : allEClasses) {
+			// can eClass be referenced by reference
+			if(referenceType.equals(eClass) || referenceType.isSuperTypeOf(eClass)) {
+				result.add(eClass);
+			}
+		}
+		return result;
+	}
+	
+	/**
+	 * Sets or adds to a reference for an EObject with any generated instance
+	 * of <code>referenceClass</code> using SetCommand/AddCommand. If the reference is 
+	 * not required, <code>random</code> decides whether the reference is set or how 
+	 * many EObjects are added to it.
+	 *  
+	 * @param eObject the EObject to set the reference for
+	 * @param referenceClass the EClass all referenced EObject shall be instances of
+	 * @param reference the reference to set
+	 * @param random the Random-object that randomizes EObjects and their amount
+	 * @param exceptionLog the current log of exceptions
+	 * @param ignoreAndLog should exceptions be ignored and added to <code>exceptionLog</code>?
+	 * @param allEObjects all existing EObjects mapped to their EClass
+	 * 
+	 * @see #addPerCommand(EObject, EStructuralFeature, Collection, Set, boolean)
+	 * @see #addPerCommand(EObject, EStructuralFeature, Object, Set, boolean)
+	 * @see #setPerCommand(EObject, EStructuralFeature, Object, Set, boolean)
+	 */
+	public static void setReference(EObject eObject, EClass referenceClass, EReference reference,
+		Random random, Set<RuntimeException> exceptionLog, boolean ignoreAndLog, Map<EClass, List<EObject>> allEObjects) {
+		List<EObject> possibleReferenceObjects = allEObjects.get(referenceClass); 
+		Collections.shuffle(possibleReferenceObjects, random);
+		boolean test = random.nextBoolean();
+		if(!possibleReferenceObjects.isEmpty()) {
+			int index = 0;
+			if(reference.isMany()) {
+				int numberOfReferences = computeFeatureAmount(reference, random);
+				for(int i = 0; i < numberOfReferences; i++) {
+					ModelMutatorUtil.addPerCommand(eObject, reference, possibleReferenceObjects.get(index),
+						exceptionLog, ignoreAndLog);
+					// ensures every EObject is set at most once
+					if(++index==possibleReferenceObjects.size()) {
+						break;
+					}
+				}
+			} else if (test || reference.isRequired()) {
+				ModelMutatorUtil.setPerCommand(eObject, reference, possibleReferenceObjects.get(index),
+					exceptionLog, ignoreAndLog);
+			} 
+			System.out.println(eObject.toString() + ": "+test);
+		}
 	}
 
 	/**

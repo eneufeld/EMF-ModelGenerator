@@ -9,6 +9,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EClass;
@@ -40,7 +41,8 @@ public abstract class AbstractModelMutator {
 		
 		setContaintments();
 
-		// TODO set references
+		setReferences();
+		
 		postMutate();
 	}
 
@@ -126,13 +128,43 @@ public abstract class AbstractModelMutator {
 		return result;
 	}
 
+	/**
+	 * Creates valid instances of children for <code>parentEObject</code> using
+	 * the information in the <code>reference</code>. They are set as a child
+	 * of <code>parentEObject</code> with AddCommand/SetCommand.
+	 * 
+	 * @param parentEObject
+	 *            the EObject that shall contain the new instances of
+	 *            children
+	 * @param reference
+	 *            the containment reference
+	 * @param width
+	 * 			  the amount of children to create
+	 * @return a list containing the instances of children or an empty list if 
+	 *  		  the operation failed
+	 * 
+	 * @see ModelGeneratorUtil#addPerCommand(EObject, EStructuralFeature,
+	 *      Object, Set, boolean)
+	 * @see ModelGeneratorUtil#setPerCommand(EObject, EStructuralFeature,
+	 *      Object, Set, boolean)
+	 */
 	private List<EObject> generateMinContainments(EObject parentEObject, EReference reference, int width) {
 		List<EObject> result = new LinkedList<EObject>();
 		for (int i = 0; i < width; i++) {
 			EClass eClass = getValidEClass(reference);
 
 			// create child and add it to parentEObject
-			EObject newChild = setContainment(parentEObject, eClass, reference);
+			// Old version which used another method:
+			//EObject newChild = setContainment(parentEObject, eClass, reference);
+			EObject newChild = null;
+			// create and set attributes
+			EObject newEObject = EcoreUtil.create(eClass);
+			// reference created EObject to the parent
+			if (reference.isMany()) {
+				newChild = ModelMutatorUtil.addPerCommand(parentEObject, reference, newEObject, configuration.getExceptionLog(), configuration.isIgnoreAndLog());
+			} else {
+				newChild = ModelMutatorUtil.setPerCommand(parentEObject, reference, newEObject, configuration.getExceptionLog(), configuration.isIgnoreAndLog());
+			}
 			// was creating the child successful?
 			if (newChild != null) {
 				result.add(newChild);
@@ -162,38 +194,58 @@ public abstract class AbstractModelMutator {
 		Collections.shuffle(allEClasses, configuration.getRandom());
 		return allEClasses.get(0);
 	}
-
+	
 	/**
-	 * Creates a valid instance of <code>childClass</code> (includes setting
-	 * attributes) and sets it as a child of <code>parentEObject</code> using
-	 * AddCommand/SetCommand.
+	 * Sets all references for every child (direct and indirect)
+	 * of <code>root</code>.
 	 * 
-	 * @param parentEObject
-	 *            the EObject that shall contain the new instance of
-	 *            <code>childClass</code>
-	 * @param childClass
-	 *            the EClass of the child that shall be contained in
-	 *            <code>parentEObject</code>
-	 * @param reference
-	 *            the containment reference
-	 * @return the instance of <code>childClass</code> that is contained in
-	 *         <code>parentEObject</code> or <code>null</code> if the operation
-	 *         failed
-	 * 
-	 * @see ModelGeneratorUtil#addPerCommand(EObject, EStructuralFeature,
-	 *      Object, Set, boolean)
-	 * @see ModelGeneratorUtil#setPerCommand(EObject, EStructuralFeature,
-	 *      Object, Set, boolean)
+	 * @see #changeEObjectAttributes(EObject)
+	 * @see #changeEObjectReferences(EObject, Map)
 	 */
-	protected EObject setContainment(EObject parentEObject, EClass childClass, EReference reference) {
-		// create and set attributes
-		EObject newEObject = EcoreUtil.create(childClass);
-		ModelMutatorUtil.setEObjectAttributes(newEObject, configuration.getRandom(), configuration.getExceptionLog(), configuration.isIgnoreAndLog());
-		// reference created EObject to the parent
-		if (reference.isMany()) {
-			return ModelMutatorUtil.addPerCommand(parentEObject, reference, newEObject, configuration.getExceptionLog(), configuration.isIgnoreAndLog());
-		} else {
-			return ModelMutatorUtil.setPerCommand(parentEObject, reference, newEObject, configuration.getExceptionLog(), configuration.isIgnoreAndLog());
+	private void setReferences() {
+		EObject rootObject = configuration.getRootEObject();
+		Map<EClass, List<EObject>> allObjectsByEClass = ModelMutatorUtil.getAllClassesAndObjects(rootObject);
+		for(EClass eClass : allObjectsByEClass.keySet()) {
+			for(EObject eObject : allObjectsByEClass.get(eClass)) {
+				generateReferences(eObject, allObjectsByEClass);
+			}
 		}
+	}
+	
+	/**
+	 * Generates references (no containment references) for an EObject.
+	 * All valid references are set with EObjects generated during the generation process.
+	 * 
+	 * @param eObject the EObject to set references for
+	 * @param allObjectsByEClass all possible EObjects that can be referenced, mapped to their EClass 
+	 * @see ModelGeneratorHelper#setReference(EObject, EClass, EReference, Map)
+	 */
+	private void generateReferences(EObject eObject, Map<EClass, List<EObject>> allObjectsByEClass) {
+		for(EReference reference : ModelMutatorUtil.getValidReferences(eObject, configuration.getExceptionLog(), configuration.isIgnoreAndLog())) {
+			for(EClass nextReferenceClass : ModelMutatorUtil.getReferenceClasses(reference, allObjectsByEClass.keySet())) {
+				setEObjectReference(eObject, nextReferenceClass, reference, allObjectsByEClass);
+			}
+		}
+	}
+	
+	/**
+	 * Sets a reference, if the upper bound allows it,
+	 * using {@link ModelGeneratorUtil#setReference}.
+	 * 
+	 * @param eObject the EObject to set the reference for
+	 * @param referenceClass the EClass of EObjects that shall be referenced
+	 * @param reference the EReference that shall be set
+	 * @param allEObjects all possible EObjects that can be referenced
+	 * @see ModelGeneratorUtil#setReference(EObject, EClass, EReference, Random, Set, boolean, Map)
+	 */
+	protected void setEObjectReference(EObject eObject, EClass referenceClass, EReference reference,
+		Map<EClass, List<EObject>> allEObjects) {
+		// check if the upper bound is reached
+		if(!ModelMutatorUtil.isValid(reference, eObject, configuration.getExceptionLog(), configuration.isIgnoreAndLog()) ||
+				(!reference.isMany() && eObject.eIsSet(reference))) {
+			return;
+		}
+		ModelMutatorUtil.setReference(eObject, referenceClass, reference, configuration.getRandom(),
+			configuration.getExceptionLog(), configuration.isIgnoreAndLog(), allEObjects);
 	}
 }

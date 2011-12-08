@@ -51,10 +51,11 @@ public class ModelChangerTest extends ModelMutatorTest {
 	public void testSetAttributesSeed() {
 
 		try {
+			System.out.println("");
 			ModelMutatorConfiguration mmc = createModelMutatorConfiurationSeed(projectSpace);
 			ModelMutator.changeModel(mmc);
 			String stringOrg = ModelMutatorHelper.eObjectToString(projectSpace.getProject());
-			
+			System.out.println("");
 			ModelMutatorConfiguration mmc2 = createModelMutatorConfiurationSeed(projectSpace);
 			ModelMutator.changeModel(mmc2);
 			String stringNew = ModelMutatorHelper.eObjectToString(projectSpace.getProject());

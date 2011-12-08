@@ -36,7 +36,9 @@ public class AttributSetterEString extends AttributeSetter<String> {
 		StringBuffer string = new StringBuffer();
 		string.delete(0, string.length());
 		for (int j = -5; j < random.nextInt(10); j++) {
-			string.append((char) (random.nextInt(94) + 33));
+			//string.append((char) (random.nextInt(94) + 33));
+			//"Nicer" strings
+			string.append((char) (random.nextInt(75) + 48));
 		}
 		return string.toString();
 	}

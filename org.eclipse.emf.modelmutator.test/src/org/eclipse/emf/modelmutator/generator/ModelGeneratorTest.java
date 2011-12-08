@@ -1,8 +1,10 @@
 package org.eclipse.emf.modelmutator.generator;
 
 import org.eclipse.emf.emfstore.client.model.ProjectSpace;
+import org.eclipse.emf.emfstore.common.model.util.SerializationException;
 import org.eclipse.emf.modelmutator.api.ModelMutator;
 import org.eclipse.emf.modelmutator.api.ModelMutatorConfiguration;
+import org.eclipse.emf.modelmutator.mutator.ModelMutatorHelper;
 import org.eclipse.emf.modelmutator.mutator.ModelMutatorTest;
 import org.junit.Assert;
 import org.junit.Test;
@@ -21,7 +23,7 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 		ModelMutatorConfiguration mmc = createModelMutatorConfiurationSeed(projectSpace);
 
 		ModelMutator.generateModel(mmc);
-
+		
 		Assert.assertEquals(width, projectSpace.getProject().getModelElements().size());
 	}
 
