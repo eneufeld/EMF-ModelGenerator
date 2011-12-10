@@ -16,7 +16,7 @@ import org.junit.After;
 import org.junit.Before;
 
 public class ModelMutatorTest {
-	protected static final String modelKey = "http://org/eclipse/example/bowling";
+	protected static final String modelKey = "http://org/eclipse/emf/modelmutator/testModel";
 	protected static final String projectName = "generated";
 	protected static final String projectDescription = "TestProject2";
 
