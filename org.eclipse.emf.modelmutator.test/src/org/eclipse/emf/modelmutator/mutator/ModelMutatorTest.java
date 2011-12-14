@@ -20,7 +20,7 @@ public class ModelMutatorTest {
 	protected static final String projectName = "generated";
 	protected static final String projectDescription = "TestProject2";
 
-	protected static final long seed = 1234567890l;
+	protected static final long seed = 1234567800;//1234567890l;
 	protected static final int width = 10;
 	protected static final int depth = 4;
 
