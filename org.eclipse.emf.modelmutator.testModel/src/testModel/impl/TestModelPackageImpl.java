@@ -9,6 +9,7 @@ package testModel.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -353,8 +354,44 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedElement_Zb() {
+	public EAttribute getContainedElement_Enumerator() {
 		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getContainedElement_Elist() {
+		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(14);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getContainedElement_Class() {
+		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(15);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getContainedElement_Map() {
+		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(16);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getContainedElement_TreeIterator() {
+		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
@@ -562,7 +599,11 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__ELEMENT_TYPE);
 		createEReference(containedElementEClass, CONTAINED_ELEMENT__REF);
 		createEReference(containedElementEClass, CONTAINED_ELEMENT__UPPER_BOUND);
-		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__ZB);
+		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__ENUMERATOR);
+		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__ELIST);
+		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__CLASS);
+		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__MAP);
+		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__TREE_ITERATOR);
 
 		referenziertesElementEClass = createEClass(REFERENZIERTES_ELEMENT);
 		createEAttribute(referenziertesElementEClass, REFERENZIERTES_ELEMENT__FLOAT);
@@ -645,7 +686,25 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 		initEAttribute(getContainedElement_ElementType(), this.getElementType(), "elementType", null, 0, 1, ContainedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContainedElement_Ref(), this.getreferenziertesElement(), null, "ref", null, 0, -1, ContainedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContainedElement_UpperBound(), this.getupperBound(), null, "upperBound", null, 0, 2, ContainedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContainedElement_Zb(), ecorePackage.getEEnumerator(), "zb", null, 0, 1, ContainedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContainedElement_Enumerator(), ecorePackage.getEEnumerator(), "Enumerator", null, 0, 1, ContainedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		EGenericType g1 = createEGenericType(ecorePackage.getEEList());
+		EGenericType g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		initEAttribute(getContainedElement_Elist(), g1, "elist", null, 0, 1, ContainedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEJavaClass());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		initEAttribute(getContainedElement_Class(), g1, "Class", null, 0, 1, ContainedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getEMap());
+		g2 = createEGenericType(this.getContainedElement());
+		g1.getETypeArguments().add(g2);
+		g2 = createEGenericType(this.getreferenziertesElement());
+		g1.getETypeArguments().add(g2);
+		initEAttribute(getContainedElement_Map(), g1, "Map", null, 0, 1, ContainedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		g1 = createEGenericType(ecorePackage.getETreeIterator());
+		g2 = createEGenericType(ecorePackage.getEString());
+		g1.getETypeArguments().add(g2);
+		initEAttribute(getContainedElement_TreeIterator(), g1, "TreeIterator", null, 0, 1, ContainedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(referenziertesElementEClass, referenziertesElement.class, "referenziertesElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getreferenziertesElement_Float(), ecorePackage.getEFloatObject(), "Float", null, 0, 1, referenziertesElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

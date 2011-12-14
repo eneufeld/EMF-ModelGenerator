@@ -9,6 +9,7 @@ package testModel.impl;
 import java.util.Collection;
 import java.util.Date;
 
+import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -16,6 +17,7 @@ import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.common.util.Enumerator;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -52,7 +54,11 @@ import testModel.upperBound;
  *   <li>{@link testModel.impl.ContainedElementImpl#getElementType <em>Element Type</em>}</li>
  *   <li>{@link testModel.impl.ContainedElementImpl#getRef <em>Ref</em>}</li>
  *   <li>{@link testModel.impl.ContainedElementImpl#getUpperBound <em>Upper Bound</em>}</li>
- *   <li>{@link testModel.impl.ContainedElementImpl#getZb <em>Zb</em>}</li>
+ *   <li>{@link testModel.impl.ContainedElementImpl#getEnumerator <em>Enumerator</em>}</li>
+ *   <li>{@link testModel.impl.ContainedElementImpl#getElist <em>Elist</em>}</li>
+ *   <li>{@link testModel.impl.ContainedElementImpl#getClass_ <em>Class</em>}</li>
+ *   <li>{@link testModel.impl.ContainedElementImpl#getMap <em>Map</em>}</li>
+ *   <li>{@link testModel.impl.ContainedElementImpl#getTreeIterator <em>Tree Iterator</em>}</li>
  * </ul>
  * </p>
  *
@@ -300,24 +306,64 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 	protected EList<upperBound> upperBound;
 
 	/**
-	 * The default value of the '{@link #getZb() <em>Zb</em>}' attribute.
+	 * The default value of the '{@link #getEnumerator() <em>Enumerator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getZb()
+	 * @see #getEnumerator()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Enumerator ZB_EDEFAULT = null;
+	protected static final Enumerator ENUMERATOR_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getZb() <em>Zb</em>}' attribute.
+	 * The cached value of the '{@link #getEnumerator() <em>Enumerator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getZb()
+	 * @see #getEnumerator()
 	 * @generated
 	 * @ordered
 	 */
-	protected Enumerator zb = ZB_EDEFAULT;
+	protected Enumerator enumerator = ENUMERATOR_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getElist() <em>Elist</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getElist()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<String> elist;
+
+	/**
+	 * The cached value of the '{@link #getClass_() <em>Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getClass_()
+	 * @generated
+	 * @ordered
+	 */
+	protected Class<String> class_;
+
+	/**
+	 * The cached value of the '{@link #getMap() <em>Map</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMap()
+	 * @generated
+	 * @ordered
+	 */
+	protected Map<ContainedElement, referenziertesElement> map;
+
+	/**
+	 * The cached value of the '{@link #getTreeIterator() <em>Tree Iterator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTreeIterator()
+	 * @generated
+	 * @ordered
+	 */
+	protected TreeIterator<String> treeIterator;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -598,8 +644,8 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Enumerator getZb() {
-		return zb;
+	public Enumerator getEnumerator() {
+		return enumerator;
 	}
 
 	/**
@@ -607,11 +653,95 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setZb(Enumerator newZb) {
-		Enumerator oldZb = zb;
-		zb = newZb;
+	public void setEnumerator(Enumerator newEnumerator) {
+		Enumerator oldEnumerator = enumerator;
+		enumerator = newEnumerator;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__ZB, oldZb, zb));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__ENUMERATOR, oldEnumerator, enumerator));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<String> getElist() {
+		return elist;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setElist(EList<String> newElist) {
+		EList<String> oldElist = elist;
+		elist = newElist;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__ELIST, oldElist, elist));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Class<String> getClass_() {
+		return class_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setClass(Class<String> newClass) {
+		Class<String> oldClass = class_;
+		class_ = newClass;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__CLASS, oldClass, class_));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Map<ContainedElement, referenziertesElement> getMap() {
+		return map;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMap(Map<ContainedElement, referenziertesElement> newMap) {
+		Map<ContainedElement, referenziertesElement> oldMap = map;
+		map = newMap;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__MAP, oldMap, map));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TreeIterator<String> getTreeIterator() {
+		return treeIterator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTreeIterator(TreeIterator<String> newTreeIterator) {
+		TreeIterator<String> oldTreeIterator = treeIterator;
+		treeIterator = newTreeIterator;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__TREE_ITERATOR, oldTreeIterator, treeIterator));
 	}
 
 	/**
@@ -662,8 +792,16 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 				return getRef();
 			case TestModelPackage.CONTAINED_ELEMENT__UPPER_BOUND:
 				return getUpperBound();
-			case TestModelPackage.CONTAINED_ELEMENT__ZB:
-				return getZb();
+			case TestModelPackage.CONTAINED_ELEMENT__ENUMERATOR:
+				return getEnumerator();
+			case TestModelPackage.CONTAINED_ELEMENT__ELIST:
+				return getElist();
+			case TestModelPackage.CONTAINED_ELEMENT__CLASS:
+				return getClass_();
+			case TestModelPackage.CONTAINED_ELEMENT__MAP:
+				return getMap();
+			case TestModelPackage.CONTAINED_ELEMENT__TREE_ITERATOR:
+				return getTreeIterator();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -718,8 +856,20 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 				getUpperBound().clear();
 				getUpperBound().addAll((Collection<? extends upperBound>)newValue);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__ZB:
-				setZb((Enumerator)newValue);
+			case TestModelPackage.CONTAINED_ELEMENT__ENUMERATOR:
+				setEnumerator((Enumerator)newValue);
+				return;
+			case TestModelPackage.CONTAINED_ELEMENT__ELIST:
+				setElist((EList<String>)newValue);
+				return;
+			case TestModelPackage.CONTAINED_ELEMENT__CLASS:
+				setClass((Class<String>)newValue);
+				return;
+			case TestModelPackage.CONTAINED_ELEMENT__MAP:
+				setMap((Map<ContainedElement, referenziertesElement>)newValue);
+				return;
+			case TestModelPackage.CONTAINED_ELEMENT__TREE_ITERATOR:
+				setTreeIterator((TreeIterator<String>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -772,8 +922,20 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 			case TestModelPackage.CONTAINED_ELEMENT__UPPER_BOUND:
 				getUpperBound().clear();
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__ZB:
-				setZb(ZB_EDEFAULT);
+			case TestModelPackage.CONTAINED_ELEMENT__ENUMERATOR:
+				setEnumerator(ENUMERATOR_EDEFAULT);
+				return;
+			case TestModelPackage.CONTAINED_ELEMENT__ELIST:
+				setElist((EList<String>)null);
+				return;
+			case TestModelPackage.CONTAINED_ELEMENT__CLASS:
+				setClass((Class<String>)null);
+				return;
+			case TestModelPackage.CONTAINED_ELEMENT__MAP:
+				setMap((Map<ContainedElement, referenziertesElement>)null);
+				return;
+			case TestModelPackage.CONTAINED_ELEMENT__TREE_ITERATOR:
+				setTreeIterator((TreeIterator<String>)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -813,8 +975,16 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 				return ref != null && !ref.isEmpty();
 			case TestModelPackage.CONTAINED_ELEMENT__UPPER_BOUND:
 				return upperBound != null && !upperBound.isEmpty();
-			case TestModelPackage.CONTAINED_ELEMENT__ZB:
-				return ZB_EDEFAULT == null ? zb != null : !ZB_EDEFAULT.equals(zb);
+			case TestModelPackage.CONTAINED_ELEMENT__ENUMERATOR:
+				return ENUMERATOR_EDEFAULT == null ? enumerator != null : !ENUMERATOR_EDEFAULT.equals(enumerator);
+			case TestModelPackage.CONTAINED_ELEMENT__ELIST:
+				return elist != null;
+			case TestModelPackage.CONTAINED_ELEMENT__CLASS:
+				return class_ != null;
+			case TestModelPackage.CONTAINED_ELEMENT__MAP:
+				return map != null;
+			case TestModelPackage.CONTAINED_ELEMENT__TREE_ITERATOR:
+				return treeIterator != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -851,8 +1021,16 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 		result.append(float_);
 		result.append(", elementType: ");
 		result.append(elementType);
-		result.append(", zb: ");
-		result.append(zb);
+		result.append(", Enumerator: ");
+		result.append(enumerator);
+		result.append(", elist: ");
+		result.append(elist);
+		result.append(", Class: ");
+		result.append(class_);
+		result.append(", Map: ");
+		result.append(map);
+		result.append(", TreeIterator: ");
+		result.append(treeIterator);
 		result.append(')');
 		return result.toString();
 	}

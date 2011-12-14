@@ -8,10 +8,12 @@ package testModel;
 
 import java.util.Date;
 
+import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.common.util.Enumerator;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -35,7 +37,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link testModel.ContainedElement#getElementType <em>Element Type</em>}</li>
  *   <li>{@link testModel.ContainedElement#getRef <em>Ref</em>}</li>
  *   <li>{@link testModel.ContainedElement#getUpperBound <em>Upper Bound</em>}</li>
- *   <li>{@link testModel.ContainedElement#getZb <em>Zb</em>}</li>
+ *   <li>{@link testModel.ContainedElement#getEnumerator <em>Enumerator</em>}</li>
+ *   <li>{@link testModel.ContainedElement#getElist <em>Elist</em>}</li>
+ *   <li>{@link testModel.ContainedElement#getClass_ <em>Class</em>}</li>
+ *   <li>{@link testModel.ContainedElement#getMap <em>Map</em>}</li>
+ *   <li>{@link testModel.ContainedElement#getTreeIterator <em>Tree Iterator</em>}</li>
  * </ul>
  * </p>
  *
@@ -366,29 +372,133 @@ public interface ContainedElement extends EObject {
 	EList<upperBound> getUpperBound();
 
 	/**
-	 * Returns the value of the '<em><b>Zb</b></em>' attribute.
+	 * Returns the value of the '<em><b>Enumerator</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Zb</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Enumerator</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Zb</em>' attribute.
-	 * @see #setZb(Enumerator)
-	 * @see testModel.TestModelPackage#getContainedElement_Zb()
+	 * @return the value of the '<em>Enumerator</em>' attribute.
+	 * @see #setEnumerator(Enumerator)
+	 * @see testModel.TestModelPackage#getContainedElement_Enumerator()
 	 * @model transient="true"
 	 * @generated
 	 */
-	Enumerator getZb();
+	Enumerator getEnumerator();
 
 	/**
-	 * Sets the value of the '{@link testModel.ContainedElement#getZb <em>Zb</em>}' attribute.
+	 * Sets the value of the '{@link testModel.ContainedElement#getEnumerator <em>Enumerator</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Zb</em>' attribute.
-	 * @see #getZb()
+	 * @param value the new value of the '<em>Enumerator</em>' attribute.
+	 * @see #getEnumerator()
 	 * @generated
 	 */
-	void setZb(Enumerator value);
+	void setEnumerator(Enumerator value);
+
+	/**
+	 * Returns the value of the '<em><b>Elist</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Elist</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Elist</em>' attribute.
+	 * @see #setElist(EList)
+	 * @see testModel.TestModelPackage#getContainedElement_Elist()
+	 * @model many="false" transient="true"
+	 * @generated
+	 */
+	EList<String> getElist();
+
+	/**
+	 * Sets the value of the '{@link testModel.ContainedElement#getElist <em>Elist</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Elist</em>' attribute.
+	 * @see #getElist()
+	 * @generated
+	 */
+	void setElist(EList<String> value);
+
+	/**
+	 * Returns the value of the '<em><b>Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Class</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Class</em>' attribute.
+	 * @see #setClass(Class)
+	 * @see testModel.TestModelPackage#getContainedElement_Class()
+	 * @model transient="true"
+	 * @generated
+	 */
+	Class<String> getClass_();
+
+	/**
+	 * Sets the value of the '{@link testModel.ContainedElement#getClass_ <em>Class</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Class</em>' attribute.
+	 * @see #getClass_()
+	 * @generated
+	 */
+	void setClass(Class<String> value);
+
+	/**
+	 * Returns the value of the '<em><b>Map</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Map</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Map</em>' attribute.
+	 * @see #setMap(Map)
+	 * @see testModel.TestModelPackage#getContainedElement_Map()
+	 * @model transient="true"
+	 * @generated
+	 */
+	Map<ContainedElement, referenziertesElement> getMap();
+
+	/**
+	 * Sets the value of the '{@link testModel.ContainedElement#getMap <em>Map</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Map</em>' attribute.
+	 * @see #getMap()
+	 * @generated
+	 */
+	void setMap(Map<ContainedElement, referenziertesElement> value);
+
+	/**
+	 * Returns the value of the '<em><b>Tree Iterator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tree Iterator</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tree Iterator</em>' attribute.
+	 * @see #setTreeIterator(TreeIterator)
+	 * @see testModel.TestModelPackage#getContainedElement_TreeIterator()
+	 * @model transient="true"
+	 * @generated
+	 */
+	TreeIterator<String> getTreeIterator();
+
+	/**
+	 * Sets the value of the '{@link testModel.ContainedElement#getTreeIterator <em>Tree Iterator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Tree Iterator</em>' attribute.
+	 * @see #getTreeIterator()
+	 * @generated
+	 */
+	void setTreeIterator(TreeIterator<String> value);
 
 } // ContainedElement

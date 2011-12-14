@@ -79,7 +79,11 @@ public class ContainedElementItemProvider
 			addFloatPropertyDescriptor(object);
 			addElementTypePropertyDescriptor(object);
 			addRefPropertyDescriptor(object);
-			addZbPropertyDescriptor(object);
+			addEnumeratorPropertyDescriptor(object);
+			addElistPropertyDescriptor(object);
+			addClassPropertyDescriptor(object);
+			addMapPropertyDescriptor(object);
+			addTreeIteratorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -349,19 +353,107 @@ public class ContainedElementItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Zb feature.
+	 * This adds a property descriptor for the Enumerator feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addZbPropertyDescriptor(Object object) {
+	protected void addEnumeratorPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContainedElement_zb_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_zb_feature", "_UI_ContainedElement_type"),
-				 TestModelPackage.Literals.CONTAINED_ELEMENT__ZB,
+				 getString("_UI_ContainedElement_Enumerator_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_Enumerator_feature", "_UI_ContainedElement_type"),
+				 TestModelPackage.Literals.CONTAINED_ELEMENT__ENUMERATOR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Elist feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addElistPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContainedElement_elist_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_elist_feature", "_UI_ContainedElement_type"),
+				 TestModelPackage.Literals.CONTAINED_ELEMENT__ELIST,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Class feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addClassPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContainedElement_Class_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_Class_feature", "_UI_ContainedElement_type"),
+				 TestModelPackage.Literals.CONTAINED_ELEMENT__CLASS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Map feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMapPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContainedElement_Map_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_Map_feature", "_UI_ContainedElement_type"),
+				 TestModelPackage.Literals.CONTAINED_ELEMENT__MAP,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Tree Iterator feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTreeIteratorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ContainedElement_TreeIterator_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_TreeIterator_feature", "_UI_ContainedElement_type"),
+				 TestModelPackage.Literals.CONTAINED_ELEMENT__TREE_ITERATOR,
 				 true,
 				 false,
 				 false,
@@ -448,7 +540,11 @@ public class ContainedElementItemProvider
 			case TestModelPackage.CONTAINED_ELEMENT__DOUBLE_OBJ:
 			case TestModelPackage.CONTAINED_ELEMENT__FLOAT:
 			case TestModelPackage.CONTAINED_ELEMENT__ELEMENT_TYPE:
-			case TestModelPackage.CONTAINED_ELEMENT__ZB:
+			case TestModelPackage.CONTAINED_ELEMENT__ENUMERATOR:
+			case TestModelPackage.CONTAINED_ELEMENT__ELIST:
+			case TestModelPackage.CONTAINED_ELEMENT__CLASS:
+			case TestModelPackage.CONTAINED_ELEMENT__MAP:
+			case TestModelPackage.CONTAINED_ELEMENT__TREE_ITERATOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case TestModelPackage.CONTAINED_ELEMENT__UPPER_BOUND:

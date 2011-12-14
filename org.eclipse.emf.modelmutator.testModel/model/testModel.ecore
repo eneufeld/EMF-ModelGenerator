@@ -32,10 +32,26 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ref" upperBound="-1" eType="#//referenziertesElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound" upperBound="2"
         eType="#//upperBound" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="zb" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Enumerator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"
         transient="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="elist" transient="true">
       <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
+        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Class" transient="true">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
+        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Map" transient="true">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
+        <eTypeArguments eClassifier="#//ContainedElement"/>
+        <eTypeArguments eClassifier="#//referenziertesElement"/>
+      </eGenericType>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="TreeIterator" transient="true">
+      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ETreeIterator">
         <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eGenericType>
     </eStructuralFeatures>

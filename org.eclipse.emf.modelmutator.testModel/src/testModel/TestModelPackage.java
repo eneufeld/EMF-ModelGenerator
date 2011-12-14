@@ -279,13 +279,49 @@ public interface TestModelPackage extends EPackage {
 	int CONTAINED_ELEMENT__UPPER_BOUND = 12;
 
 	/**
-	 * The feature id for the '<em><b>Zb</b></em>' attribute.
+	 * The feature id for the '<em><b>Enumerator</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_ELEMENT__ZB = 13;
+	int CONTAINED_ELEMENT__ENUMERATOR = 13;
+
+	/**
+	 * The feature id for the '<em><b>Elist</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINED_ELEMENT__ELIST = 14;
+
+	/**
+	 * The feature id for the '<em><b>Class</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINED_ELEMENT__CLASS = 15;
+
+	/**
+	 * The feature id for the '<em><b>Map</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINED_ELEMENT__MAP = 16;
+
+	/**
+	 * The feature id for the '<em><b>Tree Iterator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINED_ELEMENT__TREE_ITERATOR = 17;
 
 	/**
 	 * The number of structural features of the '<em>Contained Element</em>' class.
@@ -294,7 +330,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_ELEMENT_FEATURE_COUNT = 14;
+	int CONTAINED_ELEMENT_FEATURE_COUNT = 18;
 
 	/**
 	 * The meta object id for the '{@link testModel.impl.ElementImpl <em>Element</em>}' class.
@@ -743,15 +779,59 @@ public interface TestModelPackage extends EPackage {
 	EReference getContainedElement_UpperBound();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getZb <em>Zb</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getEnumerator <em>Enumerator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Zb</em>'.
-	 * @see testModel.ContainedElement#getZb()
+	 * @return the meta object for the attribute '<em>Enumerator</em>'.
+	 * @see testModel.ContainedElement#getEnumerator()
 	 * @see #getContainedElement()
 	 * @generated
 	 */
-	EAttribute getContainedElement_Zb();
+	EAttribute getContainedElement_Enumerator();
+
+	/**
+	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getElist <em>Elist</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Elist</em>'.
+	 * @see testModel.ContainedElement#getElist()
+	 * @see #getContainedElement()
+	 * @generated
+	 */
+	EAttribute getContainedElement_Elist();
+
+	/**
+	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getClass_ <em>Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Class</em>'.
+	 * @see testModel.ContainedElement#getClass_()
+	 * @see #getContainedElement()
+	 * @generated
+	 */
+	EAttribute getContainedElement_Class();
+
+	/**
+	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getMap <em>Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Map</em>'.
+	 * @see testModel.ContainedElement#getMap()
+	 * @see #getContainedElement()
+	 * @generated
+	 */
+	EAttribute getContainedElement_Map();
+
+	/**
+	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getTreeIterator <em>Tree Iterator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Tree Iterator</em>'.
+	 * @see testModel.ContainedElement#getTreeIterator()
+	 * @see #getContainedElement()
+	 * @generated
+	 */
+	EAttribute getContainedElement_TreeIterator();
 
 	/**
 	 * Returns the meta object for class '{@link testModel.referenziertesElement <em>referenziertes Element</em>}'.
@@ -1146,12 +1226,44 @@ public interface TestModelPackage extends EPackage {
 		EReference CONTAINED_ELEMENT__UPPER_BOUND = eINSTANCE.getContainedElement_UpperBound();
 
 		/**
-		 * The meta object literal for the '<em><b>Zb</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Enumerator</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTAINED_ELEMENT__ZB = eINSTANCE.getContainedElement_Zb();
+		EAttribute CONTAINED_ELEMENT__ENUMERATOR = eINSTANCE.getContainedElement_Enumerator();
+
+		/**
+		 * The meta object literal for the '<em><b>Elist</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTAINED_ELEMENT__ELIST = eINSTANCE.getContainedElement_Elist();
+
+		/**
+		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTAINED_ELEMENT__CLASS = eINSTANCE.getContainedElement_Class();
+
+		/**
+		 * The meta object literal for the '<em><b>Map</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTAINED_ELEMENT__MAP = eINSTANCE.getContainedElement_Map();
+
+		/**
+		 * The meta object literal for the '<em><b>Tree Iterator</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTAINED_ELEMENT__TREE_ITERATOR = eINSTANCE.getContainedElement_TreeIterator();
 
 		/**
 		 * The meta object literal for the '{@link testModel.impl.referenziertesElementImpl <em>referenziertes Element</em>}' class.
