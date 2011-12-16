@@ -30,6 +30,9 @@ public class ModelMutatorConfiguration {
 	private Collection<EStructuralFeature> eStructuralFeaturesToIgnore;
 	private Set<RuntimeException> exceptionLog;
 	
+	private boolean doNotGenerateRoot=false;
+	private boolean allElementsOnRoot=false;
+	
 	public ModelMutatorConfiguration(EPackage modelPackage,EObject rootEObject,long seed){
 		this.modelPackage=modelPackage;
 		this.rootEObject=rootEObject;
@@ -145,6 +148,34 @@ public class ModelMutatorConfiguration {
 	 */
 	public void seteStructuralFeaturesToIgnore(Collection<EStructuralFeature> eStructuralFeaturesToIgnore) {
 		this.eStructuralFeaturesToIgnore = eStructuralFeaturesToIgnore;
+	}
+
+	/**
+	 * @return the doNotGenerateRoot
+	 */
+	public boolean isDoNotGenerateRoot() {
+		return doNotGenerateRoot;
+	}
+
+	/**
+	 * @param doNotGenerateRoot the doNotGenerateRoot to set
+	 */
+	public void setDoNotGenerateRoot(boolean doNotGenerateRoot) {
+		this.doNotGenerateRoot = doNotGenerateRoot;
+	}
+
+	/**
+	 * @return the allElementsOnRoot
+	 */
+	public boolean isAllElementsOnRoot() {
+		return allElementsOnRoot;
+	}
+
+	/**
+	 * @param allElementsOnRoot the allElementsOnRoot to set
+	 */
+	public void setAllElementsOnRoot(boolean allElementsOnRoot) {
+		this.allElementsOnRoot = allElementsOnRoot;
 	}
 	
 }

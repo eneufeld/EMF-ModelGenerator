@@ -52,12 +52,17 @@ public abstract class AbstractModelMutator {
 		parentsInThisDepth.add(configuration.getRootEObject());
 		int currentDepth = 0;
 		depthToParentObjects.put(1, new LinkedList<EObject>());
+		if(configuration.isDoNotGenerateRoot()){
+			depthToParentObjects.put(2, new LinkedList<EObject>());
+			currentDepth++;
+			parentsInThisDepth = new LinkedList<EObject>(configuration.getRootEObject().eContents());
+		}
 		while (currentDepth < configuration.getDepth()) {
 			// for all parent EObjects in this depth
 
 			for (EObject nextParentEObject : parentsInThisDepth) {
 				//ModelMutatorUtil.setEObjectAttributes(nextParentEObject, configuration.getRandom(), configuration.getExceptionLog(), configuration.isIgnoreAndLog());
-				List<EObject> children = generateChildren(nextParentEObject);
+				List<EObject> children = generateChildren(nextParentEObject,currentDepth==0&&configuration.isAllElementsOnRoot());
 				// will the just created EObjects have children?
 				depthToParentObjects.get(currentDepth + 1).addAll(children);
 			}
@@ -79,7 +84,7 @@ public abstract class AbstractModelMutator {
 	 * @return all generated children as a list
 	 * @see #generateContainments(EObject, EReference, int)
 	 */
-	private List<EObject> generateChildren(EObject parentEObject) {
+	private List<EObject> generateChildren(EObject parentEObject,boolean generateAllReferences) {
 		Map<EReference, List<EObject>> currentContainments = new HashMap<EReference, List<EObject>>();
 		List<EObject> result = new LinkedList<EObject>();
 		for (EObject curChild : parentEObject.eContents()) {
@@ -100,7 +105,13 @@ public abstract class AbstractModelMutator {
 			int numCurrentContainments = 0;
 			if (currentContainments.containsKey(reference))
 				numCurrentContainments = currentContainments.get(reference).size();
-			List<EObject> contain = generateMinContainments(parentEObject, reference, reference.getLowerBound() - numCurrentContainments);
+			
+			List<EObject> contain=null;
+			if(generateAllReferences)
+				contain = generateFullDifferentContainment(parentEObject, reference);
+			else
+				contain = generateMinContainments(parentEObject, reference, reference.getLowerBound() - numCurrentContainments);
+			
 			if (!currentContainments.containsKey(reference))
 				currentContainments.put(reference, new LinkedList<EObject>());
 			currentContainments.get(reference).addAll(contain);
@@ -124,6 +135,30 @@ public abstract class AbstractModelMutator {
 					references.remove(reference);
 					i--;
 				}
+			}
+		}
+		return result;
+	}
+
+	private List<EObject> generateFullDifferentContainment(EObject parentEObject, EReference reference) {
+		List<EClass> allEClasses = new LinkedList<EClass>();
+
+		allEClasses.addAll(ModelMutatorUtil.getAllEContainments(reference));
+
+		// only allow EClasses that appear in the specified EPackage
+		allEClasses.retainAll(ModelMutatorUtil.getAllEClasses(configuration.getModelPackage()));
+		// don't allow any EClass or sub class of all EClasses specified in
+		// ignoredClasses
+		for (EClass eClass : configuration.geteClassesToIgnore()) {
+			allEClasses.remove(eClass);
+			allEClasses.removeAll(ModelMutatorUtil.getAllSubEClasses(eClass));
+		}
+		List<EObject> result = new LinkedList<EObject>();
+		for(EClass eClass:allEClasses){
+			EObject newChild=generateElement(parentEObject,eClass,reference);
+			// was creating the child successful?
+			if (newChild != null) {
+				result.add(newChild);
 			}
 		}
 		return result;
@@ -154,25 +189,30 @@ public abstract class AbstractModelMutator {
 		for (int i = 0; i < width; i++) {
 			EClass eClass = getValidEClass(reference);
 
-			// create child and add it to parentEObject
-			// Old version which used another method:
-			//EObject newChild = setContainment(parentEObject, eClass, reference);
-			EObject newChild = null;
-			// create and set attributes
-			EObject newEObject = EcoreUtil.create(eClass);
-			ModelMutatorUtil.setEObjectAttributes(newEObject, configuration.getRandom(), configuration.getExceptionLog(), configuration.isIgnoreAndLog());
-			// reference created EObject to the parent
-			if (reference.isMany()) {
-				newChild = ModelMutatorUtil.addPerCommand(parentEObject, reference, newEObject, configuration.getExceptionLog(), configuration.isIgnoreAndLog());
-			} else {
-				newChild = ModelMutatorUtil.setPerCommand(parentEObject, reference, newEObject, configuration.getExceptionLog(), configuration.isIgnoreAndLog());
-			}
+			EObject newChild=generateElement(parentEObject,eClass,reference);
 			// was creating the child successful?
 			if (newChild != null) {
 				result.add(newChild);
 			}
 		}
 		return result;
+	}
+
+	private EObject generateElement(EObject parentEObject,EClass eClass,EReference reference) {
+		// create child and add it to parentEObject
+		// Old version which used another method:
+		//EObject newChild = setContainment(parentEObject, eClass, reference);
+		EObject newChild = null;
+		// create and set attributes
+		EObject newEObject = EcoreUtil.create(eClass);
+		ModelMutatorUtil.setEObjectAttributes(newEObject, configuration.getRandom(), configuration.getExceptionLog(), configuration.isIgnoreAndLog());
+		// reference created EObject to the parent
+		if (reference.isMany()) {
+			newChild = ModelMutatorUtil.addPerCommand(parentEObject, reference, newEObject, configuration.getExceptionLog(), configuration.isIgnoreAndLog());
+		} else {
+			newChild = ModelMutatorUtil.setPerCommand(parentEObject, reference, newEObject, configuration.getExceptionLog(), configuration.isIgnoreAndLog());
+		}
+		return newChild;
 	}
 
 	private EClass getValidEClass(EReference eReference) {
