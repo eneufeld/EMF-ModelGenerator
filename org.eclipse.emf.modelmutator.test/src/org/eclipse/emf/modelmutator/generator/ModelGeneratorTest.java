@@ -31,6 +31,45 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 		ModelMutator.generateModel(mmc);
 		Assert.assertEquals(width, projectSpace.getProject().getModelElements().size());
 	}
+	
+	@Test
+	public void testModelDepth() {
+		// TODO This testcase fails with most depths!
+		int expectedDepth = depth;
+		
+		ProjectSpace projectSpace = createProjectSpace();
+		ModelMutatorConfiguration mmc = createModelMutatorConfiurationSeed(projectSpace);
+		mmc.setDepth(expectedDepth);
+		ModelMutator.generateModel(mmc);
+		
+		int maxDepth = calculateMaxModelDepth(projectSpace.getProject(), 0);
+		
+		Assert.assertTrue("The calculated model depth "+maxDepth+" does not match the expected depth "+expectedDepth+".", maxDepth == expectedDepth);
+	}
+	
+	private int calculateMaxModelDepth(EObject parent, int depth) {
+		if (parent.eContents() == null || parent.eContents().isEmpty()) {
+			return depth;
+		}
+		
+		int maxDepth = 0;
+		for (EObject child : parent.eContents()) {
+			//if (!(child instanceof Element)) {
+				printTree(depth, child);
+				maxDepth = Math.max(maxDepth, calculateMaxModelDepth(child, depth + 1));
+			//}
+		}
+		
+		return maxDepth;
+	}
+	
+	private void printTree(int depth, EObject child) {
+		for (int i = 0; i < depth; i++) {
+			System.out.print("  ");
+		}
+		System.out.println("| "+child+" ["+child.eContents().size()+"]");
+	}
+	
 	@Test
 	public void testDoNotGenerateRoot(){
 		ProjectSpace projectSpace = createProjectSpace();
@@ -39,28 +78,27 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 		mmc.setDepth(2);
 		mmc.setDoNotGenerateRoot(true);
 		
-		for(int i=0;i<5;i++){
+		for(int i=0; i<5; i++){
 			Kategorie newModelElement=TestModelFactory.eINSTANCE.createKategorie();
 			newModelElement.setName("Test"+i);
 			projectSpace.getProject().addModelElement(newModelElement);
 		}
 		
-		
 		ModelMutator.generateModel(mmc);
 		Assert.assertEquals(5, projectSpace.getProject().getModelElements().size());
 	}
+	
 	@Test
 	public void testAllElementsOnRoot(){
 		ProjectSpace projectSpace = createProjectSpace();
-
+		
 		ModelMutatorConfiguration mmc = createModelMutatorConfiurationSeed(projectSpace);
 		mmc.setWidth(2);
 		mmc.setAllElementsOnRoot(true);
 		
-		
 		ModelMutator.generateModel(mmc);
 		Set<EClass> differentClasses=new HashSet<EClass>();
-		for(EObject eObject:projectSpace.getProject().getAllModelElements()){
+		for(EObject eObject : projectSpace.getProject().getAllModelElements()){
 			differentClasses.add(eObject.eClass());
 		}
 		Assert.assertEquals(5, differentClasses.size());
