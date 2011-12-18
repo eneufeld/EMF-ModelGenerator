@@ -44,7 +44,7 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 		
 		int maxDepth = calculateMaxModelDepth(projectSpace.getProject(), 0);
 		
-		Assert.assertTrue("The calculated model depth "+maxDepth+" does not match the expected depth "+expectedDepth+".", maxDepth == expectedDepth);
+		Assert.assertEquals("The calculated model depth "+maxDepth+" does not match the expected depth "+expectedDepth+".", expectedDepth, maxDepth);
 	}
 	
 	private int calculateMaxModelDepth(EObject parent, int depth) {
@@ -68,6 +68,33 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 			System.out.print("  ");
 		}
 		System.out.println("| "+child+" ["+child.eContents().size()+"]");
+	}
+	
+	@Test
+	public void testModelWidth() {
+		int expectedWidth = width;
+		
+		ProjectSpace projectSpace = createProjectSpace();
+		ModelMutatorConfiguration mmc = createModelMutatorConfiurationSeed(projectSpace);
+		mmc.setWidth(expectedWidth);
+		ModelMutator.generateModel(mmc);
+		
+		int maxWidth = calculateMaxModelWidth(projectSpace.getProject());
+		
+		Assert.assertEquals("The calculated model width "+maxWidth+" does not match the expected width "+expectedWidth+".", expectedWidth, maxWidth);
+	}
+	
+	private int calculateMaxModelWidth(EObject parent) {
+		if (parent.eContents() == null || parent.eContents().isEmpty()) {
+			return 0;
+		}
+		
+		int maxWidth = parent.eContents().size();
+		for (EObject child : parent.eContents()) {
+			maxWidth = Math.max(maxWidth, calculateMaxModelWidth(child));
+		}
+		
+		return maxWidth;
 	}
 	
 	@Test
