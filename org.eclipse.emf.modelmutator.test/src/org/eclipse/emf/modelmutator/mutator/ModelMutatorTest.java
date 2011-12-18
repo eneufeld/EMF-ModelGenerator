@@ -54,7 +54,7 @@ public class ModelMutatorTest {
 		return resourceLoadOptions;
 	}
 
-	protected ModelMutatorConfiguration createModelMutatorConfiurationSeed(ProjectSpace projectSpace) {
+	protected ModelMutatorConfiguration createModelMutatorConfigurationSeed(ProjectSpace projectSpace) {
 		ModelMutatorConfiguration mmc = new ModelMutatorConfiguration(ModelMutatorUtil.getEPackage(modelKey), projectSpace.getProject(), seed);
 		mmc.setDepth(depth);
 		mmc.setWidth(width);
@@ -65,7 +65,7 @@ public class ModelMutatorTest {
 		return mmc;
 	}
 
-	protected ModelMutatorConfiguration createModelMutatorConfiurationRandom(ProjectSpace projectSpace) {
+	protected ModelMutatorConfiguration createModelMutatorConfigurationRandom(ProjectSpace projectSpace) {
 		ModelMutatorConfiguration mmc = new ModelMutatorConfiguration(ModelMutatorUtil.getEPackage(modelKey), projectSpace.getProject(),
 				System.currentTimeMillis());
 		mmc.setDepth(depth);

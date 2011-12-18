@@ -18,7 +18,7 @@ public class ModelChangerTest extends ModelMutatorTest {
 	@Before
 	public void beforeTest() {
 		projectSpace = createProjectSpace();
-		ModelMutatorConfiguration mmc = createModelMutatorConfiurationSeed(projectSpace);
+		ModelMutatorConfiguration mmc = createModelMutatorConfigurationSeed(projectSpace);
 
 		ModelMutator.generateModel(mmc);
 	}
@@ -28,41 +28,29 @@ public class ModelChangerTest extends ModelMutatorTest {
 		projectSpace = null;
 	}
 
-//	@Test
-	public void testSetAttributesRandom() {
-
-		try {
-
-			ModelMutatorConfiguration mmc = createModelMutatorConfiurationRandom(projectSpace);
-			ModelMutator.changeModel(mmc);
-			String stringOrg = ModelMutatorHelper.eObjectToString(projectSpace.getProject());
-			ModelMutatorConfiguration mmc2 = createModelMutatorConfiurationRandom(projectSpace);
-			ModelMutator.changeModel(mmc2);
-			String stringNew = ModelMutatorHelper.eObjectToString(projectSpace.getProject());
+	@Test
+	public void testSetAttributesRandom() throws SerializationException {
+		ModelMutatorConfiguration mmc = createModelMutatorConfigurationRandom(projectSpace);
+		ModelMutator.changeModel(mmc);
+		String stringOrg = ModelMutatorHelper.eObjectToString(projectSpace.getProject());
+		
+		ModelMutatorConfiguration mmc2 = createModelMutatorConfigurationRandom(projectSpace);
+		ModelMutator.changeModel(mmc2);
+		String stringNew = ModelMutatorHelper.eObjectToString(projectSpace.getProject());
 			
-			Assert.assertNotSame(stringNew, stringOrg);
-		} catch (SerializationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		Assert.assertNotSame(stringNew, stringOrg);
 	}
 
 	@Test
-	public void testSetAttributesSeed() {
-
-		try {
-			ModelMutatorConfiguration mmc = createModelMutatorConfiurationSeed(projectSpace);
-			ModelMutator.changeModel(mmc);
-			String stringOrg = ModelMutatorHelper.eObjectToString(projectSpace.getProject());
-			
-			ModelMutatorConfiguration mmc2 = createModelMutatorConfiurationSeed(projectSpace);
-			ModelMutator.changeModel(mmc2);
-			String stringNew = ModelMutatorHelper.eObjectToString(projectSpace.getProject());
-			
-			Assert.assertEquals(stringNew, stringOrg);
-		} catch (SerializationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public void testSetAttributesSeed() throws SerializationException {
+		ModelMutatorConfiguration mmc = createModelMutatorConfigurationSeed(projectSpace);
+		ModelMutator.changeModel(mmc);
+		String stringOrg = ModelMutatorHelper.eObjectToString(projectSpace.getProject());
+		
+		ModelMutatorConfiguration mmc2 = createModelMutatorConfigurationSeed(projectSpace);
+		ModelMutator.changeModel(mmc2);
+		String stringNew = ModelMutatorHelper.eObjectToString(projectSpace.getProject());
+		
+		Assert.assertEquals(stringNew, stringOrg);
 	}
 }

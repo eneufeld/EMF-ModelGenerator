@@ -1,6 +1,8 @@
 package org.eclipse.emf.modelmutator.generator;
 
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Set;
 
 import org.eclipse.emf.ecore.EClass;
@@ -26,7 +28,7 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 	public void testNumberRootElements() {
 		ProjectSpace projectSpace = createProjectSpace();
 
-		ModelMutatorConfiguration mmc = createModelMutatorConfiurationSeed(projectSpace);
+		ModelMutatorConfiguration mmc = createModelMutatorConfigurationSeed(projectSpace);
 
 		ModelMutator.generateModel(mmc);
 		Assert.assertEquals(width, projectSpace.getProject().getModelElements().size());
@@ -38,36 +40,54 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 		int expectedDepth = depth;
 		
 		ProjectSpace projectSpace = createProjectSpace();
-		ModelMutatorConfiguration mmc = createModelMutatorConfiurationSeed(projectSpace);
+		ModelMutatorConfiguration mmc = createModelMutatorConfigurationSeed(projectSpace);
 		mmc.setDepth(expectedDepth);
 		ModelMutator.generateModel(mmc);
 		
-		int maxDepth = calculateMaxModelDepth(projectSpace.getProject(), 0);
+		// breadth-first search (BFS)
+		List<EObject> parents = new LinkedList<EObject>();
+		parents.add(projectSpace.getProject());
 		
-		Assert.assertEquals("The calculated model depth "+maxDepth+" does not match the expected depth "+expectedDepth+".", expectedDepth, maxDepth);
-	}
-	
-	private int calculateMaxModelDepth(EObject parent, int depth) {
-		if (parent.eContents() == null || parent.eContents().isEmpty()) {
-			return depth;
+		List<EObject> children = new LinkedList<EObject>();
+		Set<EClass> classes = new HashSet<EClass>();
+		
+		int depth = 0;
+		do {
+			for (EObject parent : parents) {
+				printTree(depth, parent);
+				children.addAll(parent.eContents());
+				classes.add(parent.eClass());
+			}
+			
+			depth++;
+			parents.clear();
+			parents.addAll(children);
+			children.clear();
+			classes.clear();
+		} while (!parents.isEmpty());
+		
+		if (depth < expectedDepth) {
+			// The model is not as deep as we would expect - is this a restriction of the meta model?
+			for (EClass clazz : classes) {
+				if (clazz.getEAllContainments() != null && !clazz.getEAllContainments().isEmpty()) {
+					// The metamodel would allow this model to go deeper, so the generator failed
+					Assert.fail("The model is not as deep as the metamodel allows and the generator was expected to generate.");
+				}
+			}
+			
+			// This is a restriction of the metamodel, so the generator could not do anything about it
+		} else if (depth > expectedDepth) {
+			Assert.fail("The model is deeper as we would expect. (calculated: "+depth+", expected: "+expectedDepth+")");
 		}
 		
-		int maxDepth = 0;
-		for (EObject child : parent.eContents()) {
-			//if (!(child instanceof Element)) {
-				printTree(depth, child);
-				maxDepth = Math.max(maxDepth, calculateMaxModelDepth(child, depth + 1));
-			//}
-		}
-		
-		return maxDepth;
+		// The depth matches the expected depth
 	}
 	
-	private void printTree(int depth, EObject child) {
+	private void printTree(int depth, EObject object) {
 		for (int i = 0; i < depth; i++) {
 			System.out.print("  ");
 		}
-		System.out.println("| "+child+" ["+child.eContents().size()+"]");
+		System.out.println("| "+(object.eClass().getEAllContainments() != null && !object.eClass().getEAllContainments().isEmpty())+" "+object+" ["+object.eContents().size()+"]");
 	}
 	
 	@Test
@@ -75,7 +95,7 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 		int expectedWidth = width;
 		
 		ProjectSpace projectSpace = createProjectSpace();
-		ModelMutatorConfiguration mmc = createModelMutatorConfiurationSeed(projectSpace);
+		ModelMutatorConfiguration mmc = createModelMutatorConfigurationSeed(projectSpace);
 		mmc.setWidth(expectedWidth);
 		ModelMutator.generateModel(mmc);
 		
@@ -101,11 +121,11 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 	public void testDoNotGenerateRoot(){
 		ProjectSpace projectSpace = createProjectSpace();
 
-		ModelMutatorConfiguration mmc = createModelMutatorConfiurationSeed(projectSpace);
+		ModelMutatorConfiguration mmc = createModelMutatorConfigurationSeed(projectSpace);
 		mmc.setDepth(2);
 		mmc.setDoNotGenerateRoot(true);
 		
-		for(int i=0; i<5; i++){
+		for (int i=0; i<5; i++){
 			Kategorie newModelElement=TestModelFactory.eINSTANCE.createKategorie();
 			newModelElement.setName("Test"+i);
 			projectSpace.getProject().addModelElement(newModelElement);
@@ -119,13 +139,13 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 	public void testAllElementsOnRoot(){
 		ProjectSpace projectSpace = createProjectSpace();
 		
-		ModelMutatorConfiguration mmc = createModelMutatorConfiurationSeed(projectSpace);
+		ModelMutatorConfiguration mmc = createModelMutatorConfigurationSeed(projectSpace);
 		mmc.setWidth(2);
 		mmc.setAllElementsOnRoot(true);
 		
 		ModelMutator.generateModel(mmc);
 		Set<EClass> differentClasses=new HashSet<EClass>();
-		for(EObject eObject : projectSpace.getProject().getAllModelElements()){
+		for (EObject eObject : projectSpace.getProject().getAllModelElements()){
 			differentClasses.add(eObject.eClass());
 		}
 		Assert.assertEquals(5, differentClasses.size());
