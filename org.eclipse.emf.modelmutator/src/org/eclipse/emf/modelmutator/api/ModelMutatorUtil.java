@@ -31,7 +31,7 @@ import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
 import org.eclipse.emf.edit.domain.EditingDomain;
-import org.eclipse.emf.modelmutator.intern.attribute.AttributSetterEString;
+import org.eclipse.emf.modelmutator.intern.attribute.AttributeSetterEString;
 import org.eclipse.emf.modelmutator.intern.attribute.AttributeSetter;
 import org.eclipse.emf.modelmutator.intern.attribute.AttributeSetterEBigDecimal;
 import org.eclipse.emf.modelmutator.intern.attribute.AttributeSetterEBigInteger;
@@ -562,7 +562,7 @@ public class ModelMutatorUtil {
 
 		attributeSetters.put(ecoreInstance.getEByteArray(), new AttributeSetterEByteArray(random, 100));
 
-		attributeSetters.put(ecoreInstance.getEString(), new AttributSetterEString(random));
+		attributeSetters.put(ecoreInstance.getEString(), new AttributeSetterEString(random));
 
 		oAttributeSetter = new AttributeSetterEInt(random);
 		attributeSetters.put(ecoreInstance.getEInt(), oAttributeSetter);

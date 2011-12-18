@@ -17,7 +17,7 @@ import java.util.Random;
  * @author Stephan Köhler
  * @see AttributeSetter
  */
-public class AttributSetterEString extends AttributeSetter<String> {
+public class AttributeSetterEString extends AttributeSetter<String> {
 
 	/**
 	 * Creates a new AttributeSetter for String attributes.
@@ -25,7 +25,7 @@ public class AttributSetterEString extends AttributeSetter<String> {
 	 * @param random
 	 *            Random object used to create attribute values
 	 */
-	public AttributSetterEString(Random random) {
+	public AttributeSetterEString(Random random) {
 		super(random);
 	}
 
