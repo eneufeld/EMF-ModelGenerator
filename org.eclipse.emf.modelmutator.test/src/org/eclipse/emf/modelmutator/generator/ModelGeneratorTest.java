@@ -36,7 +36,6 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 	
 	@Test
 	public void testModelDepth() {
-		// TODO This testcase fails with most depths!
 		int expectedDepth = depth;
 		
 		ProjectSpace projectSpace = createProjectSpace();
@@ -51,10 +50,9 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 		List<EObject> children = new LinkedList<EObject>();
 		Set<EClass> classes = new HashSet<EClass>();
 		
-		int depth = 0;
+		int depth = -1; // Count the Project root-Element as depth=0
 		do {
 			for (EObject parent : parents) {
-				printTree(depth, parent);
 				children.addAll(parent.eContents());
 				classes.add(parent.eClass());
 			}
@@ -81,13 +79,6 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 		}
 		
 		// The depth matches the expected depth
-	}
-	
-	private void printTree(int depth, EObject object) {
-		for (int i = 0; i < depth; i++) {
-			System.out.print("  ");
-		}
-		System.out.println("| "+(object.eClass().getEAllContainments() != null && !object.eClass().getEAllContainments().isEmpty())+" "+object+" ["+object.eContents().size()+"]");
 	}
 	
 	@Test
