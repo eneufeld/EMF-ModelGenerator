@@ -157,12 +157,17 @@ public abstract class AbstractModelMutator {
 		}
 		List<EObject> result = new LinkedList<EObject>();
 		for(EClass eClass:allEClasses){
+			
 			EObject newChild=generateElement(parentEObject,eClass,reference);
 			// was creating the child successful?
 			if (newChild != null) {
 				result.add(newChild);
 			}
 		}
+		//Fill with random objects to get to the lowerBound
+		int numToFillMin=reference.getLowerBound()-result.size();
+		if(numToFillMin>0)
+			result.addAll(generateMinContainments(parentEObject, reference, numToFillMin));
 		return result;
 	}
 
