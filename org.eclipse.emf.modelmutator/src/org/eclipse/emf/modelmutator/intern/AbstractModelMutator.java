@@ -91,7 +91,9 @@ public abstract class AbstractModelMutator {
 			if (!currentContainments.containsKey(curChild.eContainmentFeature()))
 				currentContainments.put(curChild.eContainmentFeature(), new LinkedList<EObject>());
 			currentContainments.get(curChild.eContainmentFeature()).add(curChild);
-			ModelMutatorUtil.setEObjectAttributes(curChild, configuration.getRandom(), configuration.getExceptionLog(), configuration.isIgnoreAndLog());
+			if(configuration.getRandom().nextBoolean()) {
+				ModelMutatorUtil.setEObjectAttributes(curChild, configuration.getRandom(), configuration.getExceptionLog(), configuration.isIgnoreAndLog());
+			}
 			result.add(curChild);
 		}
 
