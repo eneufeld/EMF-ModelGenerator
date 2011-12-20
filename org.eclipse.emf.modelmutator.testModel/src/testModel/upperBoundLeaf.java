@@ -9,21 +9,21 @@ package testModel;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>upper Bound</b></em>'.
+ * A representation of the model object '<em><b>upper Bound Leaf</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link testModel.upperBound#getName <em>Name</em>}</li>
+ *   <li>{@link testModel.upperBoundLeaf#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
- * @see testModel.TestModelPackage#getupperBound()
+ * @see testModel.TestModelPackage#getupperBoundLeaf()
  * @model
  * @generated
  */
-public interface upperBound extends Element {
+public interface upperBoundLeaf extends Leafs {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -34,14 +34,14 @@ public interface upperBound extends Element {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see testModel.TestModelPackage#getupperBound_Name()
+	 * @see testModel.TestModelPackage#getupperBoundLeaf_Name()
 	 * @model
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link testModel.upperBound#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link testModel.upperBoundLeaf#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -50,4 +50,4 @@ public interface upperBound extends Element {
 	 */
 	void setName(String value);
 
-} // upperBound
+} // upperBoundLeaf

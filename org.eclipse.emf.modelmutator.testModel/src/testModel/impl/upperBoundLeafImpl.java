@@ -13,22 +13,22 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import testModel.TestModelPackage;
-import testModel.multiRefElement;
+import testModel.upperBoundLeaf;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>multi Ref Element</b></em>'.
+ * An implementation of the model object '<em><b>upper Bound Leaf</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link testModel.impl.multiRefElementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link testModel.impl.upperBoundLeafImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class multiRefElementImpl extends ElementImpl implements multiRefElement {
+public class upperBoundLeafImpl extends LeafsImpl implements upperBoundLeaf {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -54,7 +54,7 @@ public class multiRefElementImpl extends ElementImpl implements multiRefElement 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected multiRefElementImpl() {
+	protected upperBoundLeafImpl() {
 		super();
 	}
 
@@ -65,7 +65,7 @@ public class multiRefElementImpl extends ElementImpl implements multiRefElement 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TestModelPackage.Literals.MULTI_REF_ELEMENT;
+		return TestModelPackage.Literals.UPPER_BOUND_LEAF;
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class multiRefElementImpl extends ElementImpl implements multiRefElement 
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.MULTI_REF_ELEMENT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.UPPER_BOUND_LEAF__NAME, oldName, name));
 	}
 
 	/**
@@ -97,7 +97,7 @@ public class multiRefElementImpl extends ElementImpl implements multiRefElement 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TestModelPackage.MULTI_REF_ELEMENT__NAME:
+			case TestModelPackage.UPPER_BOUND_LEAF__NAME:
 				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -111,7 +111,7 @@ public class multiRefElementImpl extends ElementImpl implements multiRefElement 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TestModelPackage.MULTI_REF_ELEMENT__NAME:
+			case TestModelPackage.UPPER_BOUND_LEAF__NAME:
 				setName((String)newValue);
 				return;
 		}
@@ -126,7 +126,7 @@ public class multiRefElementImpl extends ElementImpl implements multiRefElement 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TestModelPackage.MULTI_REF_ELEMENT__NAME:
+			case TestModelPackage.UPPER_BOUND_LEAF__NAME:
 				setName(NAME_EDEFAULT);
 				return;
 		}
@@ -141,7 +141,7 @@ public class multiRefElementImpl extends ElementImpl implements multiRefElement 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TestModelPackage.MULTI_REF_ELEMENT__NAME:
+			case TestModelPackage.UPPER_BOUND_LEAF__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
@@ -163,4 +163,4 @@ public class multiRefElementImpl extends ElementImpl implements multiRefElement 
 		return result.toString();
 	}
 
-} //multiRefElementImpl
+} //upperBoundLeafImpl

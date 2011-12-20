@@ -19,32 +19,32 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import testModel.TestModelPackage;
-import testModel.multiRefElement;
-import testModel.referenziertesElement;
+import testModel.multiRefLeaf;
+import testModel.referedLeaf;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>referenziertes Element</b></em>'.
+ * An implementation of the model object '<em><b>refered Leaf</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link testModel.impl.referenziertesElementImpl#getFloat <em>Float</em>}</li>
- *   <li>{@link testModel.impl.referenziertesElementImpl#getInt <em>Int</em>}</li>
- *   <li>{@link testModel.impl.referenziertesElementImpl#getInteger <em>Integer</em>}</li>
- *   <li>{@link testModel.impl.referenziertesElementImpl#getLong <em>Long</em>}</li>
- *   <li>{@link testModel.impl.referenziertesElementImpl#getLongObj <em>Long Obj</em>}</li>
- *   <li>{@link testModel.impl.referenziertesElementImpl#getShort <em>Short</em>}</li>
- *   <li>{@link testModel.impl.referenziertesElementImpl#getShortObj <em>Short Obj</em>}</li>
- *   <li>{@link testModel.impl.referenziertesElementImpl#getName <em>Name</em>}</li>
- *   <li>{@link testModel.impl.referenziertesElementImpl#getNotChangeable <em>Not Changeable</em>}</li>
- *   <li>{@link testModel.impl.referenziertesElementImpl#getMultiRef <em>Multi Ref</em>}</li>
+ *   <li>{@link testModel.impl.referedLeafImpl#getFloat <em>Float</em>}</li>
+ *   <li>{@link testModel.impl.referedLeafImpl#getInt <em>Int</em>}</li>
+ *   <li>{@link testModel.impl.referedLeafImpl#getInteger <em>Integer</em>}</li>
+ *   <li>{@link testModel.impl.referedLeafImpl#getLong <em>Long</em>}</li>
+ *   <li>{@link testModel.impl.referedLeafImpl#getLongObj <em>Long Obj</em>}</li>
+ *   <li>{@link testModel.impl.referedLeafImpl#getShort <em>Short</em>}</li>
+ *   <li>{@link testModel.impl.referedLeafImpl#getShortObj <em>Short Obj</em>}</li>
+ *   <li>{@link testModel.impl.referedLeafImpl#getName <em>Name</em>}</li>
+ *   <li>{@link testModel.impl.referedLeafImpl#getNotChangeable <em>Not Changeable</em>}</li>
+ *   <li>{@link testModel.impl.referedLeafImpl#getMultiRef <em>Multi Ref</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class referenziertesElementImpl extends ElementImpl implements referenziertesElement {
+public class referedLeafImpl extends LeafsImpl implements referedLeaf {
 	/**
 	 * The default value of the '{@link #getFloat() <em>Float</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -233,14 +233,14 @@ public class referenziertesElementImpl extends ElementImpl implements referenzie
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<multiRefElement> multiRef;
+	protected EList<multiRefLeaf> multiRef;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected referenziertesElementImpl() {
+	protected referedLeafImpl() {
 		super();
 	}
 
@@ -251,7 +251,7 @@ public class referenziertesElementImpl extends ElementImpl implements referenzie
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TestModelPackage.Literals.REFERENZIERTES_ELEMENT;
+		return TestModelPackage.Literals.REFERED_LEAF;
 	}
 
 	/**
@@ -272,7 +272,7 @@ public class referenziertesElementImpl extends ElementImpl implements referenzie
 		Float oldFloat = float_;
 		float_ = newFloat;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.REFERENZIERTES_ELEMENT__FLOAT, oldFloat, float_));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.REFERED_LEAF__FLOAT, oldFloat, float_));
 	}
 
 	/**
@@ -293,7 +293,7 @@ public class referenziertesElementImpl extends ElementImpl implements referenzie
 		int oldInt = int_;
 		int_ = newInt;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.REFERENZIERTES_ELEMENT__INT, oldInt, int_));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.REFERED_LEAF__INT, oldInt, int_));
 	}
 
 	/**
@@ -314,7 +314,7 @@ public class referenziertesElementImpl extends ElementImpl implements referenzie
 		Integer oldInteger = integer;
 		integer = newInteger;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.REFERENZIERTES_ELEMENT__INTEGER, oldInteger, integer));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.REFERED_LEAF__INTEGER, oldInteger, integer));
 	}
 
 	/**
@@ -335,7 +335,7 @@ public class referenziertesElementImpl extends ElementImpl implements referenzie
 		long oldLong = long_;
 		long_ = newLong;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.REFERENZIERTES_ELEMENT__LONG, oldLong, long_));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.REFERED_LEAF__LONG, oldLong, long_));
 	}
 
 	/**
@@ -356,7 +356,7 @@ public class referenziertesElementImpl extends ElementImpl implements referenzie
 		Long oldLongObj = longObj;
 		longObj = newLongObj;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.REFERENZIERTES_ELEMENT__LONG_OBJ, oldLongObj, longObj));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.REFERED_LEAF__LONG_OBJ, oldLongObj, longObj));
 	}
 
 	/**
@@ -377,7 +377,7 @@ public class referenziertesElementImpl extends ElementImpl implements referenzie
 		short oldShort = short_;
 		short_ = newShort;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.REFERENZIERTES_ELEMENT__SHORT, oldShort, short_));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.REFERED_LEAF__SHORT, oldShort, short_));
 	}
 
 	/**
@@ -398,7 +398,7 @@ public class referenziertesElementImpl extends ElementImpl implements referenzie
 		Short oldShortObj = shortObj;
 		shortObj = newShortObj;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.REFERENZIERTES_ELEMENT__SHORT_OBJ, oldShortObj, shortObj));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.REFERED_LEAF__SHORT_OBJ, oldShortObj, shortObj));
 	}
 
 	/**
@@ -419,7 +419,7 @@ public class referenziertesElementImpl extends ElementImpl implements referenzie
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.REFERENZIERTES_ELEMENT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.REFERED_LEAF__NAME, oldName, name));
 	}
 
 	/**
@@ -436,9 +436,9 @@ public class referenziertesElementImpl extends ElementImpl implements referenzie
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<multiRefElement> getMultiRef() {
+	public EList<multiRefLeaf> getMultiRef() {
 		if (multiRef == null) {
-			multiRef = new EObjectResolvingEList<multiRefElement>(multiRefElement.class, this, TestModelPackage.REFERENZIERTES_ELEMENT__MULTI_REF);
+			multiRef = new EObjectResolvingEList<multiRefLeaf>(multiRefLeaf.class, this, TestModelPackage.REFERED_LEAF__MULTI_REF);
 		}
 		return multiRef;
 	}
@@ -451,25 +451,25 @@ public class referenziertesElementImpl extends ElementImpl implements referenzie
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TestModelPackage.REFERENZIERTES_ELEMENT__FLOAT:
+			case TestModelPackage.REFERED_LEAF__FLOAT:
 				return getFloat();
-			case TestModelPackage.REFERENZIERTES_ELEMENT__INT:
+			case TestModelPackage.REFERED_LEAF__INT:
 				return getInt();
-			case TestModelPackage.REFERENZIERTES_ELEMENT__INTEGER:
+			case TestModelPackage.REFERED_LEAF__INTEGER:
 				return getInteger();
-			case TestModelPackage.REFERENZIERTES_ELEMENT__LONG:
+			case TestModelPackage.REFERED_LEAF__LONG:
 				return getLong();
-			case TestModelPackage.REFERENZIERTES_ELEMENT__LONG_OBJ:
+			case TestModelPackage.REFERED_LEAF__LONG_OBJ:
 				return getLongObj();
-			case TestModelPackage.REFERENZIERTES_ELEMENT__SHORT:
+			case TestModelPackage.REFERED_LEAF__SHORT:
 				return getShort();
-			case TestModelPackage.REFERENZIERTES_ELEMENT__SHORT_OBJ:
+			case TestModelPackage.REFERED_LEAF__SHORT_OBJ:
 				return getShortObj();
-			case TestModelPackage.REFERENZIERTES_ELEMENT__NAME:
+			case TestModelPackage.REFERED_LEAF__NAME:
 				return getName();
-			case TestModelPackage.REFERENZIERTES_ELEMENT__NOT_CHANGEABLE:
+			case TestModelPackage.REFERED_LEAF__NOT_CHANGEABLE:
 				return getNotChangeable();
-			case TestModelPackage.REFERENZIERTES_ELEMENT__MULTI_REF:
+			case TestModelPackage.REFERED_LEAF__MULTI_REF:
 				return getMultiRef();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -484,33 +484,33 @@ public class referenziertesElementImpl extends ElementImpl implements referenzie
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TestModelPackage.REFERENZIERTES_ELEMENT__FLOAT:
+			case TestModelPackage.REFERED_LEAF__FLOAT:
 				setFloat((Float)newValue);
 				return;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__INT:
+			case TestModelPackage.REFERED_LEAF__INT:
 				setInt((Integer)newValue);
 				return;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__INTEGER:
+			case TestModelPackage.REFERED_LEAF__INTEGER:
 				setInteger((Integer)newValue);
 				return;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__LONG:
+			case TestModelPackage.REFERED_LEAF__LONG:
 				setLong((Long)newValue);
 				return;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__LONG_OBJ:
+			case TestModelPackage.REFERED_LEAF__LONG_OBJ:
 				setLongObj((Long)newValue);
 				return;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__SHORT:
+			case TestModelPackage.REFERED_LEAF__SHORT:
 				setShort((Short)newValue);
 				return;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__SHORT_OBJ:
+			case TestModelPackage.REFERED_LEAF__SHORT_OBJ:
 				setShortObj((Short)newValue);
 				return;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__NAME:
+			case TestModelPackage.REFERED_LEAF__NAME:
 				setName((String)newValue);
 				return;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__MULTI_REF:
+			case TestModelPackage.REFERED_LEAF__MULTI_REF:
 				getMultiRef().clear();
-				getMultiRef().addAll((Collection<? extends multiRefElement>)newValue);
+				getMultiRef().addAll((Collection<? extends multiRefLeaf>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -524,31 +524,31 @@ public class referenziertesElementImpl extends ElementImpl implements referenzie
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TestModelPackage.REFERENZIERTES_ELEMENT__FLOAT:
+			case TestModelPackage.REFERED_LEAF__FLOAT:
 				setFloat(FLOAT_EDEFAULT);
 				return;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__INT:
+			case TestModelPackage.REFERED_LEAF__INT:
 				setInt(INT_EDEFAULT);
 				return;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__INTEGER:
+			case TestModelPackage.REFERED_LEAF__INTEGER:
 				setInteger(INTEGER_EDEFAULT);
 				return;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__LONG:
+			case TestModelPackage.REFERED_LEAF__LONG:
 				setLong(LONG_EDEFAULT);
 				return;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__LONG_OBJ:
+			case TestModelPackage.REFERED_LEAF__LONG_OBJ:
 				setLongObj(LONG_OBJ_EDEFAULT);
 				return;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__SHORT:
+			case TestModelPackage.REFERED_LEAF__SHORT:
 				setShort(SHORT_EDEFAULT);
 				return;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__SHORT_OBJ:
+			case TestModelPackage.REFERED_LEAF__SHORT_OBJ:
 				setShortObj(SHORT_OBJ_EDEFAULT);
 				return;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__NAME:
+			case TestModelPackage.REFERED_LEAF__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__MULTI_REF:
+			case TestModelPackage.REFERED_LEAF__MULTI_REF:
 				getMultiRef().clear();
 				return;
 		}
@@ -563,25 +563,25 @@ public class referenziertesElementImpl extends ElementImpl implements referenzie
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TestModelPackage.REFERENZIERTES_ELEMENT__FLOAT:
+			case TestModelPackage.REFERED_LEAF__FLOAT:
 				return FLOAT_EDEFAULT == null ? float_ != null : !FLOAT_EDEFAULT.equals(float_);
-			case TestModelPackage.REFERENZIERTES_ELEMENT__INT:
+			case TestModelPackage.REFERED_LEAF__INT:
 				return int_ != INT_EDEFAULT;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__INTEGER:
+			case TestModelPackage.REFERED_LEAF__INTEGER:
 				return INTEGER_EDEFAULT == null ? integer != null : !INTEGER_EDEFAULT.equals(integer);
-			case TestModelPackage.REFERENZIERTES_ELEMENT__LONG:
+			case TestModelPackage.REFERED_LEAF__LONG:
 				return long_ != LONG_EDEFAULT;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__LONG_OBJ:
+			case TestModelPackage.REFERED_LEAF__LONG_OBJ:
 				return LONG_OBJ_EDEFAULT == null ? longObj != null : !LONG_OBJ_EDEFAULT.equals(longObj);
-			case TestModelPackage.REFERENZIERTES_ELEMENT__SHORT:
+			case TestModelPackage.REFERED_LEAF__SHORT:
 				return short_ != SHORT_EDEFAULT;
-			case TestModelPackage.REFERENZIERTES_ELEMENT__SHORT_OBJ:
+			case TestModelPackage.REFERED_LEAF__SHORT_OBJ:
 				return SHORT_OBJ_EDEFAULT == null ? shortObj != null : !SHORT_OBJ_EDEFAULT.equals(shortObj);
-			case TestModelPackage.REFERENZIERTES_ELEMENT__NAME:
+			case TestModelPackage.REFERED_LEAF__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case TestModelPackage.REFERENZIERTES_ELEMENT__NOT_CHANGEABLE:
+			case TestModelPackage.REFERED_LEAF__NOT_CHANGEABLE:
 				return NOT_CHANGEABLE_EDEFAULT == null ? notChangeable != null : !NOT_CHANGEABLE_EDEFAULT.equals(notChangeable);
-			case TestModelPackage.REFERENZIERTES_ELEMENT__MULTI_REF:
+			case TestModelPackage.REFERED_LEAF__MULTI_REF:
 				return multiRef != null && !multiRef.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -619,4 +619,4 @@ public class referenziertesElementImpl extends ElementImpl implements referenzie
 		return result.toString();
 	}
 
-} //referenziertesElementImpl
+} //referedLeafImpl

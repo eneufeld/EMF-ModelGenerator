@@ -8,48 +8,40 @@ package testModel;
 
 import java.util.Date;
 
-import java.util.Map;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Contained Element</b></em>'.
+ * A representation of the model object '<em><b>Contained Leaf</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link testModel.ContainedElement#getName <em>Name</em>}</li>
- *   <li>{@link testModel.ContainedElement#getByteArray <em>Byte Array</em>}</li>
- *   <li>{@link testModel.ContainedElement#getByteObject <em>Byte Object</em>}</li>
- *   <li>{@link testModel.ContainedElement#getChar <em>Char</em>}</li>
- *   <li>{@link testModel.ContainedElement#getCharacter <em>Character</em>}</li>
- *   <li>{@link testModel.ContainedElement#getDate <em>Date</em>}</li>
- *   <li>{@link testModel.ContainedElement#getDiagnosticChain <em>Diagnostic Chain</em>}</li>
- *   <li>{@link testModel.ContainedElement#getDouble <em>Double</em>}</li>
- *   <li>{@link testModel.ContainedElement#getDoubleObj <em>Double Obj</em>}</li>
- *   <li>{@link testModel.ContainedElement#getFloat <em>Float</em>}</li>
- *   <li>{@link testModel.ContainedElement#getElementType <em>Element Type</em>}</li>
- *   <li>{@link testModel.ContainedElement#getRef <em>Ref</em>}</li>
- *   <li>{@link testModel.ContainedElement#getUpperBound <em>Upper Bound</em>}</li>
- *   <li>{@link testModel.ContainedElement#getEnumerator <em>Enumerator</em>}</li>
- *   <li>{@link testModel.ContainedElement#getElist <em>Elist</em>}</li>
- *   <li>{@link testModel.ContainedElement#getClass_ <em>Class</em>}</li>
- *   <li>{@link testModel.ContainedElement#getMap <em>Map</em>}</li>
- *   <li>{@link testModel.ContainedElement#getTreeIterator <em>Tree Iterator</em>}</li>
+ *   <li>{@link testModel.ContainedLeaf#getName <em>Name</em>}</li>
+ *   <li>{@link testModel.ContainedLeaf#getByteArray <em>Byte Array</em>}</li>
+ *   <li>{@link testModel.ContainedLeaf#getByteObject <em>Byte Object</em>}</li>
+ *   <li>{@link testModel.ContainedLeaf#getChar <em>Char</em>}</li>
+ *   <li>{@link testModel.ContainedLeaf#getCharacter <em>Character</em>}</li>
+ *   <li>{@link testModel.ContainedLeaf#getDate <em>Date</em>}</li>
+ *   <li>{@link testModel.ContainedLeaf#getDiagnosticChain <em>Diagnostic Chain</em>}</li>
+ *   <li>{@link testModel.ContainedLeaf#getDouble <em>Double</em>}</li>
+ *   <li>{@link testModel.ContainedLeaf#getDoubleObj <em>Double Obj</em>}</li>
+ *   <li>{@link testModel.ContainedLeaf#getFloat <em>Float</em>}</li>
+ *   <li>{@link testModel.ContainedLeaf#getElementType <em>Element Type</em>}</li>
+ *   <li>{@link testModel.ContainedLeaf#getRef <em>Ref</em>}</li>
+ *   <li>{@link testModel.ContainedLeaf#getUpperBound <em>Upper Bound</em>}</li>
  * </ul>
  * </p>
  *
- * @see testModel.TestModelPackage#getContainedElement()
+ * @see testModel.TestModelPackage#getContainedLeaf()
  * @model
  * @generated
  */
-public interface ContainedElement extends EObject {
+public interface ContainedLeaf extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -60,14 +52,14 @@ public interface ContainedElement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see testModel.TestModelPackage#getContainedElement_Name()
+	 * @see testModel.TestModelPackage#getContainedLeaf_Name()
 	 * @model
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link testModel.ContainedElement#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link testModel.ContainedLeaf#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -86,14 +78,14 @@ public interface ContainedElement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Byte Array</em>' attribute.
 	 * @see #setByteArray(byte[])
-	 * @see testModel.TestModelPackage#getContainedElement_ByteArray()
+	 * @see testModel.TestModelPackage#getContainedLeaf_ByteArray()
 	 * @model
 	 * @generated
 	 */
 	byte[] getByteArray();
 
 	/**
-	 * Sets the value of the '{@link testModel.ContainedElement#getByteArray <em>Byte Array</em>}' attribute.
+	 * Sets the value of the '{@link testModel.ContainedLeaf#getByteArray <em>Byte Array</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Byte Array</em>' attribute.
@@ -112,14 +104,14 @@ public interface ContainedElement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Byte Object</em>' attribute.
 	 * @see #setByteObject(Byte)
-	 * @see testModel.TestModelPackage#getContainedElement_ByteObject()
+	 * @see testModel.TestModelPackage#getContainedLeaf_ByteObject()
 	 * @model
 	 * @generated
 	 */
 	Byte getByteObject();
 
 	/**
-	 * Sets the value of the '{@link testModel.ContainedElement#getByteObject <em>Byte Object</em>}' attribute.
+	 * Sets the value of the '{@link testModel.ContainedLeaf#getByteObject <em>Byte Object</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Byte Object</em>' attribute.
@@ -138,14 +130,14 @@ public interface ContainedElement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Char</em>' attribute.
 	 * @see #setChar(char)
-	 * @see testModel.TestModelPackage#getContainedElement_Char()
+	 * @see testModel.TestModelPackage#getContainedLeaf_Char()
 	 * @model
 	 * @generated
 	 */
 	char getChar();
 
 	/**
-	 * Sets the value of the '{@link testModel.ContainedElement#getChar <em>Char</em>}' attribute.
+	 * Sets the value of the '{@link testModel.ContainedLeaf#getChar <em>Char</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Char</em>' attribute.
@@ -164,14 +156,14 @@ public interface ContainedElement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Character</em>' attribute.
 	 * @see #setCharacter(Character)
-	 * @see testModel.TestModelPackage#getContainedElement_Character()
+	 * @see testModel.TestModelPackage#getContainedLeaf_Character()
 	 * @model
 	 * @generated
 	 */
 	Character getCharacter();
 
 	/**
-	 * Sets the value of the '{@link testModel.ContainedElement#getCharacter <em>Character</em>}' attribute.
+	 * Sets the value of the '{@link testModel.ContainedLeaf#getCharacter <em>Character</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Character</em>' attribute.
@@ -190,14 +182,14 @@ public interface ContainedElement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Date</em>' attribute.
 	 * @see #setDate(Date)
-	 * @see testModel.TestModelPackage#getContainedElement_Date()
+	 * @see testModel.TestModelPackage#getContainedLeaf_Date()
 	 * @model
 	 * @generated
 	 */
 	Date getDate();
 
 	/**
-	 * Sets the value of the '{@link testModel.ContainedElement#getDate <em>Date</em>}' attribute.
+	 * Sets the value of the '{@link testModel.ContainedLeaf#getDate <em>Date</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Date</em>' attribute.
@@ -216,14 +208,14 @@ public interface ContainedElement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Diagnostic Chain</em>' attribute.
 	 * @see #setDiagnosticChain(DiagnosticChain)
-	 * @see testModel.TestModelPackage#getContainedElement_DiagnosticChain()
+	 * @see testModel.TestModelPackage#getContainedLeaf_DiagnosticChain()
 	 * @model transient="true"
 	 * @generated
 	 */
 	DiagnosticChain getDiagnosticChain();
 
 	/**
-	 * Sets the value of the '{@link testModel.ContainedElement#getDiagnosticChain <em>Diagnostic Chain</em>}' attribute.
+	 * Sets the value of the '{@link testModel.ContainedLeaf#getDiagnosticChain <em>Diagnostic Chain</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Diagnostic Chain</em>' attribute.
@@ -242,14 +234,14 @@ public interface ContainedElement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Double</em>' attribute.
 	 * @see #setDouble(double)
-	 * @see testModel.TestModelPackage#getContainedElement_Double()
+	 * @see testModel.TestModelPackage#getContainedLeaf_Double()
 	 * @model
 	 * @generated
 	 */
 	double getDouble();
 
 	/**
-	 * Sets the value of the '{@link testModel.ContainedElement#getDouble <em>Double</em>}' attribute.
+	 * Sets the value of the '{@link testModel.ContainedLeaf#getDouble <em>Double</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Double</em>' attribute.
@@ -268,14 +260,14 @@ public interface ContainedElement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Double Obj</em>' attribute.
 	 * @see #setDoubleObj(Double)
-	 * @see testModel.TestModelPackage#getContainedElement_DoubleObj()
+	 * @see testModel.TestModelPackage#getContainedLeaf_DoubleObj()
 	 * @model
 	 * @generated
 	 */
 	Double getDoubleObj();
 
 	/**
-	 * Sets the value of the '{@link testModel.ContainedElement#getDoubleObj <em>Double Obj</em>}' attribute.
+	 * Sets the value of the '{@link testModel.ContainedLeaf#getDoubleObj <em>Double Obj</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Double Obj</em>' attribute.
@@ -294,14 +286,14 @@ public interface ContainedElement extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Float</em>' attribute.
 	 * @see #setFloat(float)
-	 * @see testModel.TestModelPackage#getContainedElement_Float()
+	 * @see testModel.TestModelPackage#getContainedLeaf_Float()
 	 * @model
 	 * @generated
 	 */
 	float getFloat();
 
 	/**
-	 * Sets the value of the '{@link testModel.ContainedElement#getFloat <em>Float</em>}' attribute.
+	 * Sets the value of the '{@link testModel.ContainedLeaf#getFloat <em>Float</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Float</em>' attribute.
@@ -322,14 +314,14 @@ public interface ContainedElement extends EObject {
 	 * @return the value of the '<em>Element Type</em>' attribute.
 	 * @see testModel.ElementType
 	 * @see #setElementType(ElementType)
-	 * @see testModel.TestModelPackage#getContainedElement_ElementType()
+	 * @see testModel.TestModelPackage#getContainedLeaf_ElementType()
 	 * @model
 	 * @generated
 	 */
 	ElementType getElementType();
 
 	/**
-	 * Sets the value of the '{@link testModel.ContainedElement#getElementType <em>Element Type</em>}' attribute.
+	 * Sets the value of the '{@link testModel.ContainedLeaf#getElementType <em>Element Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Element Type</em>' attribute.
@@ -341,7 +333,7 @@ public interface ContainedElement extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Ref</b></em>' reference list.
-	 * The list contents are of type {@link testModel.referenziertesElement}.
+	 * The list contents are of type {@link testModel.referedLeaf}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ref</em>' reference list isn't clear,
@@ -349,15 +341,15 @@ public interface ContainedElement extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ref</em>' reference list.
-	 * @see testModel.TestModelPackage#getContainedElement_Ref()
+	 * @see testModel.TestModelPackage#getContainedLeaf_Ref()
 	 * @model
 	 * @generated
 	 */
-	EList<referenziertesElement> getRef();
+	EList<referedLeaf> getRef();
 
 	/**
 	 * Returns the value of the '<em><b>Upper Bound</b></em>' containment reference list.
-	 * The list contents are of type {@link testModel.upperBound}.
+	 * The list contents are of type {@link testModel.upperBoundLeaf}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Upper Bound</em>' containment reference list isn't clear,
@@ -365,140 +357,10 @@ public interface ContainedElement extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Upper Bound</em>' containment reference list.
-	 * @see testModel.TestModelPackage#getContainedElement_UpperBound()
+	 * @see testModel.TestModelPackage#getContainedLeaf_UpperBound()
 	 * @model containment="true" upper="2"
 	 * @generated
 	 */
-	EList<upperBound> getUpperBound();
+	EList<upperBoundLeaf> getUpperBound();
 
-	/**
-	 * Returns the value of the '<em><b>Enumerator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Enumerator</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Enumerator</em>' attribute.
-	 * @see #setEnumerator(Enumerator)
-	 * @see testModel.TestModelPackage#getContainedElement_Enumerator()
-	 * @model transient="true"
-	 * @generated
-	 */
-	Enumerator getEnumerator();
-
-	/**
-	 * Sets the value of the '{@link testModel.ContainedElement#getEnumerator <em>Enumerator</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Enumerator</em>' attribute.
-	 * @see #getEnumerator()
-	 * @generated
-	 */
-	void setEnumerator(Enumerator value);
-
-	/**
-	 * Returns the value of the '<em><b>Elist</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Elist</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Elist</em>' attribute.
-	 * @see #setElist(EList)
-	 * @see testModel.TestModelPackage#getContainedElement_Elist()
-	 * @model many="false" transient="true"
-	 * @generated
-	 */
-	EList<String> getElist();
-
-	/**
-	 * Sets the value of the '{@link testModel.ContainedElement#getElist <em>Elist</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Elist</em>' attribute.
-	 * @see #getElist()
-	 * @generated
-	 */
-	void setElist(EList<String> value);
-
-	/**
-	 * Returns the value of the '<em><b>Class</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Class</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Class</em>' attribute.
-	 * @see #setClass(Class)
-	 * @see testModel.TestModelPackage#getContainedElement_Class()
-	 * @model transient="true"
-	 * @generated
-	 */
-	Class<String> getClass_();
-
-	/**
-	 * Sets the value of the '{@link testModel.ContainedElement#getClass_ <em>Class</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Class</em>' attribute.
-	 * @see #getClass_()
-	 * @generated
-	 */
-	void setClass(Class<String> value);
-
-	/**
-	 * Returns the value of the '<em><b>Map</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Map</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Map</em>' attribute.
-	 * @see #setMap(Map)
-	 * @see testModel.TestModelPackage#getContainedElement_Map()
-	 * @model transient="true"
-	 * @generated
-	 */
-	Map<ContainedElement, referenziertesElement> getMap();
-
-	/**
-	 * Sets the value of the '{@link testModel.ContainedElement#getMap <em>Map</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Map</em>' attribute.
-	 * @see #getMap()
-	 * @generated
-	 */
-	void setMap(Map<ContainedElement, referenziertesElement> value);
-
-	/**
-	 * Returns the value of the '<em><b>Tree Iterator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Tree Iterator</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tree Iterator</em>' attribute.
-	 * @see #setTreeIterator(TreeIterator)
-	 * @see testModel.TestModelPackage#getContainedElement_TreeIterator()
-	 * @model transient="true"
-	 * @generated
-	 */
-	TreeIterator<String> getTreeIterator();
-
-	/**
-	 * Sets the value of the '{@link testModel.ContainedElement#getTreeIterator <em>Tree Iterator</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Tree Iterator</em>' attribute.
-	 * @see #getTreeIterator()
-	 * @generated
-	 */
-	void setTreeIterator(TreeIterator<String> value);
-
-} // ContainedElement
+} // ContainedLeaf

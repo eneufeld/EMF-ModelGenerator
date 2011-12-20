@@ -28,17 +28,17 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import testModel.Kategorie;
+import testModel.Node;
 import testModel.TestModelFactory;
 import testModel.TestModelPackage;
 
 /**
- * This is the item provider adapter for a {@link testModel.Kategorie} object.
+ * This is the item provider adapter for a {@link testModel.Node} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class KategorieItemProvider
+public class NodeItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -52,7 +52,7 @@ public class KategorieItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public KategorieItemProvider(AdapterFactory adapterFactory) {
+	public NodeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -73,7 +73,7 @@ public class KategorieItemProvider
 			addBoolPropertyDescriptor(object);
 			addBooleanPropertyDescriptor(object);
 			addBytePropertyDescriptor(object);
-			addSubKategoriePropertyDescriptor(object);
+			addSubNodePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,9 +89,9 @@ public class KategorieItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Kategorie_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Kategorie_name_feature", "_UI_Kategorie_type"),
-				 TestModelPackage.Literals.KATEGORIE__NAME,
+				 getString("_UI_Node_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Node_name_feature", "_UI_Node_type"),
+				 TestModelPackage.Literals.NODE__NAME,
 				 true,
 				 false,
 				 false,
@@ -111,9 +111,9 @@ public class KategorieItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Kategorie_bigdeci_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Kategorie_bigdeci_feature", "_UI_Kategorie_type"),
-				 TestModelPackage.Literals.KATEGORIE__BIGDECI,
+				 getString("_UI_Node_bigdeci_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Node_bigdeci_feature", "_UI_Node_type"),
+				 TestModelPackage.Literals.NODE__BIGDECI,
 				 true,
 				 false,
 				 false,
@@ -133,9 +133,9 @@ public class KategorieItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Kategorie_bigint_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Kategorie_bigint_feature", "_UI_Kategorie_type"),
-				 TestModelPackage.Literals.KATEGORIE__BIGINT,
+				 getString("_UI_Node_bigint_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Node_bigint_feature", "_UI_Node_type"),
+				 TestModelPackage.Literals.NODE__BIGINT,
 				 true,
 				 false,
 				 false,
@@ -155,9 +155,9 @@ public class KategorieItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Kategorie_bool_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Kategorie_bool_feature", "_UI_Kategorie_type"),
-				 TestModelPackage.Literals.KATEGORIE__BOOL,
+				 getString("_UI_Node_bool_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Node_bool_feature", "_UI_Node_type"),
+				 TestModelPackage.Literals.NODE__BOOL,
 				 true,
 				 false,
 				 false,
@@ -177,9 +177,9 @@ public class KategorieItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Kategorie_Boolean_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Kategorie_Boolean_feature", "_UI_Kategorie_type"),
-				 TestModelPackage.Literals.KATEGORIE__BOOLEAN,
+				 getString("_UI_Node_Boolean_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Node_Boolean_feature", "_UI_Node_type"),
+				 TestModelPackage.Literals.NODE__BOOLEAN,
 				 true,
 				 false,
 				 false,
@@ -199,9 +199,9 @@ public class KategorieItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Kategorie_byte_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Kategorie_byte_feature", "_UI_Kategorie_type"),
-				 TestModelPackage.Literals.KATEGORIE__BYTE,
+				 getString("_UI_Node_byte_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Node_byte_feature", "_UI_Node_type"),
+				 TestModelPackage.Literals.NODE__BYTE,
 				 true,
 				 false,
 				 false,
@@ -211,19 +211,19 @@ public class KategorieItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Sub Kategorie feature.
+	 * This adds a property descriptor for the Sub Node feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addSubKategoriePropertyDescriptor(Object object) {
+	protected void addSubNodePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Kategorie_subKategorie_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Kategorie_subKategorie_feature", "_UI_Kategorie_type"),
-				 TestModelPackage.Literals.KATEGORIE__SUB_KATEGORIE,
+				 getString("_UI_Node_subNode_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Node_subNode_feature", "_UI_Node_type"),
+				 TestModelPackage.Literals.NODE__SUB_NODE,
 				 true,
 				 false,
 				 true,
@@ -244,7 +244,7 @@ public class KategorieItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TestModelPackage.Literals.KATEGORIE__CONTAINS);
+			childrenFeatures.add(TestModelPackage.Literals.NODE__CONTAINS);
 		}
 		return childrenFeatures;
 	}
@@ -263,14 +263,14 @@ public class KategorieItemProvider
 	}
 
 	/**
-	 * This returns Kategorie.gif.
+	 * This returns Node.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Kategorie"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Node"));
 	}
 
 	/**
@@ -281,10 +281,10 @@ public class KategorieItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Kategorie)object).getName();
+		String label = ((Node)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Kategorie_type") :
-			getString("_UI_Kategorie_type") + " " + label;
+			getString("_UI_Node_type") :
+			getString("_UI_Node_type") + " " + label;
 	}
 
 	/**
@@ -298,16 +298,16 @@ public class KategorieItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Kategorie.class)) {
-			case TestModelPackage.KATEGORIE__NAME:
-			case TestModelPackage.KATEGORIE__BIGDECI:
-			case TestModelPackage.KATEGORIE__BIGINT:
-			case TestModelPackage.KATEGORIE__BOOL:
-			case TestModelPackage.KATEGORIE__BOOLEAN:
-			case TestModelPackage.KATEGORIE__BYTE:
+		switch (notification.getFeatureID(Node.class)) {
+			case TestModelPackage.NODE__NAME:
+			case TestModelPackage.NODE__BIGDECI:
+			case TestModelPackage.NODE__BIGINT:
+			case TestModelPackage.NODE__BOOL:
+			case TestModelPackage.NODE__BOOLEAN:
+			case TestModelPackage.NODE__BYTE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case TestModelPackage.KATEGORIE__CONTAINS:
+			case TestModelPackage.NODE__CONTAINS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -327,8 +327,8 @@ public class KategorieItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(TestModelPackage.Literals.KATEGORIE__CONTAINS,
-				 TestModelFactory.eINSTANCE.createContainedElement()));
+				(TestModelPackage.Literals.NODE__CONTAINS,
+				 TestModelFactory.eINSTANCE.createContainedLeaf()));
 	}
 
 	/**

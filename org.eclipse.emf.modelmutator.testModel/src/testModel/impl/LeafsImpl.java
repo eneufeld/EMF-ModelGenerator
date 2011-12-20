@@ -10,25 +10,25 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import testModel.Element;
+import testModel.Leafs;
 import testModel.TestModelPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Element</b></em>'.
+ * An implementation of the model object '<em><b>Leafs</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public abstract class ElementImpl extends EObjectImpl implements Element {
+public abstract class LeafsImpl extends EObjectImpl implements Leafs {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ElementImpl() {
+	protected LeafsImpl() {
 		super();
 	}
 
@@ -39,7 +39,7 @@ public abstract class ElementImpl extends EObjectImpl implements Element {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TestModelPackage.Literals.ELEMENT;
+		return TestModelPackage.Literals.LEAFS;
 	}
 
-} //ElementImpl
+} //LeafsImpl

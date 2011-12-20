@@ -15,28 +15,28 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Kategorie</b></em>'.
+ * A representation of the model object '<em><b>Node</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link testModel.Kategorie#getName <em>Name</em>}</li>
- *   <li>{@link testModel.Kategorie#getBigdeci <em>Bigdeci</em>}</li>
- *   <li>{@link testModel.Kategorie#getBigint <em>Bigint</em>}</li>
- *   <li>{@link testModel.Kategorie#isBool <em>Bool</em>}</li>
- *   <li>{@link testModel.Kategorie#getBoolean <em>Boolean</em>}</li>
- *   <li>{@link testModel.Kategorie#getByte <em>Byte</em>}</li>
- *   <li>{@link testModel.Kategorie#getSubKategorie <em>Sub Kategorie</em>}</li>
- *   <li>{@link testModel.Kategorie#getContains <em>Contains</em>}</li>
+ *   <li>{@link testModel.Node#getName <em>Name</em>}</li>
+ *   <li>{@link testModel.Node#getBigdeci <em>Bigdeci</em>}</li>
+ *   <li>{@link testModel.Node#getBigint <em>Bigint</em>}</li>
+ *   <li>{@link testModel.Node#isBool <em>Bool</em>}</li>
+ *   <li>{@link testModel.Node#getBoolean <em>Boolean</em>}</li>
+ *   <li>{@link testModel.Node#getByte <em>Byte</em>}</li>
+ *   <li>{@link testModel.Node#getSubNode <em>Sub Node</em>}</li>
+ *   <li>{@link testModel.Node#getContains <em>Contains</em>}</li>
  * </ul>
  * </p>
  *
- * @see testModel.TestModelPackage#getKategorie()
+ * @see testModel.TestModelPackage#getNode()
  * @model
  * @generated
  */
-public interface Kategorie extends EObject {
+public interface Node extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * The default value is <code>""</code>.
@@ -48,14 +48,14 @@ public interface Kategorie extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see testModel.TestModelPackage#getKategorie_Name()
+	 * @see testModel.TestModelPackage#getNode_Name()
 	 * @model default=""
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link testModel.Kategorie#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link testModel.Node#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -74,14 +74,14 @@ public interface Kategorie extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bigdeci</em>' attribute.
 	 * @see #setBigdeci(BigDecimal)
-	 * @see testModel.TestModelPackage#getKategorie_Bigdeci()
+	 * @see testModel.TestModelPackage#getNode_Bigdeci()
 	 * @model
 	 * @generated
 	 */
 	BigDecimal getBigdeci();
 
 	/**
-	 * Sets the value of the '{@link testModel.Kategorie#getBigdeci <em>Bigdeci</em>}' attribute.
+	 * Sets the value of the '{@link testModel.Node#getBigdeci <em>Bigdeci</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Bigdeci</em>' attribute.
@@ -100,14 +100,14 @@ public interface Kategorie extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bigint</em>' attribute.
 	 * @see #setBigint(BigInteger)
-	 * @see testModel.TestModelPackage#getKategorie_Bigint()
+	 * @see testModel.TestModelPackage#getNode_Bigint()
 	 * @model
 	 * @generated
 	 */
 	BigInteger getBigint();
 
 	/**
-	 * Sets the value of the '{@link testModel.Kategorie#getBigint <em>Bigint</em>}' attribute.
+	 * Sets the value of the '{@link testModel.Node#getBigint <em>Bigint</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Bigint</em>' attribute.
@@ -126,14 +126,14 @@ public interface Kategorie extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bool</em>' attribute.
 	 * @see #setBool(boolean)
-	 * @see testModel.TestModelPackage#getKategorie_Bool()
+	 * @see testModel.TestModelPackage#getNode_Bool()
 	 * @model
 	 * @generated
 	 */
 	boolean isBool();
 
 	/**
-	 * Sets the value of the '{@link testModel.Kategorie#isBool <em>Bool</em>}' attribute.
+	 * Sets the value of the '{@link testModel.Node#isBool <em>Bool</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Bool</em>' attribute.
@@ -152,14 +152,14 @@ public interface Kategorie extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Boolean</em>' attribute.
 	 * @see #setBoolean(Boolean)
-	 * @see testModel.TestModelPackage#getKategorie_Boolean()
+	 * @see testModel.TestModelPackage#getNode_Boolean()
 	 * @model
 	 * @generated
 	 */
 	Boolean getBoolean();
 
 	/**
-	 * Sets the value of the '{@link testModel.Kategorie#getBoolean <em>Boolean</em>}' attribute.
+	 * Sets the value of the '{@link testModel.Node#getBoolean <em>Boolean</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Boolean</em>' attribute.
@@ -178,14 +178,14 @@ public interface Kategorie extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Byte</em>' attribute.
 	 * @see #setByte(byte)
-	 * @see testModel.TestModelPackage#getKategorie_Byte()
+	 * @see testModel.TestModelPackage#getNode_Byte()
 	 * @model
 	 * @generated
 	 */
 	byte getByte();
 
 	/**
-	 * Sets the value of the '{@link testModel.Kategorie#getByte <em>Byte</em>}' attribute.
+	 * Sets the value of the '{@link testModel.Node#getByte <em>Byte</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Byte</em>' attribute.
@@ -195,24 +195,24 @@ public interface Kategorie extends EObject {
 	void setByte(byte value);
 
 	/**
-	 * Returns the value of the '<em><b>Sub Kategorie</b></em>' reference list.
-	 * The list contents are of type {@link testModel.Kategorie}.
+	 * Returns the value of the '<em><b>Sub Node</b></em>' reference list.
+	 * The list contents are of type {@link testModel.Node}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Sub Kategorie</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Sub Node</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sub Kategorie</em>' reference list.
-	 * @see testModel.TestModelPackage#getKategorie_SubKategorie()
+	 * @return the value of the '<em>Sub Node</em>' reference list.
+	 * @see testModel.TestModelPackage#getNode_SubNode()
 	 * @model
 	 * @generated
 	 */
-	EList<Kategorie> getSubKategorie();
+	EList<Node> getSubNode();
 
 	/**
 	 * Returns the value of the '<em><b>Contains</b></em>' containment reference list.
-	 * The list contents are of type {@link testModel.ContainedElement}.
+	 * The list contents are of type {@link testModel.ContainedLeaf}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Contains</em>' containment reference list isn't clear,
@@ -220,10 +220,10 @@ public interface Kategorie extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Contains</em>' containment reference list.
-	 * @see testModel.TestModelPackage#getKategorie_Contains()
+	 * @see testModel.TestModelPackage#getNode_Contains()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<ContainedElement> getContains();
+	EList<ContainedLeaf> getContains();
 
-} // Kategorie
+} // Node

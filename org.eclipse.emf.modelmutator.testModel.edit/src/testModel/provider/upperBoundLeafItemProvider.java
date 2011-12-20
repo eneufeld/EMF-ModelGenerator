@@ -24,16 +24,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import testModel.TestModelPackage;
-import testModel.upperBound;
+import testModel.upperBoundLeaf;
 
 /**
- * This is the item provider adapter for a {@link testModel.upperBound} object.
+ * This is the item provider adapter for a {@link testModel.upperBoundLeaf} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class upperBoundItemProvider
-	extends ElementItemProvider
+public class upperBoundLeafItemProvider
+	extends LeafsItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -46,7 +46,7 @@ public class upperBoundItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public upperBoundItemProvider(AdapterFactory adapterFactory) {
+	public upperBoundLeafItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -77,9 +77,9 @@ public class upperBoundItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_upperBound_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_upperBound_name_feature", "_UI_upperBound_type"),
-				 TestModelPackage.Literals.UPPER_BOUND__NAME,
+				 getString("_UI_upperBoundLeaf_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_upperBoundLeaf_name_feature", "_UI_upperBoundLeaf_type"),
+				 TestModelPackage.Literals.UPPER_BOUND_LEAF__NAME,
 				 true,
 				 false,
 				 false,
@@ -89,14 +89,14 @@ public class upperBoundItemProvider
 	}
 
 	/**
-	 * This returns upperBound.gif.
+	 * This returns upperBoundLeaf.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/upperBound"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/upperBoundLeaf"));
 	}
 
 	/**
@@ -107,10 +107,10 @@ public class upperBoundItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((upperBound)object).getName();
+		String label = ((upperBoundLeaf)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_upperBound_type") :
-			getString("_UI_upperBound_type") + " " + label;
+			getString("_UI_upperBoundLeaf_type") :
+			getString("_UI_upperBoundLeaf_type") + " " + label;
 	}
 
 	/**
@@ -124,8 +124,8 @@ public class upperBoundItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(upperBound.class)) {
-			case TestModelPackage.UPPER_BOUND__NAME:
+		switch (notification.getFeatureID(upperBoundLeaf.class)) {
+			case TestModelPackage.UPPER_BOUND_LEAF__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

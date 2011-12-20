@@ -26,31 +26,31 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import testModel.ContainedElement;
-import testModel.Kategorie;
+import testModel.ContainedLeaf;
+import testModel.Node;
 import testModel.TestModelPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Kategorie</b></em>'.
+ * An implementation of the model object '<em><b>Node</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link testModel.impl.KategorieImpl#getName <em>Name</em>}</li>
- *   <li>{@link testModel.impl.KategorieImpl#getBigdeci <em>Bigdeci</em>}</li>
- *   <li>{@link testModel.impl.KategorieImpl#getBigint <em>Bigint</em>}</li>
- *   <li>{@link testModel.impl.KategorieImpl#isBool <em>Bool</em>}</li>
- *   <li>{@link testModel.impl.KategorieImpl#getBoolean <em>Boolean</em>}</li>
- *   <li>{@link testModel.impl.KategorieImpl#getByte <em>Byte</em>}</li>
- *   <li>{@link testModel.impl.KategorieImpl#getSubKategorie <em>Sub Kategorie</em>}</li>
- *   <li>{@link testModel.impl.KategorieImpl#getContains <em>Contains</em>}</li>
+ *   <li>{@link testModel.impl.NodeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link testModel.impl.NodeImpl#getBigdeci <em>Bigdeci</em>}</li>
+ *   <li>{@link testModel.impl.NodeImpl#getBigint <em>Bigint</em>}</li>
+ *   <li>{@link testModel.impl.NodeImpl#isBool <em>Bool</em>}</li>
+ *   <li>{@link testModel.impl.NodeImpl#getBoolean <em>Boolean</em>}</li>
+ *   <li>{@link testModel.impl.NodeImpl#getByte <em>Byte</em>}</li>
+ *   <li>{@link testModel.impl.NodeImpl#getSubNode <em>Sub Node</em>}</li>
+ *   <li>{@link testModel.impl.NodeImpl#getContains <em>Contains</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class KategorieImpl extends EObjectImpl implements Kategorie {
+public class NodeImpl extends EObjectImpl implements Node {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -172,14 +172,14 @@ public class KategorieImpl extends EObjectImpl implements Kategorie {
 	protected byte byte_ = BYTE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSubKategorie() <em>Sub Kategorie</em>}' reference list.
+	 * The cached value of the '{@link #getSubNode() <em>Sub Node</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSubKategorie()
+	 * @see #getSubNode()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Kategorie> subKategorie;
+	protected EList<Node> subNode;
 
 	/**
 	 * The cached value of the '{@link #getContains() <em>Contains</em>}' containment reference list.
@@ -189,14 +189,14 @@ public class KategorieImpl extends EObjectImpl implements Kategorie {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ContainedElement> contains;
+	protected EList<ContainedLeaf> contains;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected KategorieImpl() {
+	protected NodeImpl() {
 		super();
 	}
 
@@ -207,7 +207,7 @@ public class KategorieImpl extends EObjectImpl implements Kategorie {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TestModelPackage.Literals.KATEGORIE;
+		return TestModelPackage.Literals.NODE;
 	}
 
 	/**
@@ -228,7 +228,7 @@ public class KategorieImpl extends EObjectImpl implements Kategorie {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.KATEGORIE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.NODE__NAME, oldName, name));
 	}
 
 	/**
@@ -249,7 +249,7 @@ public class KategorieImpl extends EObjectImpl implements Kategorie {
 		BigDecimal oldBigdeci = bigdeci;
 		bigdeci = newBigdeci;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.KATEGORIE__BIGDECI, oldBigdeci, bigdeci));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.NODE__BIGDECI, oldBigdeci, bigdeci));
 	}
 
 	/**
@@ -270,7 +270,7 @@ public class KategorieImpl extends EObjectImpl implements Kategorie {
 		BigInteger oldBigint = bigint;
 		bigint = newBigint;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.KATEGORIE__BIGINT, oldBigint, bigint));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.NODE__BIGINT, oldBigint, bigint));
 	}
 
 	/**
@@ -291,7 +291,7 @@ public class KategorieImpl extends EObjectImpl implements Kategorie {
 		boolean oldBool = bool;
 		bool = newBool;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.KATEGORIE__BOOL, oldBool, bool));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.NODE__BOOL, oldBool, bool));
 	}
 
 	/**
@@ -312,7 +312,7 @@ public class KategorieImpl extends EObjectImpl implements Kategorie {
 		Boolean oldBoolean = boolean_;
 		boolean_ = newBoolean;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.KATEGORIE__BOOLEAN, oldBoolean, boolean_));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.NODE__BOOLEAN, oldBoolean, boolean_));
 	}
 
 	/**
@@ -333,7 +333,7 @@ public class KategorieImpl extends EObjectImpl implements Kategorie {
 		byte oldByte = byte_;
 		byte_ = newByte;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.KATEGORIE__BYTE, oldByte, byte_));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.NODE__BYTE, oldByte, byte_));
 	}
 
 	/**
@@ -341,11 +341,11 @@ public class KategorieImpl extends EObjectImpl implements Kategorie {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Kategorie> getSubKategorie() {
-		if (subKategorie == null) {
-			subKategorie = new EObjectResolvingEList<Kategorie>(Kategorie.class, this, TestModelPackage.KATEGORIE__SUB_KATEGORIE);
+	public EList<Node> getSubNode() {
+		if (subNode == null) {
+			subNode = new EObjectResolvingEList<Node>(Node.class, this, TestModelPackage.NODE__SUB_NODE);
 		}
-		return subKategorie;
+		return subNode;
 	}
 
 	/**
@@ -353,9 +353,9 @@ public class KategorieImpl extends EObjectImpl implements Kategorie {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ContainedElement> getContains() {
+	public EList<ContainedLeaf> getContains() {
 		if (contains == null) {
-			contains = new EObjectContainmentEList<ContainedElement>(ContainedElement.class, this, TestModelPackage.KATEGORIE__CONTAINS);
+			contains = new EObjectContainmentEList<ContainedLeaf>(ContainedLeaf.class, this, TestModelPackage.NODE__CONTAINS);
 		}
 		return contains;
 	}
@@ -368,7 +368,7 @@ public class KategorieImpl extends EObjectImpl implements Kategorie {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TestModelPackage.KATEGORIE__CONTAINS:
+			case TestModelPackage.NODE__CONTAINS:
 				return ((InternalEList<?>)getContains()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -382,21 +382,21 @@ public class KategorieImpl extends EObjectImpl implements Kategorie {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TestModelPackage.KATEGORIE__NAME:
+			case TestModelPackage.NODE__NAME:
 				return getName();
-			case TestModelPackage.KATEGORIE__BIGDECI:
+			case TestModelPackage.NODE__BIGDECI:
 				return getBigdeci();
-			case TestModelPackage.KATEGORIE__BIGINT:
+			case TestModelPackage.NODE__BIGINT:
 				return getBigint();
-			case TestModelPackage.KATEGORIE__BOOL:
+			case TestModelPackage.NODE__BOOL:
 				return isBool();
-			case TestModelPackage.KATEGORIE__BOOLEAN:
+			case TestModelPackage.NODE__BOOLEAN:
 				return getBoolean();
-			case TestModelPackage.KATEGORIE__BYTE:
+			case TestModelPackage.NODE__BYTE:
 				return getByte();
-			case TestModelPackage.KATEGORIE__SUB_KATEGORIE:
-				return getSubKategorie();
-			case TestModelPackage.KATEGORIE__CONTAINS:
+			case TestModelPackage.NODE__SUB_NODE:
+				return getSubNode();
+			case TestModelPackage.NODE__CONTAINS:
 				return getContains();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -411,31 +411,31 @@ public class KategorieImpl extends EObjectImpl implements Kategorie {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TestModelPackage.KATEGORIE__NAME:
+			case TestModelPackage.NODE__NAME:
 				setName((String)newValue);
 				return;
-			case TestModelPackage.KATEGORIE__BIGDECI:
+			case TestModelPackage.NODE__BIGDECI:
 				setBigdeci((BigDecimal)newValue);
 				return;
-			case TestModelPackage.KATEGORIE__BIGINT:
+			case TestModelPackage.NODE__BIGINT:
 				setBigint((BigInteger)newValue);
 				return;
-			case TestModelPackage.KATEGORIE__BOOL:
+			case TestModelPackage.NODE__BOOL:
 				setBool((Boolean)newValue);
 				return;
-			case TestModelPackage.KATEGORIE__BOOLEAN:
+			case TestModelPackage.NODE__BOOLEAN:
 				setBoolean((Boolean)newValue);
 				return;
-			case TestModelPackage.KATEGORIE__BYTE:
+			case TestModelPackage.NODE__BYTE:
 				setByte((Byte)newValue);
 				return;
-			case TestModelPackage.KATEGORIE__SUB_KATEGORIE:
-				getSubKategorie().clear();
-				getSubKategorie().addAll((Collection<? extends Kategorie>)newValue);
+			case TestModelPackage.NODE__SUB_NODE:
+				getSubNode().clear();
+				getSubNode().addAll((Collection<? extends Node>)newValue);
 				return;
-			case TestModelPackage.KATEGORIE__CONTAINS:
+			case TestModelPackage.NODE__CONTAINS:
 				getContains().clear();
-				getContains().addAll((Collection<? extends ContainedElement>)newValue);
+				getContains().addAll((Collection<? extends ContainedLeaf>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -449,28 +449,28 @@ public class KategorieImpl extends EObjectImpl implements Kategorie {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TestModelPackage.KATEGORIE__NAME:
+			case TestModelPackage.NODE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case TestModelPackage.KATEGORIE__BIGDECI:
+			case TestModelPackage.NODE__BIGDECI:
 				setBigdeci(BIGDECI_EDEFAULT);
 				return;
-			case TestModelPackage.KATEGORIE__BIGINT:
+			case TestModelPackage.NODE__BIGINT:
 				setBigint(BIGINT_EDEFAULT);
 				return;
-			case TestModelPackage.KATEGORIE__BOOL:
+			case TestModelPackage.NODE__BOOL:
 				setBool(BOOL_EDEFAULT);
 				return;
-			case TestModelPackage.KATEGORIE__BOOLEAN:
+			case TestModelPackage.NODE__BOOLEAN:
 				setBoolean(BOOLEAN_EDEFAULT);
 				return;
-			case TestModelPackage.KATEGORIE__BYTE:
+			case TestModelPackage.NODE__BYTE:
 				setByte(BYTE_EDEFAULT);
 				return;
-			case TestModelPackage.KATEGORIE__SUB_KATEGORIE:
-				getSubKategorie().clear();
+			case TestModelPackage.NODE__SUB_NODE:
+				getSubNode().clear();
 				return;
-			case TestModelPackage.KATEGORIE__CONTAINS:
+			case TestModelPackage.NODE__CONTAINS:
 				getContains().clear();
 				return;
 		}
@@ -485,21 +485,21 @@ public class KategorieImpl extends EObjectImpl implements Kategorie {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TestModelPackage.KATEGORIE__NAME:
+			case TestModelPackage.NODE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case TestModelPackage.KATEGORIE__BIGDECI:
+			case TestModelPackage.NODE__BIGDECI:
 				return BIGDECI_EDEFAULT == null ? bigdeci != null : !BIGDECI_EDEFAULT.equals(bigdeci);
-			case TestModelPackage.KATEGORIE__BIGINT:
+			case TestModelPackage.NODE__BIGINT:
 				return BIGINT_EDEFAULT == null ? bigint != null : !BIGINT_EDEFAULT.equals(bigint);
-			case TestModelPackage.KATEGORIE__BOOL:
+			case TestModelPackage.NODE__BOOL:
 				return bool != BOOL_EDEFAULT;
-			case TestModelPackage.KATEGORIE__BOOLEAN:
+			case TestModelPackage.NODE__BOOLEAN:
 				return BOOLEAN_EDEFAULT == null ? boolean_ != null : !BOOLEAN_EDEFAULT.equals(boolean_);
-			case TestModelPackage.KATEGORIE__BYTE:
+			case TestModelPackage.NODE__BYTE:
 				return byte_ != BYTE_EDEFAULT;
-			case TestModelPackage.KATEGORIE__SUB_KATEGORIE:
-				return subKategorie != null && !subKategorie.isEmpty();
-			case TestModelPackage.KATEGORIE__CONTAINS:
+			case TestModelPackage.NODE__SUB_NODE:
+				return subNode != null && !subNode.isEmpty();
+			case TestModelPackage.NODE__CONTAINS:
 				return contains != null && !contains.isEmpty();
 		}
 		return super.eIsSet(featureID);
@@ -531,4 +531,4 @@ public class KategorieImpl extends EObjectImpl implements Kategorie {
 		return result.toString();
 	}
 
-} //KategorieImpl
+} //NodeImpl

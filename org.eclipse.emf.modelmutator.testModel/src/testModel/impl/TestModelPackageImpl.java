@@ -9,27 +9,20 @@ package testModel.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import testModel.ContainedLeaf;
-import testModel.ContainedElement;
-import testModel.Element;
 import testModel.ElementType;
 import testModel.Leafs;
 import testModel.Node;
-import testModel.Kategorie;
 import testModel.TestModelFactory;
 import testModel.TestModelPackage;
 import testModel.multiRefLeaf;
 import testModel.referedLeaf;
 import testModel.upperBoundLeaf;
-import testModel.multiRefElement;
-import testModel.referenziertesElement;
-import testModel.upperBound;
 
 /**
  * <!-- begin-user-doc -->

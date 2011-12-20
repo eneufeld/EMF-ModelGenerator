@@ -9,21 +9,21 @@ package testModel;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>multi Ref Element</b></em>'.
+ * A representation of the model object '<em><b>multi Ref Leaf</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link testModel.multiRefElement#getName <em>Name</em>}</li>
+ *   <li>{@link testModel.multiRefLeaf#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
- * @see testModel.TestModelPackage#getmultiRefElement()
+ * @see testModel.TestModelPackage#getmultiRefLeaf()
  * @model
  * @generated
  */
-public interface multiRefElement extends Element {
+public interface multiRefLeaf extends Leafs {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -34,14 +34,14 @@ public interface multiRefElement extends Element {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see testModel.TestModelPackage#getmultiRefElement_Name()
+	 * @see testModel.TestModelPackage#getmultiRefLeaf_Name()
 	 * @model
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link testModel.multiRefElement#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link testModel.multiRefLeaf#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -50,4 +50,4 @@ public interface multiRefElement extends Element {
 	 */
 	void setName(String value);
 
-} // multiRefElement
+} // multiRefLeaf

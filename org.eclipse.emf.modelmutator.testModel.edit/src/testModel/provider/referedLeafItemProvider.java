@@ -24,16 +24,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import testModel.TestModelPackage;
-import testModel.referenziertesElement;
+import testModel.referedLeaf;
 
 /**
- * This is the item provider adapter for a {@link testModel.referenziertesElement} object.
+ * This is the item provider adapter for a {@link testModel.referedLeaf} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class referenziertesElementItemProvider
-	extends ElementItemProvider
+public class referedLeafItemProvider
+	extends LeafsItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -46,7 +46,7 @@ public class referenziertesElementItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public referenziertesElementItemProvider(AdapterFactory adapterFactory) {
+	public referedLeafItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -86,9 +86,9 @@ public class referenziertesElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_referenziertesElement_Float_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_referenziertesElement_Float_feature", "_UI_referenziertesElement_type"),
-				 TestModelPackage.Literals.REFERENZIERTES_ELEMENT__FLOAT,
+				 getString("_UI_referedLeaf_Float_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_referedLeaf_Float_feature", "_UI_referedLeaf_type"),
+				 TestModelPackage.Literals.REFERED_LEAF__FLOAT,
 				 true,
 				 false,
 				 false,
@@ -108,9 +108,9 @@ public class referenziertesElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_referenziertesElement_int_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_referenziertesElement_int_feature", "_UI_referenziertesElement_type"),
-				 TestModelPackage.Literals.REFERENZIERTES_ELEMENT__INT,
+				 getString("_UI_referedLeaf_int_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_referedLeaf_int_feature", "_UI_referedLeaf_type"),
+				 TestModelPackage.Literals.REFERED_LEAF__INT,
 				 true,
 				 false,
 				 false,
@@ -130,9 +130,9 @@ public class referenziertesElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_referenziertesElement_Integer_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_referenziertesElement_Integer_feature", "_UI_referenziertesElement_type"),
-				 TestModelPackage.Literals.REFERENZIERTES_ELEMENT__INTEGER,
+				 getString("_UI_referedLeaf_Integer_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_referedLeaf_Integer_feature", "_UI_referedLeaf_type"),
+				 TestModelPackage.Literals.REFERED_LEAF__INTEGER,
 				 true,
 				 false,
 				 false,
@@ -152,9 +152,9 @@ public class referenziertesElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_referenziertesElement_long_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_referenziertesElement_long_feature", "_UI_referenziertesElement_type"),
-				 TestModelPackage.Literals.REFERENZIERTES_ELEMENT__LONG,
+				 getString("_UI_referedLeaf_long_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_referedLeaf_long_feature", "_UI_referedLeaf_type"),
+				 TestModelPackage.Literals.REFERED_LEAF__LONG,
 				 true,
 				 false,
 				 false,
@@ -174,9 +174,9 @@ public class referenziertesElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_referenziertesElement_LongObj_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_referenziertesElement_LongObj_feature", "_UI_referenziertesElement_type"),
-				 TestModelPackage.Literals.REFERENZIERTES_ELEMENT__LONG_OBJ,
+				 getString("_UI_referedLeaf_LongObj_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_referedLeaf_LongObj_feature", "_UI_referedLeaf_type"),
+				 TestModelPackage.Literals.REFERED_LEAF__LONG_OBJ,
 				 true,
 				 false,
 				 false,
@@ -196,9 +196,9 @@ public class referenziertesElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_referenziertesElement_short_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_referenziertesElement_short_feature", "_UI_referenziertesElement_type"),
-				 TestModelPackage.Literals.REFERENZIERTES_ELEMENT__SHORT,
+				 getString("_UI_referedLeaf_short_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_referedLeaf_short_feature", "_UI_referedLeaf_type"),
+				 TestModelPackage.Literals.REFERED_LEAF__SHORT,
 				 true,
 				 false,
 				 false,
@@ -218,9 +218,9 @@ public class referenziertesElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_referenziertesElement_ShortObj_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_referenziertesElement_ShortObj_feature", "_UI_referenziertesElement_type"),
-				 TestModelPackage.Literals.REFERENZIERTES_ELEMENT__SHORT_OBJ,
+				 getString("_UI_referedLeaf_ShortObj_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_referedLeaf_ShortObj_feature", "_UI_referedLeaf_type"),
+				 TestModelPackage.Literals.REFERED_LEAF__SHORT_OBJ,
 				 true,
 				 false,
 				 false,
@@ -240,9 +240,9 @@ public class referenziertesElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_referenziertesElement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_referenziertesElement_name_feature", "_UI_referenziertesElement_type"),
-				 TestModelPackage.Literals.REFERENZIERTES_ELEMENT__NAME,
+				 getString("_UI_referedLeaf_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_referedLeaf_name_feature", "_UI_referedLeaf_type"),
+				 TestModelPackage.Literals.REFERED_LEAF__NAME,
 				 true,
 				 false,
 				 false,
@@ -262,9 +262,9 @@ public class referenziertesElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_referenziertesElement_notChangeable_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_referenziertesElement_notChangeable_feature", "_UI_referenziertesElement_type"),
-				 TestModelPackage.Literals.REFERENZIERTES_ELEMENT__NOT_CHANGEABLE,
+				 getString("_UI_referedLeaf_notChangeable_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_referedLeaf_notChangeable_feature", "_UI_referedLeaf_type"),
+				 TestModelPackage.Literals.REFERED_LEAF__NOT_CHANGEABLE,
 				 false,
 				 false,
 				 false,
@@ -284,9 +284,9 @@ public class referenziertesElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_referenziertesElement_multiRef_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_referenziertesElement_multiRef_feature", "_UI_referenziertesElement_type"),
-				 TestModelPackage.Literals.REFERENZIERTES_ELEMENT__MULTI_REF,
+				 getString("_UI_referedLeaf_multiRef_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_referedLeaf_multiRef_feature", "_UI_referedLeaf_type"),
+				 TestModelPackage.Literals.REFERED_LEAF__MULTI_REF,
 				 true,
 				 false,
 				 true,
@@ -296,14 +296,14 @@ public class referenziertesElementItemProvider
 	}
 
 	/**
-	 * This returns referenziertesElement.gif.
+	 * This returns referedLeaf.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/referenziertesElement"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/referedLeaf"));
 	}
 
 	/**
@@ -314,10 +314,10 @@ public class referenziertesElementItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((referenziertesElement)object).getName();
+		String label = ((referedLeaf)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_referenziertesElement_type") :
-			getString("_UI_referenziertesElement_type") + " " + label;
+			getString("_UI_referedLeaf_type") :
+			getString("_UI_referedLeaf_type") + " " + label;
 	}
 
 	/**
@@ -331,16 +331,16 @@ public class referenziertesElementItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(referenziertesElement.class)) {
-			case TestModelPackage.REFERENZIERTES_ELEMENT__FLOAT:
-			case TestModelPackage.REFERENZIERTES_ELEMENT__INT:
-			case TestModelPackage.REFERENZIERTES_ELEMENT__INTEGER:
-			case TestModelPackage.REFERENZIERTES_ELEMENT__LONG:
-			case TestModelPackage.REFERENZIERTES_ELEMENT__LONG_OBJ:
-			case TestModelPackage.REFERENZIERTES_ELEMENT__SHORT:
-			case TestModelPackage.REFERENZIERTES_ELEMENT__SHORT_OBJ:
-			case TestModelPackage.REFERENZIERTES_ELEMENT__NAME:
-			case TestModelPackage.REFERENZIERTES_ELEMENT__NOT_CHANGEABLE:
+		switch (notification.getFeatureID(referedLeaf.class)) {
+			case TestModelPackage.REFERED_LEAF__FLOAT:
+			case TestModelPackage.REFERED_LEAF__INT:
+			case TestModelPackage.REFERED_LEAF__INTEGER:
+			case TestModelPackage.REFERED_LEAF__LONG:
+			case TestModelPackage.REFERED_LEAF__LONG_OBJ:
+			case TestModelPackage.REFERED_LEAF__SHORT:
+			case TestModelPackage.REFERED_LEAF__SHORT_OBJ:
+			case TestModelPackage.REFERED_LEAF__NAME:
+			case TestModelPackage.REFERED_LEAF__NOT_CHANGEABLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

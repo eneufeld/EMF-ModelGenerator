@@ -24,12 +24,12 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
- * This is the item provider adapter for a {@link testModel.Element} object.
+ * This is the item provider adapter for a {@link testModel.Leafs} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ElementItemProvider
+public class LeafsItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -43,7 +43,7 @@ public class ElementItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ElementItemProvider(AdapterFactory adapterFactory) {
+	public LeafsItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -70,7 +70,7 @@ public class ElementItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Element_type");
+		return getString("_UI_Leafs_type");
 	}
 
 	/**

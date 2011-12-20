@@ -10,13 +10,13 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Element</b></em>'.
+ * A representation of the model object '<em><b>Leafs</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see testModel.TestModelPackage#getElement()
+ * @see testModel.TestModelPackage#getLeafs()
  * @model abstract="true"
  * @generated
  */
-public interface Element extends EObject {
-} // Element
+public interface Leafs extends EObject {
+} // Leafs

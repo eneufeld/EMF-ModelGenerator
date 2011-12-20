@@ -24,16 +24,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import testModel.TestModelPackage;
-import testModel.multiRefElement;
+import testModel.multiRefLeaf;
 
 /**
- * This is the item provider adapter for a {@link testModel.multiRefElement} object.
+ * This is the item provider adapter for a {@link testModel.multiRefLeaf} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class multiRefElementItemProvider
-	extends ElementItemProvider
+public class multiRefLeafItemProvider
+	extends LeafsItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -46,7 +46,7 @@ public class multiRefElementItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public multiRefElementItemProvider(AdapterFactory adapterFactory) {
+	public multiRefLeafItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -77,9 +77,9 @@ public class multiRefElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_multiRefElement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_multiRefElement_name_feature", "_UI_multiRefElement_type"),
-				 TestModelPackage.Literals.MULTI_REF_ELEMENT__NAME,
+				 getString("_UI_multiRefLeaf_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_multiRefLeaf_name_feature", "_UI_multiRefLeaf_type"),
+				 TestModelPackage.Literals.MULTI_REF_LEAF__NAME,
 				 true,
 				 false,
 				 false,
@@ -89,14 +89,14 @@ public class multiRefElementItemProvider
 	}
 
 	/**
-	 * This returns multiRefElement.gif.
+	 * This returns multiRefLeaf.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/multiRefElement"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/multiRefLeaf"));
 	}
 
 	/**
@@ -107,10 +107,10 @@ public class multiRefElementItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((multiRefElement)object).getName();
+		String label = ((multiRefLeaf)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_multiRefElement_type") :
-			getString("_UI_multiRefElement_type") + " " + label;
+			getString("_UI_multiRefLeaf_type") :
+			getString("_UI_multiRefLeaf_type") + " " + label;
 	}
 
 	/**
@@ -124,8 +124,8 @@ public class multiRefElementItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(multiRefElement.class)) {
-			case TestModelPackage.MULTI_REF_ELEMENT__NAME:
+		switch (notification.getFeatureID(multiRefLeaf.class)) {
+			case TestModelPackage.MULTI_REF_LEAF__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

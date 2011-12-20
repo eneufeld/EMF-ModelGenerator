@@ -9,15 +9,12 @@ package testModel.impl;
 import java.util.Collection;
 import java.util.Date;
 
-import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.common.util.Enumerator;
-import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -28,43 +25,38 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import testModel.ContainedElement;
+import testModel.ContainedLeaf;
 import testModel.ElementType;
 import testModel.TestModelPackage;
-import testModel.referenziertesElement;
-import testModel.upperBound;
+import testModel.referedLeaf;
+import testModel.upperBoundLeaf;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Contained Element</b></em>'.
+ * An implementation of the model object '<em><b>Contained Leaf</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link testModel.impl.ContainedElementImpl#getName <em>Name</em>}</li>
- *   <li>{@link testModel.impl.ContainedElementImpl#getByteArray <em>Byte Array</em>}</li>
- *   <li>{@link testModel.impl.ContainedElementImpl#getByteObject <em>Byte Object</em>}</li>
- *   <li>{@link testModel.impl.ContainedElementImpl#getChar <em>Char</em>}</li>
- *   <li>{@link testModel.impl.ContainedElementImpl#getCharacter <em>Character</em>}</li>
- *   <li>{@link testModel.impl.ContainedElementImpl#getDate <em>Date</em>}</li>
- *   <li>{@link testModel.impl.ContainedElementImpl#getDiagnosticChain <em>Diagnostic Chain</em>}</li>
- *   <li>{@link testModel.impl.ContainedElementImpl#getDouble <em>Double</em>}</li>
- *   <li>{@link testModel.impl.ContainedElementImpl#getDoubleObj <em>Double Obj</em>}</li>
- *   <li>{@link testModel.impl.ContainedElementImpl#getFloat <em>Float</em>}</li>
- *   <li>{@link testModel.impl.ContainedElementImpl#getElementType <em>Element Type</em>}</li>
- *   <li>{@link testModel.impl.ContainedElementImpl#getRef <em>Ref</em>}</li>
- *   <li>{@link testModel.impl.ContainedElementImpl#getUpperBound <em>Upper Bound</em>}</li>
- *   <li>{@link testModel.impl.ContainedElementImpl#getEnumerator <em>Enumerator</em>}</li>
- *   <li>{@link testModel.impl.ContainedElementImpl#getElist <em>Elist</em>}</li>
- *   <li>{@link testModel.impl.ContainedElementImpl#getClass_ <em>Class</em>}</li>
- *   <li>{@link testModel.impl.ContainedElementImpl#getMap <em>Map</em>}</li>
- *   <li>{@link testModel.impl.ContainedElementImpl#getTreeIterator <em>Tree Iterator</em>}</li>
+ *   <li>{@link testModel.impl.ContainedLeafImpl#getName <em>Name</em>}</li>
+ *   <li>{@link testModel.impl.ContainedLeafImpl#getByteArray <em>Byte Array</em>}</li>
+ *   <li>{@link testModel.impl.ContainedLeafImpl#getByteObject <em>Byte Object</em>}</li>
+ *   <li>{@link testModel.impl.ContainedLeafImpl#getChar <em>Char</em>}</li>
+ *   <li>{@link testModel.impl.ContainedLeafImpl#getCharacter <em>Character</em>}</li>
+ *   <li>{@link testModel.impl.ContainedLeafImpl#getDate <em>Date</em>}</li>
+ *   <li>{@link testModel.impl.ContainedLeafImpl#getDiagnosticChain <em>Diagnostic Chain</em>}</li>
+ *   <li>{@link testModel.impl.ContainedLeafImpl#getDouble <em>Double</em>}</li>
+ *   <li>{@link testModel.impl.ContainedLeafImpl#getDoubleObj <em>Double Obj</em>}</li>
+ *   <li>{@link testModel.impl.ContainedLeafImpl#getFloat <em>Float</em>}</li>
+ *   <li>{@link testModel.impl.ContainedLeafImpl#getElementType <em>Element Type</em>}</li>
+ *   <li>{@link testModel.impl.ContainedLeafImpl#getRef <em>Ref</em>}</li>
+ *   <li>{@link testModel.impl.ContainedLeafImpl#getUpperBound <em>Upper Bound</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ContainedElementImpl extends EObjectImpl implements ContainedElement {
+public class ContainedLeafImpl extends EObjectImpl implements ContainedLeaf {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -293,7 +285,7 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<referenziertesElement> ref;
+	protected EList<referedLeaf> ref;
 
 	/**
 	 * The cached value of the '{@link #getUpperBound() <em>Upper Bound</em>}' containment reference list.
@@ -303,74 +295,14 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<upperBound> upperBound;
-
-	/**
-	 * The default value of the '{@link #getEnumerator() <em>Enumerator</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEnumerator()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Enumerator ENUMERATOR_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEnumerator() <em>Enumerator</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEnumerator()
-	 * @generated
-	 * @ordered
-	 */
-	protected Enumerator enumerator = ENUMERATOR_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getElist() <em>Elist</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getElist()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<String> elist;
-
-	/**
-	 * The cached value of the '{@link #getClass_() <em>Class</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getClass_()
-	 * @generated
-	 * @ordered
-	 */
-	protected Class<String> class_;
-
-	/**
-	 * The cached value of the '{@link #getMap() <em>Map</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getMap()
-	 * @generated
-	 * @ordered
-	 */
-	protected Map<ContainedElement, referenziertesElement> map;
-
-	/**
-	 * The cached value of the '{@link #getTreeIterator() <em>Tree Iterator</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTreeIterator()
-	 * @generated
-	 * @ordered
-	 */
-	protected TreeIterator<String> treeIterator;
+	protected EList<upperBoundLeaf> upperBound;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ContainedElementImpl() {
+	protected ContainedLeafImpl() {
 		super();
 	}
 
@@ -381,7 +313,7 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TestModelPackage.Literals.CONTAINED_ELEMENT;
+		return TestModelPackage.Literals.CONTAINED_LEAF;
 	}
 
 	/**
@@ -402,7 +334,7 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_LEAF__NAME, oldName, name));
 	}
 
 	/**
@@ -423,7 +355,7 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 		byte[] oldByteArray = byteArray;
 		byteArray = newByteArray;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__BYTE_ARRAY, oldByteArray, byteArray));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_LEAF__BYTE_ARRAY, oldByteArray, byteArray));
 	}
 
 	/**
@@ -444,7 +376,7 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 		Byte oldByteObject = byteObject;
 		byteObject = newByteObject;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__BYTE_OBJECT, oldByteObject, byteObject));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_LEAF__BYTE_OBJECT, oldByteObject, byteObject));
 	}
 
 	/**
@@ -465,7 +397,7 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 		char oldChar = char_;
 		char_ = newChar;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__CHAR, oldChar, char_));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_LEAF__CHAR, oldChar, char_));
 	}
 
 	/**
@@ -486,7 +418,7 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 		Character oldCharacter = character;
 		character = newCharacter;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__CHARACTER, oldCharacter, character));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_LEAF__CHARACTER, oldCharacter, character));
 	}
 
 	/**
@@ -507,7 +439,7 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 		Date oldDate = date;
 		date = newDate;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__DATE, oldDate, date));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_LEAF__DATE, oldDate, date));
 	}
 
 	/**
@@ -528,7 +460,7 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 		DiagnosticChain oldDiagnosticChain = diagnosticChain;
 		diagnosticChain = newDiagnosticChain;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__DIAGNOSTIC_CHAIN, oldDiagnosticChain, diagnosticChain));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_LEAF__DIAGNOSTIC_CHAIN, oldDiagnosticChain, diagnosticChain));
 	}
 
 	/**
@@ -549,7 +481,7 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 		double oldDouble = double_;
 		double_ = newDouble;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__DOUBLE, oldDouble, double_));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_LEAF__DOUBLE, oldDouble, double_));
 	}
 
 	/**
@@ -570,7 +502,7 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 		Double oldDoubleObj = doubleObj;
 		doubleObj = newDoubleObj;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__DOUBLE_OBJ, oldDoubleObj, doubleObj));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_LEAF__DOUBLE_OBJ, oldDoubleObj, doubleObj));
 	}
 
 	/**
@@ -591,7 +523,7 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 		float oldFloat = float_;
 		float_ = newFloat;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__FLOAT, oldFloat, float_));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_LEAF__FLOAT, oldFloat, float_));
 	}
 
 	/**
@@ -612,7 +544,7 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 		ElementType oldElementType = elementType;
 		elementType = newElementType == null ? ELEMENT_TYPE_EDEFAULT : newElementType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__ELEMENT_TYPE, oldElementType, elementType));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_LEAF__ELEMENT_TYPE, oldElementType, elementType));
 	}
 
 	/**
@@ -620,9 +552,9 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<referenziertesElement> getRef() {
+	public EList<referedLeaf> getRef() {
 		if (ref == null) {
-			ref = new EObjectResolvingEList<referenziertesElement>(referenziertesElement.class, this, TestModelPackage.CONTAINED_ELEMENT__REF);
+			ref = new EObjectResolvingEList<referedLeaf>(referedLeaf.class, this, TestModelPackage.CONTAINED_LEAF__REF);
 		}
 		return ref;
 	}
@@ -632,116 +564,11 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<upperBound> getUpperBound() {
+	public EList<upperBoundLeaf> getUpperBound() {
 		if (upperBound == null) {
-			upperBound = new EObjectContainmentEList<upperBound>(upperBound.class, this, TestModelPackage.CONTAINED_ELEMENT__UPPER_BOUND);
+			upperBound = new EObjectContainmentEList<upperBoundLeaf>(upperBoundLeaf.class, this, TestModelPackage.CONTAINED_LEAF__UPPER_BOUND);
 		}
 		return upperBound;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Enumerator getEnumerator() {
-		return enumerator;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEnumerator(Enumerator newEnumerator) {
-		Enumerator oldEnumerator = enumerator;
-		enumerator = newEnumerator;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__ENUMERATOR, oldEnumerator, enumerator));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<String> getElist() {
-		return elist;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setElist(EList<String> newElist) {
-		EList<String> oldElist = elist;
-		elist = newElist;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__ELIST, oldElist, elist));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Class<String> getClass_() {
-		return class_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setClass(Class<String> newClass) {
-		Class<String> oldClass = class_;
-		class_ = newClass;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__CLASS, oldClass, class_));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Map<ContainedElement, referenziertesElement> getMap() {
-		return map;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMap(Map<ContainedElement, referenziertesElement> newMap) {
-		Map<ContainedElement, referenziertesElement> oldMap = map;
-		map = newMap;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__MAP, oldMap, map));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TreeIterator<String> getTreeIterator() {
-		return treeIterator;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTreeIterator(TreeIterator<String> newTreeIterator) {
-		TreeIterator<String> oldTreeIterator = treeIterator;
-		treeIterator = newTreeIterator;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_ELEMENT__TREE_ITERATOR, oldTreeIterator, treeIterator));
 	}
 
 	/**
@@ -752,7 +579,7 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TestModelPackage.CONTAINED_ELEMENT__UPPER_BOUND:
+			case TestModelPackage.CONTAINED_LEAF__UPPER_BOUND:
 				return ((InternalEList<?>)getUpperBound()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -766,42 +593,32 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TestModelPackage.CONTAINED_ELEMENT__NAME:
+			case TestModelPackage.CONTAINED_LEAF__NAME:
 				return getName();
-			case TestModelPackage.CONTAINED_ELEMENT__BYTE_ARRAY:
+			case TestModelPackage.CONTAINED_LEAF__BYTE_ARRAY:
 				return getByteArray();
-			case TestModelPackage.CONTAINED_ELEMENT__BYTE_OBJECT:
+			case TestModelPackage.CONTAINED_LEAF__BYTE_OBJECT:
 				return getByteObject();
-			case TestModelPackage.CONTAINED_ELEMENT__CHAR:
+			case TestModelPackage.CONTAINED_LEAF__CHAR:
 				return getChar();
-			case TestModelPackage.CONTAINED_ELEMENT__CHARACTER:
+			case TestModelPackage.CONTAINED_LEAF__CHARACTER:
 				return getCharacter();
-			case TestModelPackage.CONTAINED_ELEMENT__DATE:
+			case TestModelPackage.CONTAINED_LEAF__DATE:
 				return getDate();
-			case TestModelPackage.CONTAINED_ELEMENT__DIAGNOSTIC_CHAIN:
+			case TestModelPackage.CONTAINED_LEAF__DIAGNOSTIC_CHAIN:
 				return getDiagnosticChain();
-			case TestModelPackage.CONTAINED_ELEMENT__DOUBLE:
+			case TestModelPackage.CONTAINED_LEAF__DOUBLE:
 				return getDouble();
-			case TestModelPackage.CONTAINED_ELEMENT__DOUBLE_OBJ:
+			case TestModelPackage.CONTAINED_LEAF__DOUBLE_OBJ:
 				return getDoubleObj();
-			case TestModelPackage.CONTAINED_ELEMENT__FLOAT:
+			case TestModelPackage.CONTAINED_LEAF__FLOAT:
 				return getFloat();
-			case TestModelPackage.CONTAINED_ELEMENT__ELEMENT_TYPE:
+			case TestModelPackage.CONTAINED_LEAF__ELEMENT_TYPE:
 				return getElementType();
-			case TestModelPackage.CONTAINED_ELEMENT__REF:
+			case TestModelPackage.CONTAINED_LEAF__REF:
 				return getRef();
-			case TestModelPackage.CONTAINED_ELEMENT__UPPER_BOUND:
+			case TestModelPackage.CONTAINED_LEAF__UPPER_BOUND:
 				return getUpperBound();
-			case TestModelPackage.CONTAINED_ELEMENT__ENUMERATOR:
-				return getEnumerator();
-			case TestModelPackage.CONTAINED_ELEMENT__ELIST:
-				return getElist();
-			case TestModelPackage.CONTAINED_ELEMENT__CLASS:
-				return getClass_();
-			case TestModelPackage.CONTAINED_ELEMENT__MAP:
-				return getMap();
-			case TestModelPackage.CONTAINED_ELEMENT__TREE_ITERATOR:
-				return getTreeIterator();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -815,61 +632,46 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TestModelPackage.CONTAINED_ELEMENT__NAME:
+			case TestModelPackage.CONTAINED_LEAF__NAME:
 				setName((String)newValue);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__BYTE_ARRAY:
+			case TestModelPackage.CONTAINED_LEAF__BYTE_ARRAY:
 				setByteArray((byte[])newValue);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__BYTE_OBJECT:
+			case TestModelPackage.CONTAINED_LEAF__BYTE_OBJECT:
 				setByteObject((Byte)newValue);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__CHAR:
+			case TestModelPackage.CONTAINED_LEAF__CHAR:
 				setChar((Character)newValue);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__CHARACTER:
+			case TestModelPackage.CONTAINED_LEAF__CHARACTER:
 				setCharacter((Character)newValue);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__DATE:
+			case TestModelPackage.CONTAINED_LEAF__DATE:
 				setDate((Date)newValue);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__DIAGNOSTIC_CHAIN:
+			case TestModelPackage.CONTAINED_LEAF__DIAGNOSTIC_CHAIN:
 				setDiagnosticChain((DiagnosticChain)newValue);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__DOUBLE:
+			case TestModelPackage.CONTAINED_LEAF__DOUBLE:
 				setDouble((Double)newValue);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__DOUBLE_OBJ:
+			case TestModelPackage.CONTAINED_LEAF__DOUBLE_OBJ:
 				setDoubleObj((Double)newValue);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__FLOAT:
+			case TestModelPackage.CONTAINED_LEAF__FLOAT:
 				setFloat((Float)newValue);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__ELEMENT_TYPE:
+			case TestModelPackage.CONTAINED_LEAF__ELEMENT_TYPE:
 				setElementType((ElementType)newValue);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__REF:
+			case TestModelPackage.CONTAINED_LEAF__REF:
 				getRef().clear();
-				getRef().addAll((Collection<? extends referenziertesElement>)newValue);
+				getRef().addAll((Collection<? extends referedLeaf>)newValue);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__UPPER_BOUND:
+			case TestModelPackage.CONTAINED_LEAF__UPPER_BOUND:
 				getUpperBound().clear();
-				getUpperBound().addAll((Collection<? extends upperBound>)newValue);
-				return;
-			case TestModelPackage.CONTAINED_ELEMENT__ENUMERATOR:
-				setEnumerator((Enumerator)newValue);
-				return;
-			case TestModelPackage.CONTAINED_ELEMENT__ELIST:
-				setElist((EList<String>)newValue);
-				return;
-			case TestModelPackage.CONTAINED_ELEMENT__CLASS:
-				setClass((Class<String>)newValue);
-				return;
-			case TestModelPackage.CONTAINED_ELEMENT__MAP:
-				setMap((Map<ContainedElement, referenziertesElement>)newValue);
-				return;
-			case TestModelPackage.CONTAINED_ELEMENT__TREE_ITERATOR:
-				setTreeIterator((TreeIterator<String>)newValue);
+				getUpperBound().addAll((Collection<? extends upperBoundLeaf>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -883,59 +685,44 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TestModelPackage.CONTAINED_ELEMENT__NAME:
+			case TestModelPackage.CONTAINED_LEAF__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__BYTE_ARRAY:
+			case TestModelPackage.CONTAINED_LEAF__BYTE_ARRAY:
 				setByteArray(BYTE_ARRAY_EDEFAULT);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__BYTE_OBJECT:
+			case TestModelPackage.CONTAINED_LEAF__BYTE_OBJECT:
 				setByteObject(BYTE_OBJECT_EDEFAULT);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__CHAR:
+			case TestModelPackage.CONTAINED_LEAF__CHAR:
 				setChar(CHAR_EDEFAULT);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__CHARACTER:
+			case TestModelPackage.CONTAINED_LEAF__CHARACTER:
 				setCharacter(CHARACTER_EDEFAULT);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__DATE:
+			case TestModelPackage.CONTAINED_LEAF__DATE:
 				setDate(DATE_EDEFAULT);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__DIAGNOSTIC_CHAIN:
+			case TestModelPackage.CONTAINED_LEAF__DIAGNOSTIC_CHAIN:
 				setDiagnosticChain(DIAGNOSTIC_CHAIN_EDEFAULT);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__DOUBLE:
+			case TestModelPackage.CONTAINED_LEAF__DOUBLE:
 				setDouble(DOUBLE_EDEFAULT);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__DOUBLE_OBJ:
+			case TestModelPackage.CONTAINED_LEAF__DOUBLE_OBJ:
 				setDoubleObj(DOUBLE_OBJ_EDEFAULT);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__FLOAT:
+			case TestModelPackage.CONTAINED_LEAF__FLOAT:
 				setFloat(FLOAT_EDEFAULT);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__ELEMENT_TYPE:
+			case TestModelPackage.CONTAINED_LEAF__ELEMENT_TYPE:
 				setElementType(ELEMENT_TYPE_EDEFAULT);
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__REF:
+			case TestModelPackage.CONTAINED_LEAF__REF:
 				getRef().clear();
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__UPPER_BOUND:
+			case TestModelPackage.CONTAINED_LEAF__UPPER_BOUND:
 				getUpperBound().clear();
-				return;
-			case TestModelPackage.CONTAINED_ELEMENT__ENUMERATOR:
-				setEnumerator(ENUMERATOR_EDEFAULT);
-				return;
-			case TestModelPackage.CONTAINED_ELEMENT__ELIST:
-				setElist((EList<String>)null);
-				return;
-			case TestModelPackage.CONTAINED_ELEMENT__CLASS:
-				setClass((Class<String>)null);
-				return;
-			case TestModelPackage.CONTAINED_ELEMENT__MAP:
-				setMap((Map<ContainedElement, referenziertesElement>)null);
-				return;
-			case TestModelPackage.CONTAINED_ELEMENT__TREE_ITERATOR:
-				setTreeIterator((TreeIterator<String>)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -949,42 +736,32 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TestModelPackage.CONTAINED_ELEMENT__NAME:
+			case TestModelPackage.CONTAINED_LEAF__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case TestModelPackage.CONTAINED_ELEMENT__BYTE_ARRAY:
+			case TestModelPackage.CONTAINED_LEAF__BYTE_ARRAY:
 				return BYTE_ARRAY_EDEFAULT == null ? byteArray != null : !BYTE_ARRAY_EDEFAULT.equals(byteArray);
-			case TestModelPackage.CONTAINED_ELEMENT__BYTE_OBJECT:
+			case TestModelPackage.CONTAINED_LEAF__BYTE_OBJECT:
 				return BYTE_OBJECT_EDEFAULT == null ? byteObject != null : !BYTE_OBJECT_EDEFAULT.equals(byteObject);
-			case TestModelPackage.CONTAINED_ELEMENT__CHAR:
+			case TestModelPackage.CONTAINED_LEAF__CHAR:
 				return char_ != CHAR_EDEFAULT;
-			case TestModelPackage.CONTAINED_ELEMENT__CHARACTER:
+			case TestModelPackage.CONTAINED_LEAF__CHARACTER:
 				return CHARACTER_EDEFAULT == null ? character != null : !CHARACTER_EDEFAULT.equals(character);
-			case TestModelPackage.CONTAINED_ELEMENT__DATE:
+			case TestModelPackage.CONTAINED_LEAF__DATE:
 				return DATE_EDEFAULT == null ? date != null : !DATE_EDEFAULT.equals(date);
-			case TestModelPackage.CONTAINED_ELEMENT__DIAGNOSTIC_CHAIN:
+			case TestModelPackage.CONTAINED_LEAF__DIAGNOSTIC_CHAIN:
 				return DIAGNOSTIC_CHAIN_EDEFAULT == null ? diagnosticChain != null : !DIAGNOSTIC_CHAIN_EDEFAULT.equals(diagnosticChain);
-			case TestModelPackage.CONTAINED_ELEMENT__DOUBLE:
+			case TestModelPackage.CONTAINED_LEAF__DOUBLE:
 				return double_ != DOUBLE_EDEFAULT;
-			case TestModelPackage.CONTAINED_ELEMENT__DOUBLE_OBJ:
+			case TestModelPackage.CONTAINED_LEAF__DOUBLE_OBJ:
 				return DOUBLE_OBJ_EDEFAULT == null ? doubleObj != null : !DOUBLE_OBJ_EDEFAULT.equals(doubleObj);
-			case TestModelPackage.CONTAINED_ELEMENT__FLOAT:
+			case TestModelPackage.CONTAINED_LEAF__FLOAT:
 				return float_ != FLOAT_EDEFAULT;
-			case TestModelPackage.CONTAINED_ELEMENT__ELEMENT_TYPE:
+			case TestModelPackage.CONTAINED_LEAF__ELEMENT_TYPE:
 				return elementType != ELEMENT_TYPE_EDEFAULT;
-			case TestModelPackage.CONTAINED_ELEMENT__REF:
+			case TestModelPackage.CONTAINED_LEAF__REF:
 				return ref != null && !ref.isEmpty();
-			case TestModelPackage.CONTAINED_ELEMENT__UPPER_BOUND:
+			case TestModelPackage.CONTAINED_LEAF__UPPER_BOUND:
 				return upperBound != null && !upperBound.isEmpty();
-			case TestModelPackage.CONTAINED_ELEMENT__ENUMERATOR:
-				return ENUMERATOR_EDEFAULT == null ? enumerator != null : !ENUMERATOR_EDEFAULT.equals(enumerator);
-			case TestModelPackage.CONTAINED_ELEMENT__ELIST:
-				return elist != null;
-			case TestModelPackage.CONTAINED_ELEMENT__CLASS:
-				return class_ != null;
-			case TestModelPackage.CONTAINED_ELEMENT__MAP:
-				return map != null;
-			case TestModelPackage.CONTAINED_ELEMENT__TREE_ITERATOR:
-				return treeIterator != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1021,18 +798,8 @@ public class ContainedElementImpl extends EObjectImpl implements ContainedElemen
 		result.append(float_);
 		result.append(", elementType: ");
 		result.append(elementType);
-		result.append(", Enumerator: ");
-		result.append(enumerator);
-		result.append(", elist: ");
-		result.append(elist);
-		result.append(", Class: ");
-		result.append(class_);
-		result.append(", Map: ");
-		result.append(map);
-		result.append(", TreeIterator: ");
-		result.append(treeIterator);
 		result.append(')');
 		return result.toString();
 	}
 
-} //ContainedElementImpl
+} //ContainedLeafImpl

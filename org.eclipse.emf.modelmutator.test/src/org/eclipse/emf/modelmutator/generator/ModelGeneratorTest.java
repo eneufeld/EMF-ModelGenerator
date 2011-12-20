@@ -14,12 +14,13 @@ import org.eclipse.emf.modelmutator.mutator.ModelMutatorTest;
 import org.junit.Assert;
 import org.junit.Test;
 
-import testModel.Kategorie;
+import testModel.Node;
 import testModel.TestModelFactory;
 
 /**
  * 
  * @author Eugen Neufeld
+ * @author Stephan Köhler
  * 
  */
 public class ModelGeneratorTest extends ModelMutatorTest {
@@ -117,7 +118,7 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 		mmc.setDoNotGenerateRoot(true);
 		
 		for (int i=0; i<5; i++){
-			Kategorie newModelElement=TestModelFactory.eINSTANCE.createKategorie();
+			Node newModelElement=TestModelFactory.eINSTANCE.createNode();
 			newModelElement.setName("Test"+i);
 			projectSpace.getProject().addModelElement(newModelElement);
 		}

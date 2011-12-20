@@ -28,17 +28,17 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import testModel.ContainedElement;
+import testModel.ContainedLeaf;
 import testModel.TestModelFactory;
 import testModel.TestModelPackage;
 
 /**
- * This is the item provider adapter for a {@link testModel.ContainedElement} object.
+ * This is the item provider adapter for a {@link testModel.ContainedLeaf} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ContainedElementItemProvider
+public class ContainedLeafItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -52,7 +52,7 @@ public class ContainedElementItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContainedElementItemProvider(AdapterFactory adapterFactory) {
+	public ContainedLeafItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -79,11 +79,6 @@ public class ContainedElementItemProvider
 			addFloatPropertyDescriptor(object);
 			addElementTypePropertyDescriptor(object);
 			addRefPropertyDescriptor(object);
-			addEnumeratorPropertyDescriptor(object);
-			addElistPropertyDescriptor(object);
-			addClassPropertyDescriptor(object);
-			addMapPropertyDescriptor(object);
-			addTreeIteratorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -99,9 +94,9 @@ public class ContainedElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContainedElement_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_name_feature", "_UI_ContainedElement_type"),
-				 TestModelPackage.Literals.CONTAINED_ELEMENT__NAME,
+				 getString("_UI_ContainedLeaf_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedLeaf_name_feature", "_UI_ContainedLeaf_type"),
+				 TestModelPackage.Literals.CONTAINED_LEAF__NAME,
 				 true,
 				 false,
 				 false,
@@ -121,9 +116,9 @@ public class ContainedElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContainedElement_byteArray_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_byteArray_feature", "_UI_ContainedElement_type"),
-				 TestModelPackage.Literals.CONTAINED_ELEMENT__BYTE_ARRAY,
+				 getString("_UI_ContainedLeaf_byteArray_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedLeaf_byteArray_feature", "_UI_ContainedLeaf_type"),
+				 TestModelPackage.Literals.CONTAINED_LEAF__BYTE_ARRAY,
 				 true,
 				 false,
 				 false,
@@ -143,9 +138,9 @@ public class ContainedElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContainedElement_byteObject_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_byteObject_feature", "_UI_ContainedElement_type"),
-				 TestModelPackage.Literals.CONTAINED_ELEMENT__BYTE_OBJECT,
+				 getString("_UI_ContainedLeaf_byteObject_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedLeaf_byteObject_feature", "_UI_ContainedLeaf_type"),
+				 TestModelPackage.Literals.CONTAINED_LEAF__BYTE_OBJECT,
 				 true,
 				 false,
 				 false,
@@ -165,9 +160,9 @@ public class ContainedElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContainedElement_char_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_char_feature", "_UI_ContainedElement_type"),
-				 TestModelPackage.Literals.CONTAINED_ELEMENT__CHAR,
+				 getString("_UI_ContainedLeaf_char_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedLeaf_char_feature", "_UI_ContainedLeaf_type"),
+				 TestModelPackage.Literals.CONTAINED_LEAF__CHAR,
 				 true,
 				 false,
 				 false,
@@ -187,9 +182,9 @@ public class ContainedElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContainedElement_Character_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_Character_feature", "_UI_ContainedElement_type"),
-				 TestModelPackage.Literals.CONTAINED_ELEMENT__CHARACTER,
+				 getString("_UI_ContainedLeaf_Character_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedLeaf_Character_feature", "_UI_ContainedLeaf_type"),
+				 TestModelPackage.Literals.CONTAINED_LEAF__CHARACTER,
 				 true,
 				 false,
 				 false,
@@ -209,9 +204,9 @@ public class ContainedElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContainedElement_date_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_date_feature", "_UI_ContainedElement_type"),
-				 TestModelPackage.Literals.CONTAINED_ELEMENT__DATE,
+				 getString("_UI_ContainedLeaf_date_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedLeaf_date_feature", "_UI_ContainedLeaf_type"),
+				 TestModelPackage.Literals.CONTAINED_LEAF__DATE,
 				 true,
 				 false,
 				 false,
@@ -231,9 +226,9 @@ public class ContainedElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContainedElement_DiagnosticChain_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_DiagnosticChain_feature", "_UI_ContainedElement_type"),
-				 TestModelPackage.Literals.CONTAINED_ELEMENT__DIAGNOSTIC_CHAIN,
+				 getString("_UI_ContainedLeaf_DiagnosticChain_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedLeaf_DiagnosticChain_feature", "_UI_ContainedLeaf_type"),
+				 TestModelPackage.Literals.CONTAINED_LEAF__DIAGNOSTIC_CHAIN,
 				 true,
 				 false,
 				 false,
@@ -253,9 +248,9 @@ public class ContainedElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContainedElement_double_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_double_feature", "_UI_ContainedElement_type"),
-				 TestModelPackage.Literals.CONTAINED_ELEMENT__DOUBLE,
+				 getString("_UI_ContainedLeaf_double_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedLeaf_double_feature", "_UI_ContainedLeaf_type"),
+				 TestModelPackage.Literals.CONTAINED_LEAF__DOUBLE,
 				 true,
 				 false,
 				 false,
@@ -275,9 +270,9 @@ public class ContainedElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContainedElement_DoubleObj_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_DoubleObj_feature", "_UI_ContainedElement_type"),
-				 TestModelPackage.Literals.CONTAINED_ELEMENT__DOUBLE_OBJ,
+				 getString("_UI_ContainedLeaf_DoubleObj_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedLeaf_DoubleObj_feature", "_UI_ContainedLeaf_type"),
+				 TestModelPackage.Literals.CONTAINED_LEAF__DOUBLE_OBJ,
 				 true,
 				 false,
 				 false,
@@ -297,9 +292,9 @@ public class ContainedElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContainedElement_float_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_float_feature", "_UI_ContainedElement_type"),
-				 TestModelPackage.Literals.CONTAINED_ELEMENT__FLOAT,
+				 getString("_UI_ContainedLeaf_float_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedLeaf_float_feature", "_UI_ContainedLeaf_type"),
+				 TestModelPackage.Literals.CONTAINED_LEAF__FLOAT,
 				 true,
 				 false,
 				 false,
@@ -319,9 +314,9 @@ public class ContainedElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContainedElement_elementType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_elementType_feature", "_UI_ContainedElement_type"),
-				 TestModelPackage.Literals.CONTAINED_ELEMENT__ELEMENT_TYPE,
+				 getString("_UI_ContainedLeaf_elementType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedLeaf_elementType_feature", "_UI_ContainedLeaf_type"),
+				 TestModelPackage.Literals.CONTAINED_LEAF__ELEMENT_TYPE,
 				 true,
 				 false,
 				 false,
@@ -341,123 +336,13 @@ public class ContainedElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ContainedElement_ref_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_ref_feature", "_UI_ContainedElement_type"),
-				 TestModelPackage.Literals.CONTAINED_ELEMENT__REF,
+				 getString("_UI_ContainedLeaf_ref_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedLeaf_ref_feature", "_UI_ContainedLeaf_type"),
+				 TestModelPackage.Literals.CONTAINED_LEAF__REF,
 				 true,
 				 false,
 				 true,
 				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Enumerator feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addEnumeratorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContainedElement_Enumerator_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_Enumerator_feature", "_UI_ContainedElement_type"),
-				 TestModelPackage.Literals.CONTAINED_ELEMENT__ENUMERATOR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Elist feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addElistPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContainedElement_elist_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_elist_feature", "_UI_ContainedElement_type"),
-				 TestModelPackage.Literals.CONTAINED_ELEMENT__ELIST,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Class feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addClassPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContainedElement_Class_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_Class_feature", "_UI_ContainedElement_type"),
-				 TestModelPackage.Literals.CONTAINED_ELEMENT__CLASS,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Map feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addMapPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContainedElement_Map_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_Map_feature", "_UI_ContainedElement_type"),
-				 TestModelPackage.Literals.CONTAINED_ELEMENT__MAP,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Tree Iterator feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTreeIteratorPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContainedElement_TreeIterator_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedElement_TreeIterator_feature", "_UI_ContainedElement_type"),
-				 TestModelPackage.Literals.CONTAINED_ELEMENT__TREE_ITERATOR,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -474,7 +359,7 @@ public class ContainedElementItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TestModelPackage.Literals.CONTAINED_ELEMENT__UPPER_BOUND);
+			childrenFeatures.add(TestModelPackage.Literals.CONTAINED_LEAF__UPPER_BOUND);
 		}
 		return childrenFeatures;
 	}
@@ -493,14 +378,14 @@ public class ContainedElementItemProvider
 	}
 
 	/**
-	 * This returns ContainedElement.gif.
+	 * This returns ContainedLeaf.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/ContainedElement"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ContainedLeaf"));
 	}
 
 	/**
@@ -511,10 +396,10 @@ public class ContainedElementItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ContainedElement)object).getName();
+		String label = ((ContainedLeaf)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_ContainedElement_type") :
-			getString("_UI_ContainedElement_type") + " " + label;
+			getString("_UI_ContainedLeaf_type") :
+			getString("_UI_ContainedLeaf_type") + " " + label;
 	}
 
 	/**
@@ -528,26 +413,21 @@ public class ContainedElementItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(ContainedElement.class)) {
-			case TestModelPackage.CONTAINED_ELEMENT__NAME:
-			case TestModelPackage.CONTAINED_ELEMENT__BYTE_ARRAY:
-			case TestModelPackage.CONTAINED_ELEMENT__BYTE_OBJECT:
-			case TestModelPackage.CONTAINED_ELEMENT__CHAR:
-			case TestModelPackage.CONTAINED_ELEMENT__CHARACTER:
-			case TestModelPackage.CONTAINED_ELEMENT__DATE:
-			case TestModelPackage.CONTAINED_ELEMENT__DIAGNOSTIC_CHAIN:
-			case TestModelPackage.CONTAINED_ELEMENT__DOUBLE:
-			case TestModelPackage.CONTAINED_ELEMENT__DOUBLE_OBJ:
-			case TestModelPackage.CONTAINED_ELEMENT__FLOAT:
-			case TestModelPackage.CONTAINED_ELEMENT__ELEMENT_TYPE:
-			case TestModelPackage.CONTAINED_ELEMENT__ENUMERATOR:
-			case TestModelPackage.CONTAINED_ELEMENT__ELIST:
-			case TestModelPackage.CONTAINED_ELEMENT__CLASS:
-			case TestModelPackage.CONTAINED_ELEMENT__MAP:
-			case TestModelPackage.CONTAINED_ELEMENT__TREE_ITERATOR:
+		switch (notification.getFeatureID(ContainedLeaf.class)) {
+			case TestModelPackage.CONTAINED_LEAF__NAME:
+			case TestModelPackage.CONTAINED_LEAF__BYTE_ARRAY:
+			case TestModelPackage.CONTAINED_LEAF__BYTE_OBJECT:
+			case TestModelPackage.CONTAINED_LEAF__CHAR:
+			case TestModelPackage.CONTAINED_LEAF__CHARACTER:
+			case TestModelPackage.CONTAINED_LEAF__DATE:
+			case TestModelPackage.CONTAINED_LEAF__DIAGNOSTIC_CHAIN:
+			case TestModelPackage.CONTAINED_LEAF__DOUBLE:
+			case TestModelPackage.CONTAINED_LEAF__DOUBLE_OBJ:
+			case TestModelPackage.CONTAINED_LEAF__FLOAT:
+			case TestModelPackage.CONTAINED_LEAF__ELEMENT_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case TestModelPackage.CONTAINED_ELEMENT__UPPER_BOUND:
+			case TestModelPackage.CONTAINED_LEAF__UPPER_BOUND:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -567,8 +447,8 @@ public class ContainedElementItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(TestModelPackage.Literals.CONTAINED_ELEMENT__UPPER_BOUND,
-				 TestModelFactory.eINSTANCE.createupperBound()));
+				(TestModelPackage.Literals.CONTAINED_LEAF__UPPER_BOUND,
+				 TestModelFactory.eINSTANCE.createupperBoundLeaf()));
 	}
 
 	/**

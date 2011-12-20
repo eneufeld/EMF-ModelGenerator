@@ -13,22 +13,22 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import testModel.TestModelPackage;
-import testModel.upperBound;
+import testModel.multiRefLeaf;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>upper Bound</b></em>'.
+ * An implementation of the model object '<em><b>multi Ref Leaf</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link testModel.impl.upperBoundImpl#getName <em>Name</em>}</li>
+ *   <li>{@link testModel.impl.multiRefLeafImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class upperBoundImpl extends ElementImpl implements upperBound {
+public class multiRefLeafImpl extends LeafsImpl implements multiRefLeaf {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -54,7 +54,7 @@ public class upperBoundImpl extends ElementImpl implements upperBound {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected upperBoundImpl() {
+	protected multiRefLeafImpl() {
 		super();
 	}
 
@@ -65,7 +65,7 @@ public class upperBoundImpl extends ElementImpl implements upperBound {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return TestModelPackage.Literals.UPPER_BOUND;
+		return TestModelPackage.Literals.MULTI_REF_LEAF;
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class upperBoundImpl extends ElementImpl implements upperBound {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.UPPER_BOUND__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.MULTI_REF_LEAF__NAME, oldName, name));
 	}
 
 	/**
@@ -97,7 +97,7 @@ public class upperBoundImpl extends ElementImpl implements upperBound {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TestModelPackage.UPPER_BOUND__NAME:
+			case TestModelPackage.MULTI_REF_LEAF__NAME:
 				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -111,7 +111,7 @@ public class upperBoundImpl extends ElementImpl implements upperBound {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TestModelPackage.UPPER_BOUND__NAME:
+			case TestModelPackage.MULTI_REF_LEAF__NAME:
 				setName((String)newValue);
 				return;
 		}
@@ -126,7 +126,7 @@ public class upperBoundImpl extends ElementImpl implements upperBound {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TestModelPackage.UPPER_BOUND__NAME:
+			case TestModelPackage.MULTI_REF_LEAF__NAME:
 				setName(NAME_EDEFAULT);
 				return;
 		}
@@ -141,7 +141,7 @@ public class upperBoundImpl extends ElementImpl implements upperBound {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TestModelPackage.UPPER_BOUND__NAME:
+			case TestModelPackage.MULTI_REF_LEAF__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
@@ -163,4 +163,4 @@ public class upperBoundImpl extends ElementImpl implements upperBound {
 		return result.toString();
 	}
 
-} //upperBoundImpl
+} //multiRefLeafImpl

@@ -10,30 +10,30 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>referenziertes Element</b></em>'.
+ * A representation of the model object '<em><b>refered Leaf</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link testModel.referenziertesElement#getFloat <em>Float</em>}</li>
- *   <li>{@link testModel.referenziertesElement#getInt <em>Int</em>}</li>
- *   <li>{@link testModel.referenziertesElement#getInteger <em>Integer</em>}</li>
- *   <li>{@link testModel.referenziertesElement#getLong <em>Long</em>}</li>
- *   <li>{@link testModel.referenziertesElement#getLongObj <em>Long Obj</em>}</li>
- *   <li>{@link testModel.referenziertesElement#getShort <em>Short</em>}</li>
- *   <li>{@link testModel.referenziertesElement#getShortObj <em>Short Obj</em>}</li>
- *   <li>{@link testModel.referenziertesElement#getName <em>Name</em>}</li>
- *   <li>{@link testModel.referenziertesElement#getNotChangeable <em>Not Changeable</em>}</li>
- *   <li>{@link testModel.referenziertesElement#getMultiRef <em>Multi Ref</em>}</li>
+ *   <li>{@link testModel.referedLeaf#getFloat <em>Float</em>}</li>
+ *   <li>{@link testModel.referedLeaf#getInt <em>Int</em>}</li>
+ *   <li>{@link testModel.referedLeaf#getInteger <em>Integer</em>}</li>
+ *   <li>{@link testModel.referedLeaf#getLong <em>Long</em>}</li>
+ *   <li>{@link testModel.referedLeaf#getLongObj <em>Long Obj</em>}</li>
+ *   <li>{@link testModel.referedLeaf#getShort <em>Short</em>}</li>
+ *   <li>{@link testModel.referedLeaf#getShortObj <em>Short Obj</em>}</li>
+ *   <li>{@link testModel.referedLeaf#getName <em>Name</em>}</li>
+ *   <li>{@link testModel.referedLeaf#getNotChangeable <em>Not Changeable</em>}</li>
+ *   <li>{@link testModel.referedLeaf#getMultiRef <em>Multi Ref</em>}</li>
  * </ul>
  * </p>
  *
- * @see testModel.TestModelPackage#getreferenziertesElement()
+ * @see testModel.TestModelPackage#getreferedLeaf()
  * @model
  * @generated
  */
-public interface referenziertesElement extends Element {
+public interface referedLeaf extends Leafs {
 	/**
 	 * Returns the value of the '<em><b>Float</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -44,14 +44,14 @@ public interface referenziertesElement extends Element {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Float</em>' attribute.
 	 * @see #setFloat(Float)
-	 * @see testModel.TestModelPackage#getreferenziertesElement_Float()
+	 * @see testModel.TestModelPackage#getreferedLeaf_Float()
 	 * @model
 	 * @generated
 	 */
 	Float getFloat();
 
 	/**
-	 * Sets the value of the '{@link testModel.referenziertesElement#getFloat <em>Float</em>}' attribute.
+	 * Sets the value of the '{@link testModel.referedLeaf#getFloat <em>Float</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Float</em>' attribute.
@@ -70,14 +70,14 @@ public interface referenziertesElement extends Element {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Int</em>' attribute.
 	 * @see #setInt(int)
-	 * @see testModel.TestModelPackage#getreferenziertesElement_Int()
+	 * @see testModel.TestModelPackage#getreferedLeaf_Int()
 	 * @model
 	 * @generated
 	 */
 	int getInt();
 
 	/**
-	 * Sets the value of the '{@link testModel.referenziertesElement#getInt <em>Int</em>}' attribute.
+	 * Sets the value of the '{@link testModel.referedLeaf#getInt <em>Int</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Int</em>' attribute.
@@ -96,14 +96,14 @@ public interface referenziertesElement extends Element {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Integer</em>' attribute.
 	 * @see #setInteger(Integer)
-	 * @see testModel.TestModelPackage#getreferenziertesElement_Integer()
+	 * @see testModel.TestModelPackage#getreferedLeaf_Integer()
 	 * @model
 	 * @generated
 	 */
 	Integer getInteger();
 
 	/**
-	 * Sets the value of the '{@link testModel.referenziertesElement#getInteger <em>Integer</em>}' attribute.
+	 * Sets the value of the '{@link testModel.referedLeaf#getInteger <em>Integer</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Integer</em>' attribute.
@@ -122,14 +122,14 @@ public interface referenziertesElement extends Element {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Long</em>' attribute.
 	 * @see #setLong(long)
-	 * @see testModel.TestModelPackage#getreferenziertesElement_Long()
+	 * @see testModel.TestModelPackage#getreferedLeaf_Long()
 	 * @model
 	 * @generated
 	 */
 	long getLong();
 
 	/**
-	 * Sets the value of the '{@link testModel.referenziertesElement#getLong <em>Long</em>}' attribute.
+	 * Sets the value of the '{@link testModel.referedLeaf#getLong <em>Long</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Long</em>' attribute.
@@ -148,14 +148,14 @@ public interface referenziertesElement extends Element {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Long Obj</em>' attribute.
 	 * @see #setLongObj(Long)
-	 * @see testModel.TestModelPackage#getreferenziertesElement_LongObj()
+	 * @see testModel.TestModelPackage#getreferedLeaf_LongObj()
 	 * @model
 	 * @generated
 	 */
 	Long getLongObj();
 
 	/**
-	 * Sets the value of the '{@link testModel.referenziertesElement#getLongObj <em>Long Obj</em>}' attribute.
+	 * Sets the value of the '{@link testModel.referedLeaf#getLongObj <em>Long Obj</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Long Obj</em>' attribute.
@@ -174,14 +174,14 @@ public interface referenziertesElement extends Element {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Short</em>' attribute.
 	 * @see #setShort(short)
-	 * @see testModel.TestModelPackage#getreferenziertesElement_Short()
+	 * @see testModel.TestModelPackage#getreferedLeaf_Short()
 	 * @model
 	 * @generated
 	 */
 	short getShort();
 
 	/**
-	 * Sets the value of the '{@link testModel.referenziertesElement#getShort <em>Short</em>}' attribute.
+	 * Sets the value of the '{@link testModel.referedLeaf#getShort <em>Short</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Short</em>' attribute.
@@ -200,14 +200,14 @@ public interface referenziertesElement extends Element {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Short Obj</em>' attribute.
 	 * @see #setShortObj(Short)
-	 * @see testModel.TestModelPackage#getreferenziertesElement_ShortObj()
+	 * @see testModel.TestModelPackage#getreferedLeaf_ShortObj()
 	 * @model
 	 * @generated
 	 */
 	Short getShortObj();
 
 	/**
-	 * Sets the value of the '{@link testModel.referenziertesElement#getShortObj <em>Short Obj</em>}' attribute.
+	 * Sets the value of the '{@link testModel.referedLeaf#getShortObj <em>Short Obj</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Short Obj</em>' attribute.
@@ -226,14 +226,14 @@ public interface referenziertesElement extends Element {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see testModel.TestModelPackage#getreferenziertesElement_Name()
+	 * @see testModel.TestModelPackage#getreferedLeaf_Name()
 	 * @model
 	 * @generated
 	 */
 	String getName();
 
 	/**
-	 * Sets the value of the '{@link testModel.referenziertesElement#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link testModel.referedLeaf#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Name</em>' attribute.
@@ -252,7 +252,7 @@ public interface referenziertesElement extends Element {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Not Changeable</em>' attribute.
-	 * @see testModel.TestModelPackage#getreferenziertesElement_NotChangeable()
+	 * @see testModel.TestModelPackage#getreferedLeaf_NotChangeable()
 	 * @model default="NOT" changeable="false"
 	 * @generated
 	 */
@@ -260,7 +260,7 @@ public interface referenziertesElement extends Element {
 
 	/**
 	 * Returns the value of the '<em><b>Multi Ref</b></em>' reference list.
-	 * The list contents are of type {@link testModel.multiRefElement}.
+	 * The list contents are of type {@link testModel.multiRefLeaf}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Multi Ref</em>' reference list isn't clear,
@@ -268,10 +268,10 @@ public interface referenziertesElement extends Element {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Multi Ref</em>' reference list.
-	 * @see testModel.TestModelPackage#getreferenziertesElement_MultiRef()
+	 * @see testModel.TestModelPackage#getreferedLeaf_MultiRef()
 	 * @model
 	 * @generated
 	 */
-	EList<multiRefElement> getMultiRef();
+	EList<multiRefLeaf> getMultiRef();
 
-} // referenziertesElement
+} // referedLeaf
