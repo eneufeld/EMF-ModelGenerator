@@ -70,42 +70,42 @@ public class TestModelSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case TestModelPackage.KATEGORIE: {
-				Kategorie kategorie = (Kategorie)theEObject;
-				T result = caseKategorie(kategorie);
+			case TestModelPackage.NODE: {
+				Node node = (Node)theEObject;
+				T result = caseNode(node);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TestModelPackage.CONTAINED_ELEMENT: {
-				ContainedElement containedElement = (ContainedElement)theEObject;
-				T result = caseContainedElement(containedElement);
+			case TestModelPackage.CONTAINED_LEAF: {
+				ContainedLeaf containedLeaf = (ContainedLeaf)theEObject;
+				T result = caseContainedLeaf(containedLeaf);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TestModelPackage.REFERENZIERTES_ELEMENT: {
-				referenziertesElement referenziertesElement = (referenziertesElement)theEObject;
-				T result = casereferenziertesElement(referenziertesElement);
-				if (result == null) result = caseElement(referenziertesElement);
+			case TestModelPackage.REFERED_LEAF: {
+				referedLeaf referedLeaf = (referedLeaf)theEObject;
+				T result = casereferedLeaf(referedLeaf);
+				if (result == null) result = caseLeafs(referedLeaf);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TestModelPackage.MULTI_REF_ELEMENT: {
-				multiRefElement multiRefElement = (multiRefElement)theEObject;
-				T result = casemultiRefElement(multiRefElement);
-				if (result == null) result = caseElement(multiRefElement);
+			case TestModelPackage.MULTI_REF_LEAF: {
+				multiRefLeaf multiRefLeaf = (multiRefLeaf)theEObject;
+				T result = casemultiRefLeaf(multiRefLeaf);
+				if (result == null) result = caseLeafs(multiRefLeaf);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TestModelPackage.UPPER_BOUND: {
-				upperBound upperBound = (upperBound)theEObject;
-				T result = caseupperBound(upperBound);
-				if (result == null) result = caseElement(upperBound);
+			case TestModelPackage.UPPER_BOUND_LEAF: {
+				upperBoundLeaf upperBoundLeaf = (upperBoundLeaf)theEObject;
+				T result = caseupperBoundLeaf(upperBoundLeaf);
+				if (result == null) result = caseLeafs(upperBoundLeaf);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TestModelPackage.ELEMENT: {
-				Element element = (Element)theEObject;
-				T result = caseElement(element);
+			case TestModelPackage.LEAFS: {
+				Leafs leafs = (Leafs)theEObject;
+				T result = caseLeafs(leafs);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -114,92 +114,92 @@ public class TestModelSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Kategorie</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Kategorie</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Node</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseKategorie(Kategorie object) {
+	public T caseNode(Node object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Contained Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Contained Leaf</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Contained Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Contained Leaf</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseContainedElement(ContainedElement object) {
+	public T caseContainedLeaf(ContainedLeaf object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>referenziertes Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>refered Leaf</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>referenziertes Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>refered Leaf</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casereferenziertesElement(referenziertesElement object) {
+	public T casereferedLeaf(referedLeaf object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>multi Ref Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>multi Ref Leaf</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>multi Ref Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>multi Ref Leaf</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casemultiRefElement(multiRefElement object) {
+	public T casemultiRefLeaf(multiRefLeaf object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>upper Bound</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>upper Bound Leaf</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>upper Bound</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>upper Bound Leaf</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseupperBound(upperBound object) {
+	public T caseupperBoundLeaf(upperBoundLeaf object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Leafs</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Leafs</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseElement(Element object) {
+	public T caseLeafs(Leafs object) {
 		return null;
 	}
 

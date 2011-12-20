@@ -61,11 +61,11 @@ public class TestModelFactoryImpl extends EFactoryImpl implements TestModelFacto
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case TestModelPackage.KATEGORIE: return createKategorie();
-			case TestModelPackage.CONTAINED_ELEMENT: return createContainedElement();
-			case TestModelPackage.REFERENZIERTES_ELEMENT: return createreferenziertesElement();
-			case TestModelPackage.MULTI_REF_ELEMENT: return createmultiRefElement();
-			case TestModelPackage.UPPER_BOUND: return createupperBound();
+			case TestModelPackage.NODE: return createNode();
+			case TestModelPackage.CONTAINED_LEAF: return createContainedLeaf();
+			case TestModelPackage.REFERED_LEAF: return createreferedLeaf();
+			case TestModelPackage.MULTI_REF_LEAF: return createmultiRefLeaf();
+			case TestModelPackage.UPPER_BOUND_LEAF: return createupperBoundLeaf();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -106,9 +106,9 @@ public class TestModelFactoryImpl extends EFactoryImpl implements TestModelFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Kategorie createKategorie() {
-		KategorieImpl kategorie = new KategorieImpl();
-		return kategorie;
+	public Node createNode() {
+		NodeImpl node = new NodeImpl();
+		return node;
 	}
 
 	/**
@@ -116,9 +116,9 @@ public class TestModelFactoryImpl extends EFactoryImpl implements TestModelFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ContainedElement createContainedElement() {
-		ContainedElementImpl containedElement = new ContainedElementImpl();
-		return containedElement;
+	public ContainedLeaf createContainedLeaf() {
+		ContainedLeafImpl containedLeaf = new ContainedLeafImpl();
+		return containedLeaf;
 	}
 
 	/**
@@ -126,9 +126,9 @@ public class TestModelFactoryImpl extends EFactoryImpl implements TestModelFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public referenziertesElement createreferenziertesElement() {
-		referenziertesElementImpl referenziertesElement = new referenziertesElementImpl();
-		return referenziertesElement;
+	public referedLeaf createreferedLeaf() {
+		referedLeafImpl referedLeaf = new referedLeafImpl();
+		return referedLeaf;
 	}
 
 	/**
@@ -136,9 +136,9 @@ public class TestModelFactoryImpl extends EFactoryImpl implements TestModelFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public multiRefElement createmultiRefElement() {
-		multiRefElementImpl multiRefElement = new multiRefElementImpl();
-		return multiRefElement;
+	public multiRefLeaf createmultiRefLeaf() {
+		multiRefLeafImpl multiRefLeaf = new multiRefLeafImpl();
+		return multiRefLeaf;
 	}
 
 	/**
@@ -146,9 +146,9 @@ public class TestModelFactoryImpl extends EFactoryImpl implements TestModelFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public upperBound createupperBound() {
-		upperBoundImpl upperBound = new upperBoundImpl();
-		return upperBound;
+	public upperBoundLeaf createupperBoundLeaf() {
+		upperBoundLeafImpl upperBoundLeaf = new upperBoundLeafImpl();
+		return upperBoundLeaf;
 	}
 
 	/**

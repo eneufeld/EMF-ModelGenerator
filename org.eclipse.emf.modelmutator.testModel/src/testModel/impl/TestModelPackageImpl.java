@@ -15,12 +15,18 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import testModel.ContainedLeaf;
 import testModel.ContainedElement;
 import testModel.Element;
 import testModel.ElementType;
+import testModel.Leafs;
+import testModel.Node;
 import testModel.Kategorie;
 import testModel.TestModelFactory;
 import testModel.TestModelPackage;
+import testModel.multiRefLeaf;
+import testModel.referedLeaf;
+import testModel.upperBoundLeaf;
 import testModel.multiRefElement;
 import testModel.referenziertesElement;
 import testModel.upperBound;
@@ -37,42 +43,42 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass kategorieEClass = null;
+	private EClass nodeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass containedElementEClass = null;
+	private EClass containedLeafEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass referenziertesElementEClass = null;
+	private EClass referedLeafEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass multiRefElementEClass = null;
+	private EClass multiRefLeafEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass upperBoundEClass = null;
+	private EClass upperBoundLeafEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass elementEClass = null;
+	private EClass leafsEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,8 +153,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getKategorie() {
-		return kategorieEClass;
+	public EClass getNode() {
+		return nodeEClass;
 	}
 
 	/**
@@ -156,8 +162,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getKategorie_Name() {
-		return (EAttribute)kategorieEClass.getEStructuralFeatures().get(0);
+	public EAttribute getNode_Name() {
+		return (EAttribute)nodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -165,8 +171,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getKategorie_Bigdeci() {
-		return (EAttribute)kategorieEClass.getEStructuralFeatures().get(1);
+	public EAttribute getNode_Bigdeci() {
+		return (EAttribute)nodeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -174,8 +180,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getKategorie_Bigint() {
-		return (EAttribute)kategorieEClass.getEStructuralFeatures().get(2);
+	public EAttribute getNode_Bigint() {
+		return (EAttribute)nodeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -183,8 +189,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getKategorie_Bool() {
-		return (EAttribute)kategorieEClass.getEStructuralFeatures().get(3);
+	public EAttribute getNode_Bool() {
+		return (EAttribute)nodeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -192,8 +198,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getKategorie_Boolean() {
-		return (EAttribute)kategorieEClass.getEStructuralFeatures().get(4);
+	public EAttribute getNode_Boolean() {
+		return (EAttribute)nodeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -201,8 +207,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getKategorie_Byte() {
-		return (EAttribute)kategorieEClass.getEStructuralFeatures().get(5);
+	public EAttribute getNode_Byte() {
+		return (EAttribute)nodeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -210,8 +216,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getKategorie_SubKategorie() {
-		return (EReference)kategorieEClass.getEStructuralFeatures().get(6);
+	public EReference getNode_SubNode() {
+		return (EReference)nodeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -219,8 +225,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getKategorie_Contains() {
-		return (EReference)kategorieEClass.getEStructuralFeatures().get(7);
+	public EReference getNode_Contains() {
+		return (EReference)nodeEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -228,8 +234,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getContainedElement() {
-		return containedElementEClass;
+	public EClass getContainedLeaf() {
+		return containedLeafEClass;
 	}
 
 	/**
@@ -237,8 +243,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedElement_Name() {
-		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(0);
+	public EAttribute getContainedLeaf_Name() {
+		return (EAttribute)containedLeafEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -246,8 +252,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedElement_ByteArray() {
-		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(1);
+	public EAttribute getContainedLeaf_ByteArray() {
+		return (EAttribute)containedLeafEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -255,8 +261,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedElement_ByteObject() {
-		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(2);
+	public EAttribute getContainedLeaf_ByteObject() {
+		return (EAttribute)containedLeafEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -264,8 +270,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedElement_Char() {
-		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(3);
+	public EAttribute getContainedLeaf_Char() {
+		return (EAttribute)containedLeafEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -273,8 +279,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedElement_Character() {
-		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(4);
+	public EAttribute getContainedLeaf_Character() {
+		return (EAttribute)containedLeafEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -282,8 +288,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedElement_Date() {
-		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(5);
+	public EAttribute getContainedLeaf_Date() {
+		return (EAttribute)containedLeafEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -291,8 +297,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedElement_DiagnosticChain() {
-		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(6);
+	public EAttribute getContainedLeaf_DiagnosticChain() {
+		return (EAttribute)containedLeafEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -300,8 +306,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedElement_Double() {
-		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(7);
+	public EAttribute getContainedLeaf_Double() {
+		return (EAttribute)containedLeafEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -309,8 +315,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedElement_DoubleObj() {
-		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(8);
+	public EAttribute getContainedLeaf_DoubleObj() {
+		return (EAttribute)containedLeafEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -318,8 +324,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedElement_Float() {
-		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(9);
+	public EAttribute getContainedLeaf_Float() {
+		return (EAttribute)containedLeafEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -327,8 +333,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedElement_ElementType() {
-		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(10);
+	public EAttribute getContainedLeaf_ElementType() {
+		return (EAttribute)containedLeafEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -336,8 +342,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getContainedElement_Ref() {
-		return (EReference)containedElementEClass.getEStructuralFeatures().get(11);
+	public EReference getContainedLeaf_Ref() {
+		return (EReference)containedLeafEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -345,8 +351,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getContainedElement_UpperBound() {
-		return (EReference)containedElementEClass.getEStructuralFeatures().get(12);
+	public EReference getContainedLeaf_UpperBound() {
+		return (EReference)containedLeafEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
@@ -354,8 +360,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedElement_Enumerator() {
-		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(13);
+	public EClass getreferedLeaf() {
+		return referedLeafEClass;
 	}
 
 	/**
@@ -363,8 +369,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedElement_Elist() {
-		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(14);
+	public EAttribute getreferedLeaf_Float() {
+		return (EAttribute)referedLeafEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -372,8 +378,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedElement_Class() {
-		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(15);
+	public EAttribute getreferedLeaf_Int() {
+		return (EAttribute)referedLeafEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -381,8 +387,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedElement_Map() {
-		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(16);
+	public EAttribute getreferedLeaf_Integer() {
+		return (EAttribute)referedLeafEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -390,8 +396,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedElement_TreeIterator() {
-		return (EAttribute)containedElementEClass.getEStructuralFeatures().get(17);
+	public EAttribute getreferedLeaf_Long() {
+		return (EAttribute)referedLeafEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -399,8 +405,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getreferenziertesElement() {
-		return referenziertesElementEClass;
+	public EAttribute getreferedLeaf_LongObj() {
+		return (EAttribute)referedLeafEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -408,8 +414,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getreferenziertesElement_Float() {
-		return (EAttribute)referenziertesElementEClass.getEStructuralFeatures().get(0);
+	public EAttribute getreferedLeaf_Short() {
+		return (EAttribute)referedLeafEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -417,8 +423,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getreferenziertesElement_Int() {
-		return (EAttribute)referenziertesElementEClass.getEStructuralFeatures().get(1);
+	public EAttribute getreferedLeaf_ShortObj() {
+		return (EAttribute)referedLeafEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -426,8 +432,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getreferenziertesElement_Integer() {
-		return (EAttribute)referenziertesElementEClass.getEStructuralFeatures().get(2);
+	public EAttribute getreferedLeaf_Name() {
+		return (EAttribute)referedLeafEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -435,8 +441,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getreferenziertesElement_Long() {
-		return (EAttribute)referenziertesElementEClass.getEStructuralFeatures().get(3);
+	public EAttribute getreferedLeaf_NotChangeable() {
+		return (EAttribute)referedLeafEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -444,8 +450,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getreferenziertesElement_LongObj() {
-		return (EAttribute)referenziertesElementEClass.getEStructuralFeatures().get(4);
+	public EReference getreferedLeaf_MultiRef() {
+		return (EReference)referedLeafEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -453,8 +459,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getreferenziertesElement_Short() {
-		return (EAttribute)referenziertesElementEClass.getEStructuralFeatures().get(5);
+	public EClass getmultiRefLeaf() {
+		return multiRefLeafEClass;
 	}
 
 	/**
@@ -462,8 +468,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getreferenziertesElement_ShortObj() {
-		return (EAttribute)referenziertesElementEClass.getEStructuralFeatures().get(6);
+	public EAttribute getmultiRefLeaf_Name() {
+		return (EAttribute)multiRefLeafEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -471,8 +477,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getreferenziertesElement_Name() {
-		return (EAttribute)referenziertesElementEClass.getEStructuralFeatures().get(7);
+	public EClass getupperBoundLeaf() {
+		return upperBoundLeafEClass;
 	}
 
 	/**
@@ -480,8 +486,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getreferenziertesElement_NotChangeable() {
-		return (EAttribute)referenziertesElementEClass.getEStructuralFeatures().get(8);
+	public EAttribute getupperBoundLeaf_Name() {
+		return (EAttribute)upperBoundLeafEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -489,53 +495,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getreferenziertesElement_MultiRef() {
-		return (EReference)referenziertesElementEClass.getEStructuralFeatures().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getmultiRefElement() {
-		return multiRefElementEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getmultiRefElement_Name() {
-		return (EAttribute)multiRefElementEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getupperBound() {
-		return upperBoundEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getupperBound_Name() {
-		return (EAttribute)upperBoundEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getElement() {
-		return elementEClass;
+	public EClass getLeafs() {
+		return leafsEClass;
 	}
 
 	/**
@@ -575,55 +536,50 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 		isCreated = true;
 
 		// Create classes and their features
-		kategorieEClass = createEClass(KATEGORIE);
-		createEAttribute(kategorieEClass, KATEGORIE__NAME);
-		createEAttribute(kategorieEClass, KATEGORIE__BIGDECI);
-		createEAttribute(kategorieEClass, KATEGORIE__BIGINT);
-		createEAttribute(kategorieEClass, KATEGORIE__BOOL);
-		createEAttribute(kategorieEClass, KATEGORIE__BOOLEAN);
-		createEAttribute(kategorieEClass, KATEGORIE__BYTE);
-		createEReference(kategorieEClass, KATEGORIE__SUB_KATEGORIE);
-		createEReference(kategorieEClass, KATEGORIE__CONTAINS);
+		nodeEClass = createEClass(NODE);
+		createEAttribute(nodeEClass, NODE__NAME);
+		createEAttribute(nodeEClass, NODE__BIGDECI);
+		createEAttribute(nodeEClass, NODE__BIGINT);
+		createEAttribute(nodeEClass, NODE__BOOL);
+		createEAttribute(nodeEClass, NODE__BOOLEAN);
+		createEAttribute(nodeEClass, NODE__BYTE);
+		createEReference(nodeEClass, NODE__SUB_NODE);
+		createEReference(nodeEClass, NODE__CONTAINS);
 
-		containedElementEClass = createEClass(CONTAINED_ELEMENT);
-		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__NAME);
-		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__BYTE_ARRAY);
-		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__BYTE_OBJECT);
-		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__CHAR);
-		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__CHARACTER);
-		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__DATE);
-		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__DIAGNOSTIC_CHAIN);
-		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__DOUBLE);
-		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__DOUBLE_OBJ);
-		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__FLOAT);
-		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__ELEMENT_TYPE);
-		createEReference(containedElementEClass, CONTAINED_ELEMENT__REF);
-		createEReference(containedElementEClass, CONTAINED_ELEMENT__UPPER_BOUND);
-		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__ENUMERATOR);
-		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__ELIST);
-		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__CLASS);
-		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__MAP);
-		createEAttribute(containedElementEClass, CONTAINED_ELEMENT__TREE_ITERATOR);
+		containedLeafEClass = createEClass(CONTAINED_LEAF);
+		createEAttribute(containedLeafEClass, CONTAINED_LEAF__NAME);
+		createEAttribute(containedLeafEClass, CONTAINED_LEAF__BYTE_ARRAY);
+		createEAttribute(containedLeafEClass, CONTAINED_LEAF__BYTE_OBJECT);
+		createEAttribute(containedLeafEClass, CONTAINED_LEAF__CHAR);
+		createEAttribute(containedLeafEClass, CONTAINED_LEAF__CHARACTER);
+		createEAttribute(containedLeafEClass, CONTAINED_LEAF__DATE);
+		createEAttribute(containedLeafEClass, CONTAINED_LEAF__DIAGNOSTIC_CHAIN);
+		createEAttribute(containedLeafEClass, CONTAINED_LEAF__DOUBLE);
+		createEAttribute(containedLeafEClass, CONTAINED_LEAF__DOUBLE_OBJ);
+		createEAttribute(containedLeafEClass, CONTAINED_LEAF__FLOAT);
+		createEAttribute(containedLeafEClass, CONTAINED_LEAF__ELEMENT_TYPE);
+		createEReference(containedLeafEClass, CONTAINED_LEAF__REF);
+		createEReference(containedLeafEClass, CONTAINED_LEAF__UPPER_BOUND);
 
-		referenziertesElementEClass = createEClass(REFERENZIERTES_ELEMENT);
-		createEAttribute(referenziertesElementEClass, REFERENZIERTES_ELEMENT__FLOAT);
-		createEAttribute(referenziertesElementEClass, REFERENZIERTES_ELEMENT__INT);
-		createEAttribute(referenziertesElementEClass, REFERENZIERTES_ELEMENT__INTEGER);
-		createEAttribute(referenziertesElementEClass, REFERENZIERTES_ELEMENT__LONG);
-		createEAttribute(referenziertesElementEClass, REFERENZIERTES_ELEMENT__LONG_OBJ);
-		createEAttribute(referenziertesElementEClass, REFERENZIERTES_ELEMENT__SHORT);
-		createEAttribute(referenziertesElementEClass, REFERENZIERTES_ELEMENT__SHORT_OBJ);
-		createEAttribute(referenziertesElementEClass, REFERENZIERTES_ELEMENT__NAME);
-		createEAttribute(referenziertesElementEClass, REFERENZIERTES_ELEMENT__NOT_CHANGEABLE);
-		createEReference(referenziertesElementEClass, REFERENZIERTES_ELEMENT__MULTI_REF);
+		referedLeafEClass = createEClass(REFERED_LEAF);
+		createEAttribute(referedLeafEClass, REFERED_LEAF__FLOAT);
+		createEAttribute(referedLeafEClass, REFERED_LEAF__INT);
+		createEAttribute(referedLeafEClass, REFERED_LEAF__INTEGER);
+		createEAttribute(referedLeafEClass, REFERED_LEAF__LONG);
+		createEAttribute(referedLeafEClass, REFERED_LEAF__LONG_OBJ);
+		createEAttribute(referedLeafEClass, REFERED_LEAF__SHORT);
+		createEAttribute(referedLeafEClass, REFERED_LEAF__SHORT_OBJ);
+		createEAttribute(referedLeafEClass, REFERED_LEAF__NAME);
+		createEAttribute(referedLeafEClass, REFERED_LEAF__NOT_CHANGEABLE);
+		createEReference(referedLeafEClass, REFERED_LEAF__MULTI_REF);
 
-		multiRefElementEClass = createEClass(MULTI_REF_ELEMENT);
-		createEAttribute(multiRefElementEClass, MULTI_REF_ELEMENT__NAME);
+		multiRefLeafEClass = createEClass(MULTI_REF_LEAF);
+		createEAttribute(multiRefLeafEClass, MULTI_REF_LEAF__NAME);
 
-		upperBoundEClass = createEClass(UPPER_BOUND);
-		createEAttribute(upperBoundEClass, UPPER_BOUND__NAME);
+		upperBoundLeafEClass = createEClass(UPPER_BOUND_LEAF);
+		createEAttribute(upperBoundLeafEClass, UPPER_BOUND_LEAF__NAME);
 
-		elementEClass = createEClass(ELEMENT);
+		leafsEClass = createEClass(LEAFS);
 
 		// Create enums
 		elementTypeEEnum = createEEnum(ELEMENT_TYPE);
@@ -657,74 +613,55 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		referenziertesElementEClass.getESuperTypes().add(this.getElement());
-		multiRefElementEClass.getESuperTypes().add(this.getElement());
-		upperBoundEClass.getESuperTypes().add(this.getElement());
+		referedLeafEClass.getESuperTypes().add(this.getLeafs());
+		multiRefLeafEClass.getESuperTypes().add(this.getLeafs());
+		upperBoundLeafEClass.getESuperTypes().add(this.getLeafs());
 
 		// Initialize classes and features; add operations and parameters
-		initEClass(kategorieEClass, Kategorie.class, "Kategorie", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getKategorie_Name(), ecorePackage.getEString(), "name", "", 0, 1, Kategorie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getKategorie_Bigdeci(), ecorePackage.getEBigDecimal(), "bigdeci", null, 0, 1, Kategorie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getKategorie_Bigint(), ecorePackage.getEBigInteger(), "bigint", null, 0, 1, Kategorie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getKategorie_Bool(), ecorePackage.getEBoolean(), "bool", null, 0, 1, Kategorie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getKategorie_Boolean(), ecorePackage.getEBooleanObject(), "Boolean", null, 0, 1, Kategorie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getKategorie_Byte(), ecorePackage.getEByte(), "byte", null, 0, 1, Kategorie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getKategorie_SubKategorie(), this.getKategorie(), null, "subKategorie", null, 0, -1, Kategorie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getKategorie_Contains(), this.getContainedElement(), null, "contains", null, 0, -1, Kategorie.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNode_Name(), ecorePackage.getEString(), "name", "", 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNode_Bigdeci(), ecorePackage.getEBigDecimal(), "bigdeci", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNode_Bigint(), ecorePackage.getEBigInteger(), "bigint", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNode_Bool(), ecorePackage.getEBoolean(), "bool", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNode_Boolean(), ecorePackage.getEBooleanObject(), "Boolean", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNode_Byte(), ecorePackage.getEByte(), "byte", null, 0, 1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNode_SubNode(), this.getNode(), null, "subNode", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNode_Contains(), this.getContainedLeaf(), null, "contains", null, 0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(containedElementEClass, ContainedElement.class, "ContainedElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContainedElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ContainedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContainedElement_ByteArray(), ecorePackage.getEByteArray(), "byteArray", null, 0, 1, ContainedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContainedElement_ByteObject(), ecorePackage.getEByteObject(), "byteObject", null, 0, 1, ContainedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContainedElement_Char(), ecorePackage.getEChar(), "char", null, 0, 1, ContainedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContainedElement_Character(), ecorePackage.getECharacterObject(), "Character", null, 0, 1, ContainedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContainedElement_Date(), ecorePackage.getEDate(), "date", null, 0, 1, ContainedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContainedElement_DiagnosticChain(), ecorePackage.getEDiagnosticChain(), "DiagnosticChain", null, 0, 1, ContainedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContainedElement_Double(), ecorePackage.getEDouble(), "double", null, 0, 1, ContainedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContainedElement_DoubleObj(), ecorePackage.getEDoubleObject(), "DoubleObj", null, 0, 1, ContainedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContainedElement_Float(), ecorePackage.getEFloat(), "float", null, 0, 1, ContainedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContainedElement_ElementType(), this.getElementType(), "elementType", null, 0, 1, ContainedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContainedElement_Ref(), this.getreferenziertesElement(), null, "ref", null, 0, -1, ContainedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContainedElement_UpperBound(), this.getupperBound(), null, "upperBound", null, 0, 2, ContainedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContainedElement_Enumerator(), ecorePackage.getEEnumerator(), "Enumerator", null, 0, 1, ContainedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		EGenericType g1 = createEGenericType(ecorePackage.getEEList());
-		EGenericType g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		initEAttribute(getContainedElement_Elist(), g1, "elist", null, 0, 1, ContainedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEJavaClass());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		initEAttribute(getContainedElement_Class(), g1, "Class", null, 0, 1, ContainedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getEMap());
-		g2 = createEGenericType(this.getContainedElement());
-		g1.getETypeArguments().add(g2);
-		g2 = createEGenericType(this.getreferenziertesElement());
-		g1.getETypeArguments().add(g2);
-		initEAttribute(getContainedElement_Map(), g1, "Map", null, 0, 1, ContainedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		g1 = createEGenericType(ecorePackage.getETreeIterator());
-		g2 = createEGenericType(ecorePackage.getEString());
-		g1.getETypeArguments().add(g2);
-		initEAttribute(getContainedElement_TreeIterator(), g1, "TreeIterator", null, 0, 1, ContainedElement.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(containedLeafEClass, ContainedLeaf.class, "ContainedLeaf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getContainedLeaf_Name(), ecorePackage.getEString(), "name", null, 0, 1, ContainedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContainedLeaf_ByteArray(), ecorePackage.getEByteArray(), "byteArray", null, 0, 1, ContainedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContainedLeaf_ByteObject(), ecorePackage.getEByteObject(), "byteObject", null, 0, 1, ContainedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContainedLeaf_Char(), ecorePackage.getEChar(), "char", null, 0, 1, ContainedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContainedLeaf_Character(), ecorePackage.getECharacterObject(), "Character", null, 0, 1, ContainedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContainedLeaf_Date(), ecorePackage.getEDate(), "date", null, 0, 1, ContainedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContainedLeaf_DiagnosticChain(), ecorePackage.getEDiagnosticChain(), "DiagnosticChain", null, 0, 1, ContainedLeaf.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContainedLeaf_Double(), ecorePackage.getEDouble(), "double", null, 0, 1, ContainedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContainedLeaf_DoubleObj(), ecorePackage.getEDoubleObject(), "DoubleObj", null, 0, 1, ContainedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContainedLeaf_Float(), ecorePackage.getEFloat(), "float", null, 0, 1, ContainedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContainedLeaf_ElementType(), this.getElementType(), "elementType", null, 0, 1, ContainedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContainedLeaf_Ref(), this.getreferedLeaf(), null, "ref", null, 0, -1, ContainedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContainedLeaf_UpperBound(), this.getupperBoundLeaf(), null, "upperBound", null, 0, 2, ContainedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(referenziertesElementEClass, referenziertesElement.class, "referenziertesElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getreferenziertesElement_Float(), ecorePackage.getEFloatObject(), "Float", null, 0, 1, referenziertesElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getreferenziertesElement_Int(), ecorePackage.getEInt(), "int", null, 0, 1, referenziertesElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getreferenziertesElement_Integer(), ecorePackage.getEIntegerObject(), "Integer", null, 0, 1, referenziertesElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getreferenziertesElement_Long(), ecorePackage.getELong(), "long", null, 0, 1, referenziertesElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getreferenziertesElement_LongObj(), ecorePackage.getELongObject(), "LongObj", null, 0, 1, referenziertesElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getreferenziertesElement_Short(), ecorePackage.getEShort(), "short", null, 0, 1, referenziertesElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getreferenziertesElement_ShortObj(), ecorePackage.getEShortObject(), "ShortObj", null, 0, 1, referenziertesElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getreferenziertesElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, referenziertesElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getreferenziertesElement_NotChangeable(), ecorePackage.getEString(), "notChangeable", "NOT", 0, 1, referenziertesElement.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getreferenziertesElement_MultiRef(), this.getmultiRefElement(), null, "multiRef", null, 0, -1, referenziertesElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(referedLeafEClass, referedLeaf.class, "referedLeaf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getreferedLeaf_Float(), ecorePackage.getEFloatObject(), "Float", null, 0, 1, referedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getreferedLeaf_Int(), ecorePackage.getEInt(), "int", null, 0, 1, referedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getreferedLeaf_Integer(), ecorePackage.getEIntegerObject(), "Integer", null, 0, 1, referedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getreferedLeaf_Long(), ecorePackage.getELong(), "long", null, 0, 1, referedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getreferedLeaf_LongObj(), ecorePackage.getELongObject(), "LongObj", null, 0, 1, referedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getreferedLeaf_Short(), ecorePackage.getEShort(), "short", null, 0, 1, referedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getreferedLeaf_ShortObj(), ecorePackage.getEShortObject(), "ShortObj", null, 0, 1, referedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getreferedLeaf_Name(), ecorePackage.getEString(), "name", null, 0, 1, referedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getreferedLeaf_NotChangeable(), ecorePackage.getEString(), "notChangeable", "NOT", 0, 1, referedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, !IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getreferedLeaf_MultiRef(), this.getmultiRefLeaf(), null, "multiRef", null, 0, -1, referedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(multiRefElementEClass, multiRefElement.class, "multiRefElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getmultiRefElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, multiRefElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(multiRefLeafEClass, multiRefLeaf.class, "multiRefLeaf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getmultiRefLeaf_Name(), ecorePackage.getEString(), "name", null, 0, 1, multiRefLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(upperBoundEClass, upperBound.class, "upperBound", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getupperBound_Name(), ecorePackage.getEString(), "name", null, 0, 1, upperBound.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(upperBoundLeafEClass, upperBoundLeaf.class, "upperBoundLeaf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getupperBoundLeaf_Name(), ecorePackage.getEString(), "name", null, 0, 1, upperBoundLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(elementEClass, Element.class, "Element", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(leafsEClass, Leafs.class, "Leafs", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(elementTypeEEnum, ElementType.class, "ElementType");

@@ -3,7 +3,7 @@
     xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="testModel"
     nsURI="http://org/eclipse/emf/modelmutator/testModel" nsPrefix="org.eclipse.emf.modelmutator.testModel">
-  <eClassifiers xsi:type="ecore:EClass" name="Kategorie">
+  <eClassifiers xsi:type="ecore:EClass" name="Node">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bigdeci" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBigDecimal"/>
@@ -11,12 +11,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bool" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Boolean" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBooleanObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="byte" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByte"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="subKategorie" upperBound="-1"
-        eType="#//Kategorie"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="subNode" upperBound="-1"
+        eType="#//Node"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contains" upperBound="-1"
-        eType="#//ContainedElement" containment="true"/>
+        eType="#//ContainedLeaf" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ContainedElement">
+  <eClassifiers xsi:type="ecore:EClass" name="ContainedLeaf">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="byteArray" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteArray"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="byteObject" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteObject"/>
@@ -29,38 +29,15 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="DoubleObj" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDoubleObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="float" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="elementType" eType="#//ElementType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" upperBound="-1" eType="#//referenziertesElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" upperBound="-1" eType="#//referedLeaf"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="upperBound" upperBound="2"
-        eType="#//upperBound" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Enumerator" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEnumerator"
-        transient="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="elist" transient="true">
-      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
-        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eGenericType>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Class" transient="true">
-      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EJavaClass">
-        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eGenericType>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Map" transient="true">
-      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EMap">
-        <eTypeArguments eClassifier="#//ContainedElement"/>
-        <eTypeArguments eClassifier="#//referenziertesElement"/>
-      </eGenericType>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="TreeIterator" transient="true">
-      <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//ETreeIterator">
-        <eTypeArguments eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eGenericType>
-    </eStructuralFeatures>
+        eType="#//upperBoundLeaf" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ElementType">
     <eLiterals name="Type1" value="1" literal="Type1"/>
     <eLiterals name="Type2" literal="Type2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="referenziertesElement" eSuperTypes="#//Element">
+  <eClassifiers xsi:type="ecore:EClass" name="referedLeaf" eSuperTypes="#//Leafs">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Float" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloatObject"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="int" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Integer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
@@ -72,13 +49,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="notChangeable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         changeable="false" defaultValueLiteral="NOT"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="multiRef" upperBound="-1"
-        eType="#//multiRefElement"/>
+        eType="#//multiRefLeaf"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="multiRefElement" eSuperTypes="#//Element">
+  <eClassifiers xsi:type="ecore:EClass" name="multiRefLeaf" eSuperTypes="#//Leafs">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="upperBound" eSuperTypes="#//Element">
+  <eClassifiers xsi:type="ecore:EClass" name="upperBoundLeaf" eSuperTypes="#//Leafs">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Element" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Leafs" abstract="true"/>
 </ecore:EPackage>

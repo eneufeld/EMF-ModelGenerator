@@ -76,118 +76,118 @@ public class TestModelItemProviderAdapterFactory extends TestModelAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link testModel.Kategorie} instances.
+	 * This keeps track of the one adapter used for all {@link testModel.Node} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected KategorieItemProvider kategorieItemProvider;
+	protected NodeItemProvider nodeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link testModel.Kategorie}.
+	 * This creates an adapter for a {@link testModel.Node}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createKategorieAdapter() {
-		if (kategorieItemProvider == null) {
-			kategorieItemProvider = new KategorieItemProvider(this);
+	public Adapter createNodeAdapter() {
+		if (nodeItemProvider == null) {
+			nodeItemProvider = new NodeItemProvider(this);
 		}
 
-		return kategorieItemProvider;
+		return nodeItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link testModel.ContainedElement} instances.
+	 * This keeps track of the one adapter used for all {@link testModel.ContainedLeaf} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ContainedElementItemProvider containedElementItemProvider;
+	protected ContainedLeafItemProvider containedLeafItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link testModel.ContainedElement}.
+	 * This creates an adapter for a {@link testModel.ContainedLeaf}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createContainedElementAdapter() {
-		if (containedElementItemProvider == null) {
-			containedElementItemProvider = new ContainedElementItemProvider(this);
+	public Adapter createContainedLeafAdapter() {
+		if (containedLeafItemProvider == null) {
+			containedLeafItemProvider = new ContainedLeafItemProvider(this);
 		}
 
-		return containedElementItemProvider;
+		return containedLeafItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link testModel.referenziertesElement} instances.
+	 * This keeps track of the one adapter used for all {@link testModel.referedLeaf} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected referenziertesElementItemProvider referenziertesElementItemProvider;
+	protected referedLeafItemProvider referedLeafItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link testModel.referenziertesElement}.
+	 * This creates an adapter for a {@link testModel.referedLeaf}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createreferenziertesElementAdapter() {
-		if (referenziertesElementItemProvider == null) {
-			referenziertesElementItemProvider = new referenziertesElementItemProvider(this);
+	public Adapter createreferedLeafAdapter() {
+		if (referedLeafItemProvider == null) {
+			referedLeafItemProvider = new referedLeafItemProvider(this);
 		}
 
-		return referenziertesElementItemProvider;
+		return referedLeafItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link testModel.multiRefElement} instances.
+	 * This keeps track of the one adapter used for all {@link testModel.multiRefLeaf} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected multiRefElementItemProvider multiRefElementItemProvider;
+	protected multiRefLeafItemProvider multiRefLeafItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link testModel.multiRefElement}.
+	 * This creates an adapter for a {@link testModel.multiRefLeaf}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createmultiRefElementAdapter() {
-		if (multiRefElementItemProvider == null) {
-			multiRefElementItemProvider = new multiRefElementItemProvider(this);
+	public Adapter createmultiRefLeafAdapter() {
+		if (multiRefLeafItemProvider == null) {
+			multiRefLeafItemProvider = new multiRefLeafItemProvider(this);
 		}
 
-		return multiRefElementItemProvider;
+		return multiRefLeafItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link testModel.upperBound} instances.
+	 * This keeps track of the one adapter used for all {@link testModel.upperBoundLeaf} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected upperBoundItemProvider upperBoundItemProvider;
+	protected upperBoundLeafItemProvider upperBoundLeafItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link testModel.upperBound}.
+	 * This creates an adapter for a {@link testModel.upperBoundLeaf}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createupperBoundAdapter() {
-		if (upperBoundItemProvider == null) {
-			upperBoundItemProvider = new upperBoundItemProvider(this);
+	public Adapter createupperBoundLeafAdapter() {
+		if (upperBoundLeafItemProvider == null) {
+			upperBoundLeafItemProvider = new upperBoundLeafItemProvider(this);
 		}
 
-		return upperBoundItemProvider;
+		return upperBoundLeafItemProvider;
 	}
 
 	/**
@@ -289,11 +289,11 @@ public class TestModelItemProviderAdapterFactory extends TestModelAdapterFactory
 	 * @generated
 	 */
 	public void dispose() {
-		if (kategorieItemProvider != null) kategorieItemProvider.dispose();
-		if (containedElementItemProvider != null) containedElementItemProvider.dispose();
-		if (referenziertesElementItemProvider != null) referenziertesElementItemProvider.dispose();
-		if (multiRefElementItemProvider != null) multiRefElementItemProvider.dispose();
-		if (upperBoundItemProvider != null) upperBoundItemProvider.dispose();
+		if (nodeItemProvider != null) nodeItemProvider.dispose();
+		if (containedLeafItemProvider != null) containedLeafItemProvider.dispose();
+		if (referedLeafItemProvider != null) referedLeafItemProvider.dispose();
+		if (multiRefLeafItemProvider != null) multiRefLeafItemProvider.dispose();
+		if (upperBoundLeafItemProvider != null) upperBoundLeafItemProvider.dispose();
 	}
 
 }

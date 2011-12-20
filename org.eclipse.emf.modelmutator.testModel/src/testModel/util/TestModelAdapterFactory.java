@@ -72,28 +72,28 @@ public class TestModelAdapterFactory extends AdapterFactoryImpl {
 	protected TestModelSwitch<Adapter> modelSwitch =
 		new TestModelSwitch<Adapter>() {
 			@Override
-			public Adapter caseKategorie(Kategorie object) {
-				return createKategorieAdapter();
+			public Adapter caseNode(Node object) {
+				return createNodeAdapter();
 			}
 			@Override
-			public Adapter caseContainedElement(ContainedElement object) {
-				return createContainedElementAdapter();
+			public Adapter caseContainedLeaf(ContainedLeaf object) {
+				return createContainedLeafAdapter();
 			}
 			@Override
-			public Adapter casereferenziertesElement(referenziertesElement object) {
-				return createreferenziertesElementAdapter();
+			public Adapter casereferedLeaf(referedLeaf object) {
+				return createreferedLeafAdapter();
 			}
 			@Override
-			public Adapter casemultiRefElement(multiRefElement object) {
-				return createmultiRefElementAdapter();
+			public Adapter casemultiRefLeaf(multiRefLeaf object) {
+				return createmultiRefLeafAdapter();
 			}
 			@Override
-			public Adapter caseupperBound(upperBound object) {
-				return createupperBoundAdapter();
+			public Adapter caseupperBoundLeaf(upperBoundLeaf object) {
+				return createupperBoundLeafAdapter();
 			}
 			@Override
-			public Adapter caseElement(Element object) {
-				return createElementAdapter();
+			public Adapter caseLeafs(Leafs object) {
+				return createLeafsAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -116,86 +116,86 @@ public class TestModelAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link testModel.Kategorie <em>Kategorie</em>}'.
+	 * Creates a new adapter for an object of class '{@link testModel.Node <em>Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see testModel.Kategorie
+	 * @see testModel.Node
 	 * @generated
 	 */
-	public Adapter createKategorieAdapter() {
+	public Adapter createNodeAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link testModel.ContainedElement <em>Contained Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link testModel.ContainedLeaf <em>Contained Leaf</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see testModel.ContainedElement
+	 * @see testModel.ContainedLeaf
 	 * @generated
 	 */
-	public Adapter createContainedElementAdapter() {
+	public Adapter createContainedLeafAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link testModel.referenziertesElement <em>referenziertes Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link testModel.referedLeaf <em>refered Leaf</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see testModel.referenziertesElement
+	 * @see testModel.referedLeaf
 	 * @generated
 	 */
-	public Adapter createreferenziertesElementAdapter() {
+	public Adapter createreferedLeafAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link testModel.multiRefElement <em>multi Ref Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link testModel.multiRefLeaf <em>multi Ref Leaf</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see testModel.multiRefElement
+	 * @see testModel.multiRefLeaf
 	 * @generated
 	 */
-	public Adapter createmultiRefElementAdapter() {
+	public Adapter createmultiRefLeafAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link testModel.upperBound <em>upper Bound</em>}'.
+	 * Creates a new adapter for an object of class '{@link testModel.upperBoundLeaf <em>upper Bound Leaf</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see testModel.upperBound
+	 * @see testModel.upperBoundLeaf
 	 * @generated
 	 */
-	public Adapter createupperBoundAdapter() {
+	public Adapter createupperBoundLeafAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link testModel.Element <em>Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link testModel.Leafs <em>Leafs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see testModel.Element
+	 * @see testModel.Leafs
 	 * @generated
 	 */
-	public Adapter createElementAdapter() {
+	public Adapter createLeafsAdapter() {
 		return null;
 	}
 

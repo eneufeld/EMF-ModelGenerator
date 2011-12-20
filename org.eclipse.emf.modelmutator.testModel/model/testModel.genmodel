@@ -10,54 +10,49 @@
       <genEnumLiterals ecoreEnumLiteral="testModel.ecore#//ElementType/Type1"/>
       <genEnumLiterals ecoreEnumLiteral="testModel.ecore#//ElementType/Type2"/>
     </genEnums>
-    <genClasses ecoreClass="testModel.ecore#//Kategorie">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//Kategorie/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//Kategorie/bigdeci"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//Kategorie/bigint"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//Kategorie/bool"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//Kategorie/Boolean"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//Kategorie/byte"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference testModel.ecore#//Kategorie/subKategorie"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference testModel.ecore#//Kategorie/contains"/>
+    <genClasses ecoreClass="testModel.ecore#//Node">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//Node/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//Node/bigdeci"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//Node/bigint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//Node/bool"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//Node/Boolean"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//Node/byte"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference testModel.ecore#//Node/subNode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference testModel.ecore#//Node/contains"/>
     </genClasses>
-    <genClasses ecoreClass="testModel.ecore#//ContainedElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedElement/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedElement/byteArray"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedElement/byteObject"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedElement/char"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedElement/Character"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedElement/date"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedElement/DiagnosticChain"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedElement/double"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedElement/DoubleObj"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedElement/float"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedElement/elementType"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference testModel.ecore#//ContainedElement/ref"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference testModel.ecore#//ContainedElement/upperBound"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedElement/Enumerator"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedElement/elist"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedElement/Class"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedElement/Map"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedElement/TreeIterator"/>
+    <genClasses ecoreClass="testModel.ecore#//ContainedLeaf">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedLeaf/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedLeaf/byteArray"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedLeaf/byteObject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedLeaf/char"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedLeaf/Character"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedLeaf/date"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedLeaf/DiagnosticChain"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedLeaf/double"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedLeaf/DoubleObj"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedLeaf/float"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedLeaf/elementType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference testModel.ecore#//ContainedLeaf/ref"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference testModel.ecore#//ContainedLeaf/upperBound"/>
     </genClasses>
-    <genClasses ecoreClass="testModel.ecore#//referenziertesElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//referenziertesElement/Float"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//referenziertesElement/int"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//referenziertesElement/Integer"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//referenziertesElement/long"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//referenziertesElement/LongObj"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//referenziertesElement/short"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//referenziertesElement/ShortObj"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//referenziertesElement/name"/>
-      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//referenziertesElement/notChangeable"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference testModel.ecore#//referenziertesElement/multiRef"/>
+    <genClasses ecoreClass="testModel.ecore#//referedLeaf">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//referedLeaf/Float"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//referedLeaf/int"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//referedLeaf/Integer"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//referedLeaf/long"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//referedLeaf/LongObj"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//referedLeaf/short"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//referedLeaf/ShortObj"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//referedLeaf/name"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//referedLeaf/notChangeable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference testModel.ecore#//referedLeaf/multiRef"/>
     </genClasses>
-    <genClasses ecoreClass="testModel.ecore#//multiRefElement">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//multiRefElement/name"/>
+    <genClasses ecoreClass="testModel.ecore#//multiRefLeaf">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//multiRefLeaf/name"/>
     </genClasses>
-    <genClasses ecoreClass="testModel.ecore#//upperBound">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//upperBound/name"/>
+    <genClasses ecoreClass="testModel.ecore#//upperBoundLeaf">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//upperBoundLeaf/name"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="testModel.ecore#//Element"/>
+    <genClasses image="false" ecoreClass="testModel.ecore#//Leafs"/>
   </genPackages>
 </genmodel:GenModel>

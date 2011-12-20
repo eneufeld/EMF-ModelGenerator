@@ -26,49 +26,49 @@ public interface TestModelFactory extends EFactory {
 	TestModelFactory eINSTANCE = testModel.impl.TestModelFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Kategorie</em>'.
+	 * Returns a new object of class '<em>Node</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Kategorie</em>'.
+	 * @return a new object of class '<em>Node</em>'.
 	 * @generated
 	 */
-	Kategorie createKategorie();
+	Node createNode();
 
 	/**
-	 * Returns a new object of class '<em>Contained Element</em>'.
+	 * Returns a new object of class '<em>Contained Leaf</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Contained Element</em>'.
+	 * @return a new object of class '<em>Contained Leaf</em>'.
 	 * @generated
 	 */
-	ContainedElement createContainedElement();
+	ContainedLeaf createContainedLeaf();
 
 	/**
-	 * Returns a new object of class '<em>referenziertes Element</em>'.
+	 * Returns a new object of class '<em>refered Leaf</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>referenziertes Element</em>'.
+	 * @return a new object of class '<em>refered Leaf</em>'.
 	 * @generated
 	 */
-	referenziertesElement createreferenziertesElement();
+	referedLeaf createreferedLeaf();
 
 	/**
-	 * Returns a new object of class '<em>multi Ref Element</em>'.
+	 * Returns a new object of class '<em>multi Ref Leaf</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>multi Ref Element</em>'.
+	 * @return a new object of class '<em>multi Ref Leaf</em>'.
 	 * @generated
 	 */
-	multiRefElement createmultiRefElement();
+	multiRefLeaf createmultiRefLeaf();
 
 	/**
-	 * Returns a new object of class '<em>upper Bound</em>'.
+	 * Returns a new object of class '<em>upper Bound Leaf</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>upper Bound</em>'.
+	 * @return a new object of class '<em>upper Bound Leaf</em>'.
 	 * @generated
 	 */
-	upperBound createupperBound();
+	upperBoundLeaf createupperBoundLeaf();
 
 	/**
 	 * Returns the package supported by this factory.

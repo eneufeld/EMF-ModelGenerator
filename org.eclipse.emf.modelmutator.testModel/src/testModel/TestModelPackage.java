@@ -61,14 +61,14 @@ public interface TestModelPackage extends EPackage {
 	TestModelPackage eINSTANCE = testModel.impl.TestModelPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link testModel.impl.KategorieImpl <em>Kategorie</em>}' class.
+	 * The meta object id for the '{@link testModel.impl.NodeImpl <em>Node</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see testModel.impl.KategorieImpl
-	 * @see testModel.impl.TestModelPackageImpl#getKategorie()
+	 * @see testModel.impl.NodeImpl
+	 * @see testModel.impl.TestModelPackageImpl#getNode()
 	 * @generated
 	 */
-	int KATEGORIE = 0;
+	int NODE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -77,7 +77,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KATEGORIE__NAME = 0;
+	int NODE__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Bigdeci</b></em>' attribute.
@@ -86,7 +86,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KATEGORIE__BIGDECI = 1;
+	int NODE__BIGDECI = 1;
 
 	/**
 	 * The feature id for the '<em><b>Bigint</b></em>' attribute.
@@ -95,7 +95,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KATEGORIE__BIGINT = 2;
+	int NODE__BIGINT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Bool</b></em>' attribute.
@@ -104,7 +104,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KATEGORIE__BOOL = 3;
+	int NODE__BOOL = 3;
 
 	/**
 	 * The feature id for the '<em><b>Boolean</b></em>' attribute.
@@ -113,7 +113,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KATEGORIE__BOOLEAN = 4;
+	int NODE__BOOLEAN = 4;
 
 	/**
 	 * The feature id for the '<em><b>Byte</b></em>' attribute.
@@ -122,16 +122,16 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KATEGORIE__BYTE = 5;
+	int NODE__BYTE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Sub Kategorie</b></em>' reference list.
+	 * The feature id for the '<em><b>Sub Node</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KATEGORIE__SUB_KATEGORIE = 6;
+	int NODE__SUB_NODE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Contains</b></em>' containment reference list.
@@ -140,26 +140,26 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int KATEGORIE__CONTAINS = 7;
+	int NODE__CONTAINS = 7;
 
 	/**
-	 * The number of structural features of the '<em>Kategorie</em>' class.
+	 * The number of structural features of the '<em>Node</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KATEGORIE_FEATURE_COUNT = 8;
+	int NODE_FEATURE_COUNT = 8;
 
 	/**
-	 * The meta object id for the '{@link testModel.impl.ContainedElementImpl <em>Contained Element</em>}' class.
+	 * The meta object id for the '{@link testModel.impl.ContainedLeafImpl <em>Contained Leaf</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see testModel.impl.ContainedElementImpl
-	 * @see testModel.impl.TestModelPackageImpl#getContainedElement()
+	 * @see testModel.impl.ContainedLeafImpl
+	 * @see testModel.impl.TestModelPackageImpl#getContainedLeaf()
 	 * @generated
 	 */
-	int CONTAINED_ELEMENT = 1;
+	int CONTAINED_LEAF = 1;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -168,7 +168,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_ELEMENT__NAME = 0;
+	int CONTAINED_LEAF__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Byte Array</b></em>' attribute.
@@ -177,7 +177,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_ELEMENT__BYTE_ARRAY = 1;
+	int CONTAINED_LEAF__BYTE_ARRAY = 1;
 
 	/**
 	 * The feature id for the '<em><b>Byte Object</b></em>' attribute.
@@ -186,7 +186,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_ELEMENT__BYTE_OBJECT = 2;
+	int CONTAINED_LEAF__BYTE_OBJECT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Char</b></em>' attribute.
@@ -195,7 +195,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_ELEMENT__CHAR = 3;
+	int CONTAINED_LEAF__CHAR = 3;
 
 	/**
 	 * The feature id for the '<em><b>Character</b></em>' attribute.
@@ -204,7 +204,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_ELEMENT__CHARACTER = 4;
+	int CONTAINED_LEAF__CHARACTER = 4;
 
 	/**
 	 * The feature id for the '<em><b>Date</b></em>' attribute.
@@ -213,7 +213,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_ELEMENT__DATE = 5;
+	int CONTAINED_LEAF__DATE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Diagnostic Chain</b></em>' attribute.
@@ -222,7 +222,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_ELEMENT__DIAGNOSTIC_CHAIN = 6;
+	int CONTAINED_LEAF__DIAGNOSTIC_CHAIN = 6;
 
 	/**
 	 * The feature id for the '<em><b>Double</b></em>' attribute.
@@ -231,7 +231,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_ELEMENT__DOUBLE = 7;
+	int CONTAINED_LEAF__DOUBLE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Double Obj</b></em>' attribute.
@@ -240,7 +240,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_ELEMENT__DOUBLE_OBJ = 8;
+	int CONTAINED_LEAF__DOUBLE_OBJ = 8;
 
 	/**
 	 * The feature id for the '<em><b>Float</b></em>' attribute.
@@ -249,7 +249,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_ELEMENT__FLOAT = 9;
+	int CONTAINED_LEAF__FLOAT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Element Type</b></em>' attribute.
@@ -258,7 +258,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_ELEMENT__ELEMENT_TYPE = 10;
+	int CONTAINED_LEAF__ELEMENT_TYPE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Ref</b></em>' reference list.
@@ -267,7 +267,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_ELEMENT__REF = 11;
+	int CONTAINED_LEAF__REF = 11;
 
 	/**
 	 * The feature id for the '<em><b>Upper Bound</b></em>' containment reference list.
@@ -276,90 +276,45 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_ELEMENT__UPPER_BOUND = 12;
+	int CONTAINED_LEAF__UPPER_BOUND = 12;
 
 	/**
-	 * The feature id for the '<em><b>Enumerator</b></em>' attribute.
+	 * The number of structural features of the '<em>Contained Leaf</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_ELEMENT__ENUMERATOR = 13;
+	int CONTAINED_LEAF_FEATURE_COUNT = 13;
 
 	/**
-	 * The feature id for the '<em><b>Elist</b></em>' attribute.
+	 * The meta object id for the '{@link testModel.impl.LeafsImpl <em>Leafs</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see testModel.impl.LeafsImpl
+	 * @see testModel.impl.TestModelPackageImpl#getLeafs()
+	 * @generated
+	 */
+	int LEAFS = 5;
+
+	/**
+	 * The number of structural features of the '<em>Leafs</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_ELEMENT__ELIST = 14;
+	int LEAFS_FEATURE_COUNT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Class</b></em>' attribute.
+	 * The meta object id for the '{@link testModel.impl.referedLeafImpl <em>refered Leaf</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINED_ELEMENT__CLASS = 15;
-
-	/**
-	 * The feature id for the '<em><b>Map</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINED_ELEMENT__MAP = 16;
-
-	/**
-	 * The feature id for the '<em><b>Tree Iterator</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINED_ELEMENT__TREE_ITERATOR = 17;
-
-	/**
-	 * The number of structural features of the '<em>Contained Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINED_ELEMENT_FEATURE_COUNT = 18;
-
-	/**
-	 * The meta object id for the '{@link testModel.impl.ElementImpl <em>Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see testModel.impl.ElementImpl
-	 * @see testModel.impl.TestModelPackageImpl#getElement()
+	 * @see testModel.impl.referedLeafImpl
+	 * @see testModel.impl.TestModelPackageImpl#getreferedLeaf()
 	 * @generated
 	 */
-	int ELEMENT = 5;
-
-	/**
-	 * The number of structural features of the '<em>Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ELEMENT_FEATURE_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link testModel.impl.referenziertesElementImpl <em>referenziertes Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see testModel.impl.referenziertesElementImpl
-	 * @see testModel.impl.TestModelPackageImpl#getreferenziertesElement()
-	 * @generated
-	 */
-	int REFERENZIERTES_ELEMENT = 2;
+	int REFERED_LEAF = 2;
 
 	/**
 	 * The feature id for the '<em><b>Float</b></em>' attribute.
@@ -368,7 +323,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENZIERTES_ELEMENT__FLOAT = ELEMENT_FEATURE_COUNT + 0;
+	int REFERED_LEAF__FLOAT = LEAFS_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Int</b></em>' attribute.
@@ -377,7 +332,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENZIERTES_ELEMENT__INT = ELEMENT_FEATURE_COUNT + 1;
+	int REFERED_LEAF__INT = LEAFS_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Integer</b></em>' attribute.
@@ -386,7 +341,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENZIERTES_ELEMENT__INTEGER = ELEMENT_FEATURE_COUNT + 2;
+	int REFERED_LEAF__INTEGER = LEAFS_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Long</b></em>' attribute.
@@ -395,7 +350,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENZIERTES_ELEMENT__LONG = ELEMENT_FEATURE_COUNT + 3;
+	int REFERED_LEAF__LONG = LEAFS_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Long Obj</b></em>' attribute.
@@ -404,7 +359,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENZIERTES_ELEMENT__LONG_OBJ = ELEMENT_FEATURE_COUNT + 4;
+	int REFERED_LEAF__LONG_OBJ = LEAFS_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Short</b></em>' attribute.
@@ -413,7 +368,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENZIERTES_ELEMENT__SHORT = ELEMENT_FEATURE_COUNT + 5;
+	int REFERED_LEAF__SHORT = LEAFS_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Short Obj</b></em>' attribute.
@@ -422,7 +377,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENZIERTES_ELEMENT__SHORT_OBJ = ELEMENT_FEATURE_COUNT + 6;
+	int REFERED_LEAF__SHORT_OBJ = LEAFS_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -431,7 +386,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENZIERTES_ELEMENT__NAME = ELEMENT_FEATURE_COUNT + 7;
+	int REFERED_LEAF__NAME = LEAFS_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Not Changeable</b></em>' attribute.
@@ -440,7 +395,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENZIERTES_ELEMENT__NOT_CHANGEABLE = ELEMENT_FEATURE_COUNT + 8;
+	int REFERED_LEAF__NOT_CHANGEABLE = LEAFS_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Multi Ref</b></em>' reference list.
@@ -449,26 +404,26 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENZIERTES_ELEMENT__MULTI_REF = ELEMENT_FEATURE_COUNT + 9;
+	int REFERED_LEAF__MULTI_REF = LEAFS_FEATURE_COUNT + 9;
 
 	/**
-	 * The number of structural features of the '<em>referenziertes Element</em>' class.
+	 * The number of structural features of the '<em>refered Leaf</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int REFERENZIERTES_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 10;
+	int REFERED_LEAF_FEATURE_COUNT = LEAFS_FEATURE_COUNT + 10;
 
 	/**
-	 * The meta object id for the '{@link testModel.impl.multiRefElementImpl <em>multi Ref Element</em>}' class.
+	 * The meta object id for the '{@link testModel.impl.multiRefLeafImpl <em>multi Ref Leaf</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see testModel.impl.multiRefElementImpl
-	 * @see testModel.impl.TestModelPackageImpl#getmultiRefElement()
+	 * @see testModel.impl.multiRefLeafImpl
+	 * @see testModel.impl.TestModelPackageImpl#getmultiRefLeaf()
 	 * @generated
 	 */
-	int MULTI_REF_ELEMENT = 3;
+	int MULTI_REF_LEAF = 3;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -477,26 +432,26 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int MULTI_REF_ELEMENT__NAME = ELEMENT_FEATURE_COUNT + 0;
+	int MULTI_REF_LEAF__NAME = LEAFS_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>multi Ref Element</em>' class.
+	 * The number of structural features of the '<em>multi Ref Leaf</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MULTI_REF_ELEMENT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+	int MULTI_REF_LEAF_FEATURE_COUNT = LEAFS_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link testModel.impl.upperBoundImpl <em>upper Bound</em>}' class.
+	 * The meta object id for the '{@link testModel.impl.upperBoundLeafImpl <em>upper Bound Leaf</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see testModel.impl.upperBoundImpl
-	 * @see testModel.impl.TestModelPackageImpl#getupperBound()
+	 * @see testModel.impl.upperBoundLeafImpl
+	 * @see testModel.impl.TestModelPackageImpl#getupperBoundLeaf()
 	 * @generated
 	 */
-	int UPPER_BOUND = 4;
+	int UPPER_BOUND_LEAF = 4;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -505,16 +460,16 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UPPER_BOUND__NAME = ELEMENT_FEATURE_COUNT + 0;
+	int UPPER_BOUND_LEAF__NAME = LEAFS_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>upper Bound</em>' class.
+	 * The number of structural features of the '<em>upper Bound Leaf</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UPPER_BOUND_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 1;
+	int UPPER_BOUND_LEAF_FEATURE_COUNT = LEAFS_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link testModel.ElementType <em>Element Type</em>}' enum.
@@ -528,482 +483,427 @@ public interface TestModelPackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link testModel.Kategorie <em>Kategorie</em>}'.
+	 * Returns the meta object for class '{@link testModel.Node <em>Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Kategorie</em>'.
-	 * @see testModel.Kategorie
+	 * @return the meta object for class '<em>Node</em>'.
+	 * @see testModel.Node
 	 * @generated
 	 */
-	EClass getKategorie();
+	EClass getNode();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.Kategorie#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.Node#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see testModel.Kategorie#getName()
-	 * @see #getKategorie()
+	 * @see testModel.Node#getName()
+	 * @see #getNode()
 	 * @generated
 	 */
-	EAttribute getKategorie_Name();
+	EAttribute getNode_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.Kategorie#getBigdeci <em>Bigdeci</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.Node#getBigdeci <em>Bigdeci</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Bigdeci</em>'.
-	 * @see testModel.Kategorie#getBigdeci()
-	 * @see #getKategorie()
+	 * @see testModel.Node#getBigdeci()
+	 * @see #getNode()
 	 * @generated
 	 */
-	EAttribute getKategorie_Bigdeci();
+	EAttribute getNode_Bigdeci();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.Kategorie#getBigint <em>Bigint</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.Node#getBigint <em>Bigint</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Bigint</em>'.
-	 * @see testModel.Kategorie#getBigint()
-	 * @see #getKategorie()
+	 * @see testModel.Node#getBigint()
+	 * @see #getNode()
 	 * @generated
 	 */
-	EAttribute getKategorie_Bigint();
+	EAttribute getNode_Bigint();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.Kategorie#isBool <em>Bool</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.Node#isBool <em>Bool</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Bool</em>'.
-	 * @see testModel.Kategorie#isBool()
-	 * @see #getKategorie()
+	 * @see testModel.Node#isBool()
+	 * @see #getNode()
 	 * @generated
 	 */
-	EAttribute getKategorie_Bool();
+	EAttribute getNode_Bool();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.Kategorie#getBoolean <em>Boolean</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.Node#getBoolean <em>Boolean</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Boolean</em>'.
-	 * @see testModel.Kategorie#getBoolean()
-	 * @see #getKategorie()
+	 * @see testModel.Node#getBoolean()
+	 * @see #getNode()
 	 * @generated
 	 */
-	EAttribute getKategorie_Boolean();
+	EAttribute getNode_Boolean();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.Kategorie#getByte <em>Byte</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.Node#getByte <em>Byte</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Byte</em>'.
-	 * @see testModel.Kategorie#getByte()
-	 * @see #getKategorie()
+	 * @see testModel.Node#getByte()
+	 * @see #getNode()
 	 * @generated
 	 */
-	EAttribute getKategorie_Byte();
+	EAttribute getNode_Byte();
 
 	/**
-	 * Returns the meta object for the reference list '{@link testModel.Kategorie#getSubKategorie <em>Sub Kategorie</em>}'.
+	 * Returns the meta object for the reference list '{@link testModel.Node#getSubNode <em>Sub Node</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Sub Kategorie</em>'.
-	 * @see testModel.Kategorie#getSubKategorie()
-	 * @see #getKategorie()
+	 * @return the meta object for the reference list '<em>Sub Node</em>'.
+	 * @see testModel.Node#getSubNode()
+	 * @see #getNode()
 	 * @generated
 	 */
-	EReference getKategorie_SubKategorie();
+	EReference getNode_SubNode();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link testModel.Kategorie#getContains <em>Contains</em>}'.
+	 * Returns the meta object for the containment reference list '{@link testModel.Node#getContains <em>Contains</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Contains</em>'.
-	 * @see testModel.Kategorie#getContains()
-	 * @see #getKategorie()
+	 * @see testModel.Node#getContains()
+	 * @see #getNode()
 	 * @generated
 	 */
-	EReference getKategorie_Contains();
+	EReference getNode_Contains();
 
 	/**
-	 * Returns the meta object for class '{@link testModel.ContainedElement <em>Contained Element</em>}'.
+	 * Returns the meta object for class '{@link testModel.ContainedLeaf <em>Contained Leaf</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Contained Element</em>'.
-	 * @see testModel.ContainedElement
+	 * @return the meta object for class '<em>Contained Leaf</em>'.
+	 * @see testModel.ContainedLeaf
 	 * @generated
 	 */
-	EClass getContainedElement();
+	EClass getContainedLeaf();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.ContainedLeaf#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see testModel.ContainedElement#getName()
-	 * @see #getContainedElement()
+	 * @see testModel.ContainedLeaf#getName()
+	 * @see #getContainedLeaf()
 	 * @generated
 	 */
-	EAttribute getContainedElement_Name();
+	EAttribute getContainedLeaf_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getByteArray <em>Byte Array</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.ContainedLeaf#getByteArray <em>Byte Array</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Byte Array</em>'.
-	 * @see testModel.ContainedElement#getByteArray()
-	 * @see #getContainedElement()
+	 * @see testModel.ContainedLeaf#getByteArray()
+	 * @see #getContainedLeaf()
 	 * @generated
 	 */
-	EAttribute getContainedElement_ByteArray();
+	EAttribute getContainedLeaf_ByteArray();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getByteObject <em>Byte Object</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.ContainedLeaf#getByteObject <em>Byte Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Byte Object</em>'.
-	 * @see testModel.ContainedElement#getByteObject()
-	 * @see #getContainedElement()
+	 * @see testModel.ContainedLeaf#getByteObject()
+	 * @see #getContainedLeaf()
 	 * @generated
 	 */
-	EAttribute getContainedElement_ByteObject();
+	EAttribute getContainedLeaf_ByteObject();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getChar <em>Char</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.ContainedLeaf#getChar <em>Char</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Char</em>'.
-	 * @see testModel.ContainedElement#getChar()
-	 * @see #getContainedElement()
+	 * @see testModel.ContainedLeaf#getChar()
+	 * @see #getContainedLeaf()
 	 * @generated
 	 */
-	EAttribute getContainedElement_Char();
+	EAttribute getContainedLeaf_Char();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getCharacter <em>Character</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.ContainedLeaf#getCharacter <em>Character</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Character</em>'.
-	 * @see testModel.ContainedElement#getCharacter()
-	 * @see #getContainedElement()
+	 * @see testModel.ContainedLeaf#getCharacter()
+	 * @see #getContainedLeaf()
 	 * @generated
 	 */
-	EAttribute getContainedElement_Character();
+	EAttribute getContainedLeaf_Character();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getDate <em>Date</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.ContainedLeaf#getDate <em>Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Date</em>'.
-	 * @see testModel.ContainedElement#getDate()
-	 * @see #getContainedElement()
+	 * @see testModel.ContainedLeaf#getDate()
+	 * @see #getContainedLeaf()
 	 * @generated
 	 */
-	EAttribute getContainedElement_Date();
+	EAttribute getContainedLeaf_Date();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getDiagnosticChain <em>Diagnostic Chain</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.ContainedLeaf#getDiagnosticChain <em>Diagnostic Chain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Diagnostic Chain</em>'.
-	 * @see testModel.ContainedElement#getDiagnosticChain()
-	 * @see #getContainedElement()
+	 * @see testModel.ContainedLeaf#getDiagnosticChain()
+	 * @see #getContainedLeaf()
 	 * @generated
 	 */
-	EAttribute getContainedElement_DiagnosticChain();
+	EAttribute getContainedLeaf_DiagnosticChain();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getDouble <em>Double</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.ContainedLeaf#getDouble <em>Double</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Double</em>'.
-	 * @see testModel.ContainedElement#getDouble()
-	 * @see #getContainedElement()
+	 * @see testModel.ContainedLeaf#getDouble()
+	 * @see #getContainedLeaf()
 	 * @generated
 	 */
-	EAttribute getContainedElement_Double();
+	EAttribute getContainedLeaf_Double();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getDoubleObj <em>Double Obj</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.ContainedLeaf#getDoubleObj <em>Double Obj</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Double Obj</em>'.
-	 * @see testModel.ContainedElement#getDoubleObj()
-	 * @see #getContainedElement()
+	 * @see testModel.ContainedLeaf#getDoubleObj()
+	 * @see #getContainedLeaf()
 	 * @generated
 	 */
-	EAttribute getContainedElement_DoubleObj();
+	EAttribute getContainedLeaf_DoubleObj();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getFloat <em>Float</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.ContainedLeaf#getFloat <em>Float</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Float</em>'.
-	 * @see testModel.ContainedElement#getFloat()
-	 * @see #getContainedElement()
+	 * @see testModel.ContainedLeaf#getFloat()
+	 * @see #getContainedLeaf()
 	 * @generated
 	 */
-	EAttribute getContainedElement_Float();
+	EAttribute getContainedLeaf_Float();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getElementType <em>Element Type</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.ContainedLeaf#getElementType <em>Element Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Element Type</em>'.
-	 * @see testModel.ContainedElement#getElementType()
-	 * @see #getContainedElement()
+	 * @see testModel.ContainedLeaf#getElementType()
+	 * @see #getContainedLeaf()
 	 * @generated
 	 */
-	EAttribute getContainedElement_ElementType();
+	EAttribute getContainedLeaf_ElementType();
 
 	/**
-	 * Returns the meta object for the reference list '{@link testModel.ContainedElement#getRef <em>Ref</em>}'.
+	 * Returns the meta object for the reference list '{@link testModel.ContainedLeaf#getRef <em>Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Ref</em>'.
-	 * @see testModel.ContainedElement#getRef()
-	 * @see #getContainedElement()
+	 * @see testModel.ContainedLeaf#getRef()
+	 * @see #getContainedLeaf()
 	 * @generated
 	 */
-	EReference getContainedElement_Ref();
+	EReference getContainedLeaf_Ref();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link testModel.ContainedElement#getUpperBound <em>Upper Bound</em>}'.
+	 * Returns the meta object for the containment reference list '{@link testModel.ContainedLeaf#getUpperBound <em>Upper Bound</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Upper Bound</em>'.
-	 * @see testModel.ContainedElement#getUpperBound()
-	 * @see #getContainedElement()
+	 * @see testModel.ContainedLeaf#getUpperBound()
+	 * @see #getContainedLeaf()
 	 * @generated
 	 */
-	EReference getContainedElement_UpperBound();
+	EReference getContainedLeaf_UpperBound();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getEnumerator <em>Enumerator</em>}'.
+	 * Returns the meta object for class '{@link testModel.referedLeaf <em>refered Leaf</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Enumerator</em>'.
-	 * @see testModel.ContainedElement#getEnumerator()
-	 * @see #getContainedElement()
+	 * @return the meta object for class '<em>refered Leaf</em>'.
+	 * @see testModel.referedLeaf
 	 * @generated
 	 */
-	EAttribute getContainedElement_Enumerator();
+	EClass getreferedLeaf();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getElist <em>Elist</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Elist</em>'.
-	 * @see testModel.ContainedElement#getElist()
-	 * @see #getContainedElement()
-	 * @generated
-	 */
-	EAttribute getContainedElement_Elist();
-
-	/**
-	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getClass_ <em>Class</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Class</em>'.
-	 * @see testModel.ContainedElement#getClass_()
-	 * @see #getContainedElement()
-	 * @generated
-	 */
-	EAttribute getContainedElement_Class();
-
-	/**
-	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getMap <em>Map</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Map</em>'.
-	 * @see testModel.ContainedElement#getMap()
-	 * @see #getContainedElement()
-	 * @generated
-	 */
-	EAttribute getContainedElement_Map();
-
-	/**
-	 * Returns the meta object for the attribute '{@link testModel.ContainedElement#getTreeIterator <em>Tree Iterator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Tree Iterator</em>'.
-	 * @see testModel.ContainedElement#getTreeIterator()
-	 * @see #getContainedElement()
-	 * @generated
-	 */
-	EAttribute getContainedElement_TreeIterator();
-
-	/**
-	 * Returns the meta object for class '{@link testModel.referenziertesElement <em>referenziertes Element</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>referenziertes Element</em>'.
-	 * @see testModel.referenziertesElement
-	 * @generated
-	 */
-	EClass getreferenziertesElement();
-
-	/**
-	 * Returns the meta object for the attribute '{@link testModel.referenziertesElement#getFloat <em>Float</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.referedLeaf#getFloat <em>Float</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Float</em>'.
-	 * @see testModel.referenziertesElement#getFloat()
-	 * @see #getreferenziertesElement()
+	 * @see testModel.referedLeaf#getFloat()
+	 * @see #getreferedLeaf()
 	 * @generated
 	 */
-	EAttribute getreferenziertesElement_Float();
+	EAttribute getreferedLeaf_Float();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.referenziertesElement#getInt <em>Int</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.referedLeaf#getInt <em>Int</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Int</em>'.
-	 * @see testModel.referenziertesElement#getInt()
-	 * @see #getreferenziertesElement()
+	 * @see testModel.referedLeaf#getInt()
+	 * @see #getreferedLeaf()
 	 * @generated
 	 */
-	EAttribute getreferenziertesElement_Int();
+	EAttribute getreferedLeaf_Int();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.referenziertesElement#getInteger <em>Integer</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.referedLeaf#getInteger <em>Integer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Integer</em>'.
-	 * @see testModel.referenziertesElement#getInteger()
-	 * @see #getreferenziertesElement()
+	 * @see testModel.referedLeaf#getInteger()
+	 * @see #getreferedLeaf()
 	 * @generated
 	 */
-	EAttribute getreferenziertesElement_Integer();
+	EAttribute getreferedLeaf_Integer();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.referenziertesElement#getLong <em>Long</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.referedLeaf#getLong <em>Long</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Long</em>'.
-	 * @see testModel.referenziertesElement#getLong()
-	 * @see #getreferenziertesElement()
+	 * @see testModel.referedLeaf#getLong()
+	 * @see #getreferedLeaf()
 	 * @generated
 	 */
-	EAttribute getreferenziertesElement_Long();
+	EAttribute getreferedLeaf_Long();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.referenziertesElement#getLongObj <em>Long Obj</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.referedLeaf#getLongObj <em>Long Obj</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Long Obj</em>'.
-	 * @see testModel.referenziertesElement#getLongObj()
-	 * @see #getreferenziertesElement()
+	 * @see testModel.referedLeaf#getLongObj()
+	 * @see #getreferedLeaf()
 	 * @generated
 	 */
-	EAttribute getreferenziertesElement_LongObj();
+	EAttribute getreferedLeaf_LongObj();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.referenziertesElement#getShort <em>Short</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.referedLeaf#getShort <em>Short</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Short</em>'.
-	 * @see testModel.referenziertesElement#getShort()
-	 * @see #getreferenziertesElement()
+	 * @see testModel.referedLeaf#getShort()
+	 * @see #getreferedLeaf()
 	 * @generated
 	 */
-	EAttribute getreferenziertesElement_Short();
+	EAttribute getreferedLeaf_Short();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.referenziertesElement#getShortObj <em>Short Obj</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.referedLeaf#getShortObj <em>Short Obj</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Short Obj</em>'.
-	 * @see testModel.referenziertesElement#getShortObj()
-	 * @see #getreferenziertesElement()
+	 * @see testModel.referedLeaf#getShortObj()
+	 * @see #getreferedLeaf()
 	 * @generated
 	 */
-	EAttribute getreferenziertesElement_ShortObj();
+	EAttribute getreferedLeaf_ShortObj();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.referenziertesElement#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.referedLeaf#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see testModel.referenziertesElement#getName()
-	 * @see #getreferenziertesElement()
+	 * @see testModel.referedLeaf#getName()
+	 * @see #getreferedLeaf()
 	 * @generated
 	 */
-	EAttribute getreferenziertesElement_Name();
+	EAttribute getreferedLeaf_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.referenziertesElement#getNotChangeable <em>Not Changeable</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.referedLeaf#getNotChangeable <em>Not Changeable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Not Changeable</em>'.
-	 * @see testModel.referenziertesElement#getNotChangeable()
-	 * @see #getreferenziertesElement()
+	 * @see testModel.referedLeaf#getNotChangeable()
+	 * @see #getreferedLeaf()
 	 * @generated
 	 */
-	EAttribute getreferenziertesElement_NotChangeable();
+	EAttribute getreferedLeaf_NotChangeable();
 
 	/**
-	 * Returns the meta object for the reference list '{@link testModel.referenziertesElement#getMultiRef <em>Multi Ref</em>}'.
+	 * Returns the meta object for the reference list '{@link testModel.referedLeaf#getMultiRef <em>Multi Ref</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Multi Ref</em>'.
-	 * @see testModel.referenziertesElement#getMultiRef()
-	 * @see #getreferenziertesElement()
+	 * @see testModel.referedLeaf#getMultiRef()
+	 * @see #getreferedLeaf()
 	 * @generated
 	 */
-	EReference getreferenziertesElement_MultiRef();
+	EReference getreferedLeaf_MultiRef();
 
 	/**
-	 * Returns the meta object for class '{@link testModel.multiRefElement <em>multi Ref Element</em>}'.
+	 * Returns the meta object for class '{@link testModel.multiRefLeaf <em>multi Ref Leaf</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>multi Ref Element</em>'.
-	 * @see testModel.multiRefElement
+	 * @return the meta object for class '<em>multi Ref Leaf</em>'.
+	 * @see testModel.multiRefLeaf
 	 * @generated
 	 */
-	EClass getmultiRefElement();
+	EClass getmultiRefLeaf();
 
 	/**
-	 * Returns the meta object for the attribute '{@link testModel.multiRefElement#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see testModel.multiRefElement#getName()
-	 * @see #getmultiRefElement()
-	 * @generated
-	 */
-	EAttribute getmultiRefElement_Name();
-
-	/**
-	 * Returns the meta object for class '{@link testModel.upperBound <em>upper Bound</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>upper Bound</em>'.
-	 * @see testModel.upperBound
-	 * @generated
-	 */
-	EClass getupperBound();
-
-	/**
-	 * Returns the meta object for the attribute '{@link testModel.upperBound#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link testModel.multiRefLeaf#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see testModel.upperBound#getName()
-	 * @see #getupperBound()
+	 * @see testModel.multiRefLeaf#getName()
+	 * @see #getmultiRefLeaf()
 	 * @generated
 	 */
-	EAttribute getupperBound_Name();
+	EAttribute getmultiRefLeaf_Name();
 
 	/**
-	 * Returns the meta object for class '{@link testModel.Element <em>Element</em>}'.
+	 * Returns the meta object for class '{@link testModel.upperBoundLeaf <em>upper Bound Leaf</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Element</em>'.
-	 * @see testModel.Element
+	 * @return the meta object for class '<em>upper Bound Leaf</em>'.
+	 * @see testModel.upperBoundLeaf
 	 * @generated
 	 */
-	EClass getElement();
+	EClass getupperBoundLeaf();
+
+	/**
+	 * Returns the meta object for the attribute '{@link testModel.upperBoundLeaf#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see testModel.upperBoundLeaf#getName()
+	 * @see #getupperBoundLeaf()
+	 * @generated
+	 */
+	EAttribute getupperBoundLeaf_Name();
+
+	/**
+	 * Returns the meta object for class '{@link testModel.Leafs <em>Leafs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Leafs</em>'.
+	 * @see testModel.Leafs
+	 * @generated
+	 */
+	EClass getLeafs();
 
 	/**
 	 * Returns the meta object for enum '{@link testModel.ElementType <em>Element Type</em>}'.
@@ -1038,14 +938,14 @@ public interface TestModelPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link testModel.impl.KategorieImpl <em>Kategorie</em>}' class.
+		 * The meta object literal for the '{@link testModel.impl.NodeImpl <em>Node</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see testModel.impl.KategorieImpl
-		 * @see testModel.impl.TestModelPackageImpl#getKategorie()
+		 * @see testModel.impl.NodeImpl
+		 * @see testModel.impl.TestModelPackageImpl#getNode()
 		 * @generated
 		 */
-		EClass KATEGORIE = eINSTANCE.getKategorie();
+		EClass NODE = eINSTANCE.getNode();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1053,7 +953,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute KATEGORIE__NAME = eINSTANCE.getKategorie_Name();
+		EAttribute NODE__NAME = eINSTANCE.getNode_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Bigdeci</b></em>' attribute feature.
@@ -1061,7 +961,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute KATEGORIE__BIGDECI = eINSTANCE.getKategorie_Bigdeci();
+		EAttribute NODE__BIGDECI = eINSTANCE.getNode_Bigdeci();
 
 		/**
 		 * The meta object literal for the '<em><b>Bigint</b></em>' attribute feature.
@@ -1069,7 +969,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute KATEGORIE__BIGINT = eINSTANCE.getKategorie_Bigint();
+		EAttribute NODE__BIGINT = eINSTANCE.getNode_Bigint();
 
 		/**
 		 * The meta object literal for the '<em><b>Bool</b></em>' attribute feature.
@@ -1077,7 +977,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute KATEGORIE__BOOL = eINSTANCE.getKategorie_Bool();
+		EAttribute NODE__BOOL = eINSTANCE.getNode_Bool();
 
 		/**
 		 * The meta object literal for the '<em><b>Boolean</b></em>' attribute feature.
@@ -1085,7 +985,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute KATEGORIE__BOOLEAN = eINSTANCE.getKategorie_Boolean();
+		EAttribute NODE__BOOLEAN = eINSTANCE.getNode_Boolean();
 
 		/**
 		 * The meta object literal for the '<em><b>Byte</b></em>' attribute feature.
@@ -1093,15 +993,15 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute KATEGORIE__BYTE = eINSTANCE.getKategorie_Byte();
+		EAttribute NODE__BYTE = eINSTANCE.getNode_Byte();
 
 		/**
-		 * The meta object literal for the '<em><b>Sub Kategorie</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Sub Node</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference KATEGORIE__SUB_KATEGORIE = eINSTANCE.getKategorie_SubKategorie();
+		EReference NODE__SUB_NODE = eINSTANCE.getNode_SubNode();
 
 		/**
 		 * The meta object literal for the '<em><b>Contains</b></em>' containment reference list feature.
@@ -1109,17 +1009,17 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference KATEGORIE__CONTAINS = eINSTANCE.getKategorie_Contains();
+		EReference NODE__CONTAINS = eINSTANCE.getNode_Contains();
 
 		/**
-		 * The meta object literal for the '{@link testModel.impl.ContainedElementImpl <em>Contained Element</em>}' class.
+		 * The meta object literal for the '{@link testModel.impl.ContainedLeafImpl <em>Contained Leaf</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see testModel.impl.ContainedElementImpl
-		 * @see testModel.impl.TestModelPackageImpl#getContainedElement()
+		 * @see testModel.impl.ContainedLeafImpl
+		 * @see testModel.impl.TestModelPackageImpl#getContainedLeaf()
 		 * @generated
 		 */
-		EClass CONTAINED_ELEMENT = eINSTANCE.getContainedElement();
+		EClass CONTAINED_LEAF = eINSTANCE.getContainedLeaf();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1127,7 +1027,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTAINED_ELEMENT__NAME = eINSTANCE.getContainedElement_Name();
+		EAttribute CONTAINED_LEAF__NAME = eINSTANCE.getContainedLeaf_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Byte Array</b></em>' attribute feature.
@@ -1135,7 +1035,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTAINED_ELEMENT__BYTE_ARRAY = eINSTANCE.getContainedElement_ByteArray();
+		EAttribute CONTAINED_LEAF__BYTE_ARRAY = eINSTANCE.getContainedLeaf_ByteArray();
 
 		/**
 		 * The meta object literal for the '<em><b>Byte Object</b></em>' attribute feature.
@@ -1143,7 +1043,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTAINED_ELEMENT__BYTE_OBJECT = eINSTANCE.getContainedElement_ByteObject();
+		EAttribute CONTAINED_LEAF__BYTE_OBJECT = eINSTANCE.getContainedLeaf_ByteObject();
 
 		/**
 		 * The meta object literal for the '<em><b>Char</b></em>' attribute feature.
@@ -1151,7 +1051,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTAINED_ELEMENT__CHAR = eINSTANCE.getContainedElement_Char();
+		EAttribute CONTAINED_LEAF__CHAR = eINSTANCE.getContainedLeaf_Char();
 
 		/**
 		 * The meta object literal for the '<em><b>Character</b></em>' attribute feature.
@@ -1159,7 +1059,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTAINED_ELEMENT__CHARACTER = eINSTANCE.getContainedElement_Character();
+		EAttribute CONTAINED_LEAF__CHARACTER = eINSTANCE.getContainedLeaf_Character();
 
 		/**
 		 * The meta object literal for the '<em><b>Date</b></em>' attribute feature.
@@ -1167,7 +1067,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTAINED_ELEMENT__DATE = eINSTANCE.getContainedElement_Date();
+		EAttribute CONTAINED_LEAF__DATE = eINSTANCE.getContainedLeaf_Date();
 
 		/**
 		 * The meta object literal for the '<em><b>Diagnostic Chain</b></em>' attribute feature.
@@ -1175,7 +1075,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTAINED_ELEMENT__DIAGNOSTIC_CHAIN = eINSTANCE.getContainedElement_DiagnosticChain();
+		EAttribute CONTAINED_LEAF__DIAGNOSTIC_CHAIN = eINSTANCE.getContainedLeaf_DiagnosticChain();
 
 		/**
 		 * The meta object literal for the '<em><b>Double</b></em>' attribute feature.
@@ -1183,7 +1083,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTAINED_ELEMENT__DOUBLE = eINSTANCE.getContainedElement_Double();
+		EAttribute CONTAINED_LEAF__DOUBLE = eINSTANCE.getContainedLeaf_Double();
 
 		/**
 		 * The meta object literal for the '<em><b>Double Obj</b></em>' attribute feature.
@@ -1191,7 +1091,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTAINED_ELEMENT__DOUBLE_OBJ = eINSTANCE.getContainedElement_DoubleObj();
+		EAttribute CONTAINED_LEAF__DOUBLE_OBJ = eINSTANCE.getContainedLeaf_DoubleObj();
 
 		/**
 		 * The meta object literal for the '<em><b>Float</b></em>' attribute feature.
@@ -1199,7 +1099,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTAINED_ELEMENT__FLOAT = eINSTANCE.getContainedElement_Float();
+		EAttribute CONTAINED_LEAF__FLOAT = eINSTANCE.getContainedLeaf_Float();
 
 		/**
 		 * The meta object literal for the '<em><b>Element Type</b></em>' attribute feature.
@@ -1207,7 +1107,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CONTAINED_ELEMENT__ELEMENT_TYPE = eINSTANCE.getContainedElement_ElementType();
+		EAttribute CONTAINED_LEAF__ELEMENT_TYPE = eINSTANCE.getContainedLeaf_ElementType();
 
 		/**
 		 * The meta object literal for the '<em><b>Ref</b></em>' reference list feature.
@@ -1215,7 +1115,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTAINED_ELEMENT__REF = eINSTANCE.getContainedElement_Ref();
+		EReference CONTAINED_LEAF__REF = eINSTANCE.getContainedLeaf_Ref();
 
 		/**
 		 * The meta object literal for the '<em><b>Upper Bound</b></em>' containment reference list feature.
@@ -1223,57 +1123,17 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONTAINED_ELEMENT__UPPER_BOUND = eINSTANCE.getContainedElement_UpperBound();
+		EReference CONTAINED_LEAF__UPPER_BOUND = eINSTANCE.getContainedLeaf_UpperBound();
 
 		/**
-		 * The meta object literal for the '<em><b>Enumerator</b></em>' attribute feature.
+		 * The meta object literal for the '{@link testModel.impl.referedLeafImpl <em>refered Leaf</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see testModel.impl.referedLeafImpl
+		 * @see testModel.impl.TestModelPackageImpl#getreferedLeaf()
 		 * @generated
 		 */
-		EAttribute CONTAINED_ELEMENT__ENUMERATOR = eINSTANCE.getContainedElement_Enumerator();
-
-		/**
-		 * The meta object literal for the '<em><b>Elist</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTAINED_ELEMENT__ELIST = eINSTANCE.getContainedElement_Elist();
-
-		/**
-		 * The meta object literal for the '<em><b>Class</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTAINED_ELEMENT__CLASS = eINSTANCE.getContainedElement_Class();
-
-		/**
-		 * The meta object literal for the '<em><b>Map</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTAINED_ELEMENT__MAP = eINSTANCE.getContainedElement_Map();
-
-		/**
-		 * The meta object literal for the '<em><b>Tree Iterator</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTAINED_ELEMENT__TREE_ITERATOR = eINSTANCE.getContainedElement_TreeIterator();
-
-		/**
-		 * The meta object literal for the '{@link testModel.impl.referenziertesElementImpl <em>referenziertes Element</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see testModel.impl.referenziertesElementImpl
-		 * @see testModel.impl.TestModelPackageImpl#getreferenziertesElement()
-		 * @generated
-		 */
-		EClass REFERENZIERTES_ELEMENT = eINSTANCE.getreferenziertesElement();
+		EClass REFERED_LEAF = eINSTANCE.getreferedLeaf();
 
 		/**
 		 * The meta object literal for the '<em><b>Float</b></em>' attribute feature.
@@ -1281,7 +1141,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REFERENZIERTES_ELEMENT__FLOAT = eINSTANCE.getreferenziertesElement_Float();
+		EAttribute REFERED_LEAF__FLOAT = eINSTANCE.getreferedLeaf_Float();
 
 		/**
 		 * The meta object literal for the '<em><b>Int</b></em>' attribute feature.
@@ -1289,7 +1149,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REFERENZIERTES_ELEMENT__INT = eINSTANCE.getreferenziertesElement_Int();
+		EAttribute REFERED_LEAF__INT = eINSTANCE.getreferedLeaf_Int();
 
 		/**
 		 * The meta object literal for the '<em><b>Integer</b></em>' attribute feature.
@@ -1297,7 +1157,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REFERENZIERTES_ELEMENT__INTEGER = eINSTANCE.getreferenziertesElement_Integer();
+		EAttribute REFERED_LEAF__INTEGER = eINSTANCE.getreferedLeaf_Integer();
 
 		/**
 		 * The meta object literal for the '<em><b>Long</b></em>' attribute feature.
@@ -1305,7 +1165,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REFERENZIERTES_ELEMENT__LONG = eINSTANCE.getreferenziertesElement_Long();
+		EAttribute REFERED_LEAF__LONG = eINSTANCE.getreferedLeaf_Long();
 
 		/**
 		 * The meta object literal for the '<em><b>Long Obj</b></em>' attribute feature.
@@ -1313,7 +1173,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REFERENZIERTES_ELEMENT__LONG_OBJ = eINSTANCE.getreferenziertesElement_LongObj();
+		EAttribute REFERED_LEAF__LONG_OBJ = eINSTANCE.getreferedLeaf_LongObj();
 
 		/**
 		 * The meta object literal for the '<em><b>Short</b></em>' attribute feature.
@@ -1321,7 +1181,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REFERENZIERTES_ELEMENT__SHORT = eINSTANCE.getreferenziertesElement_Short();
+		EAttribute REFERED_LEAF__SHORT = eINSTANCE.getreferedLeaf_Short();
 
 		/**
 		 * The meta object literal for the '<em><b>Short Obj</b></em>' attribute feature.
@@ -1329,7 +1189,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REFERENZIERTES_ELEMENT__SHORT_OBJ = eINSTANCE.getreferenziertesElement_ShortObj();
+		EAttribute REFERED_LEAF__SHORT_OBJ = eINSTANCE.getreferedLeaf_ShortObj();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1337,7 +1197,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REFERENZIERTES_ELEMENT__NAME = eINSTANCE.getreferenziertesElement_Name();
+		EAttribute REFERED_LEAF__NAME = eINSTANCE.getreferedLeaf_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Not Changeable</b></em>' attribute feature.
@@ -1345,7 +1205,7 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute REFERENZIERTES_ELEMENT__NOT_CHANGEABLE = eINSTANCE.getreferenziertesElement_NotChangeable();
+		EAttribute REFERED_LEAF__NOT_CHANGEABLE = eINSTANCE.getreferedLeaf_NotChangeable();
 
 		/**
 		 * The meta object literal for the '<em><b>Multi Ref</b></em>' reference list feature.
@@ -1353,35 +1213,17 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference REFERENZIERTES_ELEMENT__MULTI_REF = eINSTANCE.getreferenziertesElement_MultiRef();
+		EReference REFERED_LEAF__MULTI_REF = eINSTANCE.getreferedLeaf_MultiRef();
 
 		/**
-		 * The meta object literal for the '{@link testModel.impl.multiRefElementImpl <em>multi Ref Element</em>}' class.
+		 * The meta object literal for the '{@link testModel.impl.multiRefLeafImpl <em>multi Ref Leaf</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see testModel.impl.multiRefElementImpl
-		 * @see testModel.impl.TestModelPackageImpl#getmultiRefElement()
+		 * @see testModel.impl.multiRefLeafImpl
+		 * @see testModel.impl.TestModelPackageImpl#getmultiRefLeaf()
 		 * @generated
 		 */
-		EClass MULTI_REF_ELEMENT = eINSTANCE.getmultiRefElement();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MULTI_REF_ELEMENT__NAME = eINSTANCE.getmultiRefElement_Name();
-
-		/**
-		 * The meta object literal for the '{@link testModel.impl.upperBoundImpl <em>upper Bound</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see testModel.impl.upperBoundImpl
-		 * @see testModel.impl.TestModelPackageImpl#getupperBound()
-		 * @generated
-		 */
-		EClass UPPER_BOUND = eINSTANCE.getupperBound();
+		EClass MULTI_REF_LEAF = eINSTANCE.getmultiRefLeaf();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1389,17 +1231,35 @@ public interface TestModelPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute UPPER_BOUND__NAME = eINSTANCE.getupperBound_Name();
+		EAttribute MULTI_REF_LEAF__NAME = eINSTANCE.getmultiRefLeaf_Name();
 
 		/**
-		 * The meta object literal for the '{@link testModel.impl.ElementImpl <em>Element</em>}' class.
+		 * The meta object literal for the '{@link testModel.impl.upperBoundLeafImpl <em>upper Bound Leaf</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see testModel.impl.ElementImpl
-		 * @see testModel.impl.TestModelPackageImpl#getElement()
+		 * @see testModel.impl.upperBoundLeafImpl
+		 * @see testModel.impl.TestModelPackageImpl#getupperBoundLeaf()
 		 * @generated
 		 */
-		EClass ELEMENT = eINSTANCE.getElement();
+		EClass UPPER_BOUND_LEAF = eINSTANCE.getupperBoundLeaf();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UPPER_BOUND_LEAF__NAME = eINSTANCE.getupperBoundLeaf_Name();
+
+		/**
+		 * The meta object literal for the '{@link testModel.impl.LeafsImpl <em>Leafs</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see testModel.impl.LeafsImpl
+		 * @see testModel.impl.TestModelPackageImpl#getLeafs()
+		 * @generated
+		 */
+		EClass LEAFS = eINSTANCE.getLeafs();
 
 		/**
 		 * The meta object literal for the '{@link testModel.ElementType <em>Element Type</em>}' enum.
