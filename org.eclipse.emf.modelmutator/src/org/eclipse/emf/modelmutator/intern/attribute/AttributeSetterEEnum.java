@@ -20,6 +20,8 @@ import org.eclipse.emf.ecore.EEnumLiteral;
  * 
  * @author Eugen Neufeld
  * @author Stephan Köhler
+ * @author Philip Achenbach
+ * 
  * @see AttributeSetter
  */
 public class AttributeSetterEEnum extends AttributeSetter<Enumerator> {
@@ -28,6 +30,7 @@ public class AttributeSetterEEnum extends AttributeSetter<Enumerator> {
 	 * The EEnum for which the Enumerators shall be created.
 	 */
 	private EEnum eEnum;
+
 
 	/**
 	 * Creates a new AttributeSetter for Enumerator attributes.

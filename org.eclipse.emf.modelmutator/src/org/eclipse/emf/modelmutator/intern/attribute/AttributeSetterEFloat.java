@@ -15,6 +15,8 @@ import java.util.Random;
  * 
  * @author Eugen Neufeld
  * @author Stephan Köhler
+ * @author Philip Achenbach
+ * 
  * @see AttributeSetter
  */
 public class AttributeSetterEFloat extends AttributeSetter<Float> {

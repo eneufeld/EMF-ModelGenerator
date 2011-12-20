@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.eclipse.emf.modelmutator.api;
 
 import java.util.Collection;
@@ -14,36 +11,42 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EStructuralFeature;
 
 /**
+ * Configuration for the ModelMutator
+ * 
  * @author Eugen Neufeld
- *
+ * @author Stephan Köhler
+ * @author Philip Achenbach
  */
 public class ModelMutatorConfiguration {
 
 	private final EPackage modelPackage;
 	private final EObject rootEObject;
 	private final Random random;
-	
+
 	private int depth;
 	private int width;
+
 	private boolean ignoreAndLog;
 	private Collection<EClass> eClassesToIgnore;
 	private Collection<EStructuralFeature> eStructuralFeaturesToIgnore;
 	private Set<RuntimeException> exceptionLog;
-	
-	private boolean doNotGenerateRoot=false;
-	private boolean allElementsOnRoot=false;
-	
-	public ModelMutatorConfiguration(EPackage modelPackage,EObject rootEObject,long seed){
-		this.modelPackage=modelPackage;
-		this.rootEObject=rootEObject;
-		this.random=new Random(seed);
+
+	private boolean doNotGenerateRoot = false;
+	private boolean allElementsOnRoot = false;
+
+
+	public ModelMutatorConfiguration(EPackage modelPackage, EObject rootEObject, long seed) {
+		this.modelPackage = modelPackage;
+		this.rootEObject = rootEObject;
+		this.random = new Random(seed);
+
+		this.eClassesToIgnore = new LinkedHashSet<EClass>();
+		this.eStructuralFeaturesToIgnore = new LinkedHashSet<EStructuralFeature>();
+		this.exceptionLog = new LinkedHashSet<RuntimeException>();
+		this.ignoreAndLog = true;
 		
-		this.eClassesToIgnore=new LinkedHashSet<EClass>();
-		this.eStructuralFeaturesToIgnore=new LinkedHashSet<EStructuralFeature>();
-		this.exceptionLog=new LinkedHashSet<RuntimeException>();
-		this.ignoreAndLog=true;
-		this.depth=5;
-		this.width=5;
+		this.depth = 5; // Default depth
+		this.width = 5; // Default width
 	}
 
 	/**
@@ -54,7 +57,8 @@ public class ModelMutatorConfiguration {
 	}
 
 	/**
-	 * @param depth the depth to set
+	 * @param depth
+	 *            the depth to set
 	 */
 	public void setDepth(int depth) {
 		this.depth = depth;
@@ -68,7 +72,8 @@ public class ModelMutatorConfiguration {
 	}
 
 	/**
-	 * @param width the width to set
+	 * @param width
+	 *            the width to set
 	 */
 	public void setWidth(int width) {
 		this.width = width;
@@ -82,7 +87,8 @@ public class ModelMutatorConfiguration {
 	}
 
 	/**
-	 * @param ignoreAndLog the ignoreAndLog to set
+	 * @param ignoreAndLog
+	 *            the ignoreAndLog to set
 	 */
 	public void setIgnoreAndLog(boolean ignoreAndLog) {
 		this.ignoreAndLog = ignoreAndLog;
@@ -96,7 +102,8 @@ public class ModelMutatorConfiguration {
 	}
 
 	/**
-	 * @param eClassesToIgnore the eClassesToIgnore to set
+	 * @param eClassesToIgnore
+	 *            the eClassesToIgnore to set
 	 */
 	public void seteClassesToIgnore(Collection<EClass> eClassesToIgnore) {
 		this.eClassesToIgnore = eClassesToIgnore;
@@ -124,11 +131,13 @@ public class ModelMutatorConfiguration {
 	}
 
 	/**
-	 * @param exceptionLog the exceptionLog to set
+	 * @param exceptionLog
+	 *            the exceptionLog to set
 	 */
 	public void setExceptionLog(Set<RuntimeException> exceptionLog) {
 		this.exceptionLog = exceptionLog;
 	}
+
 	/**
 	 * @return the random
 	 */
@@ -144,7 +153,8 @@ public class ModelMutatorConfiguration {
 	}
 
 	/**
-	 * @param eStructuralFeaturesToIgnore the eStructuralFeaturesToIgnore to set
+	 * @param eStructuralFeaturesToIgnore
+	 *            the eStructuralFeaturesToIgnore to set
 	 */
 	public void seteStructuralFeaturesToIgnore(Collection<EStructuralFeature> eStructuralFeaturesToIgnore) {
 		this.eStructuralFeaturesToIgnore = eStructuralFeaturesToIgnore;
@@ -158,7 +168,8 @@ public class ModelMutatorConfiguration {
 	}
 
 	/**
-	 * @param doNotGenerateRoot the doNotGenerateRoot to set
+	 * @param doNotGenerateRoot
+	 *            the doNotGenerateRoot to set
 	 */
 	public void setDoNotGenerateRoot(boolean doNotGenerateRoot) {
 		this.doNotGenerateRoot = doNotGenerateRoot;
@@ -172,10 +183,11 @@ public class ModelMutatorConfiguration {
 	}
 
 	/**
-	 * @param allElementsOnRoot the allElementsOnRoot to set
+	 * @param allElementsOnRoot
+	 *            the allElementsOnRoot to set
 	 */
 	public void setAllElementsOnRoot(boolean allElementsOnRoot) {
 		this.allElementsOnRoot = allElementsOnRoot;
 	}
-	
+
 }

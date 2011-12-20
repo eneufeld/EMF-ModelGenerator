@@ -13,8 +13,11 @@ import java.util.Random;
 
 /**
  * Class for creating random BigInteger values.
+ * 
  * @author Eugen Neufeld
  * @author Stephan Köhler
+ * @author Philip Achenbach
+ * 
  * @see AttributeSetter
  */
 public class AttributeSetterEBigInteger extends AttributeSetter<BigInteger> {

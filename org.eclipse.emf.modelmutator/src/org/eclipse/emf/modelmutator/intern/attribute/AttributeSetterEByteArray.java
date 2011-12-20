@@ -15,6 +15,8 @@ import java.util.Random;
  * 
  * @author Eugen Neufeld
  * @author Stephan Köhler
+ * @author Philip Achenbach
+ * 
  * @see AttributeSetter
  */
 public class AttributeSetterEByteArray extends AttributeSetter<byte[]> {
@@ -23,6 +25,7 @@ public class AttributeSetterEByteArray extends AttributeSetter<byte[]> {
 	 * Length of the Byte-array that is randomly filled.
 	 */
 	private int bytesize;
+
 
 	/**
 	 * Creates a new AttributeSetter for Byte[] attributes.

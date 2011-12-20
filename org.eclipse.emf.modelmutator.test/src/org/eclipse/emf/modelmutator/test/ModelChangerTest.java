@@ -9,23 +9,37 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Tests for the ModelChanger
+ * 
+ * @author Eugen Neufeld
+ * @author Stephan Köhler
+ * @author Philip Achenbach
+ */
 public class ModelChangerTest extends ModelMutatorTest {
 
 	private ProjectSpace projectSpace;
 
+	
 	@Before
 	public void beforeTest() {
+		// Generate the model before each change-test
 		projectSpace = createProjectSpace();
 		ModelMutatorConfiguration mmc = createModelMutatorConfigurationSeed(projectSpace);
-
 		ModelMutator.generateModel(mmc);
 	}
 
 	@After
 	public void afterTest() {
+		// Cleanup
 		projectSpace = null;
 	}
-
+	
+	/**
+	 * Tests whether two changes with distinct seeds generate different results
+	 * 
+	 * @throws SerializationException
+	 */
 	@Test
 	public void testSetAttributesRandom() throws SerializationException {
 		ModelMutatorConfiguration mmc = createModelMutatorConfigurationRandom(projectSpace);
@@ -38,7 +52,12 @@ public class ModelChangerTest extends ModelMutatorTest {
 			
 		Assert.assertNotSame(stringNew, stringOrg);
 	}
-
+	
+	/**
+	 * Tests whether two changes with the same seed generate the same result
+	 * 
+	 * @throws SerializationException
+	 */
 	@Test
 	public void testSetAttributesSeed() throws SerializationException {
 		ModelMutatorConfiguration mmc = createModelMutatorConfigurationSeed(projectSpace);

@@ -30,14 +30,15 @@ public class ModelMutatorHelper {
 	 * URI used to serialize EObject with the model util.
 	 */
 	public static final URI VIRTUAL_URI = URI.createURI("virtualUri");
-	
+
 	/**
 	 * Contains the canonical names of classes which will be ignored.
 	 */
 	private static Set<String> ignoredDataTypes;
-	
+
 	private static HashMap<Object, Object> resourceSaveOptions;
-	
+
+
 	 /**
 	 * Converts an EObject to a String.
 	 * 
@@ -48,7 +49,6 @@ public class ModelMutatorHelper {
 	 *             if a serialization problem occurs
 	 */
 	public static String eObjectToString(EObject object) throws SerializationException {
-
 		boolean containmentCheckEnabled = false;
 		boolean hrefCheckEnabled = false;
 		boolean proxyCheckEnabled = false;
@@ -134,6 +134,7 @@ public class ModelMutatorHelper {
 		}
 		return result;
 	}
+	
 	/**
 	 * @param result
 	 */
@@ -174,7 +175,6 @@ public class ModelMutatorHelper {
 	 * @return true, if the EObject will be ignored, false otherwise
 	 */
 	public static boolean isIgnoredDatatype(EObject eObject) {
-
 		if (ignoredDataTypes == null) {
 			ignoredDataTypes = new HashSet<String>();
 			IConfigurationElement[] config = Platform.getExtensionRegistry().getConfigurationElementsFor(

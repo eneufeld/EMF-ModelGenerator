@@ -16,11 +16,14 @@ import java.util.Random;
  * 
  * @author Eugen Neufeld
  * @author Stephan Köhler
+ * @author Philip Achenbach
+ * 
  * @see AttributeSetter
  */
 public class AttributeSetterEDate extends AttributeSetter<Date> {
 
 	private static final long HUNDRED_YEARS_MILLIS = 3155670000000l;
+
 
 	/**
 	 * Creates a new AttributeSetter for Date attributes.

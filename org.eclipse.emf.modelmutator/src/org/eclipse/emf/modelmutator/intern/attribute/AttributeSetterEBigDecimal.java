@@ -12,9 +12,12 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Class for creating random BigDecimal values.
+ * Class for creating random BigDecimal values
+ * 
  * @author Eugen Neufeld
  * @author Stephan Köhler
+ * @author Philip Achenbach
+ * 
  * @see AttributeSetter
  */
 public class AttributeSetterEBigDecimal extends AttributeSetter<BigDecimal> {

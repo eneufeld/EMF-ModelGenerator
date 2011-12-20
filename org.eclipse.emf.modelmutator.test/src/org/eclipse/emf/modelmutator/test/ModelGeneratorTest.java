@@ -17,23 +17,34 @@ import testModel.Node;
 import testModel.TestModelFactory;
 
 /**
+ * Tests for the ModelGenerator
  * 
  * @author Eugen Neufeld
  * @author Stephan Köhler
- * 
+ * @author Philip Achenbach
  */
 public class ModelGeneratorTest extends ModelMutatorTest {
 
+	/**
+	 * Tests whether the root level has the expected width
+	 */
 	@Test
 	public void testNumberRootElements() {
+		int expectedWidth = width;
+		
 		ProjectSpace projectSpace = createProjectSpace();
-
 		ModelMutatorConfiguration mmc = createModelMutatorConfigurationSeed(projectSpace);
-
+		mmc.setWidth(expectedWidth);
 		ModelMutator.generateModel(mmc);
-		Assert.assertEquals(width, projectSpace.getProject().getModelElements().size());
+		
+		Assert.assertEquals(expectedWidth, projectSpace.getProject().getModelElements().size());
 	}
 	
+	/**
+	 * Tests whether the model has the expected depth over all containment-levels
+	 * 
+	 * Recognizes restrictions of the metamodel
+	 */
 	@Test
 	public void testModelDepth() {
 		int expectedDepth = depth;
@@ -81,6 +92,9 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 		// The depth matches the expected depth
 	}
 	
+	/**
+	 * Tests whether the model has the expected width on all containment-levels
+	 */
 	@Test
 	public void testModelWidth() {
 		int expectedWidth = width;
@@ -108,6 +122,9 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 		return maxWidth;
 	}
 	
+	/**
+	 * Tests whether the generator successfully skips the root-generation
+	 */
 	@Test
 	public void testDoNotGenerateRoot(){
 		ProjectSpace projectSpace = createProjectSpace();
@@ -116,7 +133,7 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 		mmc.setDepth(2);
 		mmc.setDoNotGenerateRoot(true);
 		
-		for (int i=0; i<5; i++){
+		for (int i=0; i<5; i++) {
 			Node newModelElement=TestModelFactory.eINSTANCE.createNode();
 			newModelElement.setName("Test"+i);
 			projectSpace.getProject().addModelElement(newModelElement);
@@ -126,6 +143,9 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 		Assert.assertEquals(5, projectSpace.getProject().getModelElements().size());
 	}
 	
+	/**
+	 * Tests whether the generator successfully generates all elements on the root level
+	 */
 	@Test
 	public void testAllElementsOnRoot(){
 		ProjectSpace projectSpace = createProjectSpace();
@@ -135,10 +155,12 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 		mmc.setAllElementsOnRoot(true);
 		
 		ModelMutator.generateModel(mmc);
-		Set<EClass> differentClasses=new HashSet<EClass>();
-		for (EObject eObject : projectSpace.getProject().getAllModelElements()){
+		
+		Set<EClass> differentClasses = new HashSet<EClass>();
+		for (EObject eObject : projectSpace.getProject().getAllModelElements()) {
 			differentClasses.add(eObject.eClass());
 		}
+		
 		Assert.assertEquals(5, differentClasses.size());
 	}
 

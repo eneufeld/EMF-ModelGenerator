@@ -15,7 +15,15 @@ import org.eclipse.emf.modelmutator.api.ModelMutatorUtil;
 import org.junit.After;
 import org.junit.Before;
 
+/**
+ * Implements basic helper methods to setup the base-classes for the test
+ * 
+ * @author Eugen Neufeld
+ * @author Stephan Köhler
+ * @author Philip Achenbach
+ */
 public class ModelMutatorTest {
+
 	protected static final String modelKey = "http://org/eclipse/emf/modelmutator/testModel";
 	protected static final String projectName = "generated";
 	protected static final String projectDescription = "TestProject2";

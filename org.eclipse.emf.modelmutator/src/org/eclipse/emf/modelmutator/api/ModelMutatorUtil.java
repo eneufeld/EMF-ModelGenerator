@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.eclipse.emf.modelmutator.api;
 
 import java.util.Collection;
@@ -50,10 +47,9 @@ import org.eclipse.emf.modelmutator.intern.attribute.AttributeSetterEShort;
 /**
  * @author Eugen Neufeld
  * @author Stephan Köhler
- * 
+ * @author Philip Achenbach
  */
 public class ModelMutatorUtil {
-
 
 	/**
 	 * Returns the EPackage to the specified <code>nsURI</code>.
@@ -155,8 +151,7 @@ public class ModelMutatorUtil {
 	 * @return a set of all EClasses that can be contained when using
 	 *         <code>reference</code>
 	 */
-	// private static Map<EReference, List<EClass>> allEContainments = new
-	// LinkedHashMap<EReference, List<EClass>>();
+	// private static Map<EReference, List<EClass>> allEContainments = new LinkedHashMap<EReference, List<EClass>>();
 	public static List<EClass> getAllEContainments(EReference reference) {
 		// ONLY PERFORMANCE
 		/*
@@ -165,6 +160,7 @@ public class ModelMutatorUtil {
 		 * allEContainments.put(reference, new LinkedList<EClass>()); return
 		 * allEContainments.get(reference); }
 		 */
+		
 		List<EClass> result = new LinkedList<EClass>();
 		EClass referenceType = reference.getEReferenceType();
 		// no abstracts or interfaces
@@ -211,11 +207,11 @@ public class ModelMutatorUtil {
 		 * eClassToSubEClasses.put(eClass, new LinkedList<EClass>()); return
 		 * eClassToSubEClasses.get(eClass); }
 		 */
+		
 		List<EClass> allEClasses = getAllEClasses();
 		List<EClass> result = new LinkedList<EClass>();
 		for (EClass possibleSubClass : allEClasses) {
-			// is the EClass really a subClass, while not being abstract or an
-			// interface?
+			// is the EClass really a subClass, while not being abstract or an interface?
 			if (eClass.isSuperTypeOf(possibleSubClass) && canHaveInstance(possibleSubClass)) {
 				result.add(possibleSubClass);
 			}
@@ -239,6 +235,7 @@ public class ModelMutatorUtil {
 		/*
 		 * PERFORMANCE if (allEClasses != null) { return allEClasses; }
 		 */
+		
 		List<EClass> allEClasses = new LinkedList<EClass>();
 		Registry registry = EPackage.Registry.INSTANCE;
 		// for all registered EPackages
@@ -288,11 +285,12 @@ public class ModelMutatorUtil {
 	}
 	
 	/**
-	 * Returns all direct and indirect contents of <code>rootObject</code> as a map.
-	 * All EObjects that appear in these contents are mapped to their corresponding
-	 * EClass.
-	 *  
-	 * @param rootObject the EObject to get contents for
+	 * Returns all direct and indirect contents of <code>rootObject</code> as a
+	 * map. All EObjects that appear in these contents are mapped to their
+	 * corresponding EClass.
+	 * 
+	 * @param rootObject
+	 *            the EObject to get contents for
 	 * @return all contents as a map from EClass to lists of EObjects
 	 */
 	public static Map<EClass, List<EObject>> getAllClassesAndObjects(EObject rootObject) {
@@ -316,8 +314,6 @@ public class ModelMutatorUtil {
 		}
 		return result;
 	}
-	
-	
 
 	/**
 	 * Adds <code>newValue</code> to the many-valued feature of
@@ -360,17 +356,25 @@ public class ModelMutatorUtil {
 			return null;
 		}
 	}
+
 	/**
-	 * Adds all <code>objects</code> to the many-valued feature of 
-	 * <code>eObject</code> using an AddCommand. 
-	 * Exceptions are caught if <code>ignoreAndLog</code> is
-	 * true, otherwise a RuntimeException might be thrown if the command fails.  
+	 * Adds all <code>objects</code> to the many-valued feature of
+	 * <code>eObject</code> using an AddCommand. Exceptions are caught if
+	 * <code>ignoreAndLog</code> is true, otherwise a RuntimeException might be
+	 * thrown if the command fails.
 	 * 
-	 * @param eObject the EObject to which <code>objects</code> shall be added
-	 * @param feature the EReference that <code>objects</code> shall be added to
-	 * @param objects collection of objects that shall be added to <code>feature</code>
-	 * @param exceptionLog the current log of exceptions
-	 * @param ignoreAndLog should exceptions be ignored and added to <code>exceptionLog</code>?
+	 * @param eObject
+	 *            the EObject to which <code>objects</code> shall be added
+	 * @param feature
+	 *            the EReference that <code>objects</code> shall be added to
+	 * @param objects
+	 *            collection of objects that shall be added to
+	 *            <code>feature</code>
+	 * @param exceptionLog
+	 *            the current log of exceptions
+	 * @param ignoreAndLog
+	 *            should exceptions be ignored and added to
+	 *            <code>exceptionLog</code>?
 	 */
 	public static void addPerCommand(EObject eObject, EStructuralFeature feature, Collection<?> objects,
 		Set<RuntimeException> exceptionLog, boolean ignoreAndLog) {
@@ -391,6 +395,7 @@ public class ModelMutatorUtil {
 			handle(e, exceptionLog, ignoreAndLog);
 		}
 	}
+
 	/**
 	 * Sets a feature between <code>eObject</code> and <code>newValue</code>
 	 * using a SetCommand. Exceptions are caught if <code>ignoreAndLog</code> is
@@ -430,16 +435,24 @@ public class ModelMutatorUtil {
 			return null;
 		}
 	}
+
 	/**
-	 * Removes <code>objects</code> from a feature of <code>eObject</code>
-	 * using a RemoveCommand. Exceptions are caught if <code>ignoreAndLog</code> is
-	 * true, otherwise a RuntimeException might be thrown if the command fails.  
+	 * Removes <code>objects</code> from a feature of <code>eObject</code> using
+	 * a RemoveCommand. Exceptions are caught if <code>ignoreAndLog</code> is
+	 * true, otherwise a RuntimeException might be thrown if the command fails.
 	 * 
-	 * @param eObject the EObject to remove <code>objects</code> from
-	 * @param feature the EStructuralFeature <code>objects</code> shall be removed from
-	 * @param objects collection of Objects that shall be removed
-	 * @param exceptionLog the current log of exceptions
-	 * @param ignoreAndLog should exceptions be ignored and added to <code>exceptionLog</code>?
+	 * @param eObject
+	 *            the EObject to remove <code>objects</code> from
+	 * @param feature
+	 *            the EStructuralFeature <code>objects</code> shall be removed
+	 *            from
+	 * @param objects
+	 *            collection of Objects that shall be removed
+	 * @param exceptionLog
+	 *            the current log of exceptions
+	 * @param ignoreAndLog
+	 *            should exceptions be ignored and added to
+	 *            <code>exceptionLog</code>?
 	 * @see RemoveCommand
 	 */
 	public static void removePerCommand(EObject eObject, EStructuralFeature feature, Collection<?> objects,
@@ -451,6 +464,7 @@ public class ModelMutatorUtil {
 			handle(e, exceptionLog, ignoreAndLog);
 		}
 	}
+
 	/**
 	 * Sets all possible attributes of known types to random values using
 	 * {@link IAttributeSetter} and SetCommands/AddCommands.
@@ -606,20 +620,23 @@ public class ModelMutatorUtil {
 	 * Retrieves all EClasses from <code>allEClasses</code> that can possibly be
 	 * referenced by <code>reference</code> and returns them as a list.
 	 * 
-	 * @param reference the EReference to get EClasses for
-	 * @param allEClasses set of all possible EClasses
-	 * @return list of all EClasses that can be referenced by <code>reference</code>
+	 * @param reference
+	 *            the EReference to get EClasses for
+	 * @param allEClasses
+	 *            set of all possible EClasses
+	 * @return list of all EClasses that can be referenced by
+	 *         <code>reference</code>
 	 */
 	public static Set<EClass> getReferenceClasses(EReference reference, Set<EClass> allEClasses) {
 		Set<EClass> result = new LinkedHashSet<EClass>();
 		EClass referenceType = reference.getEReferenceType();
 		// 'referenceType: EObject' allows all kinds of EObjects
-		if(referenceType.equals(EcorePackage.eINSTANCE.getEObject())) {
+		if (referenceType.equals(EcorePackage.eINSTANCE.getEObject())) {
 			return allEClasses;
 		}
-		for(EClass eClass : allEClasses) {
+		for (EClass eClass : allEClasses) {
 			// can eClass be referenced by reference
-			if(referenceType.equals(eClass) || referenceType.isSuperTypeOf(eClass)) {
+			if (referenceType.equals(eClass) || referenceType.isSuperTypeOf(eClass)) {
 				result.add(eClass);
 			}
 		}
@@ -627,39 +644,47 @@ public class ModelMutatorUtil {
 	}
 	
 	/**
-	 * Sets or adds to a reference for an EObject with any generated instance
-	 * of <code>referenceClass</code> using SetCommand/AddCommand. If the reference is 
-	 * not required, <code>random</code> decides whether the reference is set or how 
-	 * many EObjects are added to it.
-	 *  
-	 * @param eObject the EObject to set the reference for
-	 * @param referenceClass the EClass all referenced EObject shall be instances of
-	 * @param reference the reference to set
-	 * @param random the Random-object that randomizes EObjects and their amount
-	 * @param exceptionLog the current log of exceptions
-	 * @param ignoreAndLog should exceptions be ignored and added to <code>exceptionLog</code>?
-	 * @param allEObjects all existing EObjects mapped to their EClass
+	 * Sets or adds to a reference for an EObject with any generated instance of
+	 * <code>referenceClass</code> using SetCommand/AddCommand. If the reference
+	 * is not required, <code>random</code> decides whether the reference is set
+	 * or how many EObjects are added to it.
 	 * 
-	 * @see #addPerCommand(EObject, EStructuralFeature, Collection, Set, boolean)
+	 * @param eObject
+	 *            the EObject to set the reference for
+	 * @param referenceClass
+	 *            the EClass all referenced EObject shall be instances of
+	 * @param reference
+	 *            the reference to set
+	 * @param random
+	 *            the Random-object that randomizes EObjects and their amount
+	 * @param exceptionLog
+	 *            the current log of exceptions
+	 * @param ignoreAndLog
+	 *            should exceptions be ignored and added to
+	 *            <code>exceptionLog</code>?
+	 * @param allEObjects
+	 *            all existing EObjects mapped to their EClass
+	 * 
+	 * @see #addPerCommand(EObject, EStructuralFeature, Collection, Set,
+	 *      boolean)
 	 * @see #addPerCommand(EObject, EStructuralFeature, Object, Set, boolean)
 	 * @see #setPerCommand(EObject, EStructuralFeature, Object, Set, boolean)
 	 */
 	public static void setReference(EObject eObject, EClass referenceClass, EReference reference,
 		Random random, Set<RuntimeException> exceptionLog, boolean ignoreAndLog, Map<EClass, List<EObject>> allEObjects) {
 		
-		
 		List<EObject> possibleReferenceObjects = allEObjects.get(referenceClass); 
 		Collections.shuffle(possibleReferenceObjects, random);
 		
-		if(!possibleReferenceObjects.isEmpty()) {
+		if (!possibleReferenceObjects.isEmpty()) {
 			int index = 0;
-			if(reference.isMany()) {
+			if (reference.isMany()) {
 				int numberOfReferences = computeFeatureAmount(reference, random);
-				for(int i = 0; i < numberOfReferences; i++) {
+				for (int i = 0; i < numberOfReferences; i++) {
 					ModelMutatorUtil.addPerCommand(eObject, reference, possibleReferenceObjects.get(index),
 						exceptionLog, ignoreAndLog);
 					// ensures every EObject is set at most once
-					if(++index==possibleReferenceObjects.size()) {
+					if (++index==possibleReferenceObjects.size()) {
 						break;
 					}
 				}

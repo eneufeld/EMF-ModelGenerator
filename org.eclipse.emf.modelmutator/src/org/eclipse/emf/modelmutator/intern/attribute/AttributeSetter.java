@@ -16,15 +16,18 @@ import java.util.Random;
  * @param <E> the attribute type of the attributes to create 
  */
 public abstract class AttributeSetter<E> {
+
 	/**
 	 * Random object that is used to determine values for attributes created 
 	 * by {@link #createNewAttribute()} and {@link #createNewAttributes()}.
 	 */
 	protected final Random random;
-	
+
+
 	public AttributeSetter(Random random) {
 		this.random = random;
 	}
+	
 	/**
 	 * Creates one attribute of type <code>E</code>.
 	 * The result is determined by <code>random</code>.

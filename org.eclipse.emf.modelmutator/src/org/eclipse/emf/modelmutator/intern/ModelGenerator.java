@@ -1,13 +1,15 @@
-/**
- * 
- */
 package org.eclipse.emf.modelmutator.intern;
 
 import org.eclipse.emf.modelmutator.api.ModelMutatorConfiguration;
 
 /**
- * @author Eugen Neufeld
+ * Allows to implement generator-specific functionality
  * 
+ * TODO Can be removed at the current status
+ * 
+ * @author Eugen Neufeld
+ * @author Stephan Köhler
+ * @author Philip Achenbach
  */
 public class ModelGenerator extends AbstractModelMutator {
 
@@ -24,6 +26,5 @@ public class ModelGenerator extends AbstractModelMutator {
 	@Override
 	public void postMutate() {
 		// TODO Auto-generated method stub
-
 	}
 }
