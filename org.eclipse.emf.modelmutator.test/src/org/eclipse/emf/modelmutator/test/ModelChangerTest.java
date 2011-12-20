@@ -1,11 +1,9 @@
-package org.eclipse.emf.modelmutator.changer;
+package org.eclipse.emf.modelmutator.test;
 
 import org.eclipse.emf.emfstore.client.model.ProjectSpace;
 import org.eclipse.emf.emfstore.common.model.util.SerializationException;
 import org.eclipse.emf.modelmutator.api.ModelMutator;
 import org.eclipse.emf.modelmutator.api.ModelMutatorConfiguration;
-import org.eclipse.emf.modelmutator.mutator.ModelMutatorHelper;
-import org.eclipse.emf.modelmutator.mutator.ModelMutatorTest;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;

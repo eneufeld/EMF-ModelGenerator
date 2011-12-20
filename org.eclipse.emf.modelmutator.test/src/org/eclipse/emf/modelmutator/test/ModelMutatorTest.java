@@ -1,4 +1,4 @@
-package org.eclipse.emf.modelmutator.mutator;
+package org.eclipse.emf.modelmutator.test;
 
 import java.util.ArrayList;
 import java.util.HashMap;

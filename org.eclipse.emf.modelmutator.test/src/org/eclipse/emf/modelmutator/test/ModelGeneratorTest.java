@@ -1,4 +1,4 @@
-package org.eclipse.emf.modelmutator.generator;
+package org.eclipse.emf.modelmutator.test;
 
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.emfstore.client.model.ProjectSpace;
 import org.eclipse.emf.modelmutator.api.ModelMutator;
 import org.eclipse.emf.modelmutator.api.ModelMutatorConfiguration;
-import org.eclipse.emf.modelmutator.mutator.ModelMutatorTest;
 import org.junit.Assert;
 import org.junit.Test;
 
