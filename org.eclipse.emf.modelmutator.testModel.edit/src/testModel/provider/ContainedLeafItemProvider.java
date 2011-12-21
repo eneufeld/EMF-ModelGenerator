@@ -73,7 +73,6 @@ public class ContainedLeafItemProvider
 			addCharPropertyDescriptor(object);
 			addCharacterPropertyDescriptor(object);
 			addDatePropertyDescriptor(object);
-			addDiagnosticChainPropertyDescriptor(object);
 			addDoublePropertyDescriptor(object);
 			addDoubleObjPropertyDescriptor(object);
 			addFloatPropertyDescriptor(object);
@@ -207,28 +206,6 @@ public class ContainedLeafItemProvider
 				 getString("_UI_ContainedLeaf_date_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedLeaf_date_feature", "_UI_ContainedLeaf_type"),
 				 TestModelPackage.Literals.CONTAINED_LEAF__DATE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Diagnostic Chain feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDiagnosticChainPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_ContainedLeaf_DiagnosticChain_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ContainedLeaf_DiagnosticChain_feature", "_UI_ContainedLeaf_type"),
-				 TestModelPackage.Literals.CONTAINED_LEAF__DIAGNOSTIC_CHAIN,
 				 true,
 				 false,
 				 false,
@@ -420,7 +397,6 @@ public class ContainedLeafItemProvider
 			case TestModelPackage.CONTAINED_LEAF__CHAR:
 			case TestModelPackage.CONTAINED_LEAF__CHARACTER:
 			case TestModelPackage.CONTAINED_LEAF__DATE:
-			case TestModelPackage.CONTAINED_LEAF__DIAGNOSTIC_CHAIN:
 			case TestModelPackage.CONTAINED_LEAF__DOUBLE:
 			case TestModelPackage.CONTAINED_LEAF__DOUBLE_OBJ:
 			case TestModelPackage.CONTAINED_LEAF__FLOAT:

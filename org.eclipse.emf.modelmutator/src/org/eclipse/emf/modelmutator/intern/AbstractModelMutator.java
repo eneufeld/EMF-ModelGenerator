@@ -202,11 +202,12 @@ public abstract class AbstractModelMutator {
 		List<EObject> result = new LinkedList<EObject>();
 		for (int i = 0; i < width; i++) {
 			EClass eClass = getValidEClass(reference);
-
-			EObject newChild = generateElement(parentEObject, eClass, reference);
-			// was creating the child successful?
-			if (newChild != null) {
-				result.add(newChild);
+			if (eClass != null) {
+				EObject newChild = generateElement(parentEObject, eClass, reference);
+				// was creating the child successful?
+				if (newChild != null) {
+					result.add(newChild);
+				}
 			}
 		}
 		return result;

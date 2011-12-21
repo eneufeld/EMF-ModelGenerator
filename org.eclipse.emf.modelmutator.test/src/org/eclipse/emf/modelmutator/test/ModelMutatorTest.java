@@ -73,7 +73,7 @@ public class ModelMutatorTest {
 		return mmc;
 	}
 
-	protected ModelMutatorConfiguration createModelMutatorConfigurationRandom(ProjectSpace projectSpace) {
+	public ModelMutatorConfiguration createModelMutatorConfigurationRandom(ProjectSpace projectSpace) {
 		ModelMutatorConfiguration mmc = new ModelMutatorConfiguration(ModelMutatorUtil.getEPackage(modelKey), projectSpace.getProject(),
 				System.currentTimeMillis());
 		mmc.setDepth(depth);

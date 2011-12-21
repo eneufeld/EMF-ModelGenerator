@@ -27,7 +27,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedLeaf/char"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedLeaf/Character"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedLeaf/date"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedLeaf/DiagnosticChain"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedLeaf/double"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedLeaf/DoubleObj"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute testModel.ecore#//ContainedLeaf/float"/>

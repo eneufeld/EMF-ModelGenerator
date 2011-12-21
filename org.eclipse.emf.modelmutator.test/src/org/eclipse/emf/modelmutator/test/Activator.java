@@ -1,9 +1,14 @@
 package org.eclipse.emf.modelmutator.test;
 
-import org.osgi.framework.BundleActivator;
+import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;
 
-public class Activator implements BundleActivator {
+public class Activator extends Plugin {
+
+	/**
+	 * The shared instance.
+	 */
+	private static Activator plugin;
 
 	private static BundleContext context;
 
@@ -17,6 +22,7 @@ public class Activator implements BundleActivator {
 	 */
 	public void start(BundleContext bundleContext) throws Exception {
 		Activator.context = bundleContext;
+		plugin = this;
 	}
 
 	/*
@@ -25,6 +31,16 @@ public class Activator implements BundleActivator {
 	 */
 	public void stop(BundleContext bundleContext) throws Exception {
 		Activator.context = null;
+		plugin = null;
+	}
+	
+	/**
+	 * Returns the shared instance.
+	 * 
+	 * @return the shared instance
+	 */
+	public static Activator getDefault() {
+		return plugin;
 	}
 
 }

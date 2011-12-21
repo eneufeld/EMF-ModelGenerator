@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ ModelGeneratorTest.class, ModelChangerTest.class })
+@Suite.SuiteClasses({ ModelGeneratorTest.class, ModelChangerTest.class, ModelMutatorServerTest.class })
 public class ModelMutatorTestSuite {
 
 }

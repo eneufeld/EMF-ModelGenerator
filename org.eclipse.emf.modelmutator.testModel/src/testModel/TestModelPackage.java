@@ -216,22 +216,13 @@ public interface TestModelPackage extends EPackage {
 	int CONTAINED_LEAF__DATE = 5;
 
 	/**
-	 * The feature id for the '<em><b>Diagnostic Chain</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTAINED_LEAF__DIAGNOSTIC_CHAIN = 6;
-
-	/**
 	 * The feature id for the '<em><b>Double</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_LEAF__DOUBLE = 7;
+	int CONTAINED_LEAF__DOUBLE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Double Obj</b></em>' attribute.
@@ -240,7 +231,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_LEAF__DOUBLE_OBJ = 8;
+	int CONTAINED_LEAF__DOUBLE_OBJ = 7;
 
 	/**
 	 * The feature id for the '<em><b>Float</b></em>' attribute.
@@ -249,7 +240,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_LEAF__FLOAT = 9;
+	int CONTAINED_LEAF__FLOAT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Element Type</b></em>' attribute.
@@ -258,7 +249,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_LEAF__ELEMENT_TYPE = 10;
+	int CONTAINED_LEAF__ELEMENT_TYPE = 9;
 
 	/**
 	 * The feature id for the '<em><b>Ref</b></em>' reference list.
@@ -267,7 +258,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_LEAF__REF = 11;
+	int CONTAINED_LEAF__REF = 10;
 
 	/**
 	 * The feature id for the '<em><b>Upper Bound</b></em>' containment reference list.
@@ -276,7 +267,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_LEAF__UPPER_BOUND = 12;
+	int CONTAINED_LEAF__UPPER_BOUND = 11;
 
 	/**
 	 * The number of structural features of the '<em>Contained Leaf</em>' class.
@@ -285,7 +276,7 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTAINED_LEAF_FEATURE_COUNT = 13;
+	int CONTAINED_LEAF_FEATURE_COUNT = 12;
 
 	/**
 	 * The meta object id for the '{@link testModel.impl.LeafsImpl <em>Leafs</em>}' class.
@@ -655,17 +646,6 @@ public interface TestModelPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getContainedLeaf_Date();
-
-	/**
-	 * Returns the meta object for the attribute '{@link testModel.ContainedLeaf#getDiagnosticChain <em>Diagnostic Chain</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Diagnostic Chain</em>'.
-	 * @see testModel.ContainedLeaf#getDiagnosticChain()
-	 * @see #getContainedLeaf()
-	 * @generated
-	 */
-	EAttribute getContainedLeaf_DiagnosticChain();
 
 	/**
 	 * Returns the meta object for the attribute '{@link testModel.ContainedLeaf#getDouble <em>Double</em>}'.
@@ -1068,14 +1048,6 @@ public interface TestModelPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CONTAINED_LEAF__DATE = eINSTANCE.getContainedLeaf_Date();
-
-		/**
-		 * The meta object literal for the '<em><b>Diagnostic Chain</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTAINED_LEAF__DIAGNOSTIC_CHAIN = eINSTANCE.getContainedLeaf_DiagnosticChain();
 
 		/**
 		 * The meta object literal for the '<em><b>Double</b></em>' attribute feature.

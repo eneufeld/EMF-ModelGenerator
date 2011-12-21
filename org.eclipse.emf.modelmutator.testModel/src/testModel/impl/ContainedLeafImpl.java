@@ -44,7 +44,6 @@ import testModel.upperBoundLeaf;
  *   <li>{@link testModel.impl.ContainedLeafImpl#getChar <em>Char</em>}</li>
  *   <li>{@link testModel.impl.ContainedLeafImpl#getCharacter <em>Character</em>}</li>
  *   <li>{@link testModel.impl.ContainedLeafImpl#getDate <em>Date</em>}</li>
- *   <li>{@link testModel.impl.ContainedLeafImpl#getDiagnosticChain <em>Diagnostic Chain</em>}</li>
  *   <li>{@link testModel.impl.ContainedLeafImpl#getDouble <em>Double</em>}</li>
  *   <li>{@link testModel.impl.ContainedLeafImpl#getDoubleObj <em>Double Obj</em>}</li>
  *   <li>{@link testModel.impl.ContainedLeafImpl#getFloat <em>Float</em>}</li>
@@ -176,26 +175,6 @@ public class ContainedLeafImpl extends EObjectImpl implements ContainedLeaf {
 	 * @ordered
 	 */
 	protected Date date = DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDiagnosticChain() <em>Diagnostic Chain</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDiagnosticChain()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final DiagnosticChain DIAGNOSTIC_CHAIN_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDiagnosticChain() <em>Diagnostic Chain</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDiagnosticChain()
-	 * @generated
-	 * @ordered
-	 */
-	protected DiagnosticChain diagnosticChain = DIAGNOSTIC_CHAIN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getDouble() <em>Double</em>}' attribute.
@@ -447,27 +426,6 @@ public class ContainedLeafImpl extends EObjectImpl implements ContainedLeaf {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DiagnosticChain getDiagnosticChain() {
-		return diagnosticChain;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setDiagnosticChain(DiagnosticChain newDiagnosticChain) {
-		DiagnosticChain oldDiagnosticChain = diagnosticChain;
-		diagnosticChain = newDiagnosticChain;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TestModelPackage.CONTAINED_LEAF__DIAGNOSTIC_CHAIN, oldDiagnosticChain, diagnosticChain));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public double getDouble() {
 		return double_;
 	}
@@ -605,8 +563,6 @@ public class ContainedLeafImpl extends EObjectImpl implements ContainedLeaf {
 				return getCharacter();
 			case TestModelPackage.CONTAINED_LEAF__DATE:
 				return getDate();
-			case TestModelPackage.CONTAINED_LEAF__DIAGNOSTIC_CHAIN:
-				return getDiagnosticChain();
 			case TestModelPackage.CONTAINED_LEAF__DOUBLE:
 				return getDouble();
 			case TestModelPackage.CONTAINED_LEAF__DOUBLE_OBJ:
@@ -649,9 +605,6 @@ public class ContainedLeafImpl extends EObjectImpl implements ContainedLeaf {
 				return;
 			case TestModelPackage.CONTAINED_LEAF__DATE:
 				setDate((Date)newValue);
-				return;
-			case TestModelPackage.CONTAINED_LEAF__DIAGNOSTIC_CHAIN:
-				setDiagnosticChain((DiagnosticChain)newValue);
 				return;
 			case TestModelPackage.CONTAINED_LEAF__DOUBLE:
 				setDouble((Double)newValue);
@@ -703,9 +656,6 @@ public class ContainedLeafImpl extends EObjectImpl implements ContainedLeaf {
 			case TestModelPackage.CONTAINED_LEAF__DATE:
 				setDate(DATE_EDEFAULT);
 				return;
-			case TestModelPackage.CONTAINED_LEAF__DIAGNOSTIC_CHAIN:
-				setDiagnosticChain(DIAGNOSTIC_CHAIN_EDEFAULT);
-				return;
 			case TestModelPackage.CONTAINED_LEAF__DOUBLE:
 				setDouble(DOUBLE_EDEFAULT);
 				return;
@@ -748,8 +698,6 @@ public class ContainedLeafImpl extends EObjectImpl implements ContainedLeaf {
 				return CHARACTER_EDEFAULT == null ? character != null : !CHARACTER_EDEFAULT.equals(character);
 			case TestModelPackage.CONTAINED_LEAF__DATE:
 				return DATE_EDEFAULT == null ? date != null : !DATE_EDEFAULT.equals(date);
-			case TestModelPackage.CONTAINED_LEAF__DIAGNOSTIC_CHAIN:
-				return DIAGNOSTIC_CHAIN_EDEFAULT == null ? diagnosticChain != null : !DIAGNOSTIC_CHAIN_EDEFAULT.equals(diagnosticChain);
 			case TestModelPackage.CONTAINED_LEAF__DOUBLE:
 				return double_ != DOUBLE_EDEFAULT;
 			case TestModelPackage.CONTAINED_LEAF__DOUBLE_OBJ:
@@ -788,8 +736,6 @@ public class ContainedLeafImpl extends EObjectImpl implements ContainedLeaf {
 		result.append(character);
 		result.append(", date: ");
 		result.append(date);
-		result.append(", DiagnosticChain: ");
-		result.append(diagnosticChain);
 		result.append(", double: ");
 		result.append(double_);
 		result.append(", DoubleObj: ");

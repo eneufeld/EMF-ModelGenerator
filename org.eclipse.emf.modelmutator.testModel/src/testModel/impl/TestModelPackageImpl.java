@@ -290,7 +290,7 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedLeaf_DiagnosticChain() {
+	public EAttribute getContainedLeaf_Double() {
 		return (EAttribute)containedLeafEClass.getEStructuralFeatures().get(6);
 	}
 
@@ -299,7 +299,7 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedLeaf_Double() {
+	public EAttribute getContainedLeaf_DoubleObj() {
 		return (EAttribute)containedLeafEClass.getEStructuralFeatures().get(7);
 	}
 
@@ -308,7 +308,7 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedLeaf_DoubleObj() {
+	public EAttribute getContainedLeaf_Float() {
 		return (EAttribute)containedLeafEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -317,7 +317,7 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedLeaf_Float() {
+	public EAttribute getContainedLeaf_ElementType() {
 		return (EAttribute)containedLeafEClass.getEStructuralFeatures().get(9);
 	}
 
@@ -326,17 +326,8 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getContainedLeaf_ElementType() {
-		return (EAttribute)containedLeafEClass.getEStructuralFeatures().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getContainedLeaf_Ref() {
-		return (EReference)containedLeafEClass.getEStructuralFeatures().get(11);
+		return (EReference)containedLeafEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -345,7 +336,7 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 	 * @generated
 	 */
 	public EReference getContainedLeaf_UpperBound() {
-		return (EReference)containedLeafEClass.getEStructuralFeatures().get(12);
+		return (EReference)containedLeafEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
@@ -546,7 +537,6 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 		createEAttribute(containedLeafEClass, CONTAINED_LEAF__CHAR);
 		createEAttribute(containedLeafEClass, CONTAINED_LEAF__CHARACTER);
 		createEAttribute(containedLeafEClass, CONTAINED_LEAF__DATE);
-		createEAttribute(containedLeafEClass, CONTAINED_LEAF__DIAGNOSTIC_CHAIN);
 		createEAttribute(containedLeafEClass, CONTAINED_LEAF__DOUBLE);
 		createEAttribute(containedLeafEClass, CONTAINED_LEAF__DOUBLE_OBJ);
 		createEAttribute(containedLeafEClass, CONTAINED_LEAF__FLOAT);
@@ -628,7 +618,6 @@ public class TestModelPackageImpl extends EPackageImpl implements TestModelPacka
 		initEAttribute(getContainedLeaf_Char(), ecorePackage.getEChar(), "char", null, 0, 1, ContainedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContainedLeaf_Character(), ecorePackage.getECharacterObject(), "Character", null, 0, 1, ContainedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContainedLeaf_Date(), ecorePackage.getEDate(), "date", null, 0, 1, ContainedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContainedLeaf_DiagnosticChain(), ecorePackage.getEDiagnosticChain(), "DiagnosticChain", null, 0, 1, ContainedLeaf.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContainedLeaf_Double(), ecorePackage.getEDouble(), "double", null, 0, 1, ContainedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContainedLeaf_DoubleObj(), ecorePackage.getEDoubleObject(), "DoubleObj", null, 0, 1, ContainedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContainedLeaf_Float(), ecorePackage.getEFloat(), "float", null, 0, 1, ContainedLeaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

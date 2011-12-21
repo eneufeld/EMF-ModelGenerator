@@ -27,7 +27,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link testModel.ContainedLeaf#getChar <em>Char</em>}</li>
  *   <li>{@link testModel.ContainedLeaf#getCharacter <em>Character</em>}</li>
  *   <li>{@link testModel.ContainedLeaf#getDate <em>Date</em>}</li>
- *   <li>{@link testModel.ContainedLeaf#getDiagnosticChain <em>Diagnostic Chain</em>}</li>
  *   <li>{@link testModel.ContainedLeaf#getDouble <em>Double</em>}</li>
  *   <li>{@link testModel.ContainedLeaf#getDoubleObj <em>Double Obj</em>}</li>
  *   <li>{@link testModel.ContainedLeaf#getFloat <em>Float</em>}</li>
@@ -197,32 +196,6 @@ public interface ContainedLeaf extends EObject {
 	 * @generated
 	 */
 	void setDate(Date value);
-
-	/**
-	 * Returns the value of the '<em><b>Diagnostic Chain</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Diagnostic Chain</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Diagnostic Chain</em>' attribute.
-	 * @see #setDiagnosticChain(DiagnosticChain)
-	 * @see testModel.TestModelPackage#getContainedLeaf_DiagnosticChain()
-	 * @model transient="true"
-	 * @generated
-	 */
-	DiagnosticChain getDiagnosticChain();
-
-	/**
-	 * Sets the value of the '{@link testModel.ContainedLeaf#getDiagnosticChain <em>Diagnostic Chain</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Diagnostic Chain</em>' attribute.
-	 * @see #getDiagnosticChain()
-	 * @generated
-	 */
-	void setDiagnosticChain(DiagnosticChain value);
 
 	/**
 	 * Returns the value of the '<em><b>Double</b></em>' attribute.
