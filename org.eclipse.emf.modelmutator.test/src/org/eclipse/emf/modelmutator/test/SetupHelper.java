@@ -36,10 +36,12 @@ import org.eclipse.emf.emfstore.server.EmfStoreController;
 import org.eclipse.emf.emfstore.server.ServerConfiguration;
 import org.eclipse.emf.emfstore.server.exceptions.EmfStoreException;
 import org.eclipse.emf.emfstore.server.exceptions.FatalEmfStoreException;
+import org.eclipse.emf.emfstore.server.exceptions.InvalidInputException;
 import org.eclipse.emf.emfstore.server.model.ProjectId;
 import org.eclipse.emf.emfstore.server.model.ProjectInfo;
 import org.eclipse.emf.emfstore.server.model.SessionId;
 import org.eclipse.emf.emfstore.server.model.accesscontrol.ACOrgUnitId;
+import org.eclipse.emf.emfstore.server.model.accesscontrol.ACUser;
 import org.eclipse.emf.emfstore.server.model.versioning.LogMessage;
 import org.eclipse.emf.emfstore.server.model.versioning.PrimaryVersionSpec;
 import org.eclipse.emf.emfstore.server.model.versioning.VersioningFactory;
@@ -128,7 +130,7 @@ public class SetupHelper {
 			}
 			FileUtil.copyFile(SetupHelper.class.getResourceAsStream("user.properties"), file);
 		} catch (IOException e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 	}
 
@@ -138,8 +140,17 @@ public class SetupHelper {
 	 * @return acorgunitid
 	 * @throws EmfStoreException in case of failure
 	 */
-	public static ACOrgUnitId createUserOnServer(SessionId sessionId, String username) throws EmfStoreException {
+	public static ACOrgUnitId createUserOnServer(SessionId sessionId, String username) throws EmfStoreException, InvalidInputException {
 		AdminConnectionManager adminConnectionManager = WorkspaceManager.getInstance().getAdminConnectionManager();
+		
+		//Check if the user already exists on the server
+		//TODO: Maybe EMFStore is broken because it throws the exception? But doesn't reach it to the caller?
+		for(ACUser user :adminConnectionManager.getUsers(sessionId)) {
+			if(user.getName().equals(username)) {
+				throw new InvalidInputException("username '"+username+"' already exists.");
+			}
+		}
+		
 		return adminConnectionManager.createUser(sessionId, username);
 	}
 

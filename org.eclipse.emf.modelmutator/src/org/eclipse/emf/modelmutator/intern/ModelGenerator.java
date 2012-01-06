@@ -15,16 +15,13 @@ public class ModelGenerator extends AbstractModelMutator {
 
 	public ModelGenerator(ModelMutatorConfiguration config) {
 		super(config);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void preMutate() {
-		// TODO Auto-generated method stub
 	}
 
 	@Override
 	public void postMutate() {
-		// TODO Auto-generated method stub
 	}
 }

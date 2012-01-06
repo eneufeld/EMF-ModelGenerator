@@ -118,7 +118,6 @@ public class ModelMutatorServerTest extends ModelMutatorServerSetup {
 		 * try {
 			System.out.println("Print: "+ModelMutatorHelper.eObjectToString(pro));
 		} catch (SerializationException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}*/
 		assertEqual(projectSpace.getProject(), pro);
@@ -158,7 +157,7 @@ public class ModelMutatorServerTest extends ModelMutatorServerSetup {
 			System.out.println(ModelMutatorHelper.eObjectToString(projectSpace.getProject()));
 			System.out.println("\n\n\n"+ModelMutatorHelper.eObjectToString(pro));
 		} catch (SerializationException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
 		*/

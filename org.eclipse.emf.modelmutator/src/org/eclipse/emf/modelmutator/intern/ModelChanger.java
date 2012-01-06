@@ -15,18 +15,16 @@ public class ModelChanger extends AbstractModelMutator {
 
 	public ModelChanger(ModelMutatorConfiguration config) {
 		super(config);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void preMutate() {
-		// TODO delete stuff randomly 
+		//TODO: delete stuff randomly?
 
 	}
 
 	@Override
 	public void postMutate() {
-		// TODO Auto-generated method stub
 
 	}
 

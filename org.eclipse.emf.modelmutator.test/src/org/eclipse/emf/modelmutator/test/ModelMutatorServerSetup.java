@@ -109,7 +109,11 @@ public class ModelMutatorServerSetup {
 	@BeforeClass
 	public static void setUpBeforeClass() throws EmfStoreException {
 		ServerConfiguration.setTesting(true);
+		try {
 		SetupHelper.addUserFileToServer(false);
+		} catch (Exception e) {
+			//do nothing
+		}
 		SetupHelper.startSever();
 		connectionManager = WorkspaceManager.getInstance().getConnectionManager();
 		login(SetupHelper.getServerInfo());
@@ -144,7 +148,7 @@ public class ModelMutatorServerSetup {
 				getGeneratedProjectId());
 		} catch (InvalidInputException e) {
 			// do nothing, user already exists.
-		} 
+		}
 	}
 
 	/**
