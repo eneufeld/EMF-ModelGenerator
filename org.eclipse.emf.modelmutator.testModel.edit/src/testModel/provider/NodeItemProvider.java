@@ -27,13 +27,13 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.emf.emfstore.modelmutator.testModel.Node;
+import org.eclipse.emf.emfstore.modelmutator.testModel.TestModelFactory;
+import org.eclipse.emf.emfstore.modelmutator.testModel.TestModelPackage;
 
-import testModel.Node;
-import testModel.TestModelFactory;
-import testModel.TestModelPackage;
 
 /**
- * This is the item provider adapter for a {@link testModel.Node} object.
+ * This is the item provider adapter for a {@link org.eclipse.emf.emfstore.modelmutator.testModel.Node} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

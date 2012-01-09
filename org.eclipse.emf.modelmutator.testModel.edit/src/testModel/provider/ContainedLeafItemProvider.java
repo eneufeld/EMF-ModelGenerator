@@ -27,13 +27,13 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.emf.emfstore.modelmutator.testModel.ContainedLeaf;
+import org.eclipse.emf.emfstore.modelmutator.testModel.TestModelFactory;
+import org.eclipse.emf.emfstore.modelmutator.testModel.TestModelPackage;
 
-import testModel.ContainedLeaf;
-import testModel.TestModelFactory;
-import testModel.TestModelPackage;
 
 /**
- * This is the item provider adapter for a {@link testModel.ContainedLeaf} object.
+ * This is the item provider adapter for a {@link org.eclipse.emf.emfstore.modelmutator.testModel.ContainedLeaf} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

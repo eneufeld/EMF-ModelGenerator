@@ -22,12 +22,12 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.emf.emfstore.modelmutator.testModel.TestModelPackage;
+import org.eclipse.emf.emfstore.modelmutator.testModel.multiRefLeaf;
 
-import testModel.TestModelPackage;
-import testModel.multiRefLeaf;
 
 /**
- * This is the item provider adapter for a {@link testModel.multiRefLeaf} object.
+ * This is the item provider adapter for a {@link org.eclipse.emf.emfstore.modelmutator.testModel.multiRefLeaf} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

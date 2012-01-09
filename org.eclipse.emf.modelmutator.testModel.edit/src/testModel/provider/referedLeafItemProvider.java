@@ -22,12 +22,12 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
+import org.eclipse.emf.emfstore.modelmutator.testModel.TestModelPackage;
+import org.eclipse.emf.emfstore.modelmutator.testModel.referedLeaf;
 
-import testModel.TestModelPackage;
-import testModel.referedLeaf;
 
 /**
- * This is the item provider adapter for a {@link testModel.referedLeaf} object.
+ * This is the item provider adapter for a {@link org.eclipse.emf.emfstore.modelmutator.testModel.referedLeaf} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated

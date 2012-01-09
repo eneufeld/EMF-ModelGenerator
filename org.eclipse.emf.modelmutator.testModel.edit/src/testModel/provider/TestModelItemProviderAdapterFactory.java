@@ -24,8 +24,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.emfstore.modelmutator.testModel.util.TestModelAdapterFactory;
 
-import testModel.util.TestModelAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -76,7 +76,7 @@ public class TestModelItemProviderAdapterFactory extends TestModelAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link testModel.Node} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.emf.emfstore.modelmutator.testModel.Node} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -84,7 +84,7 @@ public class TestModelItemProviderAdapterFactory extends TestModelAdapterFactory
 	protected NodeItemProvider nodeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link testModel.Node}.
+	 * This creates an adapter for a {@link org.eclipse.emf.emfstore.modelmutator.testModel.Node}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -99,7 +99,7 @@ public class TestModelItemProviderAdapterFactory extends TestModelAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link testModel.ContainedLeaf} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.emf.emfstore.modelmutator.testModel.ContainedLeaf} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -107,7 +107,7 @@ public class TestModelItemProviderAdapterFactory extends TestModelAdapterFactory
 	protected ContainedLeafItemProvider containedLeafItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link testModel.ContainedLeaf}.
+	 * This creates an adapter for a {@link org.eclipse.emf.emfstore.modelmutator.testModel.ContainedLeaf}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -122,7 +122,7 @@ public class TestModelItemProviderAdapterFactory extends TestModelAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link testModel.referedLeaf} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.emf.emfstore.modelmutator.testModel.referedLeaf} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -130,7 +130,7 @@ public class TestModelItemProviderAdapterFactory extends TestModelAdapterFactory
 	protected referedLeafItemProvider referedLeafItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link testModel.referedLeaf}.
+	 * This creates an adapter for a {@link org.eclipse.emf.emfstore.modelmutator.testModel.referedLeaf}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -145,7 +145,7 @@ public class TestModelItemProviderAdapterFactory extends TestModelAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link testModel.multiRefLeaf} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.emf.emfstore.modelmutator.testModel.multiRefLeaf} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -153,7 +153,7 @@ public class TestModelItemProviderAdapterFactory extends TestModelAdapterFactory
 	protected multiRefLeafItemProvider multiRefLeafItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link testModel.multiRefLeaf}.
+	 * This creates an adapter for a {@link org.eclipse.emf.emfstore.modelmutator.testModel.multiRefLeaf}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -168,7 +168,7 @@ public class TestModelItemProviderAdapterFactory extends TestModelAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link testModel.upperBoundLeaf} instances.
+	 * This keeps track of the one adapter used for all {@link org.eclipse.emf.emfstore.modelmutator.testModel.upperBoundLeaf} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -176,7 +176,7 @@ public class TestModelItemProviderAdapterFactory extends TestModelAdapterFactory
 	protected upperBoundLeafItemProvider upperBoundLeafItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link testModel.upperBoundLeaf}.
+	 * This creates an adapter for a {@link org.eclipse.emf.emfstore.modelmutator.testModel.upperBoundLeaf}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
