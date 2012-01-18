@@ -7,6 +7,7 @@
  ******************************************************************************/
 package org.eclipse.emf.emfstore.modelmutator.intern;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -16,6 +17,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Set;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
@@ -114,7 +116,13 @@ public abstract class AbstractModelMutator {
 	private List<EObject> generateChildren(EObject parentEObject, boolean generateAllReferences) {
 		Map<EReference, List<EObject>> currentContainments = new HashMap<EReference, List<EObject>>();
 		List<EObject> result = new LinkedList<EObject>();
+		List<EObject> toDelete=new ArrayList<EObject>();
+		//If the current element contains already children, delete them randomly or count them 
 		for (EObject curChild : parentEObject.eContents()) {
+			if(configuration.getRandom().nextBoolean()){
+				toDelete.add(curChild);
+				continue;
+			}
 			if (!currentContainments.containsKey(curChild.eContainmentFeature())) {
 				currentContainments.put(curChild.eContainmentFeature(), new LinkedList<EObject>());
 			}
@@ -124,8 +132,13 @@ public abstract class AbstractModelMutator {
 			}
 			result.add(curChild);
 		}
+		//delete random selected eleemnts
+		for(EObject curChild:toDelete){
+			ModelMutatorUtil.removePerCommand(parentEObject, curChild.eContainmentFeature(), curChild, configuration.getExceptionLog(), configuration.isIgnoreAndLog());
+		}
 
 		List<EReference> references = new LinkedList<EReference>();
+		//generate the children of the current element so that the lower bound holds or that there is a child of each sort 
 		for (EReference reference : parentEObject.eClass().getEAllContainments()) {
 			if (configuration.geteStructuralFeaturesToIgnore().contains(reference)
 					|| !ModelMutatorUtil.isValid(reference, parentEObject, configuration.getExceptionLog(), configuration.isIgnoreAndLog())) {
@@ -151,7 +164,7 @@ public abstract class AbstractModelMutator {
 
 			result.addAll(contain);
 		}
-		
+		// fill up the references where more elements are needed
 		if (references.size() != 0) {
 			for (int i = result.size(); i < configuration.getWidth() && references.size() != 0; i++) {
 				Collections.shuffle(references, configuration.getRandom());
@@ -333,13 +346,33 @@ public abstract class AbstractModelMutator {
 
 		// Delete already set references (only applies when changing a model)
 		if (eObject.eIsSet(reference)) {
-			eObject.eUnset(reference);
+			if(configuration.getRandom().nextBoolean()){
+				if(reference.isMany()){
+					List<EObject> toDelte=new ArrayList<EObject>();
+					if(configuration.getRandom().nextBoolean()){
+						for(EObject refObj:(EList<EObject>)eObject.eGet(reference)){
+							if(configuration.getRandom().nextBoolean()){
+								toDelte.add(refObj);
+							}
+						}
+					}
+					else{
+						toDelte.addAll((EList<EObject>)eObject.eGet(reference));
+					}
+					ModelMutatorUtil.removePerCommand(eObject, reference, toDelte, configuration.getExceptionLog(), configuration.isIgnoreAndLog());	
+				}
+				else
+					eObject.eUnset(reference);
+			}
+			else
+				return;
 		}
 		// check if the upper bound is reached
 		if (!ModelMutatorUtil.isValid(reference, eObject, configuration.getExceptionLog(), configuration.isIgnoreAndLog()) ||
 				(!reference.isMany() && eObject.eIsSet(reference))) {
 			return;
 		}
+		
 		ModelMutatorUtil.setReference(eObject, referenceClass, reference, configuration.getRandom(),
 			configuration.getExceptionLog(), configuration.isIgnoreAndLog(), allEObjects);
 	}

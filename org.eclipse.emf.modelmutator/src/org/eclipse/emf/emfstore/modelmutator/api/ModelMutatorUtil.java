@@ -19,6 +19,7 @@ import java.util.Map.Entry;
 import java.util.Random;
 import java.util.Set;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -473,6 +474,15 @@ public class ModelMutatorUtil {
 			handle(e, exceptionLog, ignoreAndLog);
 		}
 	}
+	public static void removePerCommand(EObject eObject, EStructuralFeature feature, Object object,
+			Set<RuntimeException> exceptionLog, boolean ignoreAndLog) {
+			EditingDomain domain = AdapterFactoryEditingDomain.getEditingDomainFor(eObject);
+			try {
+				new RemoveCommand(domain, eObject, feature, object).doExecute();
+			} catch(RuntimeException e){
+				handle(e, exceptionLog, ignoreAndLog);
+			}
+		}
 
 	/**
 	 * Sets all possible attributes of known types to random values using
@@ -690,6 +700,7 @@ public class ModelMutatorUtil {
 			int index = 0;
 			if (reference.isMany()) {
 				int numberOfReferences = computeFeatureAmount(reference, random);
+				numberOfReferences-=((EList<?>)eObject.eGet(reference)).size();
 				for (int i = 0; i < numberOfReferences; i++) {
 					ModelMutatorUtil.addPerCommand(eObject, reference, possibleReferenceObjects.get(index),
 						exceptionLog, ignoreAndLog);

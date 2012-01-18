@@ -7,6 +7,7 @@
  ******************************************************************************/
 package org.eclipse.emf.emfstore.modelmutator.test;
 
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.emfstore.client.model.ProjectSpace;
 import org.eclipse.emf.emfstore.common.model.util.SerializationException;
 import org.eclipse.emf.emfstore.modelmutator.api.ModelMutator;
@@ -55,13 +56,16 @@ public class ModelChangerTest extends ModelMutatorTest {
 	 */
 	@Test
 	public void testSetAttributesRandom() throws SerializationException {
-		ModelMutatorConfiguration mmc = createModelMutatorConfigurationRandom(projectSpace);
-		ModelMutator.changeModel(mmc);
-		String stringOrg = ModelMutatorHelper.eObjectToString(projectSpace.getProject());
+		ProjectSpace ps1=EcoreUtil.copy(projectSpace);
+		ProjectSpace ps2=EcoreUtil.copy(projectSpace);
 		
-		ModelMutatorConfiguration mmc2 = createModelMutatorConfigurationRandom(projectSpace);
+		ModelMutatorConfiguration mmc = createModelMutatorConfigurationRandom(ps1);
+		ModelMutator.changeModel(mmc);
+		String stringOrg = ModelMutatorHelper.eObjectToString(ps1.getProject());
+		
+		ModelMutatorConfiguration mmc2 = createModelMutatorConfigurationRandom(ps2);
 		ModelMutator.changeModel(mmc2);
-		String stringNew = ModelMutatorHelper.eObjectToString(projectSpace.getProject());
+		String stringNew = ModelMutatorHelper.eObjectToString(ps2.getProject());
 			
 		Assert.assertNotSame(stringNew, stringOrg);
 	}
@@ -73,13 +77,15 @@ public class ModelChangerTest extends ModelMutatorTest {
 	 */
 	@Test
 	public void testSetAttributesSeed() throws SerializationException {
-		ModelMutatorConfiguration mmc = createModelMutatorConfigurationSeed(projectSpace);
+		ProjectSpace ps1=EcoreUtil.copy(projectSpace);
+		ProjectSpace ps2=EcoreUtil.copy(projectSpace);
+		ModelMutatorConfiguration mmc = createModelMutatorConfigurationSeed(ps1);
 		ModelMutator.changeModel(mmc);
-		String stringOrg = ModelMutatorHelper.eObjectToString(projectSpace.getProject());
+		String stringOrg = ModelMutatorHelper.eObjectToString(ps1.getProject());
 		
-		ModelMutatorConfiguration mmc2 = createModelMutatorConfigurationSeed(projectSpace);
+		ModelMutatorConfiguration mmc2 = createModelMutatorConfigurationSeed(ps2);
 		ModelMutator.changeModel(mmc2);
-		String stringNew = ModelMutatorHelper.eObjectToString(projectSpace.getProject());
+		String stringNew = ModelMutatorHelper.eObjectToString(ps2.getProject());
 		
 		Assert.assertEquals(stringNew, stringOrg);
 	}
