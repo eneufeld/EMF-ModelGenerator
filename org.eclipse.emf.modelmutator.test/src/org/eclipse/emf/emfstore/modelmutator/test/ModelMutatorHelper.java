@@ -139,6 +139,7 @@ public class ModelMutatorHelper {
 		try {
 			res.save(stringWriter, getResourceSaveOptions());
 		} catch (IOException e) {
+			e.printStackTrace();
 			throw new SerializationException(e);
 		}
 		String result = stringWriter.toString();

@@ -7,6 +7,7 @@
  ******************************************************************************/
 package org.eclipse.emf.emfstore.modelmutator.api;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -31,7 +32,10 @@ import org.eclipse.emf.ecore.EPackage.Registry;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.EcorePackage;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.edit.command.AddCommand;
+import org.eclipse.emf.edit.command.ChangeCommand;
+import org.eclipse.emf.edit.command.DeleteCommand;
 import org.eclipse.emf.edit.command.RemoveCommand;
 import org.eclipse.emf.edit.command.SetCommand;
 import org.eclipse.emf.edit.domain.AdapterFactoryEditingDomain;
@@ -474,16 +478,39 @@ public class ModelMutatorUtil {
 			handle(e, exceptionLog, ignoreAndLog);
 		}
 	}
-	public static void removePerCommand(EObject eObject, EStructuralFeature feature, Object object,
+	/**
+	 * Deletes the <code>eObject</code> using
+	 * a {@link DeleteCommand}. Exceptions are caught if <code>ignoreAndLog</code> is
+	 * true, otherwise a RuntimeException might be thrown if the command fails.
+	 * 
+	 * @param eObject
+	 *            the EObject to delete
+	 * @param exceptionLog
+	 *            the current log of exceptions
+	 * @param ignoreAndLog
+	 *            should exceptions be ignored and added to
+	 *            <code>exceptionLog</code>?
+	 * @see DeleteCommand
+	 */
+	public static void removeFullPerCommand(final EObject eObject,
 			Set<RuntimeException> exceptionLog, boolean ignoreAndLog) {
-			EditingDomain domain = AdapterFactoryEditingDomain.getEditingDomainFor(eObject);
+		EditingDomain domain = AdapterFactoryEditingDomain.getEditingDomainFor(eObject);
+		List<EObject> toDelete=new ArrayList<EObject>();
+		toDelete.add(eObject);
 			try {
-				new RemoveCommand(domain, eObject, feature, object).doExecute();
+				new DeleteCommand(domain,toDelete ).execute();
+//				new ChangeCommand(eObject) {
+//					
+//					@Override
+//					protected void doExecute() {
+//						EcoreUtil.delete(eObject, true);
+//					}
+//				};
 			} catch(RuntimeException e){
 				handle(e, exceptionLog, ignoreAndLog);
 			}
 		}
-
+	
 	/**
 	 * Sets all possible attributes of known types to random values using
 	 * {@link IAttributeSetter} and SetCommands/AddCommands.

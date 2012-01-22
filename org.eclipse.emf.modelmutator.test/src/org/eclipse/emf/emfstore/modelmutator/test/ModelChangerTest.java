@@ -48,7 +48,26 @@ public class ModelChangerTest extends ModelMutatorTest {
 		// Cleanup
 		projectSpace = null;
 	}
-	
+	/**
+	 * Tests whether two changes with the same seed generate the same result.
+	 * 
+	 * @throws SerializationException gets thrown on serialization error
+	 */
+	@Test
+	public void testSetAttributesSeed() throws SerializationException {
+		ProjectSpace ps1=EcoreUtil.copy(projectSpace);
+		ProjectSpace ps2=EcoreUtil.copy(projectSpace);
+		ModelMutatorConfiguration mmc = createModelMutatorConfigurationSeed(ps1);
+		ModelMutator.changeModel(mmc);
+		String stringOrg = ModelMutatorHelper.eObjectToString(ps1.getProject());
+		
+		ModelMutatorConfiguration mmc2 = createModelMutatorConfigurationSeed(ps2);
+		ModelMutator.changeModel(mmc2);
+		String stringNew = ModelMutatorHelper.eObjectToString(ps2.getProject());
+		
+//		Assert.assertTrue(EcoreUtil.equals(ps1.getProject(), ps2.getProject()));
+		Assert.assertEquals(stringNew, stringOrg);
+	}
 	/**
 	 * Tests whether two changes with distinct seeds generate different results.
 	 * 
@@ -69,24 +88,10 @@ public class ModelChangerTest extends ModelMutatorTest {
 			
 		Assert.assertNotSame(stringNew, stringOrg);
 	}
-	
-	/**
-	 * Tests whether two changes with the same seed generate the same result.
-	 * 
-	 * @throws SerializationException gets thrown on serialization error
-	 */
 	@Test
-	public void testSetAttributesSeed() throws SerializationException {
-		ProjectSpace ps1=EcoreUtil.copy(projectSpace);
-		ProjectSpace ps2=EcoreUtil.copy(projectSpace);
-		ModelMutatorConfiguration mmc = createModelMutatorConfigurationSeed(ps1);
-		ModelMutator.changeModel(mmc);
-		String stringOrg = ModelMutatorHelper.eObjectToString(ps1.getProject());
-		
-		ModelMutatorConfiguration mmc2 = createModelMutatorConfigurationSeed(ps2);
-		ModelMutator.changeModel(mmc2);
-		String stringNew = ModelMutatorHelper.eObjectToString(ps2.getProject());
-		
-		Assert.assertEquals(stringNew, stringOrg);
+	public void finalCall(){
+		Assert.assertTrue(true);
 	}
+	
+	
 }

@@ -134,7 +134,8 @@ public abstract class AbstractModelMutator {
 		}
 		//delete random selected eleemnts
 		for(EObject curChild:toDelete){
-			ModelMutatorUtil.removePerCommand(parentEObject, curChild.eContainmentFeature(), curChild, configuration.getExceptionLog(), configuration.isIgnoreAndLog());
+			ModelMutatorUtil.removeFullPerCommand(curChild, configuration.getExceptionLog(), configuration.isIgnoreAndLog());
+
 		}
 
 		List<EReference> references = new LinkedList<EReference>();
@@ -343,14 +344,18 @@ public abstract class AbstractModelMutator {
 	 */
 	private void setEObjectReference(EObject eObject, EClass referenceClass, EReference reference,
 		Map<EClass, List<EObject>> allEObjects) {
-
+		
 		// Delete already set references (only applies when changing a model)
 		if (eObject.eIsSet(reference)) {
+			//check whether to delete or not
 			if(configuration.getRandom().nextBoolean()){
+				//do different stuff, depending on reference type
 				if(reference.isMany()){
 					List<EObject> toDelte=new ArrayList<EObject>();
+					//check whether to delete references randomly or all at once 
 					if(configuration.getRandom().nextBoolean()){
 						for(EObject refObj:(EList<EObject>)eObject.eGet(reference)){
+							//check whether to delete this reference
 							if(configuration.getRandom().nextBoolean()){
 								toDelte.add(refObj);
 							}
@@ -364,8 +369,10 @@ public abstract class AbstractModelMutator {
 				else
 					eObject.eUnset(reference);
 			}
-			else
+			else{
+				//nothing was deleted so no references need to be set
 				return;
+			}
 		}
 		// check if the upper bound is reached
 		if (!ModelMutatorUtil.isValid(reference, eObject, configuration.getExceptionLog(), configuration.isIgnoreAndLog()) ||
