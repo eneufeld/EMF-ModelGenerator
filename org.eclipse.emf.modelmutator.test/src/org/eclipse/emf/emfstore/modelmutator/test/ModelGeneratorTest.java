@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage.Registry;
 import org.eclipse.emf.emfstore.client.model.ProjectSpace;
+import org.eclipse.emf.emfstore.common.model.util.SerializationException;
 import org.eclipse.emf.emfstore.modelmutator.api.ModelMutator;
 import org.eclipse.emf.emfstore.modelmutator.api.ModelMutatorConfiguration;
 import org.eclipse.emf.emfstore.modelmutator.api.ModelMutatorUtil;
@@ -37,7 +38,7 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 	/**
 	 * Tests whether the root level has the expected width.
 	 */
-//	@Test
+	@Test
 	public void testNumberRootElements() {
 		int expectedWidth = width;
 		
@@ -54,7 +55,7 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 	 * 
 	 * Recognizes restrictions of the metamodel
 	 */
-//	@Test
+	@Test
 	public void testModelDepth() {
 		int expectedDepth = depth;
 		
@@ -104,7 +105,7 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 	/**
 	 * Tests whether the model has the expected width on all containment-levels.
 	 */
-//	@Test
+	@Test
 	public void testModelWidth() {
 		int expectedWidth = width;
 		
@@ -134,7 +135,7 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 	/**
 	 * Tests whether the generator successfully skips the root-generation.
 	 */
-//	@Test
+	@Test
 	public void testDoNotGenerateRoot(){
 		ProjectSpace projectSpace = createProjectSpace();
 
@@ -155,7 +156,7 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 	/**
 	 * Tests whether the generator successfully generates all elements on the root level.
 	 */
-//	@Test
+	//@Test
 	public void testAllElementsOnRoot(){
 		ProjectSpace projectSpace = createProjectSpace();
 		
@@ -172,13 +173,15 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 		
 		Assert.assertEquals(5, differentClasses.size());
 	}
+	
 	/**
 	 * Tests generation of all known models
 	 */
-	@Test
+	//@Test
 	public void testAllKnownModels(){
 		Set<String> models=new HashSet<String>(Registry.INSTANCE.keySet());
 		for(String model:models){
+			System.out.println("Generating model: "+model);
 			try{
 				ProjectSpace projectSpace = createProjectSpace();
 		ModelMutatorConfiguration mmc = new ModelMutatorConfiguration(ModelMutatorUtil.getEPackage(model), projectSpace.getProject(), seed);
@@ -196,11 +199,63 @@ public class ModelGeneratorTest extends ModelMutatorTest {
 		}
 			
 			catch(RuntimeException e){
-				System.err.println("Model "+model+" generated a runtime exception "+e.getMessage());
+				System.err.println("Model "+model+" generated a runtime exception "+e.getMessage()+" \n");
+				//e.printStackTrace();
 			}
 			
 		}
 	}
+	
+	/**
+	 * Tests if the Ecore Model (http://www.eclipse.org/emf/2002/Ecore) can be generated.
+	 */
+	//@Test
+	public void testEcoreModel() {
+		ProjectSpace projectSpace = createProjectSpace();
+		ModelMutatorConfiguration mmc = new ModelMutatorConfiguration(ModelMutatorUtil.getEPackage("http://www.eclipse.org/emf/2002/Ecore"), projectSpace.getProject(), seed);
+		
+		ModelMutator.generateModel(mmc);
+		try
+		{
+			Assert.assertEquals(mmc.getWidth(), projectSpace.getProject().getModelElements().size());
+			System.out.println("Model Ecore was successfull");
+		}
+		catch(AssertionError er)
+		{
+			System.err.println("Model Ecore generated "+projectSpace.getProject().getModelElements().size()+" elements instead of 5");
+			//er.printStackTrace();
+				
+		}
+	}
+	
+	/**
+	 * Tests if the Unicase model (http://unicase.org/model) can be generated.
+	 */
+	//@Test
+	public void testUnicaseModel() {
+		ProjectSpace projectSpace = createProjectSpace();
+		ModelMutatorConfiguration mmc = new ModelMutatorConfiguration(ModelMutatorUtil.getEPackage("http://unicase.org/model"), projectSpace.getProject(), seed);
+		
+		ModelMutator.generateModel(mmc);
+		try
+		{
+			Assert.assertEquals(mmc.getWidth(), projectSpace.getProject().getModelElements().size());
+			System.out.println("Model Unicase was successfull");
+		}
+		catch(AssertionError er)
+		{
+			System.err.println("Model Unicase generated "+projectSpace.getProject().getModelElements().size()+" elements instead of 5");
+			//er.printStackTrace();
+				
+		}
+		try {
+			System.out.println(ModelMutatorHelper.eObjectToString(projectSpace.getProject()));
+		} catch (SerializationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	@Test
 	public void finalCall(){
 		Assert.assertTrue(true);

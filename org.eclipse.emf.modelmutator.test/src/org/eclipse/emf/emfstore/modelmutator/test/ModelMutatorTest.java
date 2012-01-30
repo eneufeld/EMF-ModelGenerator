@@ -34,7 +34,7 @@ public class ModelMutatorTest {
 	/**
 	 * The modelKey for the used model.
 	 */
-	protected static final String modelKey = "http://org/eclipse/emf/modelmutator/org.eclipse.emf.emfstore.modelmutator.testModel";
+	protected static final String modelKey = "http://org/eclipse/emf/modelmutator/org.eclipse.emf.emfstore.modelmutator.testModel"; // "http://unicase.org/model"; 
 	/**
 	 * The name for the project.
 	 */
@@ -51,11 +51,11 @@ public class ModelMutatorTest {
 	/**
 	 * The model width.
 	 */
-	protected static final int width = 10;
+	protected static final int width = 3;
 	/**
 	 * The model depth.
 	 */
-	protected static final int depth = 4;
+	protected static final int depth = 3;
 
 	/**
 	 * Gets executed before the test.

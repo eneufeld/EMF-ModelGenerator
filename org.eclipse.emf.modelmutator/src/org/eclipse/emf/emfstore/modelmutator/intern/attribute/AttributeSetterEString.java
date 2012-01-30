@@ -38,7 +38,7 @@ public class AttributeSetterEString extends AttributeSetter<String> {
 	 */
 	public String createNewAttribute() {
 		if(getRandom().nextBoolean())
-			return new String("aaaaaa");
+			return null;
 		StringBuffer string = new StringBuffer();
 		string.delete(0, string.length());
 		for (int j = -5; j < getRandom().nextInt(10); j++) {

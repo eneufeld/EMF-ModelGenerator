@@ -24,6 +24,8 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.emfstore.client.model.ProjectSpace;
 import org.eclipse.emf.emfstore.client.model.Usersession;
+import org.eclipse.emf.emfstore.client.test.SetupHelper;
+import org.eclipse.emf.emfstore.client.test.server.TestSessionProvider;
 import org.eclipse.emf.emfstore.common.model.Project;
 import org.eclipse.emf.emfstore.common.model.util.ModelUtil;
 import org.eclipse.emf.emfstore.modelmutator.api.ModelMutator;
@@ -58,7 +60,7 @@ public class ModelMutatorServerTest extends ModelMutatorServerSetup {
 	@Before
 	public void beforeTest() throws EmfStoreException {
 		super.beforeTest();
-
+		
 		projectSpace = org.eclipse.emf.emfstore.client.model.ModelFactory.eINSTANCE.createProjectSpace();
 		projectSpace.setProject(org.eclipse.emf.emfstore.common.model.ModelFactory.eINSTANCE.createProject());
 		projectSpace.setProjectName(projectName);
@@ -69,14 +71,14 @@ public class ModelMutatorServerTest extends ModelMutatorServerSetup {
 		resourceSet.getLoadOptions().putAll(ModelUtil.getResourceLoadOptions());
 		projectSpace.initResources(resourceSet);
 
-		Usersession session = org.eclipse.emf.emfstore.client.model.ModelFactory.eINSTANCE.createUsersession();
+		/*Usersession session = org.eclipse.emf.emfstore.client.model.ModelFactory.eINSTANCE.createUsersession();
 		session.setServerInfo(SetupHelper.getServerInfo());
 		session.setUsername("super");
 		session.setPassword("super");
 		session.setSessionId(getSessionId());
 		projectSpace.setUsersession(session);
 		projectSpace.eResource().getContents().add(session);
-		projectSpace.eResource().getContents().add(session.getServerInfo());
+		projectSpace.eResource().getContents().add(session.getServerInfo());*/
 
 		EPackage pckge = ModelMutatorUtil.getEPackage(modelKey);
 
@@ -95,7 +97,7 @@ public class ModelMutatorServerTest extends ModelMutatorServerSetup {
 		assertTrue(getConnectionManager().getProjectList(getSessionId()).size() == getProjectsOnServerBeforeTest());
 
 		// add project to Server
-		projectSpace.shareProject(session);
+		projectSpace.shareProject(TestSessionProvider.getInstance().getDefaultUsersession(), null);
 		projectInfo = projectSpace.getProjectInfo();
 
 		// check that number increased
@@ -155,7 +157,7 @@ public class ModelMutatorServerTest extends ModelMutatorServerSetup {
 		ModelMutator.changeModel(mmc);
 
 		System.out.println("VERSION BEFORE commit:" + projectInfo.getVersion().getIdentifier());
-		PrimaryVersionSpec version = projectSpace.commit();
+		PrimaryVersionSpec version = projectSpace.commit(null, null, null);
 		System.out.println("VERSION AFTER commit:" + version.getIdentifier());
 
 		ChangePackage cpServer = getConnectionManager().getChanges(getSessionId(), projectInfo.getProjectId(),

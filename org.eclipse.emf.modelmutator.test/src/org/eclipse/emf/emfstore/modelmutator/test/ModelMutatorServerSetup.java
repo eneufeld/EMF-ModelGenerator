@@ -7,14 +7,18 @@
  ******************************************************************************/
 package org.eclipse.emf.emfstore.modelmutator.test;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.emfstore.client.model.Configuration;
 import org.eclipse.emf.emfstore.client.model.ServerInfo;
 import org.eclipse.emf.emfstore.client.model.WorkspaceManager;
+import org.eclipse.emf.emfstore.client.model.connectionmanager.AdminConnectionManager;
 import org.eclipse.emf.emfstore.client.model.connectionmanager.ConnectionManager;
 import org.eclipse.emf.emfstore.client.model.connectionmanager.KeyStoreManager;
+import org.eclipse.emf.emfstore.client.test.SetupHelper;
+import org.eclipse.emf.emfstore.client.test.server.TestSessionProvider;
 import org.eclipse.emf.emfstore.common.model.ModelFactory;
 import org.eclipse.emf.emfstore.common.model.Project;
 import org.eclipse.emf.emfstore.common.model.util.ModelUtil;
@@ -26,6 +30,7 @@ import org.eclipse.emf.emfstore.server.model.ProjectId;
 import org.eclipse.emf.emfstore.server.model.ProjectInfo;
 import org.eclipse.emf.emfstore.server.model.SessionId;
 import org.eclipse.emf.emfstore.server.model.accesscontrol.ACOrgUnitId;
+import org.eclipse.emf.emfstore.server.model.accesscontrol.ACUser;
 import org.eclipse.emf.emfstore.server.model.accesscontrol.AccesscontrolFactory;
 import org.eclipse.emf.emfstore.server.model.accesscontrol.roles.RolesPackage;
 import org.eclipse.emf.emfstore.server.model.versioning.ChangePackage;
@@ -110,10 +115,13 @@ public class ModelMutatorServerSetup {
 	 * Start server and gain sessionid.
 	 * 
 	 * @throws EmfStoreException in case of failure
+	 * @throws IOException 
 	 */
 	@BeforeClass
-	public static void setUpBeforeClass() throws EmfStoreException {
+	public static void setUpBeforeClass() throws EmfStoreException, IOException {
 		ServerConfiguration.setTesting(true);
+		Configuration.setTesting(true);
+
 		SetupHelper.addUserFileToServer(false);
 
 		SetupHelper.startSever();
@@ -133,20 +141,27 @@ public class ModelMutatorServerSetup {
 
 	public static void setupUsers() throws EmfStoreException {
 		try {
-			ACOrgUnitId orgUnitId = SetupHelper.createUserOnServer(getSessionId(), "reader");
-			SetupHelper.setUsersRole(getSessionId(), orgUnitId, RolesPackage.eINSTANCE.getReaderRole(),
+			AdminConnectionManager adminConnectionManager = WorkspaceManager.getInstance().getAdminConnectionManager();
+			for(ACUser user:adminConnectionManager.getUsers(sessionId)) {
+				if (user.getName().equals("reader") || user.getName().equals("writer1") || user.getName().equals("writer2") || user.getName().equals("projectadmin")) {
+					throw new InvalidInputException("User already exists");
+				}
+			}
+			
+			ACOrgUnitId orgUnitId = SetupHelper.createUserOnServer("reader");
+			SetupHelper.setUsersRole(orgUnitId, RolesPackage.eINSTANCE.getReaderRole(),
 				getGeneratedProjectId());
 
-			orgUnitId = SetupHelper.createUserOnServer(getSessionId(), "writer1");
-			SetupHelper.setUsersRole(getSessionId(), orgUnitId, RolesPackage.eINSTANCE.getWriterRole(),
+			orgUnitId = SetupHelper.createUserOnServer("writer1");
+			SetupHelper.setUsersRole(orgUnitId, RolesPackage.eINSTANCE.getWriterRole(),
 				getGeneratedProjectId());
 
-			orgUnitId = SetupHelper.createUserOnServer(getSessionId(), "writer2");
-			SetupHelper.setUsersRole(getSessionId(), orgUnitId, RolesPackage.eINSTANCE.getWriterRole(),
+			orgUnitId = SetupHelper.createUserOnServer("writer2");
+			SetupHelper.setUsersRole(orgUnitId, RolesPackage.eINSTANCE.getWriterRole(),
 				getGeneratedProjectId());
 
-			orgUnitId = SetupHelper.createUserOnServer(getSessionId(), "projectadmin");
-			SetupHelper.setUsersRole(getSessionId(), orgUnitId, RolesPackage.eINSTANCE.getProjectAdminRole(),
+			orgUnitId = SetupHelper.createUserOnServer("projectadmin");
+			SetupHelper.setUsersRole(orgUnitId, RolesPackage.eINSTANCE.getProjectAdminRole(),
 				getGeneratedProjectId());
 		} catch (InvalidInputException e) {
 			// do nothing, user already exists.

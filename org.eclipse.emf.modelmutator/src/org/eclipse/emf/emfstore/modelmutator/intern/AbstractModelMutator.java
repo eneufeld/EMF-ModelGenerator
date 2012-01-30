@@ -72,7 +72,10 @@ public abstract class AbstractModelMutator {
 		postMutate();
 	}
 
-	private void setContaintments() {
+	/**
+	 * This function generates the Containments of a model.
+	 */
+	public void setContaintments() {
 		Map<Integer, List<EObject>> depthToParentObjects = new LinkedHashMap<Integer, List<EObject>>();
 		List<EObject> parentsInThisDepth = new LinkedList<EObject>();
 		parentsInThisDepth.add(configuration.getRootEObject());
@@ -110,10 +113,12 @@ public abstract class AbstractModelMutator {
 	 * 
 	 * @param parentEObject
 	 *            the EObject to generate children for
+	 * @param generateAllReferences
+	 * 			  Should we generate every EObject on root level
 	 * @return all generated children as a list
 	 * @see #generateContainments(EObject, EReference, int)
 	 */
-	private List<EObject> generateChildren(EObject parentEObject, boolean generateAllReferences) {
+	public List<EObject> generateChildren(EObject parentEObject, boolean generateAllReferences) {
 		Map<EReference, List<EObject>> currentContainments = new HashMap<EReference, List<EObject>>();
 		List<EObject> result = new LinkedList<EObject>();
 		List<EObject> toDelete=new ArrayList<EObject>();
@@ -132,7 +137,7 @@ public abstract class AbstractModelMutator {
 			}
 			result.add(curChild);
 		}
-		//delete random selected eleemnts
+		//delete random selected elements
 		for(EObject curChild:toDelete){
 			ModelMutatorUtil.removeFullPerCommand(curChild, configuration.getExceptionLog(), configuration.isIgnoreAndLog());
 
@@ -237,7 +242,7 @@ public abstract class AbstractModelMutator {
 	 * @see ModelGeneratorUtil#setPerCommand(EObject, EStructuralFeature,
 	 *      Object, Set, boolean)
 	 */
-	private List<EObject> generateMinContainments(EObject parentEObject, EReference reference, int width) {
+	public List<EObject> generateMinContainments(EObject parentEObject, EReference reference, int width) {
 		List<EObject> result = new LinkedList<EObject>();
 		for (int i = 0; i < width; i++) {
 			EClass eClass = getValidEClass(reference);
@@ -252,7 +257,7 @@ public abstract class AbstractModelMutator {
 		return result;
 	}
 
-	private EObject generateElement(EObject parentEObject, EClass eClass, EReference reference) {
+	public EObject generateElement(EObject parentEObject, EClass eClass, EReference reference) {
 		// create child and add it to parentEObject
 		// Old version which used another method:
 		//EObject newChild = setContainment(parentEObject, eClass, reference);
@@ -269,7 +274,14 @@ public abstract class AbstractModelMutator {
 		return newChild;
 	}
 
-	private EClass getValidEClass(EReference eReference) {
+	/**
+	 * Returns a valid EClasses randomly for the given reference.
+	 * @param eReference
+	 * 			the eReference the EClass is searched for
+	 * @return
+	 * 			a valid eClass for the eReference
+	 */
+	public EClass getValidEClass(EReference eReference) {
 		List<EClass> allEClasses = new LinkedList<EClass>();
 		allEClasses.addAll(ModelMutatorUtil.getAllEContainments(eReference));
 
@@ -297,7 +309,7 @@ public abstract class AbstractModelMutator {
 	 * @see #changeEObjectAttributes(EObject)
 	 * @see #changeEObjectReferences(EObject, Map)
 	 */
-	private void setReferences() {
+	public void setReferences() {
 		EObject rootObject = configuration.getRootEObject();
 		Map<EClass, List<EObject>> allObjectsByEClass = ModelMutatorUtil.getAllClassesAndObjects(rootObject);
 		for (EClass eClass : allObjectsByEClass.keySet()) {
@@ -319,7 +331,7 @@ public abstract class AbstractModelMutator {
 	 *            EClass
 	 * @see ModelGeneratorHelper#setReference(EObject, EClass, EReference, Map)
 	 */
-	private void generateReferences(EObject eObject, Map<EClass, List<EObject>> allObjectsByEClass) {
+	public void generateReferences(EObject eObject, Map<EClass, List<EObject>> allObjectsByEClass) {
 		for (EReference reference : ModelMutatorUtil.getValidReferences(eObject, configuration.getExceptionLog(), configuration.isIgnoreAndLog())) {
 			for (EClass nextReferenceClass : ModelMutatorUtil.getReferenceClasses(reference, allObjectsByEClass.keySet())) {
 				setEObjectReference(eObject, nextReferenceClass, reference, allObjectsByEClass);
@@ -342,7 +354,7 @@ public abstract class AbstractModelMutator {
 	 * @see ModelGeneratorUtil#setReference(EObject, EClass, EReference, Random,
 	 *      Set, boolean, Map)
 	 */
-	private void setEObjectReference(EObject eObject, EClass referenceClass, EReference reference,
+	public void setEObjectReference(EObject eObject, EClass referenceClass, EReference reference,
 		Map<EClass, List<EObject>> allEObjects) {
 		
 		// Delete already set references (only applies when changing a model)
